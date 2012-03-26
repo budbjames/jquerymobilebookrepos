@@ -1,11 +1,12 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Author: Max Lynch <maxlynch@uwalumni.com>
 
-Chapter Leader: John Doe <email@email.com>
+Chapter Leader: Max Lynch <maxlynch@uwalumni.com>
 
 ////
 
 Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is the introduction to the chapter.  It should be written by the Chapter Leader and should contain an overview of the content that will be found in the chapter.  It should about 3-4 sentences long with a maximum of 6 sentences long.
+
+Pages are the fundamental building block of jQuery Mobile. Pages contain most of the content of an application, and help separate different screens in the application. Pages support rich navigation features, and provide standard ways to present information and navigational aids. In this chapter we will explain several core features of pages, and how to use them.
