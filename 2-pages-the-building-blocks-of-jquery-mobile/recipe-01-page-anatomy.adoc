@@ -11,12 +11,32 @@ Author: John Doe <email@email.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Pages are the fundamental building block of jQuery Mobile apps. jQuery Mobile offers a convenient structure that can be used to quickly build pages, though it does not require a specific structure. In this recipe we will demonstrate the structure of a simple jQuery Mobile page, complete with a page header, a page content area, and page footer.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+
+In jQuery Mobile, pages placed inside of the <body> element of the main document. We can include different components by using the data-role attribute. Below we have created a simple page with a basic header, content area, and footer:
+
+.A Simple jQuery Mobile Page
+[source,html]
+<body>
+	<div data-role="page">
+		<div data-role="header">
+			<h3>Title</h3>
+		</div>
+		<div data-role="content">
+			Page content goes here
+		</div>
+		<div data-role="footer">
+			<h3>Footer</h3>
+		</div>
+	</div>
+</body>
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+
+
