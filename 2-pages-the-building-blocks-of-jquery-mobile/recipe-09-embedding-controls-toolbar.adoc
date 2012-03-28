@@ -11,11 +11,28 @@ Author: John Doe <email@email.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Need to show two icons in header.One for search and another for refresh.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+ <div id="home" data-role="page" data-theme="b">
+  <div data-role="header" data-position="inline">
+	    <a href="#search" data-icon="search">Search</a>
+	    <h1>Home</h1>
+	    <a href="#refresh" data-icon="refresh" data-theme="b">Refresh</a>
+    </div>
+	<div data-role="content" style="text-align: center;">
+    Content
+	</div>
+    <div data-role="footer" data-position="fixed"> 
+        <div class="ui-grid-a">
+			<div class="ui-block-a"> </div>
+			<div class="ui-block-b"> 
+                <a href="#exit" data-role="button" data-icon="delete" class="ui-btn-right">Exit</a>
+            </div> 
+		</div>
+    </div>
+</div>
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
