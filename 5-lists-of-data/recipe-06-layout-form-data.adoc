@@ -1,17 +1,20 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+This recipe shows how to use a normal list as well an an inset list to layout form elements.
 
-Author: John Doe <email@email.com>
+Author: Daniel Mohl <danmohl@gmail.com>
+
+Bio: Daniel Mohl is a Microsoft MVP and F# Insider. He blogs at blog.danielmohl.com and you can follow him on Twitter at twitter.com/dmohl.
 
 ////
 
-#.# Recipe Title
+5.6 How to Use a List to Layout Form Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Lists are very powerful and you will find that many scenarios that would have been done in multiple ways on a website, will often end up translating to lists when building a mobile application with jQuery Mobile.
+One scenario that you may be faced with is how to create a quick form that automatically takes on the look and feel of the lists that reside in other aspects of your applications.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -20,3 +23,7 @@ Describe the solution to your recipe here.  It should be one to two paragraphs l
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+
+Bonus
+++++++++++++++++++++++++++++++++++++++++++++
+This will provide a quick, more advanced approach for dynamically displaying form elements based on input to other form elements.
