@@ -1,6 +1,11 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+jQueryMobile supports three types of toolbars.
+1.Header bars which is displayed as the top most item before page content.
+Normally used to show page title and /buttons/icons.
+2.Footer bars which normaly  displayed as the bottom most item after page content.
+Normally contains buttons/icons.
+3.Navbars which can be displayed within header/footer bars or with in page content to show seperate level of buttons/icons. 
 
 Author: John Chacko <poonkave@gmail.com>
 
