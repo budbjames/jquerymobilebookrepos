@@ -4,6 +4,8 @@ Recipe(s) for collapsibles
 
 Author: Anne-Gaelle Colom <coloma@wmin.ac.uk>
 
+TODO: need to check the code formatting, add the full example code and screen shots. 
+Awaiting instructions for how to best do that.
 ////
 
 #.# Collapsible Content Blocks
