@@ -19,7 +19,8 @@ Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 Use a collapsible content block, using a container with data-role="collapsible". For example: 
 
-        <div data-role="collapsible">
+        [source,html]
+	<div data-role="collapsible">
             <h3>Area of expertise</h3>
    	    <ul>
             	<li>jQuery Mobile</li>
@@ -46,7 +47,8 @@ Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 Theme the collapsible content using the data-theme attribute. For example: 
 
-        <div data-role="collapsible" data-theme="a" data-content-theme="c">
+        [source,html]
+	<div data-role="collapsible" data-theme="a" data-content-theme="c">
             <h3>Area of expertise</h3>
    	    <ul>
             	<li>jQuery Mobile</li>
