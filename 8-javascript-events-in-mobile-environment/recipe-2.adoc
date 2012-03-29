@@ -6,6 +6,7 @@ Notes
 Discussion section: 
  * Discuss when onload and $(document).ready() file in the lifecycle of a web page request. 
  * Discuss how pageinit fits into jQuery Mobiles single page application model
+ * Discuss exactly when pageinit is fired and what is available at this point in time
  
 
 Author: Adrian Pillinger <adrian.pillinger@gmail.com>
@@ -17,11 +18,17 @@ Author: Adrian Pillinger <adrian.pillinger@gmail.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-The typical jQuery Mobile web application is designed to behave as a single page application. This model means that the usual approach taken to execute application javascript once the document loads will not suffice, since this event will only fire once during the application's lifecycle.
+The typical jQuery Mobile web application is designed to behave as a single page application. This model means that the usual approach taken to execute application javascript when the document has finished loading will not be sufficient, since this event will only fire once during the application's lifecycle.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+To overcome this problem, jQuery mobile provides the pageinit event that fires each time a new page is loaded within the application. This event is agnostic with regard to how the page was loaded within the web browser, and therefore the pageinit event fires whether the page was loaded as a result of a full page refresh, or in response to a page fetched via an ajax call during a page transition.
+
+The application must simply bind a handler function to this event, that will execute the page specific javascript code once the page has been loaded and initialised. 
+
+The following is a simple example demonstrating a handler function bound to the pageinit event. This handler opens an alert box containing the Page Title as soon as jQuery Mobile has finished initialising the page.
+
+Code example here
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
