@@ -1,0 +1,22 @@
+////
+
+This is a comment block.  Put notes about your recipe here and also your author information.
+
+Author: Adrian Pillinger <adrian.pillinger@gmail.com>
+
+////
+
+#.# Using the pageinit() event in place of $(document).ready() and onload.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+The typical jQuery Mobile web application is designed to behave as a single page application. This model means that the usual approach taken to execute application javascript once the document loads will not suffice, since this event will only fire once during the application's lifecycle.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
