@@ -1,6 +1,12 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Notes
+-----
+
+Discussion section: 
+ * Discuss when onload and $(document).ready() file in the lifecycle of a web page request. 
+ * Discuss how pageinit fits into jQuery Mobiles single page application model
+ 
 
 Author: Adrian Pillinger <adrian.pillinger@gmail.com>
 
