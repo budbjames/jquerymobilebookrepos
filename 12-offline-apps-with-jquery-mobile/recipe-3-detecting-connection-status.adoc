@@ -1,0 +1,28 @@
+////
+
+This is a comment block.  Put notes about your recipe here and also your author information.
+
+Author: John Kleinschmidt <kleinschmidtorama@gmail.com>
+
+////
+
+#.# Detecting connection status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+In order to have a useful offline application, you need to be able to determine at any point whether a user is offline or online.
+
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+Modern browsers provide several methods to determine a user's connection status.  
+* navigator.onLine property -- true/false value
+* online event -- fires when browser switches from an offline state to an online state.
+* offline event -- fires when browser switches from an online state to an offline state.
+
+Additionally, connection status may be further ascertained by listening for error events on ajax calls.
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
