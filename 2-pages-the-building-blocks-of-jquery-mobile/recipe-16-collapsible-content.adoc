@@ -13,7 +13,7 @@ Awaiting instructions for how to best do that.
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-I want to display some information in a way that will enable to toggle the view to show or hide, so that it does not take too much space on the screen (especially relevant when the content will be displayed on a small screen).
+You want to display some information in a way that will enable to toggle the view to show or hide, so that it does not take too much space on the screen (especially relevant when the content will be displayed on a small screen).
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -41,7 +41,7 @@ The heading element (<h3>Area of expertise</h3>) in the example above must be im
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-I want to have a nice border around my content when it is expanded, so that I can easily see the delimitation of the content of the collapsible against the content of the page and providing a greater connection between the heading and the content. 
+You want to have a nice border around your content when it is expanded, so that you can easily see the delimitation of the content of the collapsible against the content of the page and providing a greater connection between the heading and the content. 
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
