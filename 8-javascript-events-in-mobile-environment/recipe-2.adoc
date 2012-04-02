@@ -28,7 +28,9 @@ The application must simply bind a handler function to this event, that will exe
 
 The following is a simple example demonstrating a handler function bound to the pageinit event. This handler opens an alert box containing the Page Title as soon as jQuery Mobile has finished initialising the page.
 
-Code example here
+----
+include::code/recipe2-1.html[]
+----
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
