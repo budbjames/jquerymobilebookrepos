@@ -2,8 +2,8 @@
 
 jQueryMobile supports three types of toolbars.
 1.Header bars which is displayed as the top most item before page content.
-Normally used to show page title and /buttons/icons.
-2.Footer bars which normaly  displayed as the bottom most item after page content.
+Normally used to show page title and buttons/icons.
+2.Footer bars which is displayed as the bottom most item after page content.
 Normally contains buttons/icons.
 3.Navbars which can be displayed within header/footer bars or with in page content to show seperate level of buttons/icons. 
 
@@ -20,23 +20,18 @@ Need to show two icons in header.One for search and another for refresh.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
- <div id="home" data-role="page" data-theme="b">
-  <div data-role="header" data-position="inline">
-	    <a href="#search" data-icon="search">Search</a>
-	    <h1>Home</h1>
-	    <a href="#refresh" data-icon="refresh" data-theme="b">Refresh</a>
-    </div>
-	<div data-role="content" style="text-align: center;">
-    Content
+<div id="home" data-role="page" data-theme="b">
+	<div data-role="header" data-position="inline">
+		<a href="#search" data-icon="search">Search</a>
+		<h1>Home</h1>
+		<a href="#refresh" data-icon="refresh" data-theme="b">Refresh</a>
 	</div>
-    <div data-role="footer" data-position="fixed"> 
-        <div class="ui-grid-a">
-			<div class="ui-block-a"> </div>
-			<div class="ui-block-b"> 
-                <a href="#exit" data-role="button" data-icon="delete" class="ui-btn-right">Exit</a>
-            </div> 
-		</div>
-    </div>
+	<div data-role="content" style="text-align: center;">
+		 Content
+	</div>
+	<div data-role="footer" data-position="fixed">
+		 Footer
+	</div>
 </div>
 
 Discussion
