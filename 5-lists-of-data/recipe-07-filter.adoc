@@ -26,6 +26,6 @@ Solution
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-In this example, we have created a filterable list of countries.  We have added the attribute, data-filter="true" to the listview which tells jQuery Mobile to make it filterable and adds a search bar to your listview.  By default the search bar will have the placeholder "filter items..." but you can override this by specifying your desired text in the data-filter-placeholder attribute.  In this example, we tell jQuery to display "Search countries..." instead of the default text.
+In this example, we have created a filterable list of countries.  Adding the attribute data-filter="true" to the listview tells jQuery Mobile to make it filterable and automatically adds a search bar to your listview.  The search bar will have the placeholder "filter items..." by default but you can override this by specifying your desired text in the data-filter-placeholder attribute.  In this example, we tell jQuery to display "Search countries..." instead of the default text.
 
 By default, the listview filter will search against the content in each list item.  However, if you want to filter against different content, you can specify this in the data-filtertext attribute.  In the example, we added this to the United States list item so that the item will filter against keywords USA, U.SA and United States of America.  Note that when this attributed is added, the contents of the list item are ignored.
