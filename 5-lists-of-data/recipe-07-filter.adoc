@@ -2,11 +2,11 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Scott Murphy <stmhawaii@gmail.com>
 
 ////
 
-#.# Recipe Title
+#.# How to use the Filter Search Box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
