@@ -4,7 +4,7 @@ This is a comment block.  Put notes about your recipe here and also your author 
 Goal: Show how to enable the standard filter search box, show how to filter with hidden data
 
 Author: Scott Murphy <stmhawaii@gmail.com>
-Bio: Scott Murphy is an interaction designer and front-end developer living in Honolulu, Hawaii.  You can follow him on twitter at twitter.com/hellocreation
+Bio: Scott Murphy is an interaction designer and front-end developer living in Honolulu, Hawaii.  You can follow him on github.com/uxder
 ////
 
 #.# How to use the Filter Search Box
@@ -26,8 +26,6 @@ Solution
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-First create a list view with a list of information.  In this example, we have created a filterable list of countries.  We have added the attribute, data-filter="true" to the list view which tells jQuery Mobile to make the list filterable and adds a search bar to your listview.  By default the search bar will have the placeholder "filter items" but you can override this by specifying your desired text in the data-filter-placeholder attribute.  In the example above, we tell jQuery to display "Search countries..." to the user instead of the default text.
+In this example, we have created a filterable list of countries.  We have added the attribute, data-filter="true" to the listview which tells jQuery Mobile to make it filterable and adds a search bar to your listview.  By default the search bar will have the placeholder "filter items..." but you can override this by specifying your desired text in the data-filter-placeholder attribute.  In this example, we tell jQuery to display "Search countries..." instead of the default text.
 
-By default, the listview filter will search against the content in each list item.  However, if you want to filter against different content, you can specify this in the data-filtertext attribute.  In the example above, we add this to the United States list item so that the item will filter against keywords specified in the data-filtertext (USA, U.SA and United States of America).  Note that when this attributed is added, the contents of the list item are ignored.
-
-
+By default, the listview filter will search against the content in each list item.  However, if you want to filter against different content, you can specify this in the data-filtertext attribute.  In the example, we added this to the United States list item so that the item will filter against keywords USA, U.SA and United States of America.  Note that when this attributed is added, the contents of the list item are ignored.
