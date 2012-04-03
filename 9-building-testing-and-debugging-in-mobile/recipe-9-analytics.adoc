@@ -1,34 +1,29 @@
 ////
-
-This is a comment block.  Put notes about your recipe here and also your author information.
-
 Author: Scott Murphy <stmhawaii@gmail.com>
 Bio: Scott Murphy is an interaction designer and front-end developer living in Honolulu, Hawaii.  You can follow him on github.com/uxder
 ////
 
-#.# Bow to setup google analytics with jQuery Mobile
+#.# How to setup google analytics on a multi-page template structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to add Google Analytics to your jQuery Mobile project and track each page.
+You launched your site and you want to add Google Analytics to support your multi-page jQuery mobile project but the default Google Analytics code can't track individual pages in your application.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
+To use Google Analytics with jQuery Mobile, you need to modify the Google Analytics code and further, send individual events to Google Analytics on each pageshow event provided by jQuery mobile.  
+
 <body>
-
 	<div data-role="page" id="page1">
-
 		<div data-role="header">
 			<h1>Page 1</h1>
 		</div>
 		<div data-role="content">	
-			<p>I'm first in the source order so I'm shown as the page.</p>		
-			<p>View internal page called <a href="#page2">bar</a></p>	
+			<p>Contents of Page 1</p>		
+			<p>View internal page called <a href="#page2">Page 2</a></p>	
 		</div>
 	</div>
-
-
 	<div data-role="page" id="page2">
 		<div data-role="header">
 			<h1>Page 2</h1>
@@ -36,10 +31,12 @@ Solution
 
 		<div data-role="content">	
 			<p>Contents of page 2.</p>		
-			<p><a href="#page1">Back to foo</a></p>	
+			<p><a href="#page1">Back to Page 1</a></p>	
 		</div>
 	</div>
+	
 	<script>
+	    //modified google analytics code
 		var _gaq = _gaq || [];
 		    _gaq.push(['_setAccount', 'UA-xxxxxx-xx']);
 
@@ -49,12 +46,24 @@ Solution
 		      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		    })();
 		
+		//on the pageshow event, send a trackPageview event to google anlaytics
 		$('[data-role=page]').live('pageshow', function(event, ui) {
-		        _gaq.push(['_trackPageview', "#" + $(event.target).attr('id')]);
+				 var pageId = "#" + $(event.target).attr('id');
+		        _gaq.push(['_trackPageview', pageId]);
 		});
 	</script>
 </body>
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+In the example above, we first use a slightly modified version of the default google analytics code.  If you compare this to the default code from Google, you will notice that the line, _gaq.push(['_trackPageview']); has been removed from the code snippet.  This line normally tells google analytics to immediately track a page view when script is loaded.  It is unnecessary in this case, since the goal is to track a pageview when a page is shown rather than when the script has loaded.  Be sure to fill in your google analytics account number where it says, UA-xxxxxx-xx.
+
+In the second portion of the script, we listen to the jQuery mobile pageshow event.  The pageshow event is an event that jQuery mobile fires each time a page is fully displayed to the suer.  Within our event handler for the pageshow event, we acquire the element id of the active page and save that in a variable called pageID.  We then use the Google Analytics API and send that pageID to Google Analytics and track it as an individual pageview.
+
+Please note that while Google Analytics is free services that provides a wealth of information on your site, it tracks user information such a geolocation, IP address, browser data and other information that may raise privacy concerns for some people.  It is recommended to review Google's privacy policies and further use the service appropriately based on your application and audience.
+
+
+
+
+
+
