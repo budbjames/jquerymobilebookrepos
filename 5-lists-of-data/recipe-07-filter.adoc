@@ -4,6 +4,7 @@ This is a comment block.  Put notes about your recipe here and also your author 
 Goal: Show how to enable the standard filter search box, show how to filter with hidden data
 
 Author: Scott Murphy <stmhawaii@gmail.com>
+Bio: Scott Murphy is an interaction designer and front-end developer living in Honolulu, Hawaii.  You can follow him on twitter at twitter.com/hellocreation
 ////
 
 #.# How to use the Filter Search Box
