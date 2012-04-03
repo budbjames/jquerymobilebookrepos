@@ -11,12 +11,11 @@ Author: Jef Claes <jef.claes@gmail.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Mobile phone coverage remains to be flaky or even non-existent in a lot of areas. Being able to fluently close that disconnectivity gap could significantly improve the user-friendliness of mobile applications running in the browser. Another issue mobile applications have to deal with is bandwidth. A new version of your application often causes the whole network connection to clog up, making the startup time of your application painfully slow.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+There were several caching techniques available before, but they were never really designed with the intention of making web applications run completely offline, making them fragile and complex to set up. HTML5 tries to make up for this missing browser capability by introducing the offline application cache. A more reliable way to make web applications truly available even offline.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
