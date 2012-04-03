@@ -2,11 +2,11 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Jef Claes <jef.claes@gmail.com>
 
 ////
 
-#.# Recipe Title
+#12.1# Cache Manifests Syntax and Usage 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
