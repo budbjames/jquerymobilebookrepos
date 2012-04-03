@@ -2,8 +2,8 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 Goal: Show how to enable the standard filter search box, show how to filter with hidden data
-Author: Scott Murphy <stmhawaii@gmail.com>
 
+Author: Scott Murphy <stmhawaii@gmail.com>
 ////
 
 #.# How to use the Filter Search Box
@@ -11,7 +11,7 @@ Author: Scott Murphy <stmhawaii@gmail.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to display a list of information and make it searchable to the user.
+You want to display a list of information and allow your users to filter the list.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -25,7 +25,7 @@ Solution
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-First create a list view with a list of information.  In this examle, we have created a list of countries.  To make this listview filterable, we add the attribute, data-filter="true" to the list view.  This tells jQuery Mobile to create a listview filter and automatically adds a search bar to your listview.  By default the search bar will have the placeholder "filter items" but you can override this by specifying your desired text in the data-filter-placeholder attribute.  In the example above, we tell jQuery to display "Search countries..." to the user instead of the default text.
+First create a list view with a list of information.  In this example, we have created a filterable list of countries.  We have added the attribute, data-filter="true" to the list view which tells jQuery Mobile to make the list filterable and adds a search bar to your listview.  By default the search bar will have the placeholder "filter items" but you can override this by specifying your desired text in the data-filter-placeholder attribute.  In the example above, we tell jQuery to display "Search countries..." to the user instead of the default text.
 
 By default, the listview filter will search against the content in each list item.  However, if you want to filter against different content, you can specify this in the data-filtertext attribute.  In the example above, we add this to the United States list item so that the item will filter against keywords specified in the data-filtertext (USA, U.SA and United States of America).  Note that when this attributed is added, the contents of the list item are ignored.
 
