@@ -15,7 +15,7 @@ Mobile phone coverage remains to be flaky or even non-existent in a lot of areas
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-There were several caching techniques available before, but they were never really designed with the intention of making web applications run completely offline, making them fragile and complex to set up. HTML5 tries to make up for this missing browser capability by introducing the offline application cache. A more reliable way to make web applications truly available even offline.
+There have been several caching techniques available in the past, but they were never really designed with the intention of making web applications run completely offline, making them fragile and complex to set up. HTML5 tries to make up for this missing browser capability by introducing the offline application cache. A more reliable way to make web applications truly available even offline.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
