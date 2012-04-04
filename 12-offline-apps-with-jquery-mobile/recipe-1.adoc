@@ -19,7 +19,7 @@ There have been several caching techniques available in the past, but they were 
 
 Discussion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The first thing you need to do when setting up the offline application cache, is creating a manifest file. A manifest file defines which resources should be available offline.
+The first thing you need to do when setting up the offline application cache is creating a manifest file. A manifest file defines which resources should be available offline.
 
 Syntax
 ++++++++++++++++++++++++++++++++++++++++++++
