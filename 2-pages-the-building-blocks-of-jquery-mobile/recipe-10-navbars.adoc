@@ -1,22 +1,36 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+[2.10] Navbars with jQuery Mobile
 
-Author: John Doe <email@email.com>
+Author: Kevin Griffin <kevin@kevgriffin.com>
 
 ////
 
-#.# Recipe Title
+2.10 Navbars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+You would like to provide a navigation bar for your users to use that allows them to easily move to particular portions of your application.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" class="ui-btn-active">First</a></li>
+				<li><a href="#">Second</a></li>
+				<li><a href="#">Third</a></li>
+				<li><a href="#">Fourth</a></li>
+				<li><a href="#">Fifth</a></li>
+			</ul>
+		</div>
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+The inclusion of a navigation bar is simple to do.  In the above code camp, you can see that we are creating a div with the assigned data-role of "navbar".
+
+Inside of the div, you'll want to create an unordered list (ul) for each of the items you would like to include.  There is no limit to the number of list items (li) that you can include.  If you have five or less items, they will be rendered on a single line.  More than five items will be rendered wrapped across multiple lines.
+
+The location of the navbar is not important.  You may render it anywhere on the page, including within headers and footers.  
