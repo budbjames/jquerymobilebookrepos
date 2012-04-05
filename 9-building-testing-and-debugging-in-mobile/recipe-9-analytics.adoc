@@ -8,11 +8,11 @@ Bio: Scott Murphy is an interaction designer and front-end developer living in H
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You launched your site and want to add Google Analytics to support your multi-page jQuery mobile project.  However, the default Google Analytics code will not track individual pageviews in your project.
+You launched your site and want to add Google Analytics to support your multi-page jQuery mobile project.  However, the default Google Analytics code will not track individual page views in your project.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-You need to modify the default Google Analytics code to track page views on each pageshow event provided by jQuery mobile.  
+You need to modify the default Google Analytics code to track page views on each 'pageshow' event provided by jQuery mobile.  
 
 <body>
 	<div data-role="page" id="page1">
@@ -58,7 +58,7 @@ Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 We begin with a slightly modified version of the default google analytics code.  You may notice that the line, _gaq.push(['_trackPageview']); has been removed from the default Google Analytics code.  This line normally tells google analytics to immediately track a page view when script is loaded.  We remove this because in the second portion of the script, we tell Google Analytics to track page views using a different method.  Be sure to fill in your google analytics account number where it says, UA-xxxxxx-xx.
 
-In the second portion of the script, we listen to the jQuery mobile's pageshow event.  The pageshow event is fired each time a page is fully displayed to the user in your application.  Within our event handler for the pageshow event, we grab the element id of the active page and save that in a variable called pageID.  Using the Google Analytics API and we then send this pageID to Google Analytics to track as a pageview.
+In the second portion of the script, we listen to the jQuery mobile's 'pageshow' event.  The 'pageshow' event is fired each time a page is fully displayed to the user in your application.  Within our event handler for the 'pageshow' event, we grab the element id of the active page and save that in a variable called pageID.  Using the Google Analytics API and we then send this pageID to Google Analytics to track as a page view.
 
 Please note that there are privacy concerns to be aware of when adding any kind of tracking mechanism to your site.  Google Analytics tracks user information such a geolocation, IP address, browser data and other information that may raise privacy concerns for some people.  It is recommended to review and understand Google's privacy policies before using the service on your site.
 
