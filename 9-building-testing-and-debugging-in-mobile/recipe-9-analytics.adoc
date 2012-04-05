@@ -8,11 +8,11 @@ Bio: Scott Murphy is an interaction designer and front-end developer living in H
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You launched your site and you want to add Google Analytics to support your multi-page jQuery mobile project but the default Google Analytics code can't track individual pages in your application.
+You launched your site and want to add Google Analytics to support your multi-page jQuery mobile project.  However, the default Google Analytics code will not track individual pageviews in your project.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-To use Google Analytics with jQuery Mobile, you need to modify the Google Analytics code and further, send individual events to Google Analytics on each pageshow event provided by jQuery mobile.  
+You need to modify the default Google Analytics code to track page views on each pageshow event provided by jQuery mobile.  
 
 <body>
 	<div data-role="page" id="page1">
@@ -56,11 +56,11 @@ To use Google Analytics with jQuery Mobile, you need to modify the Google Analyt
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-In the example above, we first use a slightly modified version of the default google analytics code.  If you compare this to the default code from Google, you will notice that the line, _gaq.push(['_trackPageview']); has been removed from the code snippet.  This line normally tells google analytics to immediately track a page view when script is loaded.  It is unnecessary in this case, since the goal is to track a pageview when a page is shown rather than when the script has loaded.  Be sure to fill in your google analytics account number where it says, UA-xxxxxx-xx.
+We begin with a slightly modified version of the default google analytics code.  You may notice that the line, _gaq.push(['_trackPageview']); has been removed from the default Google Analytics code.  This line normally tells google analytics to immediately track a page view when script is loaded.  We remove this because in the second portion of the script, we tell Google Analytics to track page views using a different method.  Be sure to fill in your google analytics account number where it says, UA-xxxxxx-xx.
 
-In the second portion of the script, we listen to the jQuery mobile pageshow event.  The pageshow event is an event that jQuery mobile fires each time a page is fully displayed to the suer.  Within our event handler for the pageshow event, we acquire the element id of the active page and save that in a variable called pageID.  We then use the Google Analytics API and send that pageID to Google Analytics and track it as an individual pageview.
+In the second portion of the script, we listen to the jQuery mobile's pageshow event.  The pageshow event is fired each time a page is fully displayed to the user in your application.  Within our event handler for the pageshow event, we grab the element id of the active page and save that in a variable called pageID.  Using the Google Analytics API and we then send this pageID to Google Analytics to track as a pageview.
 
-Please note that while Google Analytics is free services that provides a wealth of information on your site, it tracks user information such a geolocation, IP address, browser data and other information that may raise privacy concerns for some people.  It is recommended to review Google's privacy policies and further use the service appropriately based on your application and audience.
+Please note that there are privacy concerns to be aware of when adding any kind of tracking mechanism to your site.  Google Analytics tracks user information such a geolocation, IP address, browser data and other information that may raise privacy concerns for some people.  It is recommended to review and understand Google's privacy policies before using the service on your site.
 
 
 
