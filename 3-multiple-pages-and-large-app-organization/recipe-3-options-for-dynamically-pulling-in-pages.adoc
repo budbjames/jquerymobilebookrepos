@@ -1,10 +1,8 @@
 ////
 
-This recipe shows how to dynamically pull in pages
+This recipe shows some options on how to dynamically pull in pages
 
 Author: Roberto Hernandez <rhernandez@gmail.com>
-
-Bio:
 
 ////
 

@@ -1,0 +1,22 @@
+////
+
+HTML5 geolocation
+
+Author: Roberto Hernandez <rhernandez@gmail.com>
+
+////
+
+10.2 HTML5 geolocation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Your application needs to know the mobile device geolocation to provide the user with relevant content. 
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
