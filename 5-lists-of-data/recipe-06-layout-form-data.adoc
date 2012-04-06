@@ -13,13 +13,11 @@ Bio: Daniel Mohl is a Microsoft MVP and F# Insider. He blogs at blog.danielmohl.
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Lists are very powerful and you will find that many scenarios that would have been done in multiple ways on a website, will often end up translating to lists when building a mobile application with jQuery Mobile.
-One scenario that you may be faced with is how to create a quick form that automatically takes on the look and feel of the lists that reside in other aspects of your applications.
+Lists are very powerful and you will find that many scenarios that would have been done in various ways on a website, will often end up translating to lists when building a mobile application with jQuery Mobile. One scenario that you may be faced with is how to quickly create a form that automatically takes on the look and feel of the lists that reside in other areas of your applications. How can this be achieved with jQuery Mobile?
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Add some content here regarding the solution...
-
+The solution is quite simple. All that you need to do is wrap your list in a form element and add input elements as children of the desired list item element. A complete example with a few different input element types is shown below:
 [source, html]
 ----
 <div data-role="page" id="surveyPage">
@@ -93,19 +91,27 @@ Add some content here regarding the solution...
 </div>
 ----
 
+
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+This solution allows you to quickly setup forms that render just like other lists without any custom client-side code. The attributes of the form element work exactly like they would outside of a list. 
+[NOTE]
+Forms are described in detail in chapter 7. 
+
+This provides a nice blend of jQuery Mobile forms and lists functionality. Convenently, the things that you have already learned about lists and that you will learn about forms in recipes found later in this book, apply in exactly the same way. For example, to make the list shown above into an inset list, simply change the unorder list element to look like this:
+[source, html]
+----
+<ul data-role="listview" data-theme="d" data-inset="true"> 
+----
+The output of this change is shown below:
+<-- Need to add a screenshot -->
 
 Bonus
 ++++++++++++++++++++++++++++++++++++++++++++
-This will provide a quick, more advanced approach for dynamically displaying form elements based on input in other form elements.
-
-Something like this...
+As a bonus, you may run into scenarios where the list needs to dynamically display different form elements depending on input to other elements. There are several ways to accomplish this type of functionality and you will learn about many of these way throughout the rest of the book. One option for accomplishing this is to slightly modify the list elements and then add a little bit of JavaScript. The following example quickly illustrates this.
 
 [source, html]
 ----
-
 <!-- Non-relevant code ommitted -->
 
 <li data-role="fieldcontain">
