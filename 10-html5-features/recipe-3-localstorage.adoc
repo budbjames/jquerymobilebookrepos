@@ -1,0 +1,24 @@
+////
+
+HTML5 localstorage
+
+Author: Roberto Hernandez <rhernandez@overridethis.com>
+
+Bio: Currently a Managing Consultant for Excella in the Washington, DC region. I have been designing and writing software solutions using Microsoft technology for the past 12 years. I am originally from the Dominican Republic and the proud father of two beautiful daughters that make my life special.
+
+////
+
+10.3 HTML5 localstorage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Using HTML5 localstorage to store user information.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
