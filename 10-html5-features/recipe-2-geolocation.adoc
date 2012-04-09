@@ -47,7 +47,7 @@ Solution
 
     // is html5 geolocation supported
     if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success, function() { $("#error").show(); });
+      navigator.geolocation.getCurrentPosition(success, error);
     } else {
       $("#error").show();
     }
