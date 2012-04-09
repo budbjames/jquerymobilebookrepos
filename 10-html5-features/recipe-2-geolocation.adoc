@@ -43,7 +43,6 @@ Solution
     function success(position) {
       $("#lat").text("Latitude: {0}".replace("{0}", position.coords.latitude));
       $("#long").text("Longitude: {0}".replace("{0}", position.coords.longitude));
-      $("#alt").text("Altitude: {0}".replace("{0}", position.coords.altitude));
     }
 
     // is html5 geolocation supported
