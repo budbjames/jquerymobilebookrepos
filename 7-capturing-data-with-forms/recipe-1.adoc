@@ -1,12 +1,10 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
-Author: John Doe <email@email.com>
+Author: Adam Bradley <adambradley25@gmail.com>
 
 ////
 
-#.# Recipe Title
+#.# Getting started with jQuery Mobile Forms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -19,4 +17,11 @@ Describe the solution to your recipe here.  It should be one to two paragraphs l
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+Mobile devices often offer fewer ways for users to input data compared to that of traditional computers. Desktop and laptop users are able to take advantage of numerous input devices, such as entering an email using a full-sized keyboard or selecting a checkbox using a mouse or trackpad. Additionally, most traditional computers offer physically large displays allowing webpage authors to easily organize form inputs optimized for usability.
+
+Most mobile devices, however, are not given physically large displays or input devices. Commonly, mobile devices can fit into one hand and their primary input is often a touch display or small trackpad. With these factors it’s often difficult to fill out forms on mobile devices.
+
+One of the many benefits of jQuery Mobile is its progressive enhancement of standard form inputs to improve their usability.
+
+
+TODO
