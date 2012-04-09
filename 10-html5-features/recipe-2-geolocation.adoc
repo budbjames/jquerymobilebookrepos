@@ -4,6 +4,8 @@ HTML5 geolocation
 
 Author: Roberto Hernandez <rhernandez@overridethis.com>
 
+Bio: Currently a Managing Consultant for Excella in the Washington, DC region. I have been designing and writing software solutions using Microsoft technology for the past 12 years. I am originally from the Dominican Republic and the proud father of two beautiful daughters that make my life special.
+
 ////
 
 10.2 HTML5 geolocation
