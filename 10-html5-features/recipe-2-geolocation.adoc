@@ -2,7 +2,7 @@
 
 HTML5 geolocation
 
-Author: Roberto Hernandez <rhernandez@gmail.com>
+Author: Roberto Hernandez <rhernandez@overridethis.com>
 
 ////
 
@@ -11,12 +11,51 @@ Author: Roberto Hernandez <rhernandez@gmail.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Your application needs to know the mobile device geolocation to provide the user with relevant content. 
+Getting the users geolocation using HTML5.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+
+<div id="main" data-role="page">
+    <div data-role="header">
+        <h1>HTML5 GeoLocation</h1>
+    </div>
+    <div data-role="content">
+        <div id="error" class="ui-bar ui-bar-e">
+            HTML5 GeoLocation Failed
+        </div>
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">GeoLocation</li>
+            <li id="lat">Latitude: 0</li>
+            <li id="long">Longitude: 0</li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+  $("#main").on("pageinit", function() { 
+    $("#error").hide();
+        
+    function error(msg) {
+      $("#error").text("HTML5 GeoLocation failed " + msg);
+      $("#error").show();
+    }
+
+    function success(position) {
+      $("#lat").text("Latitude: {0}".replace("{0}", position.coords.latitude));
+      $("#long").text("Longitude: {0}".replace("{0}", position.coords.longitude));
+      $("#alt").text("Altitude: {0}".replace("{0}", position.coords.altitude));
+    }
+
+    // is html5 geolocation supported
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(success, function() { $("#error").show(); });
+    } else {
+      $("#error").show();
+    }
+  });
+</script>
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+
