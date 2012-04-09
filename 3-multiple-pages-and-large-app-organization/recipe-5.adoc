@@ -1,0 +1,80 @@
+﻿////
+
+Author: Oliver Brüning <obruening@yahoo.com>
+
+////
+
+3.5 Using Knockout.js on Multipage Documents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Problem
++++++++
+Knockout.js is a Javascript data-binding library. 
+It implements the Model View ViewModel (MVVM) pattern and is
+particularly suited for dealing with single page applications (SPA).
+In this recipe we'll show how to use Knockout.js in a jQuery Mobile multipage document application.
+
+
+Solution
+++++++++
+Load all pages of the multipage document and process them with jQuery Mobile's progressive enhancement technique.
+Define a main page in the multipage document and make sure that it is shown at the end of the page loading process no matter
+what hash parameter is provided in the URL. The main page will be the entry point of the application. 
+
+After all pages are enhanced, apply the the Knockout.js data-bindings on the entire DOM.
+The ViewModel represents the state of the application. Only use declarative bindings to communicate state changes
+between viewmodel and view. 
+Knockout.js custom bindings are needed to update the appearance of complex jQuery Mobile compoments such as listviews 
+after state changes.
+
+
+
+Discussion
+++++++++++
+
+Page Loading
+
+Multipage documents are a special feature of jQuery Mobile. A multipage document 
+consists of multiple pages within the same HTML file. A page is represented as
+a div tag with the data-role="page" attribute set. When a multipage document is loaded,
+only one of the multiple pages is enhanced by jQuery Mobile. Generally the first
+page found in the documemt gets enhanced. 
+But jQuery Mobile also incorporates the page hash parameter of a requested URL, 
+so it is possible to navigate to and enhance any selected page in a multipage document.
+
+In order to make multipage documents play nicely with Knockout.js, 
+we need to implement a page loading mechanism that does the following:
+
+- enhance all pages of the multipage document
+- always navigate to a defined main page that acts as the entry point of the application
+- use the generated DOM as a base for the Knockout.js data-binding.
+
+
+Bindings
+
+Custom bindings extend the built-in Knockout.js bindings. 
+In our example, we use the jqmListview custom binding to automatically 
+call listview("refresh") on listviews when items are added to or removed from the underlying array.
+You might also consider using the Knockout.js "afterRender" callback to update jQuery Mobile components.
+
+Please note that parts of the viewmodel can be bound to multiple representations in the view.
+There are two listviews for hobbies (one in the personPage, the other in personDialog)
+that are updated simultaneously on change.
+
+
+Viewmodel
+
+It is important to keep the viewmodel clean. Depencendies to the view itself or to other view related 
+javascript libraries should be avoided. As a rule of thumb, the viewmodel must be testable without the browser. 
+Unfortunately, the personDetails and personDialog actions in the viewmodel utilizes jQuery Mobile's changePage 
+function to navigate within the multipage document. To minimize dependency problems, we pass the changePage function
+as a parameter to the viewmodel. Our little example application has no need to keep track of the current page,
+so we don't represent it in the viewmodel. The only thing the viewmodel stores except of the people's data
+is the currently selected person. This is a common pattern in MVVM.
+
+
+Resources
+
+To learn more about Knockout.js, visit http://www.knockoutjs.com. 
+There is also a great interactive tutorial that can be found here: http://learn.knockoutjs.com/
