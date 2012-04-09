@@ -49,7 +49,7 @@ Solution
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success, error);
     } else {
-      $("#error").show();
+      error("HTML5 GeoLocation - Not Supported!");
     }
   });
 </script>
@@ -57,4 +57,8 @@ Solution
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
+Finding a users geolocation is simple when using the geolocation API built into most HTML5 capable browsers. The geolocation API, with the users permission, will allow your application to query for the users current geolocation.  
+
+The geolocation information provided by the API is in the form of a position object that provides accuracy and coordinates information. The HTML5 specification position object is compatible with most internet map providers specifications.
+
 
