@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Knockout Multi Document Demo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1'>
+    <link rel='stylesheet' href='http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css' />
+    <script src='http://code.jquery.com/jquery-1.6.4.min.js'></script>
+    <script src='http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js'></script>
+    <script src='http://cloud.github.com/downloads/SteveSanderson/knockout/knockout-2.0.0.debug.js'></script>
+    <script src='knockout_example.js'></script>
+  </head>
+  <body>
+    <div id='main' data-role='page'>
+      <div data-role='header'>
+        <h1>
+          People Page
+        </h1>
+      </div>
+      <div data-role='content'>
+        <ul id='peopleList'
+            data-role='listview'
+            data-inset='true'
+            data-bind='jqmListview: true, template: { foreach: people }'>
+          <li>
+            <a data-bind='click: $root.personDetails, text: personInfo'></a>
+            <a href ="#" data-bind='click: $root.personDialog'></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id='personPage' data-role='page' class='secondary'>
+      <div data-role='header'>
+        <a href='#main' data-direction='reverse'>Back</a>
+        <h1>
+          Person Page
+        </h1>
+      </div>
+      <div data-role='content'>
+        <h3>
+          <span data-bind='text: $root.selectedPerson().name'></span> has
+          <span data-bind='text: $root.selectedPerson().countHobbies'></span> hobbies.
+        </h3>
+        <ul id='hobbiesList'
+            data-role='listview'
+            data-inset='true'
+            data-bind='jqmListview: $root.selectedPerson().countHobbies(), template: { foreach: $root.selectedPerson().hobbies }'>
+          <li>
+            <a data-bind='click: $root.removeHobby, text: $data'></a>
+          </li>
+        </ul>
+        <button data-bind='click: $root.addHobby' data-inline='true'>Add Hobby</button>
+        <p>Click item to remove hobby.</p>
+      </div>
+    </div>
+
+    <div id='personDialog' data-role='dialog' class='secondary'>
+      <div data-role='header'>
+        <h1>
+          Person Dialog
+        </h1>
+      </div>
+      <div data-role='content'>
+        <h3>
+          <span data-bind='text: $root.selectedPerson().name'></span>'s hobbies
+        </h3>
+        <ul id='dialogHobbiesList'
+            data-role='listview'
+            data-inset='true'
+            data-bind='jqmListview: $root.selectedPerson().countHobbies(), template: { foreach: $root.selectedPerson().hobbies }'>
+          <li>
+            <span data-bind='text: $data'></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+
