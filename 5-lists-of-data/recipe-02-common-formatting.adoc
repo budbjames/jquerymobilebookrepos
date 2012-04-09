@@ -3,20 +3,36 @@
 This is a comment block.  Put notes about your recipe here and also your author information.
 
 Author: Don Walter <donmwalter@gmail.com>
+Bio: Don is an Application and Web Developer living in Villa Hills, KY with his wife and son. You can follow him on Twitter: @donwalter
 
 ////
 
-#.# Recipe Title
+5.2 Common Formatting of Lists
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+You may want to alter the appearance and styling of your list, or display other helpful information.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
 
+1. Data Inset True/False
+2. Split Button Lists
+3. Changing Icons
+4. Count Bubbles
+5. List Dividers
+6. Adding Images
+
+
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+
+1. Data Inset True/False
+2. Split Button Lists
+3. Changing Icons
+4. Count Bubbles
+5. List Dividers
+6. Adding Images
