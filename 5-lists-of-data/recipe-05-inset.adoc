@@ -2,21 +2,36 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Kevin Old <kevin@kevinold.com>
+Bio: Kevin Old is a Senior Software Engineer with several years focused on front-end development and learning good design principles.  He lives in White House, TN with his wife, son, 2 dogs and cat.  You can follow him on Twitter: @kevinold.
 
 ////
 
-#.# Recipe Title
+#.# Creating, Customizing, and Overriding Inset Lists
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+You may want a list to appear contained in a page or form and adjust it's styling.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+<ul data-role="listview" data-inset="true">
+    <li>Moe</li>
+    <li>Curly</li>
+    <li>Larry</li>
+</ul>
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
+////
 The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+////
+
+Add the data-inset="true" attribute to any list to make it an inset list.  Inset lists have the same abilities of normal list views.  The customizations can be any of the following:
+
+Read only
+Search filter bar - Add 'data-filter="true"'
+Divided data
+
+
