@@ -2,8 +2,6 @@
 
 Author: Jef Claes <jef.claes@gmail.com>
 
-Should I talk about all the cache states and events?
-
 ////
 
 #12.1# Cache Manifests Syntax and Usage 
@@ -15,18 +13,18 @@ Mobile phone coverage remains to be flaky or even non-existent in a lot of areas
 
 Solution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-There have been several caching techniques available in the past, but they were never really designed with the intention of making web applications run completely offline, making them fragile and complex to set up. HTML5 tries to make up for this missing browser capability by introducing the offline application cache. A more reliable way to make web applications truly available even offline.
+There have been several caching techniques available in the past, but they were never really designed with the intention of making web applications run completely offline, making them fragile and complex to set up. HTML5 tries to make up for this missing browser capability by introducing the offline application cache; a more reliable way to make web applications truly available even offline.
 
 Discussion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The first thing you need to do when setting up the offline application cache is creating a manifest file. A manifest file defines which resources should be available offline.
+The first thing you need to do when setting up the offline application cache, is creating a manifest file. A manifest file defines which resources should be available offline.
 
 Syntax
 ++++++++++++++++++++++++++++++++++++++++++++
-To make the jQuery Mobile documentation available offline, I made following manifest file.
+To make the jQuery Mobile documentation available offline, I made the following manifest file.
 
-====================================================================
-CACHE MANIFEST  
+----
+CACHE MANIFEST	
 # Version 1.0
 
 CACHE: 
@@ -45,28 +43,67 @@ NETWORK:
 
 FALLBACK:
 docs/_assets/img/logo.png docs/_assets/img/logo-logo-offline.png
-====================================================================
+----
 
 The CACHE MANIFEST header should always be the first line of the manifest.
 
-Lines starting with a number sign (#) are comments. These are often used to explicitly modify the manifest file, informing the browser that the cache needs to be updated. This is very useful when you, for example, change the version.png image, but don't change the name of the image. The browser has no way of detecting that it has changed.
+Lines starting with a number sign (#) are comments. These are often used to explicitly modify the manifest file, informing the browser that the cache needs to be updated. This is very useful when you, for example, change the version.png image, but don't change the name of the image. The browser has no way of detecting that the actual content has changed without making an HTTP request.
 
-Next to that, the manifest can contain three sections: CACHE, NETWORK and FALLBACK. In the CACHE section you specify the resources that needs to be cached. Resources that always should be fetched from the server, even when offline, should be defined in the NETWORK section. If you have a lot of resources which should always be loaded from the server when online, you can use the asterisk character (*) as a wildcard in the NETWORK section. In the FALLBACK section you can specify fallback resources to be usd when the user is offline.
+Next to that, the manifest can contain three sections: CACHE, NETWORK and FALLBACK. In the CACHE section you specify the resources that need to be cached. Resources that should always be fetched from the server, even when offline, should be defined in the NETWORK section. If you have a lot of resources which should always be loaded from the server when online, you can use the asterisk character (*) as a wildcard in the NETWORK section. In the FALLBACK section you can specify fallback resources to be used when the user is offline.
 
 The parsing of the manifest isn't very strict. The sections can be used in any order. They can even be used multiple times in one file.
 
 You can use both relative and absolute paths to locate the resources in the manifest file. If you use relative paths, they should be relative to the location of the application manifest file.
 
-The manifest file needs to be served with the text/cache-manifest MIME type. For the sake of consistency I always name the file cache.manifest and put it under the application root. 
+The manifest file needs to be served by the server with the text/cache-manifest MIME type. For the sake of consistency I always name the file cache.manifest and put it under the application root. 
 
 Usage
 ++++++++++++++++++++++++++++++++++++++++++++
-To link the manifest to the application, the manifest attribute should be added to the html tag. Each page that references the manifest will be cached automatically. However, it is adviced to explicitly list pages you want to cache in the manifest as well. Also, if the page is not referenced in the manifest, and it is never browsed to online, it will not be available offline. The browser has no clue that that page even exists.
+To link the manifest to the application, the manifest attribute should be added to the html tag. Each page that references the manifest will be cached automatically. However, it is adviced to explicitly list pages you want to cache in the manifest as well. Also, if the page is not referenced in the manifest, and it is never browsed to online, it will not be available offline. The browser has no clue that the page even exists.
 
+[source,html]
+----
 <html manifest="cache.manifest")/>
+----
 
 The first time the cache is downloaded, you don't have to do any work. The browser will make sure it's ready to be used next time the application is started. However, when a new cache is downloaded, it isn't replaced with the old one automatically. The application won't use the new cache until we tell it to. We can use the application cache API to handle the updateready event. When this event fires, a new cache finisished downloading and we can use the swapCache function to replace the old cache with the new one. These changes will only be visible after a page refresh though. 
 
+[source,javascript]
+----
 window.applicationCache.onupdateready = function(){
 	window.applicationCache.swapCache();
 });
+----
+
+There are more application cache specific events you can handle using the applicationCache API:
+* checking
+* noupdate
+* downloading
+* progress
+* cached
+* obsolete
+* error
+
+You can also query the current cache status using the status property of the applicationCache API. The cache status is a number in the 0 to 5 range, of which each number is mapped to a specific cache state:
+* 0: uncached
+* 1: idle
+* 2: checking
+* 3: downloading
+* 4: updateready
+* 5: obsolete
+
+[source,javascript]
+----
+console.log(window.applicationCache.status);
+----
+
+The application cache download process is started on every page refresh. If you want to invoke it manually, you can use the update function.
+
+[source,javascript]
+----
+window.applicationCache.update();
+----
+
+
+
+
