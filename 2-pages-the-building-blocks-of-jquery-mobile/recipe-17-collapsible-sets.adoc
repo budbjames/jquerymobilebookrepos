@@ -1,22 +1,26 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Recipe for collapsible sets
 
-Author: John Doe <email@email.com>
-
+Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
+TO DO: Complete solution and add full code and screen shots
 ////
 
-#.# Recipe Title
+#.# Collapsible sets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+You want to use more than one collapsible, but when one collapsible is expanded, you want the others to be collapsed.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+Use a collapsible set by having your collapsibles inside an additional div container with data-role="collapsible-set": 
+
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+A collapsible set is a set of collapsibles that work together. All collapsibles in a set may be collapsed at the same time, and only one collapsible in a set can be expanded at any one time. The collapsibles in the set will look like a block of collapsibles, with the top and bottom rounded corners applied to the extremities of the set by default. 
+
+Just as you are able to add theme to the header or the content of the collapsible, you can do the same with the collapsible set, by adding data-theme to the collapsible header, and/or to the collapsible content.
