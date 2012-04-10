@@ -8,7 +8,9 @@ Discussion section:
  * Discuss how pageinit fits into jQuery Mobiles single page application model
  * Discuss exactly when pageinit is fired and what is available at this point in time
  * Explain .on() is recommended
- 
+ * Discuss jquery's page loading model - ajax and inline.
+ * This event is agnostic with regard to how the page was loaded within the web browser, and therefore the pageinit event fires whether the page was loaded as a result of a full page refresh, or in response to a page fetched via an ajax call during a page transition.
+
 
 Author: Adrian Pillinger <adrian.pillinger@gmail.com>
 
@@ -19,13 +21,11 @@ Author: Adrian Pillinger <adrian.pillinger@gmail.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-The typical jQuery Mobile web application is designed to behave as a single page application. This model means that the usual approach taken to execute application javascript when the document has finished loading will not be sufficient, since this event will only fire once during the application's lifecycle.
+The typical jQuery Mobile web application is designed to behave as a single page application. Traditionally the javascript code specific to a page within a multi-page web application is executed when the DOM has finished loading. Since the single page model inevitably means that the DOM is only initialised once, the traditional approach is not sufficient for jQuery Mobile. 
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-To overcome this problem, jQuery mobile provides the pageinit event that fires each time a new page is loaded within the application. This event is agnostic with regard to how the page was loaded within the web browser, and therefore the pageinit event fires whether the page was loaded as a result of a full page refresh, or in response to a page fetched via an ajax call during a page transition.
-
-The application must simply bind a handler function to this event, that will execute the page specific javascript code once the page has been loaded and initialised. 
+To overcome this problem, jQuery mobile provides the pageinit event that fires each time a new page is loaded within the application. The application must simply bind a handler function to this event, that will execute the page specific javascript code once the page has been loaded and initialised. 
 
 The following is a simple example demonstrating a handler function bound to the pageinit event. This handler opens an alert box containing the Page Title as soon as jQuery Mobile has finished initialising the page.
 
@@ -35,4 +35,30 @@ include::code/recipe2-1.html[]
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+The structure of a jQuery Mobile web application is that an initial html document is loaded into the web browser when you first open the application. Within this html document one or more pages are defined by semantic html within the DOM. These are defined as div elements with a data-role attribute containing the value 'page'. See the following example:
+
+----
+<div data-role="page" id="page1"> 
+	<!-- page content -->
+</div> 
+----
+
+The first page defined in the DOM will be the page that is rendered in the application. As the html document is loaded, this first page is initialsed and then the pageinit event is fired. Subsequent pages are transitioned to via hyperlinks within the page. These page links can either contain the  
+
+    * ID of a page defined inline in the original html. e.g. #page2
+    * A URL to an external resource representing the page. e.g. /page3.html
+
+In the instance of transitions to pages already defined within the DOM, these pages are initialised and then the pageinit event is fired. In the case where an external resource is linked, the page is fetched asynchronously via an ajax call, embedded into the existing DOM, initialised, and then the pageinit event is fired.
+
+As you can see, regardless of whether the page was rendered as a result of a full document load, an inline load of a page element, or an ajax fetch of an external resource the pageinit event is triggered and provides the hook for page specific code to execute.
+ 
+The following example demonstrates javascript being invoked in response to the pageinit event in all three page loading mechanisms. Page 1 loads initially through a full page load, Page 2 is loaded inline, and Page 3 is loaded as an external ajax call.
+
+----
+include::code/recipe2-2.html[]
+----
+----
+include::code/page3.html[]
+----
+
+It is worth noting that the jQuery documentation recommends the use of the .on() method to register event handlers. Therefore, this example demonstrates a handler function registered with the document object, and a filter is applied so only page div elements trigger the event. 

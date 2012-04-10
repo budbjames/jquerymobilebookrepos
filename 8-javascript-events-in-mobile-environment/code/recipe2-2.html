@@ -21,15 +21,37 @@
 </head> 
 
 <body> 
+
 	<div data-role="page" id="page1"> 
 		<div data-role="header">
 			<h1>Page 1</h1>
 		</div>
 		<div data-role="content">	
+			<ul data-role="listview" data-theme="g">
+				<!-- hyperlink to inline page -->
+				<li><a href="#page2">Goto Page 2</a></li>
+			</ul>
 		</div>
 		<div data-role="footer">
 			<h4>Footer</h4>
 		</div>
 	</div>
+
+	<div data-role="page" id="page2"> 
+		<div data-role="header" data-position="inline"> 
+			<a href="#page1" data-icon="back" class="ui-btn-back">Back</a>
+			<h1>Page 2</h1>
+		</div>
+		<div data-role="content">	
+			<ul data-role="listview" data-theme="g">
+				<!-- hyperlink to external page resource -->
+				<li><a href="page3.html">Goto Page 3</a></li>
+			</ul>
+		</div>
+		<div data-role="footer">
+			<h4>Footer</h4>
+		</div>
+	</div>
+	
 </body>
 </html>
