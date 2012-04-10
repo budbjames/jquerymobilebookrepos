@@ -2,16 +2,16 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Dave Ferguson <dave@dkferguson.com>
 
 ////
 
-#.# Recipe Title
+2.5 Managing behavior of fixed positioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+I would like to control how fix position tool bars are displayed.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
