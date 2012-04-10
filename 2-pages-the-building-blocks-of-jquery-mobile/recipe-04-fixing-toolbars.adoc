@@ -2,7 +2,7 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Dave Ferguson <dave@dkferguson.com>
 
 ////
 
@@ -11,12 +11,16 @@ Author: John Doe <email@email.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+I would like to display a navigation bar that is fixed to the top or bottom of the screen.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+Createing a fixed position navigation bar is very simple.  All it takes is to add the data-position attribute and set set it to "fixed".  The same attribute can be added to either the header, footer, or both
+
+<div data-role="header" data-position="fixed">
+  <h1>Fixed position header</h1>
+</div>
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+Not all devices support fixed toolbars.  When a device does not support this function the toolbars are fixed to top and bottom of the page content.  The toolbars will then scroll with the content like a standard toolbar.
