@@ -2,16 +2,16 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Dave Ferguson <dave@dkferguson.com>
 
 ////
 
-#.# Recipe Title
+2.6 Fullscreen toolbar positioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+I would like to be able to display a toolbar that will expand to match the width of the screen.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
