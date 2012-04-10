@@ -6,7 +6,7 @@ Author: Dave Ferguson <dave@dkferguson.com>
 
 ////
 
-#.# Recipe Title
+2.4 Fixing toolbars to page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
