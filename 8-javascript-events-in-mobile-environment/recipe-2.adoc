@@ -30,7 +30,7 @@ To overcome this problem, jQuery mobile provides the pageinit event that fires e
 The following is a simple example demonstrating a handler function bound to the pageinit event. This handler opens an alert box containing the Page Title as soon as jQuery Mobile has finished initialising the page.
 
 ----
-include::code/recipe2-1.html[]
+include::recipe-2-code/example1.html[]
 ----
 
 Discussion
@@ -55,10 +55,10 @@ As you can see, regardless of whether the page was rendered as a result of a ful
 The following example demonstrates javascript being invoked in response to the pageinit event in all three page loading mechanisms. Page 1 loads initially through a full page load, Page 2 is loaded inline, and Page 3 is loaded as an external ajax call.
 
 ----
-include::code/recipe2-2.html[]
+include::recipe-2-code/example2.html[]
 ----
 ----
-include::code/page3.html[]
+include::recipe-2-code/page3.html[]
 ----
 
 It is worth noting that the jQuery documentation recommends the use of the .on() method to register event handlers. Therefore, this example demonstrates a handler function registered with the document object, and a filter is applied so only page div elements trigger the event. 
