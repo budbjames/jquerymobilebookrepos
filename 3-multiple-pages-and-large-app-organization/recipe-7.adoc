@@ -1,0 +1,33 @@
+////
+
+Notes
+-----
+
+Discussion section: 
+* Any page can be bookmarked and effectively act as the first page within the application.
+
+Author: Adrian Pillinger <adrian.pillinger@gmail.com>
+
+////
+
+#.# Designing pages that can be bookmarked.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Internet users commonly bookmark pages in their web browser, and often come to expect this functionality. In the single page application model used by jQuery Mobile the first page loaded in the web application is never re-fetched from the server. This can cause functionality issues if the first page is generated entirely server-side. The problem occurs when the application requires data on the first page to be refreshed each time the user transitions back to it. 
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+The solution is for the html of the page to only contain static content, and to utilise ajax calls to fetch the dynamic data for the page when the the page is loaded. The first page continues to be fetched only once within the application's lifecycle, yet the dynamic data is refetched on each page load.
+
+Example here.
+
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+It is worth noting that the jQuery documentation recommends the use of the .on() method to register event handlers. Therefore, this example demonstrates a handler function registered with the document object, and a filter is applied so only page div elements trigger the event. 
