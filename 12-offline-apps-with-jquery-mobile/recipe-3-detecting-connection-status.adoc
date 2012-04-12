@@ -6,7 +6,7 @@ Author: John Kleinschmidt <kleinschmidtorama@gmail.com>
 
 ////
 
-#.# Detecting connection status
+12.3 Detecting connection status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -17,12 +17,72 @@ In order to have a useful offline application, you need to be able to determine 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 Modern browsers provide several methods to determine a user's connection status.  
-* navigator.onLine property -- true/false value
-* online event -- fires when browser switches from an offline state to an online state.
-* offline event -- fires when browser switches from an online state to an offline state.
+* navigator.onLine property -- The HTML5 spec says that this property "Returns false if the user agent is definitely offline (disconnected from the network). Returns true if the user agent might be online."
+* online event -- This event fires when the browser switches from an offline state to an online state.
+* offline event -- This event fires when the browser switches from an online state to an offline state.
 
-Additionally, connection status may be further ascertained by listening for error events on ajax calls.
+Additionally, connection status may be further ascertained in the success and error callbacks on ajax calls.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+navigator.onLine may not always be accurate but its somewhat useful.   Think of it as a first line of defense.  Its useful to establish a baseline, but there may be instances where navigator.onLine == true, but actual network connectivity isn't available.  In order to handle inconsistency with this property we can track our own connection status.
+[source, javascript]
+----
+//Initialize connection status to navigator.onLine property.
+var onlineStatus = navigator.onLine;
+
+function setOnlineStatus( aStatus ) {
+    onlineStatus = aStatus;
+}
+
+function getOnlineStatus() {
+    return onlineStatus;
+}
+----
+
+How are online/offline events useful?  For example, when a user goes from an offline state to an online state, you may want to persist offline data to the server: 
+[source, javascript]
+----
+$( window ).bind( "online", function( event ) {
+    //Persist offline data to the server
+});
+----
+
+Additionally when a user goes offline you may want to circumvent page loading errors:
+[source, javascript]
+----
+$( window ).bind( "offline", function( event ) {
+    setOnlineStatus( false );
+});
+
+$( document ).bind( "pagebeforeload", function( event, data ){
+    if ( !getOnlineStatus() ) {
+        //prevent default page load
+		event.preventDefault();
+	    //perform alternative page load
+        data.deferred.resolve( data.absUrl, data.options, page );
+    }
+});
+----
+
+Ajax calls let us know at a point in time the true state of a user's connection status to your server(s).  While a user's connection may be online its possible that for some reason your server(s) are not accessible.
+----
+$.ajax( {
+    cache: false,
+    dataType: "json",
+    url: "/save",
+    timeout: 500,
+    type: "POST",
+    data: {
+        "foo": "bar"
+    },
+    error: function( jqXHR, textStatus, errorThrown ) {
+        //The ajax call failed, therefore the server is offline to us.
+        setOnlineStatus( false );
+    },
+    success: function( data, textStatus, jqXHR ) {
+        //The ajax call succeeded, therefore the server is online to us.
+        setOnlineStatus( true );
+    }
+} );
+----
