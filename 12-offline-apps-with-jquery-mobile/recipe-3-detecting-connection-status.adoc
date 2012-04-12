@@ -58,8 +58,8 @@ $( window ).bind( "offline", function( event ) {
 $( document ).bind( "pagebeforeload", function( event, data ){
     if ( !getOnlineStatus() ) {
         //prevent default page load
-		event.preventDefault();
-	    //perform alternative page load
+	event.preventDefault();
+	//perform alternative page load
         data.deferred.resolve( data.absUrl, data.options, page );
     }
 });
