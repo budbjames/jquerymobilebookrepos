@@ -1,0 +1,166 @@
+////
+
+This is a comment block.  Put notes about your recipe here and also your author information.
+
+Author: Cory Gackenheimer <cory.gack@gmail.com> 
+
+////
+
+14.3 Building a Custom Widget
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+As a developer you have created an amazing new jQuery Mobile site. You have everything you need built directly into the jQuery Mobile framework with the exception of one last awesome widget that will ensure your applications popularity and success. You need to be able to leverage what jQuery has to offer in order to create a new custom widget.
+
+Solution
+++++++++
+The jQuery Mobile framework already utilizes a widget factory to easily create exstensible stateful plugins. Using the widget factory as the model to create your plugin you will easily be able to extend the jQuery Mobile base widget. The widget factory allows you as the developer to derive important features from previously defined widgets while also creating your own powerful widget to utilize in your application.
+
+To demonstrate the ease of building a custom widget we'll create a "swipeable" widget that will allow you to swipe and replace text within your target. This might be useful to create sub menus or features that allow for rich interaction within your application. To tie your widget seamlessly into the jQuery Mobile framework you can easily inherit the properties of the jQuery Mobile widget - $.mobile.widget. By doing this you are able to call $.enhance() and $.enhanceWithin() on the pagecreate and create events so that your widgets are found and initialized along with the remainder of the framework. Building the widget with specific data attributes in mind will also allow for more coherent integration with the jQuery Mobile Framework. Ideally, we will create a widget that is created in either of the following ways.
+
+----
+<!-- created via data attribute -->
+<div data-role="swipeable" data-swipe="right">
+	<h3>This is swipeable</h3>	
+	<div data-show='right'>
+		<p> lorem ipsum dolor... </p>
+	</div>
+</div>
+
+<!-- invoked directly from JavaScript -->
+<div id="swiper">
+	<p> content </p>
+</div>
+<script>
+	/* ... */
+	$( "#swiper" ).swipeable( /* options */ );
+	/* ... */
+</script>
+----
+
+Discussion
+++++++++++
+As you build your custom widget you will want to consider inheritance, options, creation methods, and instantiation and how those fit into the widget lifecycle. To start we will utilize the widget factory to create our new widget. This will create the widget with a namespace and our custom widget name and allow us to inherit from the base jQuery Mobile widget. Lets create a widget that inherits this and has the namespace "cgack" and is named "swipeable".
+
+----
+$.widget( "cgack.swipeable", $.mobile.widget, { /* custom widget code */ });
+----
+
+Now that we have our widget inheriting the mobile widget and the widget factory has added the namespace to the jQuery object we can start to think about the widget's options. The first thing we might want to add is the ability to create widgets from our jQuery Mobile application's HTML markup.  To do this we need to access the widget through the "initSelector" option.  This option can be any selector but to keep our widget closely aligned with the rest of the jQuery Mobile widgets lets utilize a data attribute - data-role="swipeable - which will let us decorate any object that has this as swipeable. Another option might be to allow for swipe direction right, left, or both as well as corresponding items to display when a swipeable element is swiped in a defined direction. These options are set as a simple JavaScript object within the widget
+
+----
+/* ... */
+options: {
+	header: "h1,h2,h3,h4,h5,h6",
+	initSelector: "jqmData(role='swipeable')",
+	swipeRight: "jqmData(swipe='right')",
+	swipeLeft: "jqmData(swipe='left')",
+	swipeBoth: "jqmData(swipe='both')",
+	showRight: "jqmData(show='right')",
+	showLeft: "jqmData(show='left')"
+},
+/* ... */
+----
+
+The options will be used in our "_create" function, which is where we will tell the widget how to behave when its created.  In our case that assigns some custom CSS classes to important things like our header element, content container, as well as suitable classes for our special right and left content containers. 
+
+----
+
+	_create: function() 
+
+		var $el = this.element,
+			o = this.options,
+			swipeable = $el,
+			swipeheader =$el.find( o.heading ).first(),
+			swipecontent = swipeable.wrapInner( "<div class='ui-swipeable-content' ></div>" ).find( ".ui-swipeable-content" );
+			
+		swipeable.addClass( "ui-swipeable" );
+		swipeheader.addClass( "ui-swipeable-header" ).insertBefore( swipecontent );
+		
+		o.showRight = swipeable.find(o.showRight).length > 0 ? swipeable.find(o.showRight).insertBefore( swipecontent ) : swipecontent;
+		o.showLeft = swipeable.find(o.showLeft).length > 0 ? swipeable.find(o.showLeft).insertBefore( swipecontent ) : swipecontent;
+		
+		o.showRight.addClass( "ui-swipeable-rcontent" ).hide();
+		o.showLeft.addClass( "ui-swipeable-lcontent" ).hide();
+		
+----
+
+There is little logic to determine which swipe directions to which we should bind our event listeners. From there we can bind to our custom handlers to hide and replace our content as intended.
+
+----
+		//Determine direction we need to bind our listeners to
+		var swiperight = swipeable.is(o.swipeRight) || o.swipeRight === true,
+				swipeleft = swipeable.is(o.swipeLeft) || o.swipeLeft === true,
+				swipeboth = swipeable.is(o.swipeBoth) || o.swipeBoth === true;
+
+		//Bind our listeners fallback to click where there is no touch support
+		if ( swiperight ) {
+			swipeable.bind( "swiperight", function( event ) { swipeable.trigger( "showRight" ); event.preventDefault(); } );
+		} else if ( swipeleft ) {
+			swipeable.bind( "swipeleft", function( event ) { swipeable.trigger( "showLeft" ); event.preventDefault(); } );
+		}
+		if ( swipeboth ) {
+			swipeable.bind( "swipeleft", function( event) { swipeable.trigger( "showLeft" ); event.preventDefault(); });
+			swipeable.bind( "swiperight", function( event){ swipeable.trigger( "showRight" ); event.preventDefault(); });
+		} 
+	  if ( !$.support.touch ) {
+			swipeable.bind( "click", function( event ) { swipeable.trigger( "noswipe" ); event.preventDefault(); } );
+		}
+
+----
+
+Now we have our custom events triggering.  This will allow us to bind our functionality to the showRight, showLeft, and noswipe events. Since we have already determined what the elements are that the display will be toggled, we simply test for visibility and show or hide accordingly.  
+
+----
+
+		//Custom event bindings
+		swipeable.bind( "showRight", function() {
+			if (o.showRight.is( ":visible" )) {
+				o.showRight.hide();
+				if ( !o.showLeft.is( ":visible" ) ) {
+					swipeheader.show();
+				}
+			} else {
+				o.showRight.show();
+				swipeheader.hide();
+			}
+		});
+		
+		swipeable.bind( "showLeft", function() {
+			if (o.showLeft.is( ":visible" )) {
+				o.showLeft.hide();
+				if ( !o.showRight.is( ":visible" ) ) {
+					swipeheader.show();
+				}
+			} else {
+				o.showLeft.show();
+				swipeheader.hide();
+			}
+		});
+
+		swipeable.bind( "noswipe", function() {
+			var ishidden = false;
+			if ( (swiperight  || swipeboth) && o.showRight.is( ":visible" )) {
+				o.showRight.hide()
+				ishidden = true;
+			} else if (!swipeleft){
+				o.showRight.show();
+			}
+
+			if ((swipeleft || swipeboth) && o.showLeft.is( ":visible" )) {
+				o.showLeft.hide();
+				ishidden = true;
+			} else { 
+				o.showLeft.show();
+			}
+
+			if ( ishidden ) {
+				swipeheader.show();
+			} else {
+				swipeheader.hide();
+			}
+		});
+----
+
+By utilizing the widget factory you, the developer, can leverage the ease of extensibility and reuse that is part of the jQuery Mobile framework to build a custom widget allowing you to customize any app to meet your needs.
