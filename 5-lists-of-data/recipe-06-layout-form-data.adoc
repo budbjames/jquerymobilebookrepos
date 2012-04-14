@@ -66,7 +66,7 @@ The solution is quite simple. All that you need to do is wrap your list in a for
 				</li>
 				<li>	
 					<label>How many hours per week do you write server-side code?</label>
-					<div data-role="fieldcontain">							
+					<div>							
 						<input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
 					</div>
 				</li>
@@ -147,7 +147,7 @@ As a bonus, you may run into scenarios where the list needs to dynamically displ
 </li>
 <li class="toggleElement serverSide">	
 	<label>How many hours per week do you write server-side code?</label>
-	<div data-role="fieldcontain">
+	<div>
 		<input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
 	</div>
 </li>
@@ -155,7 +155,7 @@ As a bonus, you may run into scenarios where the list needs to dynamically displ
 <!-- Non-relevant code ommitted -->
 ----
 
-And add a little bit of JavaScript...
+The following JavaScript allows you to add the desired dynamic display aspects.
 
 [source, javascript]     
 ----
