@@ -8,7 +8,21 @@
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0-rc.2/jquery.mobile-1.1.0-rc.2.min.js"></script>
 	<script type="text/javascript">
-		// TODO example code to fetch dynamic data and add to list
+	
+		// WORK IN PROGRESS
+		
+		// attach an event handler to the document that handles the pagebeforeshow event. 
+		// filter the selected elements that trigger the event to the page div elements
+		$(document).on('pagebeforeshow', '#page1', function(event) {
+			// when the pagebeforeshow event is triggered, 
+			var pageContent = $(this).find('[data-role="content"]');
+			$.get('page1/content', function(data) {
+				pageContent.html('<ul><li><a href="#page2">Goto page 2</a><li></ul>');
+				pageContent.find('ul').listview();
+			});
+			// TODO example code to fetch dynamic data and add to list
+		});
+
 	</script>
 </head> 
 
@@ -18,7 +32,7 @@
 			<h1>Page 1</h1>
 		</div>
 		<div data-role="content">
-		<!-- TODO dynamic content -->
+			<!-- TODO dynamic content -->
 		</div>
 		<div data-role="footer">
 			<h4>Footer</h4>

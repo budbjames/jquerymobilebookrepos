@@ -9,6 +9,7 @@ In this solution, the server is no longer required to serve pages containing the
 
 The solution is for each html document to only contain static content, and to utilise ajax calls to fetch the dynamic data corresponding to the page, once the the page has been loaded. This does not alter the fact that the first page is never refreshed, however the page uses javascript to respond to the page being displayed and will fetch the dynamic content on each page load.
 
+Perhaps async false required?!
 
 Author: Adrian Pillinger <adrian.pillinger@gmail.com>
 
