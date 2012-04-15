@@ -9,7 +9,7 @@ Author: Grzegorz Wilczyński <gwilczynski@gmail.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+At the begining web sites used to present static content only and web servers used to deliver pure html files. The world is changing though and all of us expect dynamic content. Servers can be responsible for storage, creation and preparation of data for presentation. But why servers should be responsible for all of that things? When should this job be shared between web servers and web browsers?
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
