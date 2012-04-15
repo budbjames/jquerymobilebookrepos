@@ -1,22 +1,108 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Recipe for Layout grids
+Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
-Author: John Doe <email@email.com>
-
+TO DO: Complete Discussion, indent code, add something on collapsibles inside layour grids
 ////
 
-#.# Recipe Title
+#.# Formatting content with Layout Grids
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size. 
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+use layout grids to format your content by having your content setup in a set of specific containers. For the example mentioned here, you will need to start by having the columns in a div with class="ui-grid-c". This corresponds to a four-column grid. This container will then hold the four div containers that will correspond to each of the four columns, each of which has its own class: "ui-block-a" to "ui-block-d": 
+
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grid Layout example</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+
+</head>
+
+<body> 
+
+<div data-role="page" id="home">
+<div data-role="header" data-position="fixed">
+ 
+<h4>Choose Contact</h4>
+
+</div>
+
+<div data-role="content">
+
+<div class="ui-grid-c">
+<!-- defines a four-column grid layout -->
+<div class="ui-block-a"> <!-- first column -->
+<img src=”todd.jpg" width="64"/><br /><br />
+  
+<img src=”ghislain.jpg" width="64"/><br /><br />
+  
+<img src="elijah.jpg" width="64"/><br /><br />
+  
+<img src=”addy.jpg" width="64"/><br />
+ 
+</div>
+ 
+<div class="ui-block-b"> <!-- second column -->
+<img src="anne.jpg" width="64"/><br /><br />
+<img src=”garann.jpg" width="64"/><br /><br />
+<img src="doug.jpg" width="64"/><br /><br />
+<img src="paul.jpg" width="64"/><br />
+ 
+</div>
+ 
+<div class="ui-block-c"> <!-- third column -->
+<img src="scott.jpg" width="64"/><br /><br />
+<img src=”mat.jpg" width="64"/><br /><br />
+<img src="max.jpg" width="64"/><br /><br />
+
+<img src=”andy.jpg" width="64"/><br />
+  
+</div>
+ 
+<div class="ui-block-d">
+<!-- fourth column -->
+<img src="john.jpg" width="64"/><br /><br />
+
+<img src=”jquerymobile.jpg" width="64"/><br /><br />
+  
+<img src=”mike.jpg" width="64"/><br /><br />
+
+<img src=”raymond.jpg" width="64"/><br />
+  
+</div>
+
+</div>
+<!-- end of grid layout -->
+</div>
+
+<div data-role="footer" data-position="fixed">
+ 
+<h4>My Contacts</h4>
+
+</div>
+</div>
+</body>
+</html>
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+There are 4 layout grids that can be chosen to format your content: 
+• Layout grid a is a two-column grid, 
+•	Layout grid b is a three-column grid, 
+•	Layout grid c is a four-column grid, 
+•	Layout grid d is a five-column grid.
+
+MORE TO COME HERE 
+
+Only a small portion of the content can be put in a layout grid. You do not have to apply that layout to the whole content of the page. For example, you may have one line of elements in a layout grid to align buttons on the page. You may be able to apply more than one layout grids to the same page. 
+
