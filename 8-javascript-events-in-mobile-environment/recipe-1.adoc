@@ -1,22 +1,31 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Notes
+-----
 
-Author: John Doe <email@email.com>
+* Discuss various approaches for using the mobileinit method for configuring defaults.
+* Discuss some important default settings which can be configured, like namespace, default transitions, etc.
+* List out the other default settings which can be modified.
+
+Author: Kinshuk Kar <kinshuk.kar@gmail.com>
 
 ////
 
 #.# Recipe Title
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using mobileinit to configure jQuery Mobile defaults.
+
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+jQuery Mobile has a number of default settings which it uses for its markup enhancements and other functionality. In most cases the default settings suffice but there maybe situations where one would need to modify the default settings.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
 
+jQuery Mobile triggers an event named "mobileinit" on the document object just when it begins execution. This event can be used as a handle to configure the defaults before jQuery Mobile goes ahead and uses them.
+ 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
