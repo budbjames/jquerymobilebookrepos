@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Picup success</title>
+  </head>
+  <body onload="checkPhoto()">
+    <h1>Picup success</h1>
+
+    <script>
+      function checkPhoto() {
+        var hash = window.location.hash.substring( 1 ),
+            params = hash.split( "&" ),
+            p;
+
+        for ( var i = 0; i < params.length; i++ ) {
+          p = params[ i ].split( "=" );
+          if ( p[ 0 ] === "remoteImageURL" ) {
+            localStorage.setItem( "photoUrl", decodeURIComponent( p[ 1 ] ) );
+            window.close();
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
