@@ -17,9 +17,9 @@ Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 use layout grids to format your content by having your content setup in a set of specific containers. For the example mentioned here, you will need to start by having the columns in a div with class="ui-grid-c". This corresponds to a four-column grid. This container will then hold the four div containers that will correspond to each of the four columns, each of which has its own class: "ui-block-a" to "ui-block-d": 
 
+[source,html]
 <html>
-
-<head>
+   <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grid Layout example</title>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
