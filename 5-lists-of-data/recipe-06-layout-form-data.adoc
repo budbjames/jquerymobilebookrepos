@@ -21,62 +21,62 @@ The solution is quite simple. All that you need to do is wrap your list in a for
 [source, html]
 ----
 <div data-role="page" id="surveyPage">
-	<div data-role="content">
-		<form action="#surveyCompletePage" method="get" data-ajax="false">
-			<ul data-role="listview" data-theme="d" > 
-				<li data-role="fieldcontain">
-					<label for="yourName">Your Name:</label>
-					<input type="text" name="yourName" id="yourName" value="" />
-				</li>
-				<li>
-					<label>Favorite Language:</label>
-					<fieldset data-role="controlgroup">
-						<input type="radio" name="favoriteLanguage" id="javaScript" value="javaScript"/>
-						<label for="javaScript">JavaScript</label>
-						<input type="radio" name="favoriteLanguage" id="ruby" value="ruby" />
-						<label for="ruby">Ruby</label>
-						<input type="radio" name="favoriteLanguage" id="fsharp" value="fsharp" />
-						<label for="fsharp">F#</label>
-						<input type="radio" name="favoriteLanguage" id="coffeeScript" value="coffeeScript" />
-						<label for="coffeeScript">CoffeeScript</label>
-						<input type="radio" name="favoriteLanguage" id="java" value="java" />
-						<label for="java">Java</label>
-						<input type="radio" name="favoriteLanguage" id="csharp" value="csharp" />
-						<label for="csharp">C#</label>
-					</fieldset>
-				</li>
-				<li>
-					<label>Do you use this language to develop for the:</label>
-					<fieldset data-role="controlgroup" data-type="horizontal">
-						<input type="radio" name="languageUse" id="usedForClientSide" value="usedForClientSide"/>
-						<label for="usedForClientSide">Client</label>
-						<input type="radio" name="languageUse" id="usedForServerSide" value="usedForServerSide" />
-						<label for="usedForServerSide">Server</label>
-						<input type="radio" name="languageUse" id="usedForBoth" value="usedForBoth" />
-						<label for="usedForBoth">Both</label>
-					</fieldset>	
-				</li>
-				<li>	
-					<label>How many hours per week do you write server-side code?</label>
-					<div>							
-						<input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
-					</div>
-				</li>
-				<li>
-					<fieldset class="ui-grid-a">
-						<div class="ui-block-a"><a href="#" data-role="button" data-theme="d">Cancel</a></div>
-						<div class="ui-block-b"><button type="submit" data-theme="b">Save</button></div>
-					</fieldset>
-				</li>
-			</ul>
-		</form>
-	</div>
+  <div data-role="content">
+    <form action="#surveyCompletePage" method="get" data-ajax="false">
+      <ul data-role="listview" data-theme="d" > 
+        <li data-role="fieldcontain">
+          <label for="yourName">Your Name:</label>
+          <input type="text" name="yourName" id="yourName" value="" />
+        </li>
+        <li>
+          <label>Favorite Language:</label>
+          <fieldset data-role="controlgroup">
+            <input type="radio" name="favoriteLanguage" id="javaScript" value="javaScript"/>
+            <label for="javaScript">JavaScript</label>
+            <input type="radio" name="favoriteLanguage" id="ruby" value="ruby" />
+            <label for="ruby">Ruby</label>
+            <input type="radio" name="favoriteLanguage" id="fsharp" value="fsharp" />
+            <label for="fsharp">F#</label>
+            <input type="radio" name="favoriteLanguage" id="coffeeScript" value="coffeeScript" />
+            <label for="coffeeScript">CoffeeScript</label>
+            <input type="radio" name="favoriteLanguage" id="java" value="java" />
+            <label for="java">Java</label>
+            <input type="radio" name="favoriteLanguage" id="csharp" value="csharp" />
+            <label for="csharp">C#</label>
+          </fieldset>
+        </li>
+        <li>
+          <label>Do you use this language to develop for the:</label>
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <input type="radio" name="languageUse" id="usedForClientSide" value="usedForClientSide"/>
+            <label for="usedForClientSide">Client</label>
+            <input type="radio" name="languageUse" id="usedForServerSide" value="usedForServerSide" />
+            <label for="usedForServerSide">Server</label>
+            <input type="radio" name="languageUse" id="usedForBoth" value="usedForBoth" />
+            <label for="usedForBoth">Both</label>
+          </fieldset>	
+        </li>
+        <li>	
+          <label>How many hours per week do you write server-side code?</label>
+          <div>							
+            <input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
+          </div>
+        </li>
+        <li>
+          <fieldset class="ui-grid-a">
+            <div class="ui-block-a"><a href="#" data-role="button" data-theme="d">Cancel</a></div>
+            <div class="ui-block-b"><button type="submit" data-theme="b">Save</button></div>
+          </fieldset>
+        </li>
+      </ul>
+    </form>
+  </div>
 </div>
 
 <div data-role="page" id="surveyCompletePage">
-	<div data-role="content">
-	Thanks for completing this survey
-	</div>	
+  <div data-role="content">
+  Thanks for completing this survey
+  </div>	
 </div>
 ----
 
@@ -97,38 +97,38 @@ As a bonus, you may run into scenarios where the list needs to dynamically displ
 ----
 <!-- Non-relevant code ommitted -->
 <li>
-	<label>Favorite Language:</label>
-	<fieldset data-role="controlgroup">
-		<input type="radio" name="favoriteLanguage" id="javaScript" value="javaScript" data-dependency-class="clientAndServerSide"/>
-		<label for="javaScript">JavaScript</label>
-		<input type="radio" name="favoriteLanguage" id="ruby" value="ruby" data-dependency-class="serverSide" />
-		<label for="ruby">Ruby</label>
-		<input type="radio" name="favoriteLanguage" id="fsharp" value="fsharp" data-dependency-class="clientAndServerSide" />
-		<label for="fsharp">F#</label>
-		<input type="radio" name="favoriteLanguage" id="coffeeScript" value="coffeeScript" data-dependency-class="clientAndServerSide" />
-		<label for="coffeeScript">CoffeeScript</label>
-		<input type="radio" name="favoriteLanguage" id="java" value="java" data-dependency-class="serverSide" />
-		<label for="java">Java</label>
-		<input type="radio" name="favoriteLanguage" id="csharp" value="csharp" data-dependency-class="clientAndServerSide" />
-		<label for="csharp">C#</label>
-	</fieldset>
+  <label>Favorite Language:</label>
+  <fieldset data-role="controlgroup">
+    <input type="radio" name="favoriteLanguage" id="javaScript" value="javaScript" data-dependency-class="clientAndServerSide"/>
+    <label for="javaScript">JavaScript</label>
+    <input type="radio" name="favoriteLanguage" id="ruby" value="ruby" data-dependency-class="serverSide" />
+    <label for="ruby">Ruby</label>
+    <input type="radio" name="favoriteLanguage" id="fsharp" value="fsharp" data-dependency-class="clientAndServerSide" />
+    <label for="fsharp">F#</label>
+    <input type="radio" name="favoriteLanguage" id="coffeeScript" value="coffeeScript" data-dependency-class="clientAndServerSide" />
+    <label for="coffeeScript">CoffeeScript</label>
+    <input type="radio" name="favoriteLanguage" id="java" value="java" data-dependency-class="serverSide" />
+    <label for="java">Java</label>
+    <input type="radio" name="favoriteLanguage" id="csharp" value="csharp" data-dependency-class="clientAndServerSide" />
+    <label for="csharp">C#</label>
+  </fieldset>
 </li>
 <li class="toggleElement clientAndServerSide">
-	<label>Do you use this language for development on the:</label>
-	<fieldset data-role="controlgroup" data-type="horizontal">
-		<input type="radio" name="languageUse" id="usedForClientSide" value="usedForClientSide"/>
-		<label for="usedForClientSide">Client</label>
-		<input type="radio" name="languageUse" id="usedForServerSide" value="usedForServerSide" />
-		<label for="usedForServerSide">Server</label>
-		<input type="radio" name="languageUse" id="usedForBoth" value="usedForBoth" />
-		<label for="usedForBoth">Both</label>
-	</fieldset>	
+  <label>Do you use this language for development on the:</label>
+  <fieldset data-role="controlgroup" data-type="horizontal">
+    <input type="radio" name="languageUse" id="usedForClientSide" value="usedForClientSide"/>
+    <label for="usedForClientSide">Client</label>
+    <input type="radio" name="languageUse" id="usedForServerSide" value="usedForServerSide" />
+    <label for="usedForServerSide">Server</label>
+    <input type="radio" name="languageUse" id="usedForBoth" value="usedForBoth" />
+    <label for="usedForBoth">Both</label>
+  </fieldset>	
 </li>
 <li class="toggleElement serverSide">	
-	<label>How many hours per week do you write server-side code?</label>
-	<div>
-		<input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
-	</div>
+  <label>How many hours per week do you write server-side code?</label>
+  <div>
+    <input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
+  </div>
 </li>
 <!-- Non-relevant code ommitted -->
 ----
@@ -136,19 +136,19 @@ The following JavaScript allows you to add the desired dynamic display aspects.
 [source, javascript]     
 ----
 $( document ).delegate( "#surveyPage", "pagebeforeshow", function( event ) {
-	// Hide all dependency questions
-	$( ".toggleElement" ).hide();	
-	// Ensure that no radio buttons are initially selected
-	$( "input[type=radio]" ).attr( "checked", false ).next( "label" ).removeClass( "ui-btn-active" );	
-	// Bind an event handler to the change JavaScript event to toggle the visibility of the dependency questions
-	$( "input[name=favoriteLanguage]:radio" ).change(function() {
-		var $classToShow;
-		// Hide all dependency questions
-		$( ".toggleElement" ).hide();
-		// Get the value of the data-dependency-class attribute 
-		$classToShow = $( this ).data( "dependencyClass" );
-		// Show the appropriate dependency question
-		$( "." + $classToShow ).show();
-	});		
+  // Hide all dependency questions
+  $( ".toggleElement" ).hide();	
+  // Ensure that no radio buttons are initially selected
+  $( "input[type=radio]" ).attr( "checked", false ).next( "label" ).removeClass( "ui-btn-active" );	
+  // Bind an event handler to the change JavaScript event to toggle the visibility of the dependency questions
+  $( "input[name=favoriteLanguage]:radio" ).change(function() {
+    var $classToShow;
+    // Hide all dependency questions
+    $( ".toggleElement" ).hide();
+    // Get the value of the data-dependency-class attribute 
+    $classToShow = $( this ).data( "dependencyClass" );
+    // Show the appropriate dependency question
+    $( "." + $classToShow ).show();
+  });		
 });
 ----
