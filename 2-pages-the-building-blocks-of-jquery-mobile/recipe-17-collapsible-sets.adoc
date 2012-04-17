@@ -19,7 +19,7 @@ Use a collapsible set by having your collapsibles inside an additional div conta
 
 [source,html]
 <div data-role="collapsible-set">
-  <div data-role="collapsible" data-theme="a" data-content-theme="c" >
+	<div data-role="collapsible" data-theme="a" data-content-theme="c" >
 	<h3>Virtual Noticeboard</h3>
 	<dl>
 			<dt>News: </dt>
