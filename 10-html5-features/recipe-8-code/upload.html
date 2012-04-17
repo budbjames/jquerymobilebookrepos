@@ -25,25 +25,25 @@
     </div>
 
     <script>
-      $( "window" ).on( "storage", function( e ) {
+      $("window").on( "storage", function( e ) {
         if ( e.key === "photoUrl" && e.newValue ) {
-          $( "#photoUrl" ).val( e.newValue );
+          $("#photoUrl").val( e.newValue );
         }
-      } );
+      });
 
-      $( "body" ).on( "pagecreate", "#upload", function( e ) {
-        if ( $( "#photoData" ).prop( "disabled" ) ) {
-          $( ".file-input" ).hide( );
+      $("body").on( "pagecreate", "#upload", function( e ) {
+        if ( $("#photoData").prop("disabled") ) {
+          $(".file-input").hide();
 
           var callbackUrl = $.mobile.path.makeUrlAbsolute( "picup.html", window.location.href );
 
-          $( "#launchPicup" ).attr( "href", function( i, attr ) {
+          $("#launchPicup").attr( "href", function( i, attr ) {
             return attr + callbackUrl;
-          } );
+          });
         } else {
-          $( ".no-file-input" ).hide();
+          $(".no-file-input").hide();
         }
-      } );
+      });
     </script>
 
   </body>
