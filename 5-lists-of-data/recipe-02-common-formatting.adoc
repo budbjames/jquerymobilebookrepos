@@ -21,11 +21,11 @@ Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 // Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
 // 1. Data Inset True/False
-// 2. Split Button Lists
-// 3. Changing Icons
-// 4. Count Bubbles
-// 5. List Dividers
-// 6. Adding Images
+// 2. List Dividers
+// 3. Adding Images
+// 4. Changing Icons
+// 5. Split Button Lists
+// 6. Count Bubbles
 
 You can apply a variety of formatting to your lists, to both increase readability, and add more information. You can apply an inset to your list, which will give the list left and right margins, as well as rounded corners. In cases where you might want to have more than one action per list item, you can create a split button list. You can add thumbnails or icons, add count bubbles to show the number of results for a particular list item, and add dividers to your list to help separate information. There are many options to customize your list to suit the data you would like to display.
 
@@ -44,6 +44,30 @@ An inset list, is just a standard list that sits inside the content area with a 
   <li>Cake</li>
   <li>Guster</li>
 </ul>
+----
+
+=== List Dividers
+// Text here
+
+[source, html]
+----
+// Code here
+----
+
+=== Adding Images
+// Text here
+
+[source, html]
+----
+// Code here
+----
+
+=== Changing Icons
+// Text here
+
+[source, html]
+----
+// Code here
 ----
 
 === Split Button Lists
@@ -76,31 +100,7 @@ Sometimes, you need a list element to have multiple actions assigned to it... ma
 </ul>
 ----
 
-=== Changing Icons
-// Text here
-
-[source, html]
-----
-// Code here
-----
-
 === Count Bubbles
-// Text here
-
-[source, html]
-----
-// Code here
-----
-
-=== List Dividers
-// Text here
-
-[source, html]
-----
-// Code here
-----
-
-=== Adding Images
 // Text here
 
 [source, html]
