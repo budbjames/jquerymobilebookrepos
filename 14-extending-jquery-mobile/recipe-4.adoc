@@ -1,0 +1,20 @@
+////
+
+Author: Casey Justus <caseyjustus@gmail.com>
+
+////
+
+#.# Extending the Event Model to Accept Gestures.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+One of the unique challenges on mobile devices is handling user input. The size of screens and their keyboards are the biggest limiting factors. There are a few touch events and controls that help, but sometimes that's still not enough.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+By combining and extending jQuery Mobile's touch events you can create more complex gestures. These can give the user more options for input. 
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+The first gesture we'll build is a circle.  Let's do a clockwise circle to be more specific. 

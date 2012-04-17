@@ -1,0 +1,20 @@
+////
+
+Author: Casey Justus <caseyjustus@gmail.com>
+
+////
+
+#.# Creating an image gallery with the swipe event
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+If you want to create a photo gallery on a mobile device, there isn't a jquery plugin for this.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+Fortunately, you can use jQuery Mobile's events to build your own. The swipe event works well for this. 
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
