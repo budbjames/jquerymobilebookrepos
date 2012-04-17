@@ -24,7 +24,7 @@ Discussion
 The widget factory takes two, or optionally three arguments to create a new widget.  The first argument is defines the namespace and widget name that will be utilized within the factory. The second argument is the optional argument. This is used to specify an existing widget prototype from which the new widget will inherit its methods and properties.  The final argument is the actual object literal which will become the prototype of the new widget.
 [source, javascript]
 ----
-$.widget( "namespace.widgetname", $.exisitng.widget, { /* widget object goes here */ } );
+$.widget( "namespace.widgetname", $.existing.widget, { /* widget object goes here */ } );
 ----
 
 jQuery Mobile widgets all inherit their base properties from the jQuery Mobile base widget, so the optional second parameter in the factory method is $.mobile.widget. The jQuery Mobile widget is a small widget which passes along a few very powerful features to the widgets which extend it. The first thing that happens is triggering an "init" event on the base widget _createWidget method in addition to the existing "create" event that is triggered. The "init" event allows a developer to target a widget after it has been created in order to make alterations during the initialization phase. A second extension of the base widget happens in _getCreateOptions, which sets the options as jqmData on the element targeted by the widget. 
