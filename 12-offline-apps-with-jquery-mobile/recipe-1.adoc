@@ -63,16 +63,16 @@ To link the manifest to the application, the manifest attribute should be added 
 
 [source,html]
 ----
-<html manifest="cache.manifest")/>
+<html manifest="cache.manifest">
 ----
 
 The first time the cache is downloaded, you don't have to do any work. The browser will make sure it's ready to be used next time the application is started. However, when a new cache is downloaded, it isn't replaced with the old one automatically. The application won't use the new cache until we tell it to. We can use the application cache API to handle the updateready event. When this event fires, a new cache finisished downloading and we can use the swapCache function to replace the old cache with the new one. These changes will only be visible after a page refresh though. 
 
 [source,javascript]
 ----
-window.applicationCache.onupdateready = function(){
-	window.applicationCache.swapCache();
-});
+window.applicationCache.onupdateready = function() {
+  window.applicationCache.swapCache();
+};
 ----
 
 There are more application cache specific events you can handle using the applicationCache API:
@@ -94,7 +94,7 @@ You can also query the current cache status using the status property of the app
 
 [source,javascript]
 ----
-console.log(window.applicationCache.status);
+console.log( window.applicationCache.status );
 ----
 
 The application cache download process is started on every page refresh. If you want to invoke it manually, you can use the update function.
