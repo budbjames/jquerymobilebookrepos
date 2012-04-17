@@ -22,14 +22,14 @@ Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 First, in your HTML form where you have just a file input, add a div for iOS. This solution requires users to install a third-party utility, Picup, from the Apple App Store. Your HTML for iOS should make that clear and provide a link to install Picup. You will also need a Browse button, which launches Picup via iOS URL scheme handling, and a hidden input to store a URL Picup returns to your app.
 
-When the user taps the Browse button, Picup will launch. The user chooses from their photo roll or snaps a new photo. Next, Picup sends to photo to a service of your choice, imgur by default, to turn it into a URL. The URL is passed to a callback page in Mobile Safari and is opened as a new tab. A small bit of JavaScript on the callback page sends a message to your jQuery Mobile app. The message is the photo’s URL and is submitted with your original form instead of photo data itself. The callback page then closes itself.
+When the user taps the Browse button, Picup will launch. The user chooses from their photo roll or snaps a new photo. Next, Picup sends to photo to a service of your choice, imgur by default, to turn it into a URL. The URL is passed to a callback page in Mobile Safari and is opened as a new tab. A small bit of JavaScript on the callback page sends a message to your jQuery Mobile app. The message is the photoï¿½s URL and is submitted with your original form instead of photo data itself. The callback page then closes itself.
 Server-side code should process either the photo data sent normally or the link to photo data sent by iOS devices.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 This may sound like a complicated, roundabout way to upload a file but I have found it to be smoothest way to get the job done. To the user, it appears almost integrated.
 
-First, let’s take a look at the HTML in the form:
+First, letï¿½s take a look at the HTML in the form:
 
 ----
 <div class="no-file-input">
@@ -48,27 +48,27 @@ First, let’s take a look at the HTML in the form:
 
 The div at the top is for iOS. Inside we have a note and a link to Picup in the App Store. Picup installs itself as a handler for the fileupload URL scheme. This means that any time a link points to fileupload://, the iOS device will launch Picup. Our link is created as a jQuery Mobile button. We also tell jQuery Mobile not to interfere with the link in any way by setting data-ajax to false.
 
-To make the non-iOS side look similar, hide the actual file input and include a Browse button in your label. When a user taps the Browse button, it will launch the normal file browser for the device. As a bonus for Android 3+, the accept attribute will launch the camera app. Remove it if you don’t want that behavior.
+To make the non-iOS side look similar, hide the actual file input and include a Browse button in your label. When a user taps the Browse button, it will launch the normal file browser for the device. As a bonus for Android 3+, the accept attribute will launch the camera app. Remove it if you donï¿½t want that behavior.
 
-The JavaScript for this page has to decide which of these two sections to hide. We can do this by detecting whether or not the file input is disabled when jQuery Mobile creates the page. Also, we have to update the Picup link with an absolute URL to the callback page. jQuery Mobile includes a nice function to help with that. Assuming your page’s id is “upload”:
+The JavaScript for this page has to decide which of these two sections to hide. We can do this by detecting whether or not the file input is disabled when jQuery Mobile creates the page. Also, we have to update the Picup link with an absolute URL to the callback page. jQuery Mobile includes a nice function to help with that. Assuming your pageï¿½s id is ï¿½uploadï¿½:
 
 ----
-$( "body" ).on( "pagecreate", "#upload", function( e ) {
-  if ( $( "#photoData" ).prop( "disabled" ) ) {
-    $( ".file-input" ).hide();
+$("body").on( "pagecreate", "#upload", function( e ) {
+  if ( $("#photoData").prop("disabled") ) {
+    $(".file-input").hide();
 
     var callbackUrl = $.mobile.path.makeUrlAbsolute( "picup.html", window.location.href );
 
-    $( "#launchPicup" ).attr( "href", function( i, attr ) {
+    $("#launchPicup").attr( "href", function( i, attr ) {
       return attr + callbackUrl;
-    } );
+    });
   } else {
-    $( ".no-file-input" ).hide();
+    $(".no-file-input").hide();
   }
-} );
+});
 ----
 
-On an iOS device, the above code hides the regular file input. It then appends the absolute URL of our callback page, picup.html in this example, to the Picup link’s href attribute. We append the URL because we want to retain the “fileupload://new?callbackURL=” already in the markup. On other devices, the snippet hides the iOS section.
+On an iOS device, the above code hides the regular file input. It then appends the absolute URL of our callback page, picup.html in this example, to the Picup linkï¿½s href attribute. We append the URL because we want to retain the ï¿½fileupload://new?callbackURL=ï¿½ already in the markup. On other devices, the snippet hides the iOS section.
 
 After the user chooses a photo in Picup, the app returns them to Mobile Safari and opens a new tab to our callback URL. The callback page is almost entirely JavaScript and the user barely gets a chance to see it before it closes itself. The callback page must be on the same domain as your jQuery Mobile app.
 
@@ -87,18 +87,18 @@ for ( var i = 0; i < params.length; i++ ) {
 }
 ----
 
-Picup sends the uploaded photo’s URL via a remoteImageURL parameter in the callback page’s hash. We search the hash and decode the URL when found. Your first thought might be to send the photo URL directly to the jQuery Mobile app using postMessage but a) we don’t have a reference to that window and b) the only means to get one is window.open( url, name ) which might cause data or state loss in the original app because it refreshes the page. However, we can use the often ignored HTML5 storage event. Setting a value in localStorage on this tab will trigger an event in the jQuery Mobile app on the original tab. With that done, this tab closes itself and the following JavaScript in the jQuery Mobile app takes over:
+Picup sends the uploaded photoï¿½s URL via a remoteImageURL parameter in the callback pageï¿½s hash. We search the hash and decode the URL when found. Your first thought might be to send the photo URL directly to the jQuery Mobile app using postMessage but a) we donï¿½t have a reference to that window and b) the only means to get one is window.open( url, name ) which might cause data or state loss in the original app because it refreshes the page. However, we can use the often ignored HTML5 storage event. Setting a value in localStorage on this tab will trigger an event in the jQuery Mobile app on the original tab. With that done, this tab closes itself and the following JavaScript in the jQuery Mobile app takes over:
 
 ----
-$( "window" ).on( "storage", function( e ) {
+$("window").on( "storage", function( e ) {
   if ( e.key === "photoUrl" && e.newValue ) {
-    $( "#photoUrl" ).val( e.newValue );
+    $("#photoUrl").val( e.newValue );
   }
-} );
+});
 ----
 
-In the event handler, e.newValue contains the photo URL we sent from our callback page. We set the hidden input’s value to it and let the form post as usual.
+In the event handler, e.newValue contains the photo URL we sent from our callback page. We set the hidden inputï¿½s value to it and let the form post as usual.
 
-There isn’t a way to detect if Picup is installed but we can leave the photoUrl item in localStorage after a successful upload. If present during pagecreate and we want to clean up our UI a little, we can hide or remove the note and App Store link from our iOS section.
+There isnï¿½t a way to detect if Picup is installed but we can leave the photoUrl item in localStorage after a successful upload. If present during pagecreate and we want to clean up our UI a little, we can hide or remove the note and App Store link from our iOS section.
 
-This could be done a lot nicer with one of HTML5’s new file APIs, but there’s no telling when or if Mobile Safari will get them. Until then, this is a functional work around.
+This could be done a lot nicer with one of HTML5ï¿½s new file APIs, but thereï¿½s no telling when or if Mobile Safari will get them. Until then, this is a functional work around.
