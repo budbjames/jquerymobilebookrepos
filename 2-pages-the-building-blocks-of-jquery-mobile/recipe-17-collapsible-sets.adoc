@@ -19,37 +19,37 @@ Use a collapsible set by having your collapsibles inside an additional div conta
 
 [source,html]
 <div data-role="collapsible-set">
-	<div data-role="collapsible" data-theme="a" data-content-theme="c" >
-	<h3>Virtual Noticeboard</h3>
-		<dl>
-			<dt>News: </dt>
-			<dd>I am currently working on my recipes for the jQuery Mobile Cookbook...</dd>
-			<br />
-			<dd>I will be attending the next jQuery UK Conference and will provide highlights on my blog.</dd>
-			<br/>
-			<dt>General Information: </dt>
-			<dd>All students are invited to attend the module fair on Wednesday.</dd>
-			<br />
-			<dd>All level 5 students are invited to the Final Year Project talk in the Large Lecture Theatre on Tuesday 1pm-2pm</dd>
-		</dl>
-	</div>
-	<div data-role="collapsible" data-theme="a" data-content-theme="c">
-		<h3>Area of expertise</h3>
-		<ul>
-			<li>jQuery Mobile</li>
-			<li>JavaScript</li>
-			<li>Front-end Web development</li>
-			<li>User Experience</li>
-		</ul>
-	</div>
-	<div data-role="collapsible" data-theme="a" data-content-theme="c">
-		<h3>Teaching</h3>
-		<p>Teaching details here...</p>
-	</div>
-	<div data-role="collapsible" data-theme="a" data-content-theme="c">
-		<h3>Projects</h3>
-		<p>Projects details here...</p>
-	</div>
+  <div data-role="collapsible" data-theme="a" data-content-theme="c" >
+    <h3>Virtual Noticeboard</h3>
+    <dl>
+      <dt>News: </dt>
+      <dd>I am currently working on my recipes for the jQuery Mobile Cookbook...</dd>
+      <br />
+      <dd>I will be attending the next jQuery UK Conference and will provide highlights on my blog.</dd>
+      <br/>
+      <dt>General Information: </dt>
+      <dd>All students are invited to attend the module fair on Wednesday.</dd>
+      <br />
+      <dd>All level 5 students are invited to the Final Year Project talk in the Large Lecture Theatre on Tuesday 1pm-2pm</dd>
+    </dl>
+  </div>
+  <div data-role="collapsible" data-theme="a" data-content-theme="c">
+    <h3>Area of expertise</h3>
+    <ul>
+      <li>jQuery Mobile</li>
+      <li>JavaScript</li>
+      <li>Front-end Web development</li>
+      <li>User Experience</li>
+    </ul>
+  </div>
+  <div data-role="collapsible" data-theme="a" data-content-theme="c">
+    <h3>Teaching</h3>
+    <p>Teaching details here...</p>
+  </div>
+  <div data-role="collapsible" data-theme="a" data-content-theme="c">
+    <h3>Projects</h3>
+    <p>Projects details here...</p>
+  </div>
 </div>
 
 
