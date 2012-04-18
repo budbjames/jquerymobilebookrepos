@@ -24,7 +24,7 @@ Solution
 // 2. List Dividers
 // 3. Count Bubbles
 // 4. Text Formatting
-// 5. Adding Images
+// 5. Adding Thumbnails
 // 6. Adding Icons
 // 7. Split Button Lists
 
@@ -109,7 +109,7 @@ The jQuery Mobile framework also allows you to easily format your list item cont
 </ul>
 ----
 
-=== Adding Images
+=== Adding Thumbnails
 Thumbnails can easily be added to the left of a list item simply by adding an image inside your `<li>` tag. The jQuery Mobile framework will automatically scale the image to 80px x 80px.
 
 [source, html]
@@ -118,7 +118,7 @@ Thumbnails can easily be added to the left of a list item simply by adding an im
   <li>
     <a href="details.html">
     <img src="images/album-bff.jpg" />
-  <h3>Ben Folds Five</h3>
+	<h3>Ben Folds Five</h3>
     <p>Ben Folds Five</p>
     </a>
   </li>
