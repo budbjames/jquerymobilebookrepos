@@ -2,11 +2,11 @@
 
 Author: Adam Bradley <adambradley25@gmail.com>
 
-Why and how to add icons. Demonstrate the various positions an icon can be located. 
+How to have jQuery Mobile NOT enhance input elements
 
 ////
 
-2.12 Navbar icons
+7.5 Using native form elements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
