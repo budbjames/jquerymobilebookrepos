@@ -118,21 +118,21 @@ Thumbnails can easily be added to the left of a list item simply by adding an im
   <li>
     <a href="details.html">
     <img src="images/album-bff.jpg" />
-	<h3>Ben Folds Five</h3>
+    <h3>Ben Folds Five</h3>
     <p>Ben Folds Five</p>
     </a>
   </li>
   <li>
     <a href="details.html">
     <img src="images/album-waea.jpg" />
-	<h3>Whatever And Ever Amen</h3>
+    <h3>Whatever And Ever Amen</h3>
     <p>Ben Folds Five</p>
     </a>
   </li>
   <li>
     <a href="details.html">
     <img src="images/album-nbp.jpg" />
-	<h3>Naked Baby Photos</h3>
+    <h3>Naked Baby Photos</h3>
     <p>Ben Folds Five</p>
     </a>
   </li>
@@ -148,19 +148,19 @@ Icons can be inserted to the left of a list item the same way thumbnails can. Th
   <li>
     <a href="details.html">
     <img src="images/album-bff.jpg" width="16" height="16" class="ui-li-icon" />
-	Ben Folds Five
+    Ben Folds Five
     </a>
   </li>
   <li>
     <a href="details.html">
     <img src="images/album-waea.jpg" width="16" height="16" class="ui-li-icon" />
-	Whatever And Ever Amen
+    Whatever And Ever Amen
     </a>
   </li>
   <li>
     <a href="details.html">
     <img src="images/album-nbp.jpg" width="16" height="16" class="ui-li-icon" />
-	Naked Baby Photos
+    Naked Baby Photos
     </a>
   </li>
 </ul>
@@ -175,7 +175,7 @@ Sometimes, you need a list element to have multiple actions assigned to it... ma
   <li>
     <a href="details.html">
     <img src="images/album-bff.jpg" />
-	<h3>Ben Folds Five</h3>
+    <h3>Ben Folds Five</h3>
     <p>Ben Folds Five</p>
     </a>
     <a href="purchase.html">Purchase album</a>
@@ -183,7 +183,7 @@ Sometimes, you need a list element to have multiple actions assigned to it... ma
   <li>
     <a href="details.html">
     <img src="images/album-waea.jpg" />
-	<h3>Whatever And Ever Amen</h3>
+    <h3>Whatever And Ever Amen</h3>
     <p>Ben Folds Five</p>
     </a>
     <a href="purchase.html" data-rel="dialog" data-transition="slideup">Purchase album</a>
@@ -191,7 +191,7 @@ Sometimes, you need a list element to have multiple actions assigned to it... ma
   <li>
     <a href="details.html">
     <img src="images/album-nbp.jpg" />
-	<h3>Naked Baby Photos</h3>
+    <h3>Naked Baby Photos</h3>
     <p>Ben Folds Five</p>
     </a>
     <a href="purchase.html" data-rel="dialog" data-transition="slideup">Purchase album</a>
