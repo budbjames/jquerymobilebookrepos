@@ -21,17 +21,13 @@ Need to show two icons in header.One for search and another for refresh.
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 <div id="home" data-role="page" data-theme="b">
-	<div data-role="header" data-position="inline">
-		<a href="#search" data-icon="search">Search</a>
-		<h1>Home</h1>
-		<a href="#refresh" data-icon="refresh" data-theme="b">Refresh</a>
-	</div>
-	<div data-role="content" style="text-align: center;">
-		 Content
-	</div>
-	<div data-role="footer" data-position="fixed">
-		 Footer
-	</div>
+  <div data-role="header" data-position="inline">
+    <a href="#search" data-icon="search">Search</a>
+    <h1>Home</h1>
+    <a href="#refresh" data-icon="refresh" data-theme="b">Refresh</a>
+  </div>
+  <div data-role="content" style="text-align: center;">Content</div>
+  <div data-role="footer" data-position="fixed">Footer</div>
 </div>
 
 Discussion
