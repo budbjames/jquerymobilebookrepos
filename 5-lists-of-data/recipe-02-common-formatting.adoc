@@ -48,6 +48,9 @@ An inset list, is just a standard list that sits inside the content area with a 
 </ul>
 ----
 
+// Screenshot to come
+
+
 === List Dividers
 List dividers can be used to help organize and group your list item. To make any list list a list divider, simply add `data-role="list-divider"` to that list item. You can also specify the theme for the divider row by adding `data-dividertheme="c"` attribute to the list (`<ul>` or `<ol>`), and specifying the theme letter you would like to use.
 
@@ -64,6 +67,9 @@ List dividers can be used to help organize and group your list item. To make any
 </ul>
 ----
 
+// Screenshot to come
+
+
 === Count Bubbles
 Count bubbles can be helpful when you might want your users to be given an indicator of how many results exist for each list item. A count bubble can easily be added by wrapping the count inside a `<span>` tag with a class of `ui-li-count`. jQuery Mobile will wrap the count into a bubble, and right align it.
 
@@ -77,6 +83,9 @@ Count bubbles can be helpful when you might want your users to be given an indic
   <li><a href="albums.html">Guster <span class="ui-li-count">6</span></a></li>
 </ul>
 ----
+
+// Screenshot to come
+
 
 === Text Formatting
 The jQuery Mobile framework also allows you to easily format your list item content with headers, descriptions, and other secondary information, using nothing more than the HTML tags that you already know. You can add headers or paragraphs, make items bold or italicized, or just about any other text formatting you'd like to add.
@@ -109,6 +118,9 @@ The jQuery Mobile framework also allows you to easily format your list item cont
 </ul>
 ----
 
+// Screenshot to come
+
+
 === Adding Thumbnails
 Thumbnails can easily be added to the left of a list item simply by adding an image inside your `<li>` tag. The jQuery Mobile framework will automatically scale the image to 80px x 80px.
 
@@ -131,13 +143,16 @@ Thumbnails can easily be added to the left of a list item simply by adding an im
   </li>
   <li>
     <a href="details.html">
-    <img src="images/album-nbp.jpg" />
-    <h3>Naked Baby Photos</h3>
+    <img src="images/album-tuborm.jpg" />
+    <h3>The Unauthorized Biography Of Reinhold Messner</h3>
     <p>Ben Folds Five</p>
     </a>
   </li>
 </ul>
 ----
+
+// Screenshot to come
+
 
 === Adding Icons
 Icons can be inserted to the left of a list item the same way thumbnails can. The only difference is that you will add a class of `ui-li-icon` to the image element. Icon images do not get auto resized to the correct dimensions, and should be no larger than 16px x 16px for the cleanest appearance.
@@ -159,12 +174,15 @@ Icons can be inserted to the left of a list item the same way thumbnails can. Th
   </li>
   <li>
     <a href="details.html">
-    <img src="images/album-nbp.jpg" width="16" height="16" class="ui-li-icon" />
-    Naked Baby Photos
+    <img src="images/album-tuborm.jpg" width="16" height="16" class="ui-li-icon" />
+    The Unauthorized Biography Of Reinhold Messner
     </a>
   </li>
 </ul>
 ----
+
+// Screenshot to come
+
 
 === Split Button Lists
 Sometimes, you need a list element to have multiple actions assigned to it. Maybe you would like to give your users the ability to view an items details, or purchase that item, both from the same list element. This can be done with a split button list. To do this, you just need to add a second link inside the `li`, and jQuery Mobile does the rest. You can take this a step further and customize the right split icon, if you'd like. To do this, you just need to add a `data-split-icon` attribute with whatever icon name you'd like to use. You can also theme the split button swatch color with a `data-split-theme` attribute
@@ -190,11 +208,13 @@ Sometimes, you need a list element to have multiple actions assigned to it. Mayb
   </li>
   <li>
     <a href="details.html">
-    <img src="images/album-nbp.jpg" />
-    <h3>Naked Baby Photos</h3>
+    <img src="images/album-tuborm.jpg" />
+    <h3>The Unauthorized Biography Of Reinhold Messner</h3>
     <p>Ben Folds Five</p>
     </a>
     <a href="purchase.html" data-rel="dialog" data-transition="slideup">Purchase album</a>
   </li>
 </ul>
 ----
+
+// Screenshot to come
