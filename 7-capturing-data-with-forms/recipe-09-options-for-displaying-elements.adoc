@@ -10,7 +10,7 @@ Author: Mattias Kihlstrom <mattias@kihlstrom.com>
 
 Problem
 +++++++
-When laying out a form you often want to group elements together. This could be as simple as putting a label just before its input element and wrapping a fieldset around them. But how would you go about if you for instance want two select boxes grouped together and, to boot, one taking up more space than the other?
+When laying out a form you often want to group elements together. This could be as simple as putting a label just before its input element and wrapping a fieldset around them. But how would you go about if you for instance have two select boxes grouped together and you also want them to fill up the full width of the screen?
 
 Solution
 ++++++++
