@@ -6,18 +6,18 @@ Why and how to add icons. Demonstrate the various positions an icon can be locat
 
 ////
 
-2.12 Navbar icons
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+2.12 Navbar icons
+~~~~~~~~~~~~~~~~~
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
++++++++
+Like with any application, or even your car's dashboard, interface icons help users quickly identify an expected outcome when an interaction occurs. 
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+++++++++
+By default, jQuery Mobile comes with a basic set of icons which can be easily displayed within various elements, including navbars. After jQuery Mobile does its magic and performs its progressive enhancement, the assigned icons help to provide users with a familiar "app-like" appearance. Along with choosing which icon to display for each nav link, author's can also customize an icon's position relative to each nav link's text.
 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
+++++++++++
 The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.

@@ -7,23 +7,12 @@ Discuss form UX on mobile devices. Explain how native inputs are hard to use on 
 ////
 
 7.1 Getting started with jQuery Mobile Forms
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
-
-Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
-
-Discussion
-++++++++++++++++++++++++++++++++++++++++++++
 Mobile devices often offer fewer ways for users to input data compared to that of traditional computers. Desktop and laptop users are able to take advantage of numerous input devices, such as entering an email using a full-sized keyboard or selecting a checkbox using a mouse or trackpad. Additionally, most traditional computers offer physically large displays allowing webpage authors to easily organize form inputs optimized for usability.
 
 Most mobile devices, however, are not given physically large displays or input devices. Commonly, mobile devices can fit into one hand and their primary input is often a touch display or small trackpad. With these factors it’s often difficult to fill out forms on mobile devices.
 
 One of the many benefits of jQuery Mobile is its progressive enhancement of standard form inputs to improve their usability.
-
 
 TODO

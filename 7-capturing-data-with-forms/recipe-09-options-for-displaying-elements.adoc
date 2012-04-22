@@ -1,0 +1,23 @@
+////
+
+Author: Mattias Kihlstrom <mattias@kihlstrom.com>
+
+////
+
+7.9 Options for Displaying Elements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Problem
++++++++
+When laying out a form you often want to group elements together. This could be as simple as putting a label just before its input element and wrapping a fieldset around them. But how would you go about if you for instance have two select boxes grouped together horizontally and you also want them to fill up the full width of the screen?
+
+Solution
+++++++++
+Select boxes can be grouped together by putting them inside a fieldset with data-role="controlgroup". Adding data-type="horizontal" makes sure they are side by side instead of below each other (as long as the browser supports display: inline-block;). But if you want them to use 100% of the width you will have to add an extra wrapping div and some styling.
+
+[Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.]
+
+Discussion
+++++++++++
+[The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.]

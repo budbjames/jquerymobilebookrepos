@@ -10,19 +10,19 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
++++++++
 jQuery by itself is a robust solution for JavaScript development. It cannot, however, hold all the tools needed to implement a standard set of tools for Mobile Development. A solution is required that easily extends jQuery to form the jQuery Mobile toolset.
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
+++++++++
 jQuery has a rich history of being extensible.  One can easily extend it with plugins by adding to the jQuery prototype which is exposed as jQuery.fn.  This has allowed for an enormous library of third party plugins to enrich the community. Sometimes a simple plugin is not enough and one might want to be able to have a plugin that manages state and is itself easily extensible. jQuery Mobile implements a Widget Factory, originally created for jQuery UI, that allows for easy and robust extension of jQuery in the form of such extensible and stateful plugins.  
 
-The widget factory is a function that lives the on jQuery base object. It can be utilized to create a plugin which it does by extending jQuery.prototype, giving that plugin a namespace on the jQuery prototype. Once defined, a widget factory widget can be extended when creating other widgets. This feature is utilized by jQuery Mobile to pass a standard set of methods to the prototype of each widget which inherits the $.mobile.widget.
+The widget factory is a function that lives on the jQuery base object. It can be utilized to create a plugin which it does by extending jQuery.prototype, giving that plugin a namespace on the jQuery prototype. Once defined, a widget factory widget can be extended when creating other widgets. This feature is utilized by jQuery Mobile to pass a standard set of methods to the prototype of each widget which inherits the $.mobile.widget.
 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
+++++++++++
 The widget factory takes two, or optionally three arguments to create a new widget.  The first argument is defines the namespace and widget name that will be utilized within the factory. The second argument is the optional argument. This is used to specify an existing widget prototype from which the new widget will inherit its methods and properties.  The final argument is the actual object literal which will become the prototype of the new widget.
-[source, javascript]
+
 ----
 $.widget( "namespace.widgetname", $.existing.widget, { /* widget object goes here */ } );
 ----
@@ -30,7 +30,7 @@ $.widget( "namespace.widgetname", $.existing.widget, { /* widget object goes her
 jQuery Mobile widgets all inherit their base properties from the jQuery Mobile base widget, so the optional second parameter in the factory method is $.mobile.widget. The jQuery Mobile widget is a small widget which passes along a few very powerful features to the widgets which extend it. The first thing that happens is triggering an "init" event on the base widget _createWidget method in addition to the existing "create" event that is triggered. The "init" event allows a developer to target a widget after it has been created in order to make alterations during the initialization phase. A second extension of the base widget happens in _getCreateOptions, which sets the options as jqmData on the element targeted by the widget. 
 
 The mobile widget then implements two functions related to enhancing, 'enhance' and 'enhanceWithin'.  The 'enhance' function will act as an interdictor for elements that your widget may have that should be excluded from the jQuery Mobile framework's markup enhancement process. Exlusion for enhance must start with the jQuery Mobile frameworks $.mobile.ignoreContentEnabled flag being set. Then elements on the widget that would not be enhanced would be ones that are within a parent decorated with the 'data-enhance="false"' attribute. Also excluded are elements that would be found within the jQuery Mobile framework's keepNative selector if the 'useKeepNative' argument is set on the call to 'enhance'.  The keepNative selector defaults to 'data-role="none"' elements, but can be overridden as seen here:
-[source, javascript]
+
 ----
 $( document ).bind( "mobileinit", function() {
 	$.mobile.page.prototype.options.keepNative = "select, .foo";
@@ -40,10 +40,11 @@ $( document ).bind( "mobileinit", function() {
 The 'enhanceWithin' function takes a specific target and passes that in addition to the widget's initSelector option to the 'enhance' function. 
 
 jQuery Mobile utilizes the $.mobile.widget as the base for all the widgets within the framework. This allows the "auto self-init" pattern within each widget which binds to the pagecreate and calls the enhance or enhanceWithin methods on the widget prototype. This pattern will ensure that the widget will be created as desired when the page is created it looks like the following in the case of jQuery Mobile collapsible:
-[source, javascript]
+
 ----
 $( document ).bind( "pagecreate create", function( e ) {
 	$.mobile.collapsible.prototype.enhanceWithin( e.target );
 });
+----
 
 Understanding the widget factory to extend jQuery Mobile is a powerful tool for further extending the framework in your own jQuery Mobile application.
