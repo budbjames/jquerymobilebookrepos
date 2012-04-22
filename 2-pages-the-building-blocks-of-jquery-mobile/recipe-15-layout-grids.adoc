@@ -19,7 +19,7 @@ image::images/grid_layout_example.png[]
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-use layout grids to format your content by having your content setup in a set of specific containers. For the example mentioned here, you will need to start by having the columns in a div with class="ui-grid-c". This corresponds to a four-column grid. This container will then hold the four div containers that will correspond to each of the four columns, each of which has its own class: "ui-block-a" to "ui-block-d": 
+You can use layout grids to format your content by having your content setup in a set of specific containers. For the example mentioned above, you will need to start by having the columns in a div with class="ui-grid-c". This corresponds to a four-column grid. This container will then hold the four div containers that will correspond to each of the four columns, each of which has its own class: "ui-block-a" to "ui-block-d": 
 
 [source,html]
 <html>
@@ -73,12 +73,15 @@ use layout grids to format your content by having your content setup in a set of
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 There are 4 layout grids that can be chosen to format your content: 
-* Layout grid a is a two-column grid, 
-* Layout grid b is a three-column grid, 
-* Layout grid c is a four-column grid, 
-* Layout grid d is a five-column grid.
+* Layout grid a is defined with +<div class="ui-grid-a">+ and is a two-column grid, 
+* Layout grid b is defined with +<div class="ui-grid-b">+ and is a three-column grid, 
+* Layout grid c is defined with +<div class="ui-grid-c">+ and is a four-column grid, 
+* Layout grid d is defined with +<div class="ui-grid-d">+ and is a five-column grid.
 
-MORE TO COME HERE 
+After this definition, you will need to construct the content of each column in the grid. In our example, we have a four-column grid, defined with +<div class="ui-grid-c">, and the four columns are constructed using +<div class="ui-block-a">+ for the first column, +<div class="ui-block-b">+ for the second column, +<div class="ui-block-c">+ for the third column, and finally +<div class="ui-block-d">+ for the fourth column.  
+Each of the defined column can have any type of content. In our example, we simply have images. Any standard page content element can be inserted in a grid column. 
 
-Only a small portion of the content can be put in a layout grid. You do not have to apply that layout to the whole content of the page. For example, you may have one line of elements in a layout grid to align buttons on the page. You may be able to apply more than one layout grids to the same page. 
+Note that it is possible to have multiple row grids. In this case, you will need to define the layout grid type using the corresponding +ui-grid+ class, and assign block classes in a repeating sequence, so for a +3x3+ grid, this will look like +a, b, c, a, b, c, a, b, c+. The first column in each row must have the ui-block-a class that clears the floats and which will start a new line.
+
+It is possible to only have a small portion of the page content in a layout grid. You do not have to apply that layout to the whole content of the page. For example, you may choose to only have one line of elements in a layout grid to align buttons on the page. 
 
