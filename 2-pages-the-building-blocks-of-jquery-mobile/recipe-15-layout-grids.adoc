@@ -3,7 +3,7 @@
 Recipe for Layout grids
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
-TO DO: Complete Discussion, indent code, add something on collapsibles inside layour grids
+TO DO: Complete Discussion, add something on collapsibles inside layour grids
 ////
 
 #.# Formatting content with Layout Grids
@@ -11,7 +11,11 @@ TO DO: Complete Discussion, indent code, add something on collapsibles inside la
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size. 
+You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, as shown in <<FIG1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size. 
+
+[[FIG1]]
+.Layout Grid Example
+image::images/grid_layout_example.png[]
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -69,10 +73,10 @@ use layout grids to format your content by having your content setup in a set of
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 There are 4 layout grids that can be chosen to format your content: 
-• Layout grid a is a two-column grid, 
-• Layout grid b is a three-column grid, 
-• Layout grid c is a four-column grid, 
-• Layout grid d is a five-column grid.
+* Layout grid a is a two-column grid, 
+* Layout grid b is a three-column grid, 
+* Layout grid c is a four-column grid, 
+* Layout grid d is a five-column grid.
 
 MORE TO COME HERE 
 
