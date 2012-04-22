@@ -49,3 +49,25 @@ $( document ).bind( "mobileinit" , function() {
 });
 ---
 
+<<XREF_TABLE>> shows the options that can be configured through the $.mobile object.
+
+[[XREF_TABLE]]
+.Configurable options available
+[options="header"]
+|=======
+|Property|Version added|Default value|Description
+|autoInitializePage|1.0|"true"|Whether to automatically call the $.mobile.initializePage when the page is ready. If set to false, $.mobile.initializePage has to be manually called else the page will be hidden.
+|gradeA|1.0|a function returning the value of $.support.mediaquery or if browser is IE7+|function which will check the basic support conditions.
+|defaultPageTransition|1.0|"fade", "slide" in 1.0|The default transition to be used for page transitions.
+|defaultDialogTransition|1.0|"pop"|The default transition to be used for dialog changes.
+|activePageClass|1.0|"ui-page-active"|The CSS class assigned to the page in view and during transitions.
+|activeBtnClass|1.0|"ui-btn-active"|The CSS class assigned for buttons in the "active" state.
+|focusClass|1.1|"ui-focus"|The CSS class assigned for "focus" form element state.
+|loadingMessage|1.0|"loading"|The text that appears when a page is loading. Set it to false to disabling the loading message.
+|loadingMessageTextVisible|1.1|"false"|Sets whether the text should be displayed in a loading message box. Note:- Page load error message will always be visible.
+|loadingMessageTheme|1.1|"a"|The theme to be used for the loading message box when the text is visible.
+|pageLoadErrorMessage|1.0|"Error Loading Page"|Sets the text that appears when a page fails to load.
+|pageLoadErrorMessageTheme|1.1|"e"|The theme to be used by the error message box.
+|minScrollBack|1.0|250|The minimum scroll distance to be remembered when a user returns to a page.
+|=======
+
