@@ -3,10 +3,9 @@
 Recipe for Layout grids
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
-TO DO: Complete Discussion, add something on collapsibles inside layour grids
 ////
 
-#.# Formatting content with Layout Grids
+2.15 Formatting content with Layout Grids
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -79,7 +78,7 @@ There are 4 layout grids that can be chosen to format your content:
 * Layout grid d is defined with +<div class="ui-grid-d">+ and is a five-column grid.
 
 After this definition, you will need to construct the content of each column in the grid. In our example, we have a four-column grid, defined with +<div class="ui-grid-c">, and the four columns are constructed using +<div class="ui-block-a">+ for the first column, +<div class="ui-block-b">+ for the second column, +<div class="ui-block-c">+ for the third column, and finally +<div class="ui-block-d">+ for the fourth column.  
-Each of the defined column can have any type of content. In our example, we simply have images. Any standard page content element can be inserted in a grid column. 
+Each of the defined column can have any type of content. In our example, we simply have images. Any standard page content element can be inserted in a grid column. In some cases, for example if you have collapsibles in a grid, you will need to add an additional container that will ensure that you have extra margin around your elements and these do not overlap into their neighbouring columns.  
 
 Note that it is possible to have multiple row grids. In this case, you will need to define the layout grid type using the corresponding +ui-grid+ class, and assign block classes in a repeating sequence, so for a +3x3+ grid, this will look like +a, b, c, a, b, c, a, b, c+. The first column in each row must have the ui-block-a class that clears the floats and which will start a new line.
 
