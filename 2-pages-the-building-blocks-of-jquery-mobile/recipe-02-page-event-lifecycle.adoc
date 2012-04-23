@@ -64,7 +64,7 @@ We can monitor the lifecycle of a jQuery Mobile page with serveral built in even
       $.each(events, function(i, e) {
         $( id ).live( e, lifecycle );
       });
-    }
+    };
 
     var pages = [ '#page1', '#page2' ];
     pages.map(monitorPage);
