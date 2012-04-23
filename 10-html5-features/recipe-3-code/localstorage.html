@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+			<title>jQuery Mobile - HTML5 LocalStorage</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="main">
+			<div data-role="header">
+				<h1>HTML5 Local Storage</h1>
+			</div>
+			<div data-role="content">
+				<div class="ui-bar ui-bar-e" id="warning">
+					HTML5 LocalStorage not supported.
+				</div>
+				<ul data-role="listview" data-inset="true">
+					<li data-role="list-divider">HTML5 LocalStorage</li>
+					<li>
+						<div data-role="fieldcontain">
+							<label for="key">Key:</label>
+							<input id="key" name="key" type="text" data-mini="true" />
+						</div>
+						<div data-role="fieldcontain">
+							<label for="value">Value:</label>
+							<input id="value" name="value" type="text" data-mini="true" />
+						</div>
+						<button data-role="button" data-theme="e" id="addItem" data-mini="true">Add Item</button>
+					</li>
+				</ul>    
+				<ul data-role="listview" data-inset="true" id="storageView">
+					<li data-role="list-divider">HTML5 LocalStorage (Items)</li>
+					<!-- HTML5 LocalStorage items go here -->
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#main").on("pageinit", function() {
+				$("#warning").hide();
+
+				function hasLocalStorageSupport() {
+					try {
+						var support = "support";
+						localStorage.setItem(support, support);
+						localStorage.removeItem(support);
+						return true;
+					} catch(e) {
+						return false;
+					}
+				}
+
+				if(hasLocalStorageSupport()) {
+					var refresh = function() {
+						var $storageView = $("#storageView");
+						$storageView.empty();
+						$storageView.append("<li data-role='list-divider'>HTML5 LocalStorage (Items)</li>");
+
+						for(var i = 0; i < localStorage.length; i++) {
+							var key = localStorage.key(i),
+								value = localStorage.getItem(key),
+								html = "<li><a href='#' data-role='button' class='removeItem' data-key='{0}'><span class='ui-icon ui-icon-delete'> </span>Key: {0}, Value: {1}</a></li>"
+									.replace("{0}", key)
+									.replace("{0}", key)
+									.replace("{1}", value);
+							$storageView.append(html);
+						}
+						
+						$storageView.listview('refresh');
+					};
+
+					$(document).on("click", "a.removeItem", function(e) {
+						var key = $(this).data("key");
+						localStorage.removeItem(key);
+						refresh();
+					});
+
+					$("#addItem").on("click", function() {
+						localStorage.setItem($("#key").val(), $("#value").val());
+						refresh();
+					});
+
+					refresh();
+				} else {
+					$("#warning").show();
+				}
+			});
+		</script>
+	</body>
+</html>
+
