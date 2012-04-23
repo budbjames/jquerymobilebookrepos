@@ -27,15 +27,17 @@ Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 The HTML5 LocalStorage API is very simple, it consists of two methods +setItem+ and +removeItem+ that allow you to either add or remove an item from the browsers LocalStorage. The following sample code shows a sample of adding and removing an item from the HTML5 LocalStorage.
 
-[HTML,Source]
+[html,source]
+====
 // add item to HTML5 LocalStorage.
 localStorage.setItem("jquery", "jquery");
 // remove item from HTML5 LocalStorage
 localStorage.removeItem("jquery");
-
+====
 One thing to note is not all browsers support HTML5 LocalStorage so your application should use this API cautiously. The sample code outlined uses the following code to detect HTML5 LocalStorage support.
 
-[HTML,Source]
+[html,source]
+====
 function hasLocalStorageSupport() {
 	try {
 		var support = "support";
@@ -46,6 +48,7 @@ function hasLocalStorageSupport() {
 		return false;
 	}
 }
+====
 
 [Warning]
 ====
