@@ -11,7 +11,7 @@ Author: John Chacko <poonkave@gmail.com>
 
 ////
 
-#.# Recipe Title
+#.# Embedding controls in toolbars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
