@@ -1,0 +1,68 @@
+////
+
+Author: Ryan Westphal <ryan@trippingthebits.com>
+
+////
+
+#.# Combining pages, tweets, and maps
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+You want to mix location data (geo-enabled tweets in this recipe) with a jQuery Mobile list. You also want the list items to link to a details page which has a map.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+This recipe focuses on using a non-fullscreen map in a jQuery Mobile page with other content. If you are interested in the supporting code for this example, such as Twitter Search, please see this jsFiddle: http://jsfiddle.net/ryanttb/2w2yU/
+
+Our first page contains a jQuery Mobile listview where we will append list items for tweets. A link in each list item points to a second jQuery Mobile page. This second page displays the full text of the tweet as well as a Google map showing the tweet's location. When your map is not fullscreen, i.e., there is other content on the page, it must have a height.
+
+----
+<div id="tweetinfo" data-role="page">
+  <div data-role="header">
+    <h1>username</h1>
+  </div>
+
+  <div data-role="content">
+    <p>tweet text</p>
+
+    <div id="map_canvas" style="width: 100%; height: 12em;"></div>
+  </div>
+</div>
+----
+
+Our JavaScript uses HTML5's geolocation API to send the user's current location to Twitter Search. When Twitter responds, we fill the listview with tweets. When a link is clicked, we store the clicked tweet's info in HTML5 sessionStorage and change to the second page. On the second page, we update elements with info from the tweet.
+
+Finally, we create a Google map which shows the tweet's location. 
+
+----
+$( "body" ).on( "pageshow", "#tweetinfo", function( ) {
+  var tweetCoords = clickedTweet.geo.coordinates,
+      tweetLatLng = new google.maps.LatLng( tweetCoords[ 0 ], tweetCoords[ 1 ] );
+
+  var map = new google.maps.Map( $( "#map_canvas" )[ 0 ], {
+    zoom: 14,
+    center: tweetLatLng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    disableDefaultUI: true,
+    draggable: false,
+    zoomControl: true
+  } );
+
+  var marker = new google.maps.Marker( {
+    position: tweetLatLng,
+    map: map,
+    clickable: false
+  } );
+} );
+----
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+Without a static height, a non-fullscreen Google map will not appear in a jQuery Mobile page. There are a few ways to handle this. First, you can set the same height for all devices as in the above HTML. Another option is to set the height in a style sheet and use media queries to choose an appropriate size. Follow the jsFiddle link to see a small example. Lastly, you can use JavaScript to change the height of the map div just before creating the map.
+
+We create the map on the pageshow event of the page containing the map's div. This allows jQuery Mobile to enhance the page and apply any framework styles to the page element before we ask the Google API to put a map on it. If you don't wait until the page is shown for the first time, the Google map may not appear.
+
+Since the map is part of a page that has other content, we may want to consider setting the map's draggable property to false. This way, if there is content below the map, dragging the screen will still scroll the page instead of panning the map.
+
+You might notice that this recipe creates a new map on the same div each time a new tweet is chosen from the previous page. To decrease the amount of JavaScript that runs each time the second page is shown, we could maintain a reference to the map and use the panTo function instead. However, if your map is not on the first page of a jQuery Mobile app, I have noticed tile placement issues with the Google map widget on both Android and iOS. For now, my recommendation is to create a new map each time.
