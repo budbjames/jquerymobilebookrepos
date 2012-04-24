@@ -15,43 +15,42 @@ Solution
 You need to modify the default Google Analytics code to track page views on each 'pageshow' event provided by jQuery mobile.  
 
 <body>
-	<div data-role="page" id="page1">
-		<div data-role="header">
-			<h1>Page 1</h1>
-		</div>
-		<div data-role="content">	
-			<p>Contents of Page 1</p>		
-			<p>View internal page called <a href="#page2">Page 2</a></p>	
-		</div>
-	</div>
-	<div data-role="page" id="page2">
-		<div data-role="header">
-			<h1>Page 2</h1>
-		</div>
-
-		<div data-role="content">	
-			<p>Contents of page 2.</p>		
-			<p><a href="#page1">Back to Page 1</a></p>	
-		</div>
-	</div>
+  <div data-role="page" id="page1">
+    <div data-role="header">
+      <h1>Page 1</h1>
+    </div>
+    <div data-role="content">	
+      <p>Contents of Page 1</p>		
+      <p>View internal page called <a href="#page2">Page 2</a></p>	
+    </div>
+  </div>
+  <div data-role="page" id="page2">
+    <div data-role="header">
+      <h1>Page 2</h1>
+    </div>
+    <div data-role="content">	
+      <p>Contents of page 2.</p>		
+      <p><a href="#page1">Back to Page 1</a></p>	
+    </div>
+  </div>
 	
-	<script>
-	    //modified google analytics code
-		var _gaq = _gaq || [];
-		    _gaq.push(['_setAccount', 'UA-xxxxxx-xx']);
+  <script>
+  //modified google analytics code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-xxxxxx-xx']);
 
-		    (function() {
-		      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		    })();
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 		
-		//on the pageshow event, send a trackPageview event to google anlaytics
-		$('[data-role=page]').live('pageshow', function(event, ui) {
-				 var pageId = "#" + $(event.target).attr('id');
-		        _gaq.push(['_trackPageview', pageId]);
-		});
-	</script>
+  //on the pageshow event, send a trackPageview event to google anlaytics
+  $('[data-role=page]').live('pageshow', function(event, ui) {
+    var pageId = "#" + $(event.target).attr('id');
+    _gaq.push(['_trackPageview', pageId]);
+  });
+  </script>
 </body>
 
 Discussion
