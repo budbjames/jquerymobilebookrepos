@@ -86,14 +86,14 @@ image::images/Collapsible_Simple_Expanded.png[]
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The collapsible content block will by default have content collapsed, so that only the collapsible heading is visible, next to a + sign, that indicates that the content can be expanded. The user can expand (show) the content of the collapsible by touching anywhere on the heading (text or + sign). The content then appears below the heading in its own content area. The + sign becomes a - sign, indicating that the content can now be collapsed (hidden).
-The heading element (<h3>Area of expertise</h3>) in the example above must be immediately inside the collapsible container. It is this heading that will be displayed and clickable when the collapsible content is collapsed. It is possible to have more than one collapsible on the same page, and there is no restriction to the content of a collapsible.
+The collapsible content block will by default have content collapsed, so that only the collapsible heading is visible, next to a + sign, that indicates that the content can be expanded. The user can expand (show) the content of the collapsible by touching anywhere on the heading (text or plus icon). The content then appears below the heading in its own content area. The + icon becomes a - icon, indicating that the content can now be collapsed (hidden).
+The heading element *+<h3>Area of expertise</h3>+* in the example above must be immediately inside the collapsible container. It is this heading that will be displayed and clickable when the collapsible content is collapsed. It is possible to have more than one collapsible on the same page, and there is no restriction to the content of a collapsible.
 
 Note that it is also possible to add color to the collapsible header and/or the collapsible content. By default, the collapsible header will inherit theme from the defined page content theme (see Chapter 6 for more information on themes), and the content will have no theme and will simply be displayed on the page below its header. 
-To override this style, you can add +data-theme+ to the collapsible elements, i.e. to the header, or to the content. Adding +data-theme+ to the collapsible content will create a visual effect. The collapsible content will no longer be simply displayed on the page, but it will be in a visual container of the color corresponding to the theme specified. 
+To override this style, you can add *+data-theme+* to the collapsible elements, i.e. to the header, or to the content. Adding *+data-theme+* to the collapsible content will create a visual effect. The collapsible content will no longer be simply displayed on the page, but it will be in a visual container of the color corresponding to the theme specified. 
 The content will still be below the heading, but also visually attached to it. The bottom of the content will have by default a nice rounded corner at the bottom. This can be changed with custom CSS.
 
-See the results below <<FIG2-16-3>> and <<FIG2-16-4>> of theming the collapsible and its content by changing the collapsible container to +<div data-role="collapsible" data-theme="a" data-content-theme="c">+
+See the results below <<FIG2-16-3>> and <<FIG2-16-4>> of theming the collapsible and its content by changing the collapsible container to *+<div data-role="collapsible" data-theme="a" data-content-theme="c">+*
 
 
 [[FIG2-16-3]]
