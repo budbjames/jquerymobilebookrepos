@@ -2,21 +2,34 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Ray Daly <raydaly@gmail.com>
 
 ////
 
-#.# Recipe Title
+#.# How to make pages readable on desktops and other wide screens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Your app looks fine on the phone but not on your desktop monitor. Text lines are too long to read comfortably.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+Add one line of css to limit the screen width .
+
+jqpage { max-width: 790px; margin-left: auto; margin-right: auto;}
+
+and give each div with a data-role of page a class of jqpage:
+
+<div id="load" data-role="page" class="jqpage">
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+It is very easy when working with jQueryMobile to concentrate on how your app looks on a small screen. However, some people will use their desktop monitor.
+
+So just use CSS to set the max-width of your app to 790px. Then using a left and right margin of auto, the app will center in the desktop browser regardless of the width.
+
+This avoids the problem of lines of text that are too long for comfortable reading. This is a simple 'readability' usability tip.
+
+
