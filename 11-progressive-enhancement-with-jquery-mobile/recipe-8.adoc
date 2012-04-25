@@ -4,7 +4,7 @@ Author: R. Thompson <whynetsolutions@aol.com>
 
 ////
 
-#.# What is Progressive Enhancement in a Mobile Context?
+#.# Media Queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -17,11 +17,11 @@ You want to display a list of information and allow your users to filter the lis
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 <ul data-role="listview" data-filter="true" data-filter-placeholder="Search countries..."> 
-	<li><a href="#">Afghanistan</a></li>
-	<li><a href="#">Iceland</a></li>
-	<li><a href="#">Japan</a></li>
-	<li><a href="#">Thailand</a></li>
-	<li data-filtertext="USA U.S.A. United States of America"><a href="#">United States</a></li>
+  <li><a href="#">Afghanistan</a></li>
+  <li><a href="#">Iceland</a></li>
+  <li><a href="#">Japan</a></li>
+  <li><a href="#">Thailand</a></li>
+  <li data-filtertext="USA U.S.A. United States of America"><a href="#">United States</a></li>
 </ul>
 
 Discussion

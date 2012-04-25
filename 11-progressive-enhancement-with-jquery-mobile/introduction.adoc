@@ -1,8 +1,8 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Progressive Enhancement with jQuery Mobile
 
-Chapter Leader: John Doe <email@email.com>
+Chapter Leader: Zach Leatherman <zachleatherman@gmail.com>
 
 ////
 

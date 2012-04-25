@@ -1,12 +1,12 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+jQuery Mobile Page Anatomy
 
-Author: John Doe <email@email.com>
+Author: Max Lynch <maxlynch@uwalumni.com>
 
 ////
 
-#.# Recipe Title
+#.# Page Anatomy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -20,6 +20,16 @@ In jQuery Mobile, pages placed inside of the <body> element of the main document
 
 .A Simple jQuery Mobile Page
 [source,html]
+----
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
 <body>
 	<div data-role="page">
 		<div data-role="header">
@@ -33,10 +43,11 @@ In jQuery Mobile, pages placed inside of the <body> element of the main document
 		</div>
 	</div>
 </body>
+----
 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
 
+In the example page, we have a header, content area, and footer which are standard jQuery Mobile components that make up a page. As mentioned, we can put anything we like inside of a page, though the standard header, content, and footer sections have many nice built in features that make it easier to incorporate common mobile features such as navigation bars, or back buttons.
 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Combining tweets, lists, and maps</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+
+    <style type="text/css">
+      .tweetinfo-from_user { color: #888; }
+
+      /* you MUST give the in-page maps a height or it won't work in jQuery Mobile */
+      #map_canvas
+      {
+        width: 100%;
+        height: 12em;
+      }
+
+@media screen and (min-device-height: 641px) {
+      #map_canvas
+      {
+        height: 24em;
+      }
+}
+
+      
+    </style>
+  </head>
+  <body>
+    <div id="tweets" data-role="page">
+      <div data-role="header">
+        <h1>Tweets near you</h1>
+      </div>
+
+      <div class="tweets-content" data-role="content">
+        <ul class="tweets-list" data-role="listview" data-inset="true">
+        </ul>
+      </div>
+    </div>
+
+    <div id="tweetinfo" data-role="page">
+      <div data-role="header">
+        <a data-rel="back" data-icon="arrow-l" data-iconpos="notext">Back</a>
+        <h1><span class="tweetinfo-from_user_name"></span></h1>
+      </div>
+
+      <div class="tweetinfo-content" data-role="content">
+        <p><b class="tweetinfo-from_user_name"></b><br /><span class="tweetinfo-from_user"></span></p>
+
+        <p class="tweetinfo-text"></p>
+
+        <div id="map_canvas"></div>
+      </div>
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
+    <script>
+      ( function( ) {
+
+        var marker = null; //< tweet marker reference for later
+
+        $( "body" ).on( "pagebeforeshow", "#tweets", function( ) {
+          $( ".tweets-list" ).html( "" );
+
+          if ( navigator.geolocation ) {
+            navigator.geolocation.getCurrentPosition( function( position ) {
+              var loc = position.coords;
+
+              $.ajax( {
+                url: "http://search.twitter.com/search.json",
+                data: {
+                  rpp: 50, //< max results
+                  geocode: loc.latitude + "," + loc.longitude + ",5km"
+                },
+                cache: "false",
+                dataType: "jsonp",
+                success: function ( tweets ) {
+                  var tweetItems = new jQuery( ),
+                      tweetItem;
+
+                  $.each( tweets.results, function () {
+                    // not all tweet results have the geo property set
+                    if ( this.geo ) {
+                      tweetItem = $( '<li><a href="#tweetinfo">' + ('<h2>' + this.from_user_name + '</h2>') + ('<p>' + this.text + '</p>') + '</a></li>' );
+                      tweetItem.children( ).data( "tweet", this );
+                      tweetItems = tweetItems.add( tweetItem );
+                    }
+                  } );
+
+                  if ( tweetItems.length > 0 ) {
+                    $( ".tweets-list" ).append( tweetItems ).listview( "refresh" );
+                  } else {
+                    $( ".tweets-content" ).html( '<p>There are no tweets in your area</p>' );
+                  }
+                },
+                error: function( xhr ) {
+                  $( ".tweets-content" ).html( '<p>There was an error querying twitter</p>' );
+                }
+              });
+            }, function( error ) {
+              $( ".tweets-content" ).html( '<p>HTML5 geolocation request failed</p>' );
+            }, {
+              enableHighAccuracy: true
+            } );
+          } else {
+            $( ".tweets-content" ).html( '<p>Your device does not support HTML5 geolocation</p>' );
+          }
+        } );
+
+        $( "body" ).on( "click", ".tweets-list a", function ( ) {
+          window.sessionStorage.setItem( "clickedTweet", JSON.stringify( $( this ).data("tweet") ) );
+        });
+
+        $( "body" ).on( "pagebeforeshow", "#tweetinfo", function( ) {
+          // do this part here so the user doesn't see the text change
+          // from a previous tweet
+
+          var clickedTweet = JSON.parse( window.sessionStorage.getItem( "clickedTweet" ) );
+
+          $( ".tweetinfo-from_user_name" ).text( clickedTweet.from_user_name );
+          $( ".tweetinfo-from_user" ).text( "@" + clickedTweet.from_user );
+
+          $( ".tweetinfo-text" ).html( clickedTweet.text );
+        } );
+
+        $( "body" ).on( "pageshow", "#tweetinfo", function( ) {
+          // we need to make sure jQuery Mobile has enhanced the page
+          // and it's visible (pageshow) before we create the map
+          var clickedTweet = JSON.parse( window.sessionStorage.getItem( "clickedTweet" ) ),
+              tweetCoords = clickedTweet.geo.coordinates,
+              tweetLatLng = new google.maps.LatLng( tweetCoords[ 0 ], tweetCoords[ 1 ] );
+
+          if ( marker !== null ) {
+            // unhook the original marker from the map
+            marker.setMap( null );
+          }
+
+          var map = new google.maps.Map( $( "#map_canvas" )[ 0 ], {
+            zoom: 14,
+            center: tweetLatLng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            draggable: false,
+            zoomControl: true
+          } );
+
+          marker = new google.maps.Marker( {
+            position: tweetLatLng,
+            map: map,
+            clickable: false
+          } );
+        } );
+      }( ) );
+    </script>
+  </body>
+</html>
