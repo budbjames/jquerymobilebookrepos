@@ -1,0 +1,30 @@
+////
+
+This is a comment block.  Put notes about your recipe here and also your author information.
+
+Author: Kevin Old <kevin@kevinold.com>
+Bio: Kevin Old is a Senior Software Engineer experience with backend and frontend development.  Recent years have been focused on frontend development and learning good design principles.  He lives in White House, TN with his wife, son, 2 dogs and cat.  You can follow him on Twitter: @kevinold.
+
+////
+
+#.# Linking to external pages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+////Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+You would like to provide a button or text link directing to another domain
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+The default behavior for jQuery Mobile links are to load content via Ajax.  You may use the 'rel="external"'attribute to make a link point to an external source.
+
+[source, html]
+----
+<a rel="external" href="http://www.jquery.com">jQuery!</a>
+----
+
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
