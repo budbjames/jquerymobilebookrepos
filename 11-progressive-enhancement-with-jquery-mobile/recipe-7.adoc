@@ -1,10 +1,10 @@
 ////
 
-Author: R. Thompson <whynetsolutions@aol.com>
+Author: Randy Weinstein
 
 ////
 
-#.# What is Progressive Enhancement in a Mobile Context?
+#.# Switching Between Dialogs and Collapsible Panels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

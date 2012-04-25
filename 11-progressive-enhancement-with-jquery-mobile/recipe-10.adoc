@@ -1,10 +1,10 @@
 ////
 
-Author: R. Thompson <whynetsolutions@aol.com>
+Author: Randy Weinstein
 
 ////
 
-#.# What is Progressive Enhancement in a Mobile Context?
+#.# Responsive Images based on Screen Dimensions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
