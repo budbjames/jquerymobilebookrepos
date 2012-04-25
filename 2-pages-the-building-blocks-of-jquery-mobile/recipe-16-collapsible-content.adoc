@@ -4,7 +4,7 @@ Recipe(s) for collapsibles
 
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
-
+Need to check ref id of chapter on linking pages
 ////
 
 2.15 Collapsible Content Blocks
@@ -16,9 +16,10 @@ You want to display some information in a way that will enable to toggle the vie
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Use a collapsible content block, using a container with data-role="collapsible". For example: 
+Use a collapsible content block, using a container with data-role="collapsible", see <<EX2-16-1>>: 
 
-[source,html]
+[[EX2-16-1]]
+.A Collapsible Example
 <!DOCTYPE html>
 <html>
   <head>
