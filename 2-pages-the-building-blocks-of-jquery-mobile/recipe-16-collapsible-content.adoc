@@ -4,7 +4,6 @@ Recipe(s) for collapsibles
 
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
-TODO: upload 3 picture files. 
 
 ////
 
