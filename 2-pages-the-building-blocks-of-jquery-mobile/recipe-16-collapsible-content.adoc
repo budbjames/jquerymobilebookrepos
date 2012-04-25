@@ -101,13 +101,13 @@ Note that it is also possible to add color to the collapsible header and/or the 
 To override this style, you can add +data-theme+ to the collapsible elements, i.e. to the header, or to the content. Adding +data-theme+ to the collapsible content will create a visual effect. The collapsible content will no longer be simply displayed on the page, but it will be in a visual container of the color corresponding to the theme specified. 
 The content will still be below the heading, but also visually attached to it. The bottom of the content will have by default a nice rounded corner at the bottom. This can be changed with custom CSS.
 
-See the difference below <<FIG2-16-2>> and <<FIG2-16-3>> of changing the collapsible containers to +<div data-role="collapsible" data-theme="a" data-content-theme="c">+
+See the results below <<FIG2-16-3>> and <<FIG2-16-4>> of theming the collapsible and its content by changing the collapsible container to +<div data-role="collapsible" data-theme="a" data-content-theme="c">+
 
-
-[[FIG2-16-2]]
-.Default Collapsibles Expanded
-image::images/Collapsible_Simple_Expanded.png[]
 
 [[FIG2-16-3]]
+.Themed Collapsibles Collapsed
+image::images/Collapsible_Themed_Collapsed.png[]
+
+[[FIG2-16-4]]
 .Collapsibles with Themed Content Expanded
-image::images/Collapsible_Themed_Content_Expanded.png[]
+image::images/Collapsible_Themed_Expanded.png[]
