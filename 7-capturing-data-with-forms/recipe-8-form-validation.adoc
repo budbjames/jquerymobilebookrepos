@@ -102,7 +102,7 @@ $( document ).on( "pageinit", "#feedback", function( event ) {
 });
 ----
 
-Many types of validation are supported by the jQuery validation framework. Multiple rules may be combined for an element as follows:
+Many types of validation are supported by the jQuery validation framework. Validation rules may be added declaratively with support provided for the new set of HTML5 input types. Multiple rules may be combined for an element as follows:
 
 ----
 rules: {
@@ -155,7 +155,12 @@ var formValidation = (function( $ ) {
 })( jQuery );
 ----
 
-The module exposes a single method called validate, which performs the validator setup.  Firstly, a validation model object is created by merging the form specific validation rules with a settingsForMobile object.  The settingsForMobile object contains an error placement function specific to jQuery Mobile. This function is invoked by the jQuery validation framework to place error labels for invalid elements; as shown, the function places errors for jQuery Mobile radio controls and select lists by searching for the closest field container.  It then appends the error label to the container, therefore presenting error messages cleanly below radio control groups and select lists.  All other controls, such as input text fields and text areas have the error label inserted directly below.
+The module exposes a single method called validate, which performs the validator setup.  Firstly, a validationModel object is created by merging the form specific validation rules with a settingsForMobile object.  The settingsForMobile object contains an error placement function specific to jQuery Mobile. This function is invoked by the jQuery validation framework to place error labels for invalid elements; in this case, the function places errors for radio controls and select lists by searching for the closest element that is a jQuery Mobile field container. It then appends the error label to the container, therefore presenting error messages cleanly below radio control groups and select lists.  All other controls, such as input text fields and text areas have their error labels inserted directly below. Using this approach, a number of error placement strategies may be created appropriate to the application.
 
-Invoking the validate method on the provided form initialises the validator with the given validation model options. The final line in the validate method binds the handleChangeEvent function to the change events of all select and radio button controls within the provided form.  TODO Provide detailed explanation for this behaviour
+After declaring the required variables, the validate method, provided by the jQuery validation plugin, is invoked on the form instance. This initialises the validator with the given validation model options; validation is now enabled for the provided form and will be triggered on initial form submission.
+
+The final line in the validate method invokes the validateDelegate function provided by the jQuery validation plugin.  This call attaches the handleChangeEvent function to the change events of all select and radio button controls within the provided form. Using this approach, we can detect changes made to enhanced radio/select controls and trigger validation by invoking the handleChangeEvent function, therefore providing 'as you type' validation for such controls.  It is important to note that simple elements, such as input text fields and text areas work correctly out of the box, due to their mark-up being minimally enhanced.
+
+
+
 
