@@ -4,18 +4,28 @@
     <meta charset="utf-8">
     <title>Combining tweets, lists, and maps</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
 	  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 
     <style type="text/css">
       .tweetinfo-from_user { color: #888; }
 
-      /* you MUST give the in-page map a height or it won't work in jQuery Mobile */
+      /* you MUST give the in-page maps a height or it won't work in jQuery Mobile */
       #map_canvas
-      { 
-        position: relative;
+      {
         width: 100%;
+        height: 12em;
+      }
+
+@media screen and (min-device-height: 641px) {
+      #map_canvas
+      {
         height: 24em;
       }
+}
+
+      
     </style>
   </head>
   <body>
@@ -32,6 +42,7 @@
 
     <div id="tweetinfo" data-role="page">
       <div data-role="header">
+        <a data-rel="back" data-icon="arrow-l" data-iconpos="notext">Back</a>
         <h1><span class="tweetinfo-from_user_name"></span></h1>
       </div>
 
@@ -51,23 +62,21 @@
 
     <script>
       ( function( ) {
-        var map = null; //< a map widget reference for later
-        var marker = null; //< tweet marker
+
+        var marker = null; //< tweet marker reference for later
 
         $( "body" ).on( "pagebeforeshow", "#tweets", function( ) {
           $( ".tweets-list" ).html( "" );
 
           if ( navigator.geolocation ) {
             navigator.geolocation.getCurrentPosition( function( position ) {
-              var latLng = position.coords.latitude + "," + position.coords.longitude,
-                  radius = "5km",
-                  geocodeArgument = latLng + "," + radius;
+              var loc = position.coords;
 
               $.ajax( {
                 url: "http://search.twitter.com/search.json",
                 data: {
                   rpp: 50, //< max results
-                  geocode: geocodeArgument
+                  geocode: loc.latitude + "," + loc.longitude + ",5km"
                 },
                 cache: "false",
                 dataType: "jsonp",
@@ -118,11 +127,6 @@
           $( ".tweetinfo-from_user" ).text( "@" + clickedTweet.from_user );
 
           $( ".tweetinfo-text" ).html( clickedTweet.text );
-
-          if ( marker !== null ) {
-            marker.setMap( null );
-            marker = null;
-          }
         } );
 
         $( "body" ).on( "pageshow", "#tweetinfo", function( ) {
@@ -132,20 +136,19 @@
               tweetCoords = clickedTweet.geo.coordinates,
               tweetLatLng = new google.maps.LatLng( tweetCoords[ 0 ], tweetCoords[ 1 ] );
 
-          if ( map === null ) {
-            map = new google.maps.Map( $( "#map_canvas" )[ 0 ], {
-              zoom: 14,
-              center: tweetLatLng,
-              mapTypeId: google.maps.MapTypeId.ROADMAP,
-              disableDefaultUI: true,
-              zoomControl: true,
-              zoomControlOptions: {
-                style: google.maps.ZoomControlStyle.SMALL
-              }
-            } );
-          } else {
-            map.panTo( new google.maps.LatLng( tweetCoords[ 0 ], tweetCoords[ 1 ] ) );
+          if ( marker !== null ) {
+            // unhook the original marker from the map
+            marker.setMap( null );
           }
+
+          var map = new google.maps.Map( $( "#map_canvas" )[ 0 ], {
+            zoom: 14,
+            center: tweetLatLng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            draggable: false,
+            zoomControl: true
+          } );
 
           marker = new google.maps.Marker( {
             position: tweetLatLng,

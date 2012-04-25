@@ -2,9 +2,7 @@
 
 Recipe for getting started with jQuery Mobile and Google Maps
 
-Author: Anne-Gaelle Colom <coloma@wmin.ac.uk>
-
-TODO: need to add screen shots
+Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
 ////
 
@@ -41,7 +39,7 @@ You need to merge the jQuery Mobile elements and your existing map together, mak
       }
     </script>
     <style type="text/css">
-      #map_canvas { height: 560px; width: 100%  }
+      #map_canvas { height: 300px; width: 100%  }
     </style>
   </head>
 
@@ -66,7 +64,7 @@ You need to merge the jQuery Mobile elements and your existing map together, mak
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The best way here is often to start with your Google Map page and add the jQuery Mobile elements around the page. The map container (<div id=”map_canvas”> </div> in the example above) will be part of the jQuery Mobile content container. The scripts relating to the map will be placed after the jQuery Mobile scripts and css. Your custom css, to define the map container should appear after the jQuery Mobile css. The first script will load the Google map api, and the second one is to create and initialize your map object. The body tag will contain the function that will initialize the Google map. From there, you can build further by, for example, adding further elements and services, such as geocoding, directions, etc.
+The best way here is often to start with your Google Map page and add the jQuery Mobile elements around the page. The map container (<div id=”map_canvas”> </div> in the example above) will be part of the jQuery Mobile content container. The scripts relating to the map will be placed after the jQuery Mobile scripts and css. Your custom css, to define the map container should appear after the jQuery Mobile css. The first script will load the Google map api, and the second one is to create and initialize your map object. The body tag will contain the function that will initialize the Google map. From there, you can build further by, for example, adding further elements and services, such as markers, geocoding, directions, etc.
 
 You may encounter a difficulty if you try to set the map container’s height to 100%, if you want the map to appear full screen. This is due to the fact that if you set the map container to 100%, it will be relative to its parent container. That means that to set the map container to 100%, you also need to set the height of the content div, the page, body and html to the same value or an error will be thrown and the map will not display. You may also want to add a padding of 0 pixel to all those elements. 
 
@@ -83,6 +81,13 @@ In this case, the style declaration becomes:
         }
       </style>    
     
+The code displayed in the Solution will produce <<FIG10-10-1>> while the full-screen version will produce <<FIG10-10-2>>:
 
+[[FIG10-10-1]]
+.A Simple Google Map with 300 pixel height 
+image::images/GoogleMap_Example_FullScreen.png[]
 
-The corresponding page is displayed <<Fig2>>.
+[[FIG10-10-2]]
+.A Simple Google Map full-screen
+image::images/GoogleMap_Example_iPhone.png
+

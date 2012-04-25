@@ -5,31 +5,45 @@ jQueryMobile supports three types of toolbars.
 Normally used to show page title and buttons/icons.
 2.Footer bars which is displayed as the bottom most item after page content.
 Normally contains buttons/icons.
-3.Navbars which can be displayed within header/footer bars or with in page content to show seperate level of buttons/icons. 
+3.Navbars which can be displayed within header/footer bars or with in page content to show seperate level of buttons/icons/other controls. 
 
 Author: John Chacko <poonkave@gmail.com>
 
 ////
 
-#.# Recipe Title
+#.# Embedding controls in toolbars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Need to show two icons in header.One for search and another for refresh.
+Needs to provide an option for user to change website language.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 <div id="home" data-role="page" data-theme="b">
   <div data-role="header" data-position="inline">
-    <a href="#search" data-icon="search">Search</a>
-    <h1>Home</h1>
-    <a href="#refresh" data-icon="refresh" data-theme="b">Refresh</a>
+    <h1>Home Page</h1>
+    <div data-role="navbar" data-theme="a" class="ui-bar">
+      <div class="ui-grid-a">
+        <div class="ui-block-a" style="text-align:right">
+          <label for="select-choice-custom" class="select">Language:</label>
+        </div>
+        <div class="ui-block-b">
+          <select name="select-choice-1" id="select1" data-native-menu="false" data-theme="b">
+            <option value="English">English</option>
+            <option value="French">French</option>
+            <option value="Russian">Russian</option>
+            <option value="Polish">Polish</option>
+          </select>
+        </div>
+      </div>
+      <div data-role="content" style="text-align: center;"></div>
+    </div>
   </div>
-  <div data-role="content" style="text-align: center;">Content</div>
-  <div data-role="footer" data-position="fixed">Footer</div>
 </div>
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+A custom select menu is embeded inside a navbar after header.
+Grid layout is used to align selectbox to the right.
+
