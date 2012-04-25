@@ -1,0 +1,97 @@
+////
+
+Notes
+-----
+
+* Discuss when and why you would want to use pagebeforeload.
+
+
+Author: Javed Anwar <javed_anwar@yahoo.com>
+
+////
+
+#.# Using the pagebeforeload() event.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using pagebeforeload.
+
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Intercept the loading of a page and make changes or dynamically load an entirely different page into the current page container.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+jQuery Mobile triggers an event named "pagebeforeload" on the document object before any external page is loaded by clicking on an anchor or by using $.mobile.loadPage.
+
+The pagebeforeload event is triggered before any load request is actually made. For any callbacks bound to this event you should call preventDefault() on the event if your intention is to handle the load request. If your callback does this then you *MUST* make sure you call resolve() or reject() on the deferred object reference that is contained in the data object passed to the callback.
+
+
+The following example shows how the pagebeforeload event can be handled to affect the pages being loaded.
+
+----
+include::recipe-5-code/main.html[]
+----
+
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+We cannot bind to pages that are not yet in the DOM and to handle these we have to bind to the events on $( document ). 
+Pagebeforeload is the first event that gets triggered during a page load before any AJAX request is done. A call to $.mobile.loadPage will trigger this event. Also, if a string is passed to $.mobile.changePage then internally $.mobile.loadPage will be called which in turn triggers this event.
+
+
+[source,javascript]
+---
+$( document ).bind( "pagebeforeload" , function( e, data ) {
+
+});
+---
+
+Callbacks for this event are passed two arguments. The first is the actual event object and the second argument is a data 
+object. 
+
+The event object has the typical event handler values and methods. The method we care about is preventDefault() which we must call if we want to manually handle the page load. If we do call this method then the deferred object that is on the data argument must either be resolved or rejected.
+
+The data object has the following properties:
+
+url - This is the absolute or relative url value that was passed into $.mobile.loadPage.
+
+absUrl - This is the absolute url value.
+
+dataUrl - This is the url that will be used as the value for the data-url attribute for the page that will be added to the DOM. It is also the value that will be shown in the browsers location field when the page is made active.
+
+options - This is the options argument that was passed to $.mobile.loadPage.
+
+deferred - This object is only valid if you have called preventDefault() on the event so that you can handle the page loading. In order for the loadPage request to continue on you must either resolve the deferred object as shown below: 
+
+[source,javascript]
+---
+$( document ).bind( "pagebeforeload", function( event, data ){
+
+  // Let the framework know we're going to handle the load.
+  event.preventDefault();
+
+  // manually load page here
+
+  data.deferred.resolve( data.absUrl, data.options, page );
+
+});
+---
+
+or reject the deferred object like this:
+
+[source,javascript]
+---
+$( document ).bind( "pagebeforeload", function( event, data ){
+
+  // Let the framework know we're going to handle the load.
+
+  event.preventDefault();
+
+  // manually load page here, and if there was an error loading the page
+  // then reject the deferred object
+
+  data.deferred.reject( data.absUrl, data.options );
+
+});
+---
+
