@@ -9,11 +9,11 @@
 	<script type="text/javascript">
 		// attach an event handler to the document that handles the pageinit event. 
 		// filter the selected elements that trigger the event to the page div elements
-		$(document).on("pageinit", "div[data-role='page']", function(event) {
+		$( document ).on( "pageinit", "div[data-role='page']", function( event ) {
 			// when the pageinit event is triggered, 
 			// popup an alert displaying the title of the initialised page
-			var pageTitle = $(this).find("h1").text();
-			alert(pageTitle+ " has been initialised");
+			var pageTitle = $( this ).find( "h1" ).text();
+			alert( pageTitle + " has been initialised" );
 		});
 	</script>
 </head> 
