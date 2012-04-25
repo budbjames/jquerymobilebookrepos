@@ -21,7 +21,7 @@ Author: Adrian Pillinger <adrian.pillinger@gmail.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-The typical jQuery Mobile web application is designed to behave as a single page application. Traditionally the javascript code specific to a page within a multi-page web application is executed when the DOM has finished loading. Since the single page model inevitably means that the DOM is only initialised once, the traditional approach is not sufficient for jQuery Mobile. 
+The typical jQuery Mobile web application is designed to behave as a single page application. Traditionally any page specific javascript code within a multi-page web application is executed when the DOM has finished loading. Since the single page model inevitably means that the DOM is only initialised once, the traditional approach is not sufficient for jQuery Mobile. 
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
