@@ -20,6 +20,8 @@ To overcome this problem, jQuery mobile provides the +pageinit+ event that fires
 
 The following is a simple example demonstrating a handler function bound to the +pageinit+ event. This handler opens an alert box containing the Page Title as soon as jQuery Mobile has finished initialising the page.
 
+.Simple pageinit Example
+[source,html]
 ----
 include::recipe-2-code/example1.html[]
 ----
@@ -30,6 +32,7 @@ Javascript provides the +load+ event which is fired once the DOM and all resourc
 
 When you first launch a jQuery mobile application, the initial html document is loaded into the web browser. Within this html document one or more pages are defined using simple semantic html within the DOM. These are defined as div elements with a data-role attribute containing the value 'page'. See the following example:
 
+[source,html]
 ----
 <div data-role="page" id="page1"> 
 	<!-- page content -->
