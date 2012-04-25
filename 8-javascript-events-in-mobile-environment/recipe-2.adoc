@@ -3,11 +3,6 @@
 Notes
 -----
 
-Discussion section: 
- * Discuss when onload and $(document).ready() file in the lifecycle of a web page request. 
- * Discuss exactly when +pageinit+ is fired and what is available at this point in time
-
-
 Author: Adrian Pillinger <adrian.pillinger@gmail.com>
 
 ////
@@ -31,7 +26,7 @@ include::recipe-2-code/example1.html[]
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-Javascript provides the +load+ event which is fired once the DOM and all resources such as images have loaded within a webpage. jQuery improved on this and superceeded this event with the +.ready()+ method that is invoked once the DOM has finished loading, but before all resources have loaded, therefore improving page load times. Neither of these events fit the singlepage architecture of jQuery Mobile, and therefore this section discusses how the new +pageinit+ event provides equivalent functionality to applications.
+Javascript provides the +load+ event which is fired once the DOM and all resources such as images have loaded within a webpage. jQuery improved on this and superceeded this event with the +.ready()+ method that is invoked once the DOM has finished loading, but before all resources have loaded, therefore improving page load times. Neither of these events fit the singlepage architecture of jQuery Mobile because these events generally only fire once during a singlepage application's lifetime. Therefore this section discusses how the new +pageinit+ event provides equivalent functionality to jQuery Mobile applications. 
 
 When you first launch a jQuery mobile application, the initial html document is loaded into the web browser. Within this html document one or more pages are defined using simple semantic html within the DOM. These are defined as div elements with a data-role attribute containing the value 'page'. See the following example:
 
@@ -45,11 +40,16 @@ The first page defined in the DOM will be the page that is rendered initialy in 
 
 jQuery Mobile loads these two styles of page link differently. Links to pages defined inline, and therefore already present in the DOM can simply be initialised by enhancing the markup. Links to external resources require an additional step, in which jQuery Mobile fetches the resource using an ajax call and embeds the page into the DOM before enhancing/initialising the page. However, regardless of the link type, once page initialisation is complete the +pageinit+ event is fired. i.e The +pageinit+ event is agnostic to the mechanism used to load a page and is triggered each time a page is initialised.
 
-The following example demonstrates javascript being invoked in response to the +pageinit+ event in all three page loading mechanisms. Page 1 loads initially through a full page load, Page 2 is loaded inline, and Page 3 is loaded as an external ajax call.
+The following example demonstrates javascript being invoked in response to the +pageinit+ event in all three page loading mechanisms. When navigating the example application Page 1 loads initially through a full page load, Page 2 is loaded inline, and Page 3 is loaded as an external ajax call. 
 
+.Pages 1 and 2 (Inline pages)
+[source,html]
 ----
 include::recipe-2-code/example2.html[]
 ----
+
+.Page 3 (External Resource)
+[source,html]
 ----
 include::recipe-2-code/page3.html[]
 ----

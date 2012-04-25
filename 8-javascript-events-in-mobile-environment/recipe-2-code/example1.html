@@ -2,24 +2,21 @@
 <html> 
 <head> 
 	<title>pageinit example</title> 
-	
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.2/jquery.mobile-1.1.0-rc.2.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.1.0-rc.2/jquery.mobile-1.1.0-rc.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 	<script type="text/javascript">
 		// attach an event handler to the document that handles the pageinit event. 
 		// filter the selected elements that trigger the event to the page div elements
-		$(document).on('pageinit', 'div[data-role="page"]', function(event) {
+		$(document).on("pageinit", "div[data-role='page']", function(event) {
 			// when the pageinit event is triggered, 
 			// popup an alert displaying the title of the initialised page
-			var pageTitle = $(this).find('h1').text();
-			alert(pageTitle+ ' has been initialised');
+			var pageTitle = $(this).find("h1").text();
+			alert(pageTitle+ " has been initialised");
 		});
 	</script>
 </head> 
-
 <body> 
 	<div data-role="page" id="page1"> 
 		<div data-role="header">
