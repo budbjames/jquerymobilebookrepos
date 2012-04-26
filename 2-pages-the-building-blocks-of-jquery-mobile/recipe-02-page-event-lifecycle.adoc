@@ -1,22 +1,78 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+jQuery Mobile page event lifecycle
 
-Author: John Doe <email@email.com>
+Author: Max Lynch <maxlynch@uwalumni.com>
 
 ////
 
-#.# Recipe Title
+#.# Page Event Lifecycle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+In jQuery Mobile, pages are initialized in an asynchronous fashion. 
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+We can monitor the lifecycle of a jQuery Mobile page with serveral built in events:
+
+.Page Event Lifecycle
+[source,html]
+----
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+<body>
+  <div id="page1" data-role="page">
+    <div data-role="header">
+      <h3>Page 1</h3>
+    </div>
+    <div data-role="content">
+      <a data-role="button" href="#page2">Go to Page 2</a>
+    </div>
+  </div>
+  <div id="page2" data-role="page">
+    <div data-role="header">
+      <h3>Page 2</h3>
+    </div>
+    <div data-role="content">
+    </div>
+  </div>
+  <div id="status">
+    <ul></ul>
+  </div>
+  <script>
+
+    // Print out a message based on which lifecycle event fired
+    var lifecycle = function( event ) {
+      var page = $(this);
+      $('#status ul').append( '<li>' + page.attr('id') + ': ' + event.type + '</li>' );
+    };
+
+    // Monitor page events on the given page with the requested id
+    var monitorPage = function( id ) {
+      var events = [ 'pagebeforecreate', 'pagecreate', 'pageinit', 'pageremove', 
+      'pagebeforeshow', 'pagebeforehide', 'pagehide', 'pageshow'
+      ];
+      $.each(events, function(i, e) {
+        $( id ).live( e, lifecycle );
+      });
+    };
+
+    var pages = [ '#page1', '#page2' ];
+    pages.map(monitorPage);
+  </script>
+</body>
+</html>
+----
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+In this recipe, we are simply placing two pages inside of a single HTML page. For each page, we call monitorPage to listen for various page events. When a page event occurs, we emit a note to a div on our page that acts as a status window.

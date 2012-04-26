@@ -1,11 +1,11 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Author: Elijah Manor <emanor@appendto.com>
 
-Chapter Leader: John Doe <email@email.com>
+Chapter Leader: Elijah Manor <emano@appendto.com>
 
 ////
 
 Introduction
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is the introduction to the chapter.  It should be written by the Chapter Leader and should contain an overview of the content that will be found in the chapter.  It should about 3-4 sentences long with a maximum of 6 sentences long.
+~~~~~~~~~~~~
+Lists are a common way of quickly representing data to a user. In addition lists are also the most common way to provide a user with a way to navigate from page to page in a web application. jQuery Mobile makes it really easy to leverage an ordered or unordered list and transform it into a rich and user friendly control. This chapter will guide you on the various ways to structure, format, and theme a list to meet your application's needs.

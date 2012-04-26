@@ -17,8 +17,46 @@ Using HTML5 localstorage to store user information.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+The following code outlines a simple scheme that demos the of HTML5 LocalStorage API.
+
+----
+include::recipe-3-code/localstorage.html[]
+----
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+The HTML5 LocalStorage API is very simple, it consists of two methods +setItem+ and +removeItem+ that allow you to either add or remove an item from the browsers LocalStorage. The following sample code shows a sample of adding and removing an item from the HTML5 LocalStorage.
+
+[html,source]
+====
+// add item to HTML5 LocalStorage.
+localStorage.setItem("jquery", "jquery");
+// remove item from HTML5 LocalStorage
+localStorage.removeItem("jquery");
+====
+One thing to note is not all browsers support HTML5 LocalStorage so your application should use this API cautiously. The sample code outlined uses the following code to detect HTML5 LocalStorage support.
+
+[html,source]
+====
+function hasLocalStorageSupport() {
+	try {
+		var support = "support";
+		localStorage.setItem(support, support);
+		localStorage.removeItem(support);
+		return true;
+	} catch(e) {
+		return false;
+	}
+}
+====
+
+[Warning]
+====
+Safe HTML5 feature detection is not trivial, you should leverage a well tested third party library to perform this task.  One such library is Modernizr - http://www.modernizr.com.
+====
+
+
+
+
+
+

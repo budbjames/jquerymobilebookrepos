@@ -1,10 +1,10 @@
 ////
 
-Author: R. Thompson <whynetsolutions@aol.com>
+Author: Unassigned
 
 ////
 
-#.# What is Progressive Enhancement in a Mobile Context?
+#.# Adding AJAX to Page Links
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

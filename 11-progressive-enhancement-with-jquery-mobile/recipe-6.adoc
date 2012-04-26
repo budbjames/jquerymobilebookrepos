@@ -1,10 +1,10 @@
 ////
 
-Author: R. Thompson <whynetsolutions@aol.com>
+Author: Mike Sumner
 
 ////
 
-#.# What is Progressive Enhancement in a Mobile Context?
+#.# Dividing Content Using Tabs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
