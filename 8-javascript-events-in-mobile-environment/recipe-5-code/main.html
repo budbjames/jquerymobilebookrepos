@@ -1,116 +1,130 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>PageBeforeLoad Recipe</title> 
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>		
-	</head> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>jQuery Mobile Cookbook - pagebeforeload</title> 
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>  
+    <script>
+      // Bind click events for buttons for example 4 and 5
+      $(document).on( "pageinit", function( e ) {
+        // Example 4: load an external page using $.mobile.loadPage
+        $( "#loadFourthPage" ).on( "click", function( data ) {
+          $.mobile.loadPage( "four.html" );
+        });
 
-	<body> 
-		<!-- Start of first page: #one -->
-		<div data-role="page" id="one">
-			<div data-role="header">
-				<h1>PageBeforeLoad</h1>
-			</div>
-			<div data-role="content">	
-				<h2>One</h2>
-				<p><a href="#two" data-role="button">Show internal page "two"</a></p>	
-				<p><a href="thirdpagesnippet.html" data-role="button">Load external page "three"</a></p>	
-				<p><a href="#" id="loadFourthPage" data-role="button">Use $.mobile.loadPage to load page "four"</a></p>
-				<p><a href="#" id="changeToFourthPage" data-role="button">Use $.mobile.changePage to load page "four"</a></p>
-				<p><a href="doesnotexist.html" data-role="button">Show missing external page</a></p>
-			</div>			
-			<div data-role="footer" data-theme="d">
-				<h4>Page Footer</h4>
-			</div>
-		</div>
-		<!-- Start of second page: #two -->
-		<div data-role="page" id="two" data-theme="a">
-			<div data-role="header">
-				<h1>Two</h1>
-			</div>
-			<div data-role="content" data-theme="a">	
-				<h2>Two</h2>
-				<p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page "one"</a></p>	
-				
-			</div>			
-			<div data-role="footer">
-				<h4>Page Footer</h4>
-			</div>
-		</div>
+        // Example 5: load an external page using $.mobile.changePage
+        $( "#changeToFourthPage" ).on( "click", function( data ) {
+          $.mobile.changePage( "four.html" );
+        });        
+      });
 
-		<!-- Start of page: #external -->
-		<div data-role="page" id="external" data-theme="e">
-			<div data-role="header">
-				<h1>External</h1>
-			</div>
-			<div data-role="content" data-theme="a">	
-				<h2>External content needs to be loaded</h2>
-				<p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page "one"</a></p>	
-				
-			</div>			
-			<div data-role="footer">
-				<h4>Page Footer</h4>
-			</div>
-		</div>
+      // Listen for any attempts to call changePage().
+      $(document).on( "pagebeforechange", function( e, data ) {
+        console.log("pagebeforechange fired"); 
+        console.log(data.toPage);
+      });
 
-		<script>
-			// Listen for any attempts to call changePage().
-			$(document).on( "pagebeforechange", function( e, data ) {
-				console.log("pagebeforechange fired"); 
-				console.log(data.toPage);
-			});
+      // Listen for any attempts to call loadPage() or changePage() with a url
+      $( document ).on( "pagebeforeload", function( e, data ) {         
+        console.log( "pagebeforeload fired" ); 
+        console.log( "url: " + data.url );
+        console.log( "absUrl: " + data.absUrl );
+        console.log( "dataUrl: " + data.dataUrl );
+        
+        var url = $.mobile.path.parseUrl( data.url );
 
-			// Listen for any attempts to call loadPage() or changePage() with a url
-			$( document ).on( "pagebeforeload", function( e, data ) { 				
-				console.log( "pagebeforeload fired" ); 
-				console.log( "url: " + data.url );
-				console.log( "absUrl: " + data.absUrl );
-				console.log( "dataUrl: " + data.dataUrl );
-				
-				// Let the framework know we're manually loading the page 
-				e.preventDefault(); 
+        // Example 2 & 3: let normal page loading occur
+        if (url.filename === "three.html") {
+          // let's return so the normal page loading sequence continues
+          return;
+        }
 
-				var $page = $( '#external' );
+        // Let the framework know we're manually loading the page 
+        e.preventDefault(); 
 
-				$.ajax( data.url )
-					.done( function( results ) {
-						$page.html(results); // make sure page is enhanced
-						var url = $.mobile.path.parseUrl( data.url );
-						var dynamicHeader = "This is a dynamic header";
-						if (url.filename === "fourthpagesnippet.html") {
-							dynamicHeader = "This is a custom dynamic header for the fourth page";
-						}
-						$page.find( "[data-role=header] h1" ).html( dynamicHeader );
-						data.deferred.resolve( data.absUrl, data.options, $page );
-						
-						// the following check is needed to handle the case of loadPage
-						// triggering the pagebeforeload, since we do not automatically change to the ]
-						// target page
-						if ( $.mobile.activePage[0].id !== "external" ) {
-							console.log( "Calling changePage" );
-							$.mobile.changePage( $page, data.options );	
-						}
-					})
-					.fail( function () {
-						console.log( "Error loading page" );
-						alert( "Sorry. The requested page could not be found." );
-						data.deferred.reject( data.absUrl, data.options );
-					});
-			});
+        // getting target div to load page into
+        var $page = $( '#external' );
 
-			$( "#loadFourthPage" ).on( "click", function( data ) {
-				$.mobile.loadPage( "fourthpagesnippet.html" );
-			});
+        $.ajax( data.url )
+          .done( function( results ) {
+            $page.html(results); 
+            
+            // let's do something special if we try and load four.html
+            if (url.filename === "four.html") {
+              $page.find( "[data-role=header] h1" ).html( "This is a custom dynamic header for the fourth page" );
+            }
+            
+            // resolve the deferred so that the page loading sequence continues            
+            data.deferred.resolve( data.absUrl, data.options, $page );
+            
+            // the following check is needed to handle the case of loadPage
+            // triggering the pagebeforeload, since we do not automatically change to the
+            // target page
+            if ( $.mobile.activePage[0].id !== "external" ) {
+              console.log( "Calling changePage" );
+              $.mobile.changePage( $page, data.options ); 
+            }
+          })
+          .fail( function () {
+            console.log( "Error loading page" );
+            // Example 6: error trying to load a page
+            alert( "Sorry. The requested page could not be found." );
+            // reject the deferred since we had an error and stop the page loading sequence
+            data.deferred.reject( data.absUrl, data.options );
+          });
+      });
+    </script>   
+  </head> 
 
-			$( "#changeToFourthPage" ).on( "click", function( data ) {
-				$.mobile.changePage( "fourthpagesnippet.html" );
-			});
+  <body> 
 
-		</script>			
-	</body>
+    <div data-role="page" id="one">
+      <div data-role="header">
+        <h1>jQuery Mobile Cookbook - pagebeforeload - Page One</h1>
+      </div>
+      <div data-role="content"> 
+        <h2>One</h2>
+        <p><a href="#two" data-role="button">Example 1: Show internal page "two"</a></p>  
+        <p><a href="three.html" rel=external data-role="button">Example 2: Load external page "three"</a></p> 
+        <p><a href="three.html" data-role="button">Example 3: Load page "three" using AJAX</a></p> 
+        <p><a id="loadFourthPage" data-role="button">Example 4: Use $.mobile.loadPage to load page "four"</a></p>
+        <p><a id="changeToFourthPage" data-role="button">Example 5: Use $.mobile.changePage to load page "four"</a></p>
+        <p><a href="doesnotexist.html" data-role="button">Example 6: Show missing external page</a></p>
+      </div>      
+      <div data-role="footer" data-theme="d">
+        <h4>jQuery Mobile Cookbook</h4>
+      </div>
+    </div>
+
+    <div data-role="page" id="two" data-theme="a">
+      <div data-role="header">
+        <h1>jQuery Mobile Cookbook - pagebeforeload - Page Two</h1>
+      </div>
+      <div data-role="content" data-theme="a">  
+        <h2>Two</h2>
+        <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page "one"</a></p>         
+      </div>      
+      <div data-role="footer">
+        <h4>jQuery Mobile Cookbook</h4>
+      </div>
+    </div>
+
+    <!-- Start of page: #external -->
+    <div data-role="page" id="external" data-theme="e">
+      <div data-role="header">
+        <h1>jQuery Mobile Cookbook - pagebeforeload - External</h1>
+      </div>
+      <div data-role="content" data-theme="a">  
+        <h2>External content needs to be loaded</h2>
+        <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page "one"</a></p>         
+      </div>      
+      <div data-role="footer">
+        <h4>jQuery Mobile Cookbook</h4>
+      </div>
+    </div>
+  
+  </body>
 </html>
