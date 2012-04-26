@@ -4,7 +4,7 @@ Recipe(s) for Dialogs
 
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
-TODO: Add Code and Screen shot (code is ready)
+
 ////
 
 2.14 Recipe Title
@@ -27,11 +27,59 @@ Solution
 Create the page as a standard jQuery Mobile page, and add the data-rel="dialog" attribute to the link to that page: 
 
 [source,html]
-TODO: CODE HERE
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grid Layout example</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+    <style>
+      .pic {
+        padding-right: 15px;
+        valign: middle;
+        width: 64px
+      }
+    </style>
+  </head>
+  <body>
+    <div data-role="page" id="home">
+      <div data-role="header" data-position="fixed">
+        <h4>Choose Contact</h4>
+      </div>
+      <div data-role="content">
+        <!-- some code here -->
+
+        <a href="#contact_anne" data-rel="dialog" data-transition="pop">
+          <img src="anne.png" width="64"/>
+        </a>
+
+        <!-- some code here -->
+      </div> <!-- /content -->
+      <div data-role="footer" data-position="fixed">
+         <h4>My Contacts</h4>
+      </div>
+    </div>
+    <div data-role="page" id="contact_anne" >
+      <div data-role="header" >
+        <h1>Contact Anne</h1>
+      </div>
+      <div data-role="content">   
+        <img src="anne.png" class="pic" align="left" />        
+        <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+          <legend>Anne-Gaelle Colom</legend>
+          <a href="mailto:coloma@wmin.ac.uk" data-role="button">Email</a>
+          <a href="tel:01234567890" data-role="button">Tel</a>
+          <a href="sms:coloma@wmin.ac.uk" data-role="button">iMessage</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-Anne's picture here is a link to the page with the +id+ +contact_anne+. +contact_anne+ is the id of a standard jQueryMobile page which is in the same file as the picture which was clicked, which allows the page to be called by simply linking to its +id+ (see chapter xxx for more information on linking pages).
+Anne's picture here is a link to the page with the +id+ +contact_anne+ (Note that the code for the content before and after that picture in the page content container has been removed for clarity). +contact_anne+ is the id of a standard jQueryMobile page which is in the same file as the picture which was clicked, which allows the page to be called by simply linking to its +id+ using the +#id+ key.
 
 By adding the +data-rel="dialog"+ as an attribute to the link to the +contact_anne+ page +id+, the page will not be displayed in full screen like all standard pages. Instead, it will come as a dialog box floating in the middle of the screen. 
 
