@@ -13,11 +13,14 @@ Bio: Daniel Mohl is a Microsoft MVP and F# Insider. He blogs at blog.danielmohl.
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
+
 Traditional web applications often use various techniques to layout forms. However, creating web based applications for mobile devices requires a shift in design thinking. One very common and easy approach in jQuery Mobile is to use a list to layout form elements. By using a list you can quickly create a form that automatically takes on the look and feel of the rest of your mobile application. Let's look at how this can be achieved.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
+
 To accomplish the goal, all that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item. The following, which is also available as a jsFiddle at http://jsfiddle.net/gh/gist/jquery/1.7.1/2504142/, provides an example:
+
 [source, html]
 ----
 <div data-role="page" id="surveyPage">
@@ -70,9 +73,11 @@ To accomplish the goal, all that you need to do is wrap your list in a form elem
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
+
 This solution allows you to quickly setup a form that renders just like any other list without custom client-side code. The attributes of the form element work exactly like they would outside of a list. In this example, I'm using a data-role attribute with the value fieldcontain on the first list item to allow the two child elements to be visually grouped. Additionally, the label elements are associated with the appropriate input elements through the use of for attributes with values that match the input element's id. All of this is pretty standard forms related functionality provided by jQuery Mobile. You will learn more about forms in chapter 7. 
 
 The solution shown above demonstrates how easy it is to blend jQuery Mobile forms features with list functionality. Conveniently, the things that you have already learned about lists and that you will learn about forms (in recipes found later in this book) apply in exactly the same way as they do when not combined. For example, to make the list shown above into an inset list, simply change the unordered list element to look like this:
+
 [source, html]
 ----
 <ul data-role="listview" data-theme="d" data-inset="true"> 
@@ -80,7 +85,9 @@ The solution shown above demonstrates how easy it is to blend jQuery Mobile form
 
 Bonus
 ++++++++++++++++++++++++++++++++++++++++++++
+
 As a bonus, you may run into scenarios where the list needs to dynamically display different form elements depending on input to other elements. One option for accomplishing this is to slightly modify the list elements and then add a little bit of JavaScript. The following example quickly illustrates the concept.
+
 [source, html]
 ----
 <!-- Non-relevant code omitted -->
@@ -120,19 +127,23 @@ As a bonus, you may run into scenarios where the list needs to dynamically displ
 </li>
 <!-- Non-relevant code omitted -->
 ----
+
 Dynamic display of a dependency question can now be achieved with JavaScript such as this:
+
 [source, javascript]     
 ----
 $( document ).on( "pagebeforeshow", "#surveyPage", function() {
   var $page = $( this );    
+
   // Hide all dependency questions
   $page.find( ".toggleElement" ).hide();
   // Bind an event handler to the change JavaScript event to 
   // toggle the visibility of the dependency questions
   $( "input[name=favoriteLanguage]" ).change(function() {
     var $input = $( this ), 
-          $page = $input.closest( "[data-role='page']" ),
-          classToShow;
+      $page = $input.closest( "[data-role='page']" ),
+      classToShow;
+
     // Hide all dependency questions
     $page.find( ".toggleElement" ).hide();
     // Get the value of the data-dependency-class attribute 
@@ -142,4 +153,5 @@ $( document ).on( "pagebeforeshow", "#surveyPage", function() {
   });
 });
 ----
-A jsFiddle for this example can be found at http://jsfiddle.net/gh/gist/jquery/1.7.1/2504208/.
+
+A jsFiddle for this example can be found at http://jsfiddle.net/gh/gist/jquery/1.7.1/2504208/
