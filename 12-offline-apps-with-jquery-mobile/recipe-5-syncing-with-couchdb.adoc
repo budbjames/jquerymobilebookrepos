@@ -4,35 +4,29 @@ Author: Casey Justus <caseyjustus@gmail.com>
 
 ////
 
-#.# Syncing With couchDB
+#.# Persisting and Syncing with Lawnchair.js
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-To use a web app offline typically requires a javascript object model to be saved on the client. Since you wouldn't be getting a current JSON from the server, any changes you make run the risk of getting your models out of sync.
+Persisting data on a mobile device is straight forward if you're using localstorage. However, Jquery Mobile supports many devices that don't.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-CouchDB handles the complexity of keeping the server and client in sync. It not only works off of timestamps but can actually handle conflict resolution as well.
+lawnchair.js supports supports some of the other ways to persist javascript objects. Not only does it add these other persistence options, but it abstracts them away to give you a single, simple interface. 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-For starters you should install couchDB.  An easy way to install it with all the dependencies is to use homebrew.
-  http://github.com/mxcl/homebrew
+First let's get lawnchair.js
 
-At the terminal install couchDB
-  brew install couchdb
+  https://github.com/brianleroux/lawnchair
 
-and then to start it
-  couchdb
+Next let's set up a basic implementation. 
 
-To verify that it's working:
-  curl http://127.0.0.1:5984/
+  // code for basic implementation
 
-or you can view it in the browser:
-  http://127.0.0.1:5984/_utils/index.html
+This is using web storage. Now let's add an adapter for windows. 
 
-For our example however, we will need a remote server in order to be able to disconnect the client from the server.  
 
 
 
