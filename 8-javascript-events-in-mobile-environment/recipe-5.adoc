@@ -130,7 +130,7 @@ The following code
 var url = $.mobile.path.parseUrl( data.url );
 
 // Example 3: let normal page loading occur
-if (url.filename === "three.html") {
+if ( url.filename === "three.html" ) {
   // let's return so the normal page loading sequence continues
   return;
 }
@@ -176,7 +176,7 @@ Once we have loaded the external resource, here we are using $.ajax, we can mani
 
 ----
 // let's do something special if we try and load four.html
-if (url.filename === "four.html") {
+if ( url.filename === "four.html" ) {
   $page.find( "[data-role=header] h1" ).html( "This is a custom dynamic header for the fourth page" );
 }
 ----
