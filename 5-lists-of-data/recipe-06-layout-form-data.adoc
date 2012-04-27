@@ -1,6 +1,6 @@
 ////
 
-This recipe shows how to use a normal list as well an an inset list to layout form elements.
+This recipe shows how to use a normal list as well as an inset list to layout form elements.
 
 Author: Daniel Mohl <danmohl@gmail.com>
 
@@ -13,16 +13,16 @@ Bio: Daniel Mohl is a Microsoft MVP and F# Insider. He blogs at blog.danielmohl.
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Lists are very powerful and you will find that many scenarios that would have been done in various ways on a website, will often end up translating to lists when building a mobile application with jQuery Mobile. One scenario that you may be faced with is how to quickly create a form that automatically takes on the look and feel of the lists that reside in other areas of your applications. How can this be achieved with jQuery Mobile?
+Traditional web applications often use various techniques to layout forms. However, creating web based applications for mobile devices requires a shift in design thinking. One very common and easy approach in jQuery Mobile is to use a list to layout form elements. By using a list you can quickly create a form that automatically takes on the look and feel of the rest of your mobile application. Let's look at how this can be achieved.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-The solution is quite simple. All that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item element. A simple yet complete example is shown below:
+To accomplish the goal, all that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item. The following, which is also available as a jsFiddle at http://jsfiddle.net/gh/gist/jquery/1.7.1/2504142/, provides an example:
 [source, html]
 ----
 <div data-role="page" id="surveyPage">
   <div data-role="content">
-    <form action="#surveyCompletePage" method="get" data-ajax="false">
+    <form action="#" method="get" data-ajax="false">
       <ul data-role="listview" data-theme="d" > 
         <li data-role="fieldcontain">
           <label for="yourName">Your Name:</label>
@@ -62,29 +62,17 @@ The solution is quite simple. All that you need to do is wrap your list in a for
             <input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
           </div>
         </li>
-        <li>
-          <fieldset class="ui-grid-a">
-            <div class="ui-block-a"><a href="#" data-role="button" data-theme="d">Cancel</a></div>
-            <div class="ui-block-b"><button type="submit" data-theme="b">Save</button></div>
-          </fieldset>
-        </li>
       </ul>
     </form>
   </div>
-</div>
-
-<div data-role="page" id="surveyCompletePage">
-  <div data-role="content">
-  Thanks for completing this survey
-  </div>	
 </div>
 ----
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-This solution allows you to quickly setup a form that renders just like other lists without any custom client-side code. The attributes of the form element work exactly like they would outside of a list. In this example, I'm using a data-role attribute with the value fieldcontain on the first list item to allow the two child elements to be visually grouped. Additionally, the label elements are associated with the appropriate input elements through the use of for attributes with values that match the input element's id. All of this is pretty standard forms related functionality provided by jQuery Mobile. You will learn more about forms in chapter 7. 
+This solution allows you to quickly setup a form that renders just like any other list without custom client-side code. The attributes of the form element work exactly like they would outside of a list. In this example, I'm using a data-role attribute with the value fieldcontain on the first list item to allow the two child elements to be visually grouped. Additionally, the label elements are associated with the appropriate input elements through the use of for attributes with values that match the input element's id. All of this is pretty standard forms related functionality provided by jQuery Mobile. You will learn more about forms in chapter 7. 
 
-The solution shown above demonstrates how easy it is to blend jQuery Mobile forms features with list functionality. Convenently, the things that you have already learned about lists and that you will learn about forms (in recipes found later in this book) apply in exactly the same way as they do when not combined. For example, to make the list shown above into an inset list, simply change the unordered list element to look like this:
+The solution shown above demonstrates how easy it is to blend jQuery Mobile forms features with list functionality. Conveniently, the things that you have already learned about lists and that you will learn about forms (in recipes found later in this book) apply in exactly the same way as they do when not combined. For example, to make the list shown above into an inset list, simply change the unordered list element to look like this:
 [source, html]
 ----
 <ul data-role="listview" data-theme="d" data-inset="true"> 
@@ -92,10 +80,10 @@ The solution shown above demonstrates how easy it is to blend jQuery Mobile form
 
 Bonus
 ++++++++++++++++++++++++++++++++++++++++++++
-As a bonus, you may run into scenarios where the list needs to dynamically display different form elements depending on input to other elements. There are several ways to accomplish this type of functionality and you will learn about many of them throughout the rest of the book. One option for accomplishing this is to slightly modify the list elements and then add a little bit of JavaScript. The following example quickly illustrates this.
+As a bonus, you may run into scenarios where the list needs to dynamically display different form elements depending on input to other elements. One option for accomplishing this is to slightly modify the list elements and then add a little bit of JavaScript. The following example quickly illustrates the concept.
 [source, html]
 ----
-<!-- Non-relevant code ommitted -->
+<!-- Non-relevant code omitted -->
 <li>
   <label>Favorite Language:</label>
   <fieldset data-role="controlgroup">
@@ -130,25 +118,28 @@ As a bonus, you may run into scenarios where the list needs to dynamically displ
     <input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
   </div>
 </li>
-<!-- Non-relevant code ommitted -->
+<!-- Non-relevant code omitted -->
 ----
-The following JavaScript allows you to add the desired dynamic display aspects.
+Dynamic display of a dependency question can now be achieved with JavaScript such as this:
 [source, javascript]     
 ----
-$( document ).delegate( "#surveyPage", "pagebeforeshow", function( event ) {
+$( document ).on( "pagebeforeshow", "#surveyPage", function() {
+  var $page = $( this );    
   // Hide all dependency questions
-  $( ".toggleElement" ).hide();	
-  // Ensure that no radio buttons are initially selected
-  $( "input[type=radio]" ).attr( "checked", false ).next( "label" ).removeClass( "ui-btn-active" );	
-  // Bind an event handler to the change JavaScript event to toggle the visibility of the dependency questions
-  $( "input[name=favoriteLanguage]:radio" ).change(function() {
-    var $classToShow;
+  $page.find( ".toggleElement" ).hide();
+  // Bind an event handler to the change JavaScript event to 
+  // toggle the visibility of the dependency questions
+  $( "input[name=favoriteLanguage]" ).change(function() {
+    var $input = $( this ), 
+          $page = $input.closest( "[data-role='page']" ),
+          classToShow;
     // Hide all dependency questions
-    $( ".toggleElement" ).hide();
+    $page.find( ".toggleElement" ).hide();
     // Get the value of the data-dependency-class attribute 
-    $classToShow = $( this ).data( "dependencyClass" );
+    classToShow = $input.data( "dependencyClass" );
     // Show the appropriate dependency question
-    $( "." + $classToShow ).show();
-  });		
+    $page.find( "." + classToShow ).show();
+  });
 });
 ----
+A jsFiddle for this example can be found at http://jsfiddle.net/gh/gist/jquery/1.7.1/2504208/.
