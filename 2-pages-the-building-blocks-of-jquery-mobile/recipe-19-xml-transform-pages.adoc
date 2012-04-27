@@ -3,8 +3,7 @@ XML 2 JQM using XSLT
 
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
-TODO: awaiting approval from Scott to use his picture
-add discussion
+TODO: Complete discussion
 ////
 
 2.19 Transforming XML to jQuery Mobile using XSLT
@@ -157,4 +156,24 @@ And then create an XSL file to transform the XML into an HTML that will contain 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-This is applicable in particular when you have pages describing artifacts or products.  
+The first thing you need to do is to write your XML file so that it can hold all the details you will need. <<EX2-19-1>> is very simple and holds names and contact details. The +shortName+ was added to be used on the page header in case you want to use it when someone has a very long first name to avoid the ellipsis, or when your contact uses a shorten version of their name as their usual name. 
+
+<<EX2-19-2>> hold the rules to transform <<EX2-19-1>> to the final HTML file and holds the jQuery Mobile code that will be used on the page. 
+The XSL file starts be specifying that we will match the whole XML document. We then load the jQuery Mobile libraries and specify the title of the document.
+We want to have one page per contact, so for each +contact+ in the XML document, the rule is to create a new jQuery Mobile page. The header of each page will have:
+* a fixed header that contains:
+** a previous button to go to the previous page unless this is the first page (with a slide transition in the reverse direction)
+** a next button to go to the next page unless this is the last page (with a slide transition)
+* a content container that contains:
+** the picture of the contact
+** a horizontal group container for three button links:
+*** the contact email address
+*** the contact telephone number
+*** the contact iMessage details
+* a fixed footer
+
+No style was specified, so the default +a+ swatch is used to display the header and footer, while the +c+ swatch is used to display the content and the content elements. 
+
+You could modiiy the XSL file to allow for perpetual navigation, so that the first page has a previous button that links to the last page, and the last page has a next link to the first page. 
+
+This technique is applicable in particular when you have pages describing artifacts or products.    
