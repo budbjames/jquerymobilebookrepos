@@ -9,7 +9,7 @@
     <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>  
     <script>
       // Bind click events for buttons for example 4 and 5
-      $(document).on( "pageinit", function( e ) {
+      $( document ).on( "pageinit", function( e ) {
         // Example 4: load an external page using $.mobile.loadPage
         $( "#loadFourthPage" ).on( "click", function() {
           $.mobile.loadPage( "four.html" );
@@ -37,7 +37,7 @@
         e.preventDefault(); 
 
         // getting target div to load page into
-        var $page = $( '#external' );
+        var $page = $( "#external" );
 
         $.ajax( data.url )
           .done( function( results ) {
