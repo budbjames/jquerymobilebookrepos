@@ -158,7 +158,7 @@ Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 The first thing you need to do is to write your XML file so that it can hold all the details you will need. <<EX2-19-1>> is very simple and holds names and contact details. The +shortName+ was added to be used on the page header in case you want to use it when someone has a very long first name to avoid the ellipsis, or when your contact uses a shorten version of their name as their usual name. 
 
-<<EX2-19-2>> hold the rules to transform <<EX2-19-1>> to the final HTML file and holds the jQuery Mobile code that will be used on the page. 
+<<EX2-19-2>> holds the rules to transform <<EX2-19-1>> to the final HTML file and holds the jQuery Mobile code that will be used on the page. 
 The XSL file starts be specifying that we will match the whole XML document. We then load the jQuery Mobile libraries and specify the title of the document.
 We want to have one page per contact, so for each +contact+ in the XML document, the rule is to create a new jQuery Mobile page. The header of each page will have:
 * a fixed header that contains:
