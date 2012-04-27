@@ -19,13 +19,13 @@ Traditional web applications often use various techniques to layout forms. Howev
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 
-To accomplish the goal, all that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item. The following, which is also available as a jsFiddle at http://jsfiddle.net/gh/gist/jquery/1.7.1/2504142/, provides an example:
+To accomplish the goal, all that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item. The following, which is also available as a jsFiddle at http://jsfiddle.net/gh/gist/jquery/1.7.1/2512225/, provides an example:
 
 [source, html]
 ----
 <div data-role="page" id="surveyPage">
   <div data-role="content">
-    <form action="#" method="get" data-ajax="false">
+    <form action="#surveyCompletePage" method="get" data-ajax="false">
       <ul data-role="listview" data-theme="d" > 
         <li data-role="fieldcontain">
           <label for="yourName">Your Name:</label>
@@ -65,10 +65,22 @@ To accomplish the goal, all that you need to do is wrap your list in a form elem
             <input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
           </div>
         </li>
+        <li>
+          <fieldset class="ui-grid-a">
+            <div class="ui-block-a"><a href="#" data-role="button" data-theme="d">Cancel</a></div>
+            <div class="ui-block-b"><button type="submit" data-theme="b">Save</button></div>
+          </fieldset>
+        </li>
       </ul>
     </form>
   </div>
 </div>
+
+<div data-role="page" id="surveyCompletePage">
+  <div data-role="content">
+  Thanks for completing this survey
+  </div>    
+</div>​
 ----
 
 Discussion
@@ -154,4 +166,4 @@ $( document ).on( "pagebeforeshow", "#surveyPage", function() {
 });
 ----
 
-A jsFiddle for this example can be found at http://jsfiddle.net/gh/gist/jquery/1.7.1/2504208/
+A jsFiddle for this example can be found at http://jsfiddle.net/gh/gist/jquery/1.7.1/2512243/
