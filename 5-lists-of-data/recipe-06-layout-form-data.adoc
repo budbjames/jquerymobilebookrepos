@@ -83,7 +83,7 @@ Bonus
 As a bonus, you may run into scenarios where the list needs to dynamically display different form elements depending on input to other elements. One option for accomplishing this is to slightly modify the list elements and then add a little bit of JavaScript. The following example quickly illustrates the concept.
 [source, html]
 ----
-<!-- Non-relevant code ommitted -->
+<!-- Non-relevant code omitted -->
 <li>
   <label>Favorite Language:</label>
   <fieldset data-role="controlgroup">
@@ -118,7 +118,7 @@ As a bonus, you may run into scenarios where the list needs to dynamically displ
     <input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
   </div>
 </li>
-<!-- Non-relevant code ommitted -->
+<!-- Non-relevant code omitted -->
 ----
 Dynamic display of a dependency question can now be achieved with JavaScript such as this:
 [source, javascript]     
