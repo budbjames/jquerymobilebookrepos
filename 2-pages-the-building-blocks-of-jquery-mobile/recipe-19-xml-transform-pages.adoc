@@ -64,7 +64,7 @@ To produce the example described above, it would be inefficient to hardcode all 
 And then create an XSL file to transform the XML into an HTML that will contain some jQuery Mobile, see <<EX2-19-2>>:
 
 [[EX2-19-2]]
-.contact.xsl
+.contacts.xsl
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xsl:stylesheet  [
   <!ENTITY nbsp   "&#160;">
