@@ -133,14 +133,14 @@ And then create an XSL file to transform the XML into an HTML that will contain 
                   Email
                 </a>
                 <a>
-              <xsl:attribute name="href">tel:<xsl:value-of select="tel" /></xsl:attribute>
-              <xsl:attribute name="data-role">button</xsl:attribute>
-              Tel
+                  <xsl:attribute name="href">tel:<xsl:value-of select="tel" /></xsl:attribute>
+                  <xsl:attribute name="data-role">button</xsl:attribute>
+                  Tel
                 </a>
                 <a>
-              <xsl:attribute name="sms">iMessage<xsl:value-of select="imessage" /></xsl:attribute>
-              <xsl:attribute name="data-role">button</xsl:attribute>
-              iMessage
+                  <xsl:attribute name="sms">iMessage<xsl:value-of select="imessage" /></xsl:attribute>
+                  <xsl:attribute name="data-role">button</xsl:attribute>
+                  iMessage
                 </a>
               </div>               
             </div> <!-- /content -->
