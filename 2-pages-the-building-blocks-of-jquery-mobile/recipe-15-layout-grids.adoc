@@ -10,9 +10,9 @@ Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, as shown in <<FIG1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size. 
+You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, as shown in <<FIG2-15-1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size. 
 
-[[FIG1]]
+[[FIG2-15-1]]
 .Layout Grid Example
 image::images/grid_layout_example.png[]
 

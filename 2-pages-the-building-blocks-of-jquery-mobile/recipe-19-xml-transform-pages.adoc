@@ -1,10 +1,9 @@
 ////
 XML 2 JQM using XSLT
 
-Author: Anne-Gaelle Colom <coloma@wmin.ac.uk>
+Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
 TODO: awaiting approval from Scott to use his picture
-add screen shots
 add discussion
 ////
 
@@ -13,20 +12,23 @@ add discussion
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You have multiple pages that look similar, and it seems inefficient to repeat the same code. 
+You have multiple pages that look similar, and it seems inefficient to repeat the same code.
+
+For example, you want to develop a page for each of your contacts where you can just click a button to send them an email, call them or send them an iMessage. You also want to be able to navigate through all those pages, as shown <<FIG2-19-1>>:
+[[FIG2-19-1]]
+.Navigating through contacts
+image::images/contacts.png[]
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 You can write the content in XML and transform it to jQuery Mobile pages using XSLT. You can then link your XML file and your XSLT file by either adding the reference of the +.xsl+ file on the second line of your XML file, or by using PHP to load both files and do the transformation on the server.
 
-For example, you want to develop a page for each of your contacts where you can just click a button to send them an email, call them or send them an iMessage. You also want to be able to navigate through all those pages.
+To produce the example described above, it would be inefficient to hardcode all these pages. Instead, you can create an XML file to store your contact details, see <<EX2-19-1>>:
 
-To produce the example described above, it would be inefficient to hardcode all these pages. Instead, you can create an XML file to store your contact details, see xxxx (add ref to xml code):
-
-
-ADD REF HERE TO THE FILE
+[[EX2-19-1]]
+.contacts.xml
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="xml2jqmExample.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="contacts.xsl" ?>
 <myContacts>
   <contact>
     <contact_id>contact_1</contact_id>
@@ -60,7 +62,10 @@ ADD REF HERE TO THE FILE
   </contact>
 </myContacts>
 
-ADD REF TO XSL FILE
+And then create an XSL file to transform the XML into an HTML that will contain some jQuery Mobile, see <<EX2-19-2>>:
+
+[[EX2-19-2]]
+.contact.xsl
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xsl:stylesheet  [
   <!ENTITY nbsp   "&#160;">
@@ -139,7 +144,7 @@ ADD REF TO XSL FILE
               iMessage
                 </a>
               </div>               
-      	    </div> <!-- /content -->
+            </div> <!-- /content -->
             <div data-role="footer" data-position="fixed">
               <h4></h4>
             </div> <!-- /footer -->
