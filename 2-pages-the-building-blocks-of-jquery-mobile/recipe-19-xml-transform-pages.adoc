@@ -174,6 +174,6 @@ We want to have one page per contact, so for each +contact+ in the XML document,
 
 No style was specified, so the default +a+ swatch is used to display the header and footer, while the +c+ swatch is used to display the content and the content elements. 
 
-You could modiiy the XSL file to allow for perpetual navigation, so that the first page has a previous button that links to the last page, and the last page has a next link to the first page. 
+You could modify the XSL file to allow for perpetual navigation, so that the first page has a previous button that links to the last page, and the last page has a next button that links to the first page. 
 
 This technique is applicable in particular when you have pages describing artifacts or products.    
