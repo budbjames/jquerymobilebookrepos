@@ -11,32 +11,23 @@
       // Bind click events for buttons for example 4 and 5
       $(document).on( "pageinit", function( e ) {
         // Example 4: load an external page using $.mobile.loadPage
-        $( "#loadFourthPage" ).on( "click", function( data ) {
+        $( "#loadFourthPage" ).on( "click", function() {
           $.mobile.loadPage( "four.html" );
         });
 
         // Example 5: load an external page using $.mobile.changePage
-        $( "#changeToFourthPage" ).on( "click", function( data ) {
+        $( "#changeToFourthPage" ).on( "click", function() {
           $.mobile.changePage( "four.html" );
         });        
       });
 
-      // Listen for any attempts to call changePage().
-      $(document).on( "pagebeforechange", function( e, data ) {
-        console.log("pagebeforechange fired"); 
-        console.log(data.toPage);
-      });
-
       // Listen for any attempts to call loadPage() or changePage() with a url
       $( document ).on( "pagebeforeload", function( e, data ) {         
-        console.log( "pagebeforeload fired" ); 
-        console.log( "url: " + data.url );
-        console.log( "absUrl: " + data.absUrl );
-        console.log( "dataUrl: " + data.dataUrl );
+        alert( "pagebeforeload fired" ); 
         
         var url = $.mobile.path.parseUrl( data.url );
 
-        // Example 2 & 3: let normal page loading occur
+        // Example 3: let normal page loading occur
         if (url.filename === "three.html") {
           // let's return so the normal page loading sequence continues
           return;
@@ -64,12 +55,11 @@
             // triggering the pagebeforeload, since we do not automatically change to the
             // target page
             if ( $.mobile.activePage[0].id !== "external" ) {
-              console.log( "Calling changePage" );
+              alert( "Calling changePage" );
               $.mobile.changePage( $page, data.options ); 
             }
           })
           .fail( function () {
-            console.log( "Error loading page" );
             // Example 6: error trying to load a page
             alert( "Sorry. The requested page could not be found." );
             // reject the deferred since we had an error and stop the page loading sequence
@@ -92,7 +82,7 @@
         <p><a href="three.html" data-role="button">Example 3: Load page "three" using AJAX</a></p> 
         <p><a id="loadFourthPage" data-role="button">Example 4: Use $.mobile.loadPage to load page "four"</a></p>
         <p><a id="changeToFourthPage" data-role="button">Example 5: Use $.mobile.changePage to load page "four"</a></p>
-        <p><a href="doesnotexist.html" data-role="button">Example 6: Show missing external page</a></p>
+        <p><a href="doesnotexist.html" data-role="button">Example 6: Load missing external page</a></p>
       </div>      
       <div data-role="footer" data-theme="d">
         <h4>jQuery Mobile Cookbook</h4>
