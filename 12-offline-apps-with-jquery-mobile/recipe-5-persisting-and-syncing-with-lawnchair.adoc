@@ -1,0 +1,32 @@
+////
+
+Author: Casey Justus <caseyjustus@gmail.com>
+
+////
+
+#.# Persisting and Syncing with Lawnchair.js
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Persisting data on a mobile device is straight forward if you're using localstorage. However, Jquery Mobile supports many devices that don't.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+lawnchair.js supports supports some of the other ways to persist javascript objects. Not only does it add these other persistence options, but it abstracts them away to give you a single, simple interface. 
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+First let's get lawnchair.js
+
+  https://github.com/brianleroux/lawnchair
+
+Next let's set up a basic implementation. 
+
+  // code for basic implementation
+
+This is using web storage. Now let's add an adapter for windows. 
+
+
+
+

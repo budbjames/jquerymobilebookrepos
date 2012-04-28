@@ -10,9 +10,9 @@ Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, as shown in <<FIG1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size. 
+You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, as shown in <<FIG2-15-1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size. 
 
-[[FIG1]]
+[[FIG2-15-1]]
 .Layout Grid Example
 image::images/grid_layout_example.png[]
 
@@ -22,51 +22,51 @@ You can use layout grids to format your content by having your content setup in 
 
 [source,html]
 <html>
-   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Grid Layout example</title>
-      <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
-      <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
-      <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
-   </head>
-<body> 
-   <div data-role="page" id="home">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grid Layout example</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+    <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+  </head>
+  <body> 
+    <div data-role="page" id="home">
       <div data-role="header" data-position="fixed">
-         <h4>Choose Contact</h4>
+        <h4>Choose Contact</h4>
       </div>
       <div data-role="content">
-         <div class="ui-grid-c"><!-- defines a four-column grid layout -->
-            <div class="ui-block-a"> <!-- first column -->
-               <img src=”todd.jpg" width="64"/><br /><br />
-               <img src=”ghislain.jpg" width="64"/><br /><br />
-               <img src="elijah.jpg" width="64"/><br /><br />
-               <img src=”addy.jpg" width="64"/><br />
-            </div> <!-- /first column -->
-            <div class="ui-block-b"> <!-- second column -->
-               <img src="anne.jpg" width="64"/><br /><br />
-               <img src=”garann.jpg" width="64"/><br /><br />
-               <img src="doug.jpg" width="64"/><br /><br />
-               <img src="paul.jpg" width="64"/><br />
-            </div> <!-- /second column -->
-            <div class="ui-block-c"> <!-- third column -->
-               <img src="scott.jpg" width="64"/><br /><br />
-               <img src=”mat.jpg" width="64"/><br /><br />
-               <img src="max.jpg" width="64"/><br /><br />
-               <img src=”andy.jpg" width="64"/><br />
-            </div> <!-- /third column -->
-            <div class="ui-block-d"> <!-- fourth column -->
-               <img src="john.jpg" width="64"/><br /><br />
-               <img src=”jquerymobile.jpg" width="64"/><br /><br />
-               <img src=”mike.jpg" width="64"/><br /><br />
-               <img src=”raymond.jpg" width="64"/><br />
-            </div> <!-- /fourth column -->
-         </div> <!-- /grid layout -->
+        <div class="ui-grid-c"><!-- defines a four-column grid layout -->
+          <div class="ui-block-a"> <!-- first column -->
+            <img src="todd.jpg" width="64"/><br /><br />
+            <img src="ghislain.jpg" width="64"/><br /><br />
+            <img src="elijah.jpg" width="64"/><br /><br />
+            <img src="addy.jpg" width="64"/><br />
+          </div> <!-- /first column -->
+          <div class="ui-block-b"> <!-- second column -->
+            <img src="anne.jpg" width="64"/><br /><br />
+            <img src="garann.jpg" width="64"/><br /><br />
+            <img src="doug.jpg" width="64"/><br /><br />
+            <img src="paul.jpg" width="64"/><br />
+          </div> <!-- /second column -->
+          <div class="ui-block-c"> <!-- third column -->
+            <img src="scott.jpg" width="64"/><br /><br />
+            <img src="mat.jpg" width="64"/><br /><br />
+            <img src="max.jpg" width="64"/><br /><br />
+            <img src="andy.jpg" width="64"/><br />
+          </div> <!-- /third column -->
+          <div class="ui-block-d"> <!-- fourth column -->
+            <img src="john.jpg" width="64"/><br /><br />
+            <img src="jquerymobile.jpg" width="64"/><br /><br />
+            <img src="mike.jpg" width="64"/><br /><br />
+            <img src="raymond.jpg" width="64"/><br />
+          </div> <!-- /fourth column -->
+        </div> <!-- /grid layout -->
       </div> <!-- /content -->
       <div data-role="footer" data-position="fixed">
-         <h4>My Contacts</h4>
+        <h4>My Contacts</h4>
       </div>
-   </div> 
-</body>
+    </div> 
+  </body>
 </html>
 
 Discussion

@@ -1,0 +1,253 @@
+////
+
+This recipe will show you when the pagebeforeload event is fired and how you can intercept it and get in the middle of the page loading sequence.
+
+Author: Javed Anwar <javed_anwar@yahoo.com>
+
+////
+
+8.5 Handling the pagebeforeload() event.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Intercept the loading of a page and make changes to what is shown or dynamically load an entirely different page into the current page container.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+jQuery Mobile triggers an event named ``pagebeforeload'' on the document object before any external page is loaded by clicking on an anchor or by using +$.mobile.loadPage()+.
+
+The pagebeforeload event is triggered before any load request is actually made. For any callbacks bound to this event you should call preventDefault() on the event if your intention is to handle the load request. If your callback does this then you *MUST* make sure you call +resolve()+ or +reject()+ on the deferred object reference that is contained in the data object passed to the callback.
+
+IMPORTANT: Remember to call resolve() or reject() on data.deferred if you called preventDefault() on the event.
+
+The following example shows various ways how the pagebeforeload event can be handled to affect the pages being loaded.
+
+.Example of intercepting pagebeforeload
+[source,html]
+----
+include::recipe-5-code/main.html[]
+----
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+We cannot bind to pages that are not yet in the DOM and to handle these we have to bind to the events on $( document ). The first event that gets triggered during a page load before any AJAX request is done is pagebeforeload. We can intercept the pagebeforeload event which is triggered when $.mobile.loadPage() is invoked as part of jQuery Mobile's link hijacking behavior. By binding to the pagebeforeload event at the document level we can insert ourselves into the loadPage() workflow. Also, if a string is passed to $.mobile.changePage() then internally $.mobile.loadPage() will be called which in turn triggers this event.
+
+.pagebeforeload callback
+[source,javascript]
+---
+$( document ).bind( "pagebeforeload" , function( e, data ) {
+
+});
+---
+
+Callbacks for this event are passed two arguments. The first is the actual event object and the second argument is a data 
+object. 
+
+.Arguments for pagebeforeload
+* The event object has the typical event handler values and methods. The method we care about is preventDefault() which we must call if we want to manually handle the page load. If we do call this method then the deferred object that is on the data argument must either be resolved or rejected.
+* The data object has the following properties:
+** url - This is the absolute or relative url value that was passed into $.mobile.loadPage().
+** absUrl - The absolute reference of the url value. If the url was relative, it is resolved against the url used to load the current active page.
+** dataUrl - This is the url that will be used as the value for the data-url attribute for the page that will be added to the DOM. It is also the value that will be shown in the browsers location field when the page is made active.
+** options - This is the options argument that was passed to $.mobile.loadPage().
+** deferred - This object is only valid if you have called preventDefault() on the event so that you can handle the page loading. In order for the loadPage request to continue on you must either resolve the deferred object as shown below: 
+
+[source,javascript]
+---
+$( document ).bind( "pagebeforeload", function( event, data ){
+
+  // Let the framework know we're going to handle the load.
+  event.preventDefault();
+
+  // manually load page here
+
+  data.deferred.resolve( data.absUrl, data.options, page );
+
+});
+---
+
+or reject the deferred object like this:
+
+[source,javascript]
+---
+$( document ).bind( "pagebeforeload", function( event, data ){
+
+  // Let the framework know we're going to handle the load.
+  event.preventDefault();
+
+  // manually load page here, and if there was an error loading the page
+  // then reject the deferred object
+
+  data.deferred.reject( data.absUrl, data.options );
+
+});
+---
+
+The sample code has six examples to explain various scenarios as to when the pagebeforeload event will fire and how it can be handled. In the sample code we will be loading a full html page and also an html snippet. In the use cases where the pagebeforeload event is fired you will see an alert message. 
+
+
+.External page to be loaded
+[source,html]
+----
+include::recipe-5-code/three.html[]
+----
+
+.HTML snippet to be loaded
+[source,html]
+----
+include::recipe-5-code/four.html[]
+----
+
+
+.Example 1
+
+----
+<a href="#two" data-role="button">Example 1: Show internal page "two"</a>
+----
+
+The first button on the sample page shows a typical request for an internal page, in this case the page with an id of "two". In this scenario the pagebeforeload event is not fired.
+
+
+.Example 2
+
+----
+<a href="three.html" rel=external data-role="button">Example 2: Load external page "three"</a>
+----
+
+In this example we are loading an external page (three.html) and have set the rel attribute on the anchor tag to external. In this scenario the pagebeforeload event is not fired, because rel=external will tell jQuery Mobile to not use AJAX to the load the page. The page three.html will be loaded and the location bar for the browser will be updated to reflect this.
+
+
+.Example 3
+
+----
+<a href="three.html" data-role="button">Example 3: Load page "three" using AJAX</a>
+----
+
+Here we are loading three.html again, but this time we have not set the rel attribute on the anchor tag. Since the rel attribute has not been set jQuery Mobile knows to load this page using its link hijacking process. Since the pagebeforeload event will fire, you will see an alert message.
+
+The following code
+
+----
+var url = $.mobile.path.parseUrl( data.url );
+
+// Example 3: let normal page loading occur
+if ( url.filename === "three.html" ) {
+  // let's return so the normal page loading sequence continues
+  return;
+}
+----
+
+will check to see which file is being loaded and for this example we just return from the pagebeforeload event callback to let the normal loading sequence continue. As a result the page three.html is loaded and the location bar for the browser will be updated to reflect this.
+
+
+.Example 4
+
+----
+<a id="loadFourthPage" data-role="button">Example 4: Use $.mobile.loadPage to load page "four"</a>
+----
+
+For this example we will call $.mobile.loadPage() to load our external page four.html, which just happens to be an HTML snippet and not a complete page.
+
+We use the following code to load four.html for this example.
+
+----
+// Example 4: load an external page using $.mobile.loadPage
+$( "#loadFourthPage" ).on( "click", function() {
+  $.mobile.loadPage( "four.html" );
+});
+----
+
+Since we are calling $.mobile.loadPage() the pagebeforeload event will fire and we will see our alert message.
+
+For this example we will handle loading the page into the DOM ourselves and so we have to call
+
+----
+// Let the framework know we're manually loading the page 
+e.preventDefault(); 
+----
+
+to let the framework know that the page loading is being dealt with. Then we have to do the actual loading of the page and adding it to the DOM. We have an internal page with an id of "external" into which we will be loading our external page. 
+
+----
+// getting target div to load page into
+var $page = $( '#external' );
+----
+
+Once we have loaded the external resource, here we are using $.ajax, we can manipulate the internal page however we wish. In this case I am modifying the page header whenever we load four.html. 
+
+----
+// let's do something special if we try and load four.html
+if ( url.filename === "four.html" ) {
+  $page.find( "[data-role=header] h1" ).html( "This is a custom dynamic header for the fourth page" );
+}
+----
+
+Now that our page is loaded and inserted into the DOM we have to resolve the deferred object so that the page loading sequence can continue. We must pass in the absolute url, the options that were initial passed in, and finally the actual page element that we are trying to load.
+
+----
+// resolve the deferred so that the page loading sequence continues            
+data.deferred.resolve( data.absUrl, data.options, $page );
+----
+
+For this example we were loading the page using $.mobile.loadPage(), so we are responsible for making sure we actually change to this page. The code below checks to see if the current page is the one we are trying to load and if not then we call $.mobile.changePage() to make sure we change to it. You will see a second alert for this example letting you know that changePage was called.
+
+----
+// the following check is needed to handle the case of loadPage
+// triggering the pagebeforeload, since we do not automatically change to the
+// target page
+if ( $.mobile.activePage[0].id !== "external" ) {
+  alert( "Calling changePage" );
+  $.mobile.changePage( $page, data.options ); 
+}
+----
+
+Since we are explicitly loading the internal page with id "external", we will never see four.html in the location bar for the browser, what we will see is main.html#external.
+
+
+.Example 5
+
+----
+<a id="changeToFourthPage" data-role="button">Example 5: Use $.mobile.changePage to load page "four"</a>
+----
+
+For this example we will call $.mobile.changePage() to load our external page four.html, which just happens to be an HTML snippet and not a complete page.
+
+We use the following code to load four.html for this example.
+
+----
+// Example 5: load an external page using $.mobile.changePage
+$( "#changeToFourthPage" ).on( "click", function() {
+  $.mobile.changePage( "four.html" );
+});
+----
+
+Since we are calling $.mobile.changePage() with a string parameter, internally the framework will call $.mobile.loadPage() and so the pagebeforeload event will fire and we will see our alert message. 
+
+The rest of the page loading sequence will be similar to Example 4, the only exception being that we will not see the "Calling changePage" alert. Resolving the deferred object during the changePage page loading sequence is enough to tell the framework to continue changing to the page "external" and so we do not have to call changePage ourselves.
+
+Just like Example 4 we are explicitly loading the internal page with id "external" and we will never see four.html in the location bar for the browser, what we will see is main.html#external.
+
+
+.Example 6
+
+----
+<a href="doesnotexist.html" data-role="button">Example 6: Load missing external page</a>
+----
+
+In this example we will attempt to load a page that does not exist. The flow here is similar to Example 3. We have a link to an external page the framework will try and load and we will get an alert that tells us the pagebeforeload event has fired. When we attempt to manually load this page we will get a 404 Not Found error and fall into the fail() handler for our $.ajax() call.
+
+----
+.fail( function () {
+  // Example 6: error trying to load a page
+  alert( "Sorry. The requested page could not be found." );
+  // reject the deferred since we had an error and stop the page loading sequence
+  data.deferred.reject( data.absUrl, data.options );
+});
+----
+
+You will see an alert to let you know that the page load failed. As mentioned before we have to reject the deferred object if the page could not be loaded. This takes care of stopping the page loading sequence from going any further.
+
+
+
+
