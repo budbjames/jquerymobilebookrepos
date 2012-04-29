@@ -12,7 +12,7 @@ Bio: Don is an Application and Web Developer living in Villa Hills, KY with his 
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You may want to alter the appearance and styling of your list, or display some additional helpful information.
+By default, jQuery Mobile does a nice job of styling your lists to look nice on mobile devices, but sometimes your application requires a specific appearance. How can we alter the styling of a list and implement some common formatting techniques?
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
