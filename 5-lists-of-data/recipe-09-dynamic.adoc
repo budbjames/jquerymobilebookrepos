@@ -2,7 +2,7 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: Don Walter <donmwalter@gmail.com>
+Author: Don Walter <don@don-walter.com>
 Bio: Don is an Application and Web Developer living in Villa Hills, KY with his wife and son. You can follow him on Twitter: @donwalter
 
 ////
@@ -12,14 +12,54 @@ Bio: Don is an Application and Web Developer living in Villa Hills, KY with his 
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-// Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+You've seen how easy it is to use jQuery Mobile's List View to make easy to use lists and menus for your web applications, but sometimes you might not want to hard code all of your list items. How can you make a list using dynamic data?
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-// Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
-// 1. Cover pulling in data from AJAX and refreshing the listview
-// 2. Possibly cover performance considerations of a long list
+So far, we've talked about lists containing static data. Lists can be populated dynamically from an array of data, an AJAX call to a web service, or even a local database. You must make sure you have an element on the page to attach the dynamic data to, and then make your call and inject the items into the listview element. This can make it really easy to populate large lists, but keep in mind that the more items you put into your list, the more your application's performance will be affected.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 // The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+// - Must call $('#mylist').listview('refresh'); - Refresh only affects new items, ignores items that were in already in the list for performance reasons
+
+The first thing you must do is place a listview element on your page, this is what the dynamic data will be injected into. Make sure you give your list a unique ID that jQuery can use to select the appropriate element for injection. 
+
+[source, html]
+----
+<ul data-role="listview" id="myList"></ul>
+----
+
+Once you have got your list element on the page, you will need to get your data in order. For this example, we are using an array of items. You can also make an AJAX call to a web service, or use local storage data. Our array will look as follows:
+
+[source, javascript]     
+----
+var arrItems = [
+      'Ben Folds Five',
+      'Cake',
+      'Gomez',
+      'Guster'
+    ];
+----
+
+Once you have got your data set, you need to write some javascript to loop over the results and inject them in to the list element. This can be done quite easily using jQuery's `.each()` function, and then within that using the `.append()` function to inject the record into the listview. The last step you need to do is refresh the listview using `.listview( 'refresh' )`. This is a very important step, as if you omit it, none of the jQuery Mobile formatting will be applied to the injected items. The refresh function will only run on the newly injected nodes, so you will not have to worry about your existing items being affected.  
+
+[source, javascript]     
+----
+$(function() {
+  // Set your list element into a variable
+  var $myList = $( '#myList' );
+
+  // Loop through your results and append a new <li> onto your list for each result
+  $.each( arrItems, function( index, value ) {
+    $myList.append( '<li><a href="index.html?id=' + index + '">' + value + '</a></li>' );
+  });
+
+  // Refresh the listview to apply jQuery Mobile formatting to new items
+  $myList.listview( 'refresh' );
+});
+----
+
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2552018/[jsFiddle].
+
+If you'd like to see an AJAX example, you can see view, run, and modify one from http://jsfiddle.net/gh/gist/jquery/1.7.1/2552031/[jsFiddle].
