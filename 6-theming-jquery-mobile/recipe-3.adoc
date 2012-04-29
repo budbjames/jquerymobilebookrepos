@@ -20,21 +20,24 @@ similar functionality with the jQuery UI ThemeRoller, and allows you to customiz
 through a web interface with instant preview of the changes you make. What is more, it
 is open source under the standard jQuery project licences.
 
+Pages built with jQuery Mobile can have different customized styles with swatches.
 _Swatches_ define the look and feel for a bar, a content block, and a button with normal, 
 hover and pressed interaction states. Within a single theme, you can create up to 26 swatches 
 lettered from A-Z, each one having a unique color scheme.  This lets you combine swatch colors
 for different elements in the same webpage; for example, in case you want to style two
 buttons differently in a page, you can assign swatch A to one button and swatch M to the 
-other, thus using two different color schemes.
+other, thus using two different color <schemes class=""></schemes>
 
-In Figure 6. we can see the ThemeRoller interface, which is divided in three main areas:
+In Figure 6-3.1. we can see the ThemeRoller interface, which is divided in three main areas:
 
 image::images-themeroller/themeroller-interface.png[]
 
-. The *swatches panel* on the left. Through this panel, you can add or modify a swatch, 
-change the global theme settings, and save, import, or share your theme.
-. The *palette panel* at the top, which also has a button to enable the inspector.
-. The *preview panel* on the right, that shows you in real-time each change you make.
+. The *swatches panel* (A) on the left. Through this panel, you can add or modify a swatch, 
+and change the global theme settings.
+. The *palette panel* (B) at the right-top. With the new version of jQuery Mobile 1.1.0 this 
+panel has added many new buttons. The main functionality is controling the inspector and allowing 
+for downloading or importing a theme.
+. The *preview panel* (C) on the right, that shows you in real-time each change you make.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
