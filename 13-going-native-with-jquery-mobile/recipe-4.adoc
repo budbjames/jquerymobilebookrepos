@@ -1,0 +1,22 @@
+////
+
+This is a comment block.  Put notes about your recipe here and also your author information.
+
+Author: Jeff Linwood <jlinwood@gmail.com>
+
+////
+
+13.4 Using jQuery Mobile with PhoneGap's Camera
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Mobile web sites don't have access to a smartphone or tablet's camera.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+PhoneGap provides a cross-platform solution for jQuery Mobile web applications to use a smartphone's camera. PhoneGap provides a JavaScript API that can be used to capture photos or video on devices with camera support. 
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.

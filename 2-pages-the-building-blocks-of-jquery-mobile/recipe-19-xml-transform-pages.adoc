@@ -1,11 +1,9 @@
 ////
 XML 2 JQM using XSLT
 
-Author: Anne-Gaelle Colom <coloma@wmin.ac.uk>
+Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
-TODO: awaiting approval from Scott to use his picture
-add screen shots
-add discussion
+TODO: Complete discussion
 ////
 
 2.19 Transforming XML to jQuery Mobile using XSLT
@@ -13,20 +11,23 @@ add discussion
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You have multiple pages that look similar, and it seems inefficient to repeat the same code. 
+You have multiple pages that look similar, and it seems inefficient to repeat the same code.
+
+For example, you want to develop a page for each of your contacts where you can just click a button to send them an email, call them or send them an iMessage. You also want to be able to navigate through all those pages, as shown <<FIG2-19-1>>:
+[[FIG2-19-1]]
+.Navigating through contacts
+image::images/contacts.png[]
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 You can write the content in XML and transform it to jQuery Mobile pages using XSLT. You can then link your XML file and your XSLT file by either adding the reference of the +.xsl+ file on the second line of your XML file, or by using PHP to load both files and do the transformation on the server.
 
-For example, you want to develop a page for each of your contacts where you can just click a button to send them an email, call them or send them an iMessage. You also want to be able to navigate through all those pages.
+To produce the example described above, it would be inefficient to hardcode all these pages. Instead, you can create an XML file to store your contact details, see <<EX2-19-1>>:
 
-To produce the example described above, it would be inefficient to hardcode all these pages. Instead, you can create an XML file to store your contact details, see xxxx (add ref to xml code):
-
-
-ADD REF HERE TO THE FILE
+[[EX2-19-1]]
+.contacts.xml
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="xml2jqmExample.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="contacts.xsl" ?>
 <myContacts>
   <contact>
     <contact_id>contact_1</contact_id>
@@ -60,7 +61,10 @@ ADD REF HERE TO THE FILE
   </contact>
 </myContacts>
 
-ADD REF TO XSL FILE
+And then create an XSL file to transform the XML into an HTML that will contain some jQuery Mobile, see <<EX2-19-2>>:
+
+[[EX2-19-2]]
+.contacts.xsl
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xsl:stylesheet  [
   <!ENTITY nbsp   "&#160;">
@@ -88,6 +92,8 @@ ADD REF TO XSL FILE
         <style>
           .pic {
             margin: 0 15 15 15;
+            align: center;
+            width: 190px;
           }
         </style>
       </head>    
@@ -119,7 +125,7 @@ ADD REF TO XSL FILE
             </div> <!-- /header -->
             <div data-role="content" align="center">
               <h2><xsl:value-of select="forename" />&nbsp;<xsl:value-of select="surname" /></h2>
-              <img align="center" width="190" class="pic">
+              <img class="pic">
                 <xsl:attribute name="src"><xsl:value-of select="picture"></xsl:attribute> 
               </img>
               <div data-role="controlgroup" data-type="horizontal" >
@@ -129,17 +135,17 @@ ADD REF TO XSL FILE
                   Email
                 </a>
                 <a>
-              <xsl:attribute name="href">tel:<xsl:value-of select="tel" /></xsl:attribute>
-              <xsl:attribute name="data-role">button</xsl:attribute>
-              Tel
+                  <xsl:attribute name="href">tel:<xsl:value-of select="tel" /></xsl:attribute>
+                  <xsl:attribute name="data-role">button</xsl:attribute>
+                  Tel
                 </a>
                 <a>
-              <xsl:attribute name="sms">iMessage<xsl:value-of select="imessage" /></xsl:attribute>
-              <xsl:attribute name="data-role">button</xsl:attribute>
-              iMessage
+                  <xsl:attribute name="sms">iMessage<xsl:value-of select="imessage" /></xsl:attribute>
+                  <xsl:attribute name="data-role">button</xsl:attribute>
+                  iMessage
                 </a>
               </div>               
-      	    </div> <!-- /content -->
+            </div> <!-- /content -->
             <div data-role="footer" data-position="fixed">
               <h4></h4>
             </div> <!-- /footer -->
@@ -152,4 +158,24 @@ ADD REF TO XSL FILE
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-This is applicable in particular when you have pages describing artifacts or products.  
+The first thing you need to do is to write your XML file so that it can hold all the details you will need. <<EX2-19-1>> is very simple and holds names and contact details. The +shortName+ was added to be used on the page header in case you want to use it when someone has a very long first name to avoid the ellipsis, or when your contact uses a shorten version of their name as their usual name. 
+
+<<EX2-19-2>> holds the rules to transform <<EX2-19-1>> to the final HTML file and holds the jQuery Mobile code that will be used on the page. 
+The XSL file starts be specifying that we will match the whole XML document. We then load the jQuery Mobile libraries and specify the title of the document.
+We want to have one page per contact, so for each +contact+ in the XML document, the rule is to create a new jQuery Mobile page. The header of each page will have:
+* a fixed header that contains:
+** a previous button to go to the previous page unless this is the first page (with a slide transition in the reverse direction)
+** a next button to go to the next page unless this is the last page (with a slide transition)
+* a content container that contains:
+** the picture of the contact
+** a horizontal group container for three button links:
+*** the contact email address
+*** the contact telephone number
+*** the contact iMessage details
+* a fixed footer
+
+No style was specified, so the default +a+ swatch is used to display the header and footer, while the +c+ swatch is used to display the content and the content elements. 
+
+You could modify the XSL file to allow for perpetual navigation, so that the first page has a previous button that links to the last page, and the last page has a next button that links to the first page. 
+
+This technique is applicable in particular when you have pages describing artifacts or products.    
