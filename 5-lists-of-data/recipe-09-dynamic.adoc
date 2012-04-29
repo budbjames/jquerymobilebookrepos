@@ -20,9 +20,6 @@ So far, we've talked about lists containing static data. Lists can be populated 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-// The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
-// - Must call $('#mylist').listview('refresh'); - Refresh only affects new items, ignores items that were in already in the list for performance reasons
-
 The first thing you must do is place a listview element on your page, this is what the dynamic data will be injected into. Make sure you give your list a unique ID that jQuery can use to select the appropriate element for injection. 
 
 [source, html]
