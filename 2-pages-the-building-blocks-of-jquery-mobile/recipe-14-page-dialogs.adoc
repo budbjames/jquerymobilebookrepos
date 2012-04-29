@@ -7,7 +7,7 @@ Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
 ////
 
-2.14 Recipe Title
+2.14 Page Dialogs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
