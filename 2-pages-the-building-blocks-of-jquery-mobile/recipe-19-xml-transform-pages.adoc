@@ -6,12 +6,12 @@ Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 TODO: Complete discussion
 ////
 
-2.19 Transforming XML to jQuery Mobile using XSLT
+2.19 Transforming XML to linked jQuery Mobile pages using XSLT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You have multiple pages that look similar, and it seems inefficient to repeat the same code.
+You want to create multiple pages that will look similar, and it seems inefficient to repeat the same code. You also want to link all those pages one after the other.
 
 For example, you want to develop a page for each of your contacts where you can just click a button to send them an email, call them or send them an iMessage. You also want to be able to navigate through all those pages, as shown <<FIG2-19-1>>:
 [[FIG2-19-1]]
