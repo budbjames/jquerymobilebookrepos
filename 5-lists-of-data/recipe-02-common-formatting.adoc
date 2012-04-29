@@ -37,13 +37,15 @@ An inset list is just a standard list that sits inside the content area with a m
 .Inset List
 image::images/5-2-inset.png[]
 
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2519857/[jsFiddle].
+
 
 .List Dividers
-List dividers can be used to help organize and group your list item. To make a list divider, simply add `data-role="list-divider"` to a list item. You can also specify the theme for the divider row by adding `data-dividertheme="c"` attribute to the list (`<ul>` or `<ol>`), and specifying the theme letter you would like to use.
+List dividers can be used to help organize and group your list item. To make a list divider, simply add `data-role="list-divider"` to a list item. You can also specify the theme for the divider row by adding `data-dividertheme="d"` attribute to the list (`<ul>` or `<ol>`), and specifying the theme letter you would like to use.
 
 [source, html]
 ----
-<ul data-role="listview" data-dividertheme="c">
+<ul data-role="listview" data-dividertheme="d">
   <li data-role="list-divider">B</li>
   <li>Ben Folds Five</li>
   <li data-role="list-divider">C</li>
@@ -57,6 +59,8 @@ List dividers can be used to help organize and group your list item. To make a l
 [[FIG2]]
 .List Dividers
 image::images/5-2-list-dividers.png[]
+
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521774/[jsFiddle].
 
 
 .Count Bubbles
@@ -76,6 +80,8 @@ Count bubbles can be helpful when you want your users to be given an indicator o
 [[FIG3]]
 .Count Bubbles
 image::images/5-2-count-bubbles.png[]
+
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521786/[jsFiddle].
 
 
 .Text Formatting
@@ -113,6 +119,8 @@ The jQuery Mobile framework also allows you to easily format your list item cont
 .Text Formatting
 image::images/5-2-text-formatting.png[]
 
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521793/[jsFiddle].
+
 
 .Thumbnails
 Thumbnails can easily be added to the left of a list item simply by adding an image inside your `<li>` tag. The jQuery Mobile framework will automatically scale the image to 80px x 80px.
@@ -148,6 +156,8 @@ Thumbnails can easily be added to the left of a list item simply by adding an im
 .Thumbnails
 image::images/5-2-thumbnails.png[]
 
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521798/[jsFiddle].
+
 
 .Icons
 Icons can be inserted to the left of a list item the same way thumbnails can. The only difference is that you need to add a class of `ui-li-icon` to the image element. Icon images do not get auto resized to the correct dimensions, and should be no larger than 16px x 16px for the cleanest appearance.
@@ -179,6 +189,8 @@ Icons can be inserted to the left of a list item the same way thumbnails can. Th
 [[FIG6]]
 .Icons
 image::images/5-2-icons.png[]
+
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521800/[jsFiddle].
 
 
 .Split Button Lists
@@ -217,3 +229,5 @@ Sometimes, you need a list element to have multiple actions assigned to it. Mayb
 [[FIG7]]
 .Split Button List
 image::images/5-2-split-button-list.png[]
+
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521833/[jsFiddle].

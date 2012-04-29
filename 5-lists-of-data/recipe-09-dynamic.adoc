@@ -2,21 +2,24 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Don Walter <donmwalter@gmail.com>
+Bio: Don is an Application and Web Developer living in Villa Hills, KY with his wife and son. You can follow him on Twitter: @donwalter
 
 ////
 
-#.# Recipe Title
+5.9 Make a List that Contains Dynamic Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+// Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+// Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+// 1. Cover pulling in data from AJAX and refreshing the listview
+// 2. Possibly cover performance considerations of a long list
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+// The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
