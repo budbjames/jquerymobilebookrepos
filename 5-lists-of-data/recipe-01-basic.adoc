@@ -12,7 +12,7 @@ Bio: Don is an Application and Web Developer living in Villa Hills, KY with his 
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You may want to display and organize information on your site in a format that is easy for your users to understand and use. 
+How can you display information in your application in a way that both looks good on mobile devices and is easy for your users to understand and use?
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -21,7 +21,7 @@ jQuery Mobile makes it easy to display your information in a mobile-friendly lis
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 .Basic List
-You can easily transform a standard HTML unordered list into a mobile-friendly list element simply by adding `data-inset="true"` attribute to the unordered list element (`<ul>`). jQuery Mobile will add the styling, as well as small arrow icon on the right side of the element to signify that it is a link.
+You can easily transform a standard HTML unordered list into a mobile-friendly list element simply by adding `data-inset="true"` attribute to the unordered list element (`<ul>`). jQuery Mobile will add the styling, as well as small arrow icon on the right side of the element to signify that it is a link. When an item in the list is tapped on, the framework will trigger a click event on the first link inside that list item, issue an AJAX request for the URL in the link, create the new page in the DOM, and then start a page transition while directing you to the new page.
 
 [source, html]
 ----
@@ -40,7 +40,7 @@ image::images/5-1-basic.png[]
 You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2529294/[jsFiddle].
 
 .Numbered List
-The only difference between a regular list view and a numbered list, is that you use an ordered list element (`<ol>`) element instead of an unordered list element (`<ul>`).
+Sometimes you might want your lists to present items that should be in sequence. By simply changing your unordered list element (`<ul>`) to an ordered list element (`<ol>`), jQuery Mobile will add numbers to your list items.
 
 [source, html]
 ----
@@ -59,7 +59,7 @@ image::images/5-1-numbered.png[]
 You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2529949/[jsFiddle].
 
 .Read-Only List
-To make a list, just remove any links from the list content. jQuery Mobile will still apply the list styling, without the small arrow icon. This can be useful if you have information you would like to display without having to link the items to other pages. 
+You might not always want your lists to be interactive, rather just display your data. If you omit the link in the list item content, your list will still be styled by jQuery Mobile, but remain read-only.
 
 [source, html]
 ----
