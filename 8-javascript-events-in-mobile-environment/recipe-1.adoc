@@ -41,13 +41,13 @@ Discussion
 We can also achieve the achieve the same effect as above by extending the $.mobile object using jQuery. Following is the snippet for it - 
 
 [source,javascript]
----
+----
 $( document ).bind( "mobileinit" , function() {
   $.extend(  $.mobile , {
     foo : bar
   });
 });
----
+----
 
 <<XREF_TABLE>> shows the options that can be configured through the $.mobile object.
 
@@ -55,19 +55,30 @@ $( document ).bind( "mobileinit" , function() {
 .Configurable options available
 [options="header"]
 |=======
-|Property|Version added|Default value|Description
-|autoInitializePage|1.0|"true"|Whether to automatically call the $.mobile.initializePage when the page is ready. If set to false, $.mobile.initializePage has to be manually called else the page will be hidden.
-|gradeA|1.0|a function returning the value of $.support.mediaquery or if browser is IE7+|function which will check the basic support conditions.
-|defaultPageTransition|1.0|"fade", "slide" in 1.0|The default transition to be used for page transitions.
-|defaultDialogTransition|1.0|"pop"|The default transition to be used for dialog changes.
-|activePageClass|1.0|"ui-page-active"|The CSS class assigned to the page in view and during transitions.
-|activeBtnClass|1.0|"ui-btn-active"|The CSS class assigned for buttons in the "active" state.
-|focusClass|1.1|"ui-focus"|The CSS class assigned for "focus" form element state.
-|loadingMessage|1.0|"loading"|The text that appears when a page is loading. Set it to false to disabling the loading message.
-|loadingMessageTextVisible|1.1|"false"|Sets whether the text should be displayed in a loading message box. Note:- Page load error message will always be visible.
-|loadingMessageTheme|1.1|"a"|The theme to be used for the loading message box when the text is visible.
-|pageLoadErrorMessage|1.0|"Error Loading Page"|Sets the text that appears when a page fails to load.
-|pageLoadErrorMessageTheme|1.1|"e"|The theme to be used by the error message box.
-|minScrollBack|1.0|250|The minimum scroll distance to be remembered when a user returns to a page.
+|Property|Version added|Type|Default value|Description
+|ajaxEnabled|1.0|boolean|true|Links will be handled through ajax when possible (except external URLs or links which have rel="external"). When disabled links will be loaded as normal HTTP requests.
+|ns|1.0|string|""|The default namespace to be used for the custome data- attributes of jQuery mobile. If you override the namespace with, for example, "jqm-", now all the jQuery mobile data- attributes would require the new namespace "jqm-" as a prefix, hence, data-role="page" becomes data-jqm-role="page". Also when overriding the namespace one selector has to be updated - .ui-mobile [data-role=page], .ui-mobile [data-role=dialog] will become .ui-mobile [data-jqm-role=page], .ui-mobile [data-jqm-role=dialog]. Overriding the default namespace safeguards against naming conflicts with other frameworks which use data- attributes for their functionality.
+|autoInitializePage|1.0|boolean|true|Whether to automatically call the $.mobile.initializePage when the page is ready. If set to false, $.mobile.initializePage has to be manually called else the page will be hidden.
+|gradeA|1.0|function|a function returning a true value if media-queries are supported or the browser is IE7+|function which will check the basic support conditions. jQuery mobile will not perform any enhancements if this method returns false.
+|hashListeningEnabled|1.0|boolean|true|jQuery mobile handles all the changes to the location.hash property. If set to false, all changes to the hash have to be manually handled.
+|allowCrossDomainPages|1.0|boolean|false|All external links pass through the $.mobile.loadPage() method. This will allow cross-domain pages only if this property is set to true, otherwise the request will be blocked by jQuery mobile itself irrespective of how the browser handles such requests.
+|touchOverflowEnabled|1.0|boolean|false| Deprecated as of 1.1. This property was added to leverage the support for overflow-scrolling: touch in iOS5 for achieving true fixed toolbars. Has been deprecated in version 1.1 as jQuery Mobile does not use this property at all.
+|pushStateEnabled|1.0|boolean|true|Converts the hash-based Ajax URL into the full document path using the history.replaceState in supported browsers. Should ideally be set to false when ajax is disabled (By using ajaxEnabled configuration) or excessively using the rel="external" attribute for links.
+|linkBindingEnabled|1.0|boolean|true|When this property is set to false, jQuery mobile will not automatically bind the clicks on anchor tags, which would not allow it to set active button states on links.
+|ignoreContentEnabled|1.1|boolean|false|When set to true, jQuery mobile will check whether any of the element's parents have data-enhance attribute set as false. If so, jQuery mobile would not enhance the particular element. Note: Usage might affect performance.
+|subPageUrlKey|1.0|string|"ui-page"|The url parameter used for referencing widget-generated sub-pages. Example - "example.html&ui-page=subpageIdentifier". The hash segment before &ui-page= is used by the framework for making an Ajax request to the URL where the sub-page exists
+|defaultPageTransition|1.0|string|"fade", "slide" in 1.0|The default transition to be used for page transitions.
+|defaultDialogTransition|1.0|string|"pop"|The default transition to be used for dialog changes.
+|activePageClass|1.0|string|"ui-page-active"|The CSS class assigned to the page in view and during transitions.
+|activeBtnClass|1.0|string|"ui-btn-active"|The CSS class assigned for buttons in the "active" state.
+|focusClass|1.1|string|"ui-focus"|The CSS class assigned for "focus" form element state.
+|loadingMessage|1.0|string|"loading"|The text that appears when a page is loading. Set it to false to disabling the loading message.
+|loadingMessageTextVisible|1.1|boolean|false|Sets whether the text should be displayed in a loading message box. Note:- Page load error message will always be visible.
+|loadingMessageTheme|1.1|string|"a"|The theme to be used for the loading message box when the text is visible.
+|pageLoadErrorMessage|1.0|string|"Error Loading Page"|Sets the text that appears when a page fails to load.
+|pageLoadErrorMessageTheme|1.1|string|"e"|The theme to be used by the error message box.
+|minScrollBack|1.0|integer|250|The minimum scroll distance to be remembered when a user returns to a page.
+|buttonMarkup.hoverDelay|1.1|integer|200|Sets the delay for touch devices to add the hover and down classes on touch interactions for buttons throughout the framework.
+|maxTransitionWidth|1.1|integer|false|Sets the maximum width for transitions to apply. When set to 'false' (default) there is no limit.
 |=======
 
