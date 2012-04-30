@@ -12,9 +12,9 @@ twitter: @nvega
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Navigation between pages is one the most important features in the web development arena. When it comes to mobile web development,
-the design and transition between the pages are even  more critical. This recipe is aiming to the design of nested multiple pages
-and the navigation between them using jQuery Mobile
+Navigation between pages is one the most important features in the web development arena. 
+When it comes to mobile web development,the design and transition between the pages are even  more critical. 
+This recipe is aiming to the design of nested multiple pages and the navigation between them using jQuery Mobile
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
