@@ -1,6 +1,5 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
 
 Author: Nelson  Vega <nvegamarrero@gmail.com>
 
