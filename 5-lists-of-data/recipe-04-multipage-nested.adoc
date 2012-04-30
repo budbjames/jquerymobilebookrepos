@@ -30,31 +30,28 @@ Design of the main page.
     You can also set the list divider theme by adding the attribute data-divider-theme . In our specific case
     we are going to set it to "a". 
     
-    To add a little bit of space between the border and the ul you can also add the data-inset attribute and set it to true.
-    Once you do that , the ul is going to have a little bit of margin.
+    To add a little bit of space between the border and the ul you can also add the data-inset attribute and set it to 
+    true.Once you do that , the ul is going to have a little bit of margin.
 
-    Now that we have the ul, we need to start adding  list items or li with the only attribute data-theme . In our specific case,
-    we are going to set it to d,
-    If you want to have a header in your list view, you only need to add the attribute data-role="list-divider" and role="heading" 
-    to the first li.
-    The next step is to define te content of each li.Since we are going to have links to the nested pages,let's add 
-    a tags with the attribute data-transition , this will indicate how the transition between the pages are going to look
-    like. On the href we are going to set it to the id of the nested pages. Finally , the content of the page is going to 
-    be anything , i.e : Page1,Page2,etc..
+    Now that we have the ul, we need to start adding  list items or li with the only attribute data-theme . In our 
+    specific case,we are going to set it to d,If you want to have a header in your list view, you only need to add the 
+    attribute data-role="list-divider" and role="heading" to the first li.The next step is to define te content of 
+    each li.Since we are going to have links to the nested pages,let's add a tags with the attribute data-transition , 
+    this will indicate how the transition between the pages are going to looklike. On the href we are going to set 
+    it to the id of the nested pages. Finally , the content of the page is going to be anything.
+    i.e : Page1,Page2,etc..
    
     We now have the skeleton of the main page, but we need to define the nested  pages.
     
 Nested Pages
-    By now, you should have learned that in order to define a page, we only need to create a div with data-role=page  and 
-    set the id 
-    In our case, we define another div ,added the data-role attribute and set it to page,then we set the id attribute.
-   
-    Be aware that in order to navigate from a link in the main page to a nested page, the href has to be the same as the
-    id of the nested page.
+    By now, you should have learned that in order to define a page, we only need to create a div with data-role=page  
+    and set the id In our case, we define another div ,added the data-role attribute and set it to page,then we set 
+    the id attribute.Be aware that in order to navigate from a link in the main page to a nested page, the href has 
+    to be the same as the id of the nested page.
    
     If you want to navigate back from the nested page to the main page, add another div with the data-role="content" 
-    inside the nested page and add a "a" tag inside it with the data-role attribute set to button data-transition set to fade 
-    and href set to the id of the main page.
+    inside the nested page and add a "a" tag inside it with the data-role attribute set to button data-transition set 
+    to fade and href set to the id of the main page.
 
     you can look at the following jsfiddle http://jsfiddle.net/nvega/DdzuT/4/
  
