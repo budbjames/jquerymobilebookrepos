@@ -1,7 +1,9 @@
 ////
 
 
-Author: Nelson  Vega <nvegamarrero@gmail.com>
+Author : Nelson  Vega 
+email  : nvegamarrero@gmail.com
+twitter: @nvega
 
 ////
 
@@ -12,14 +14,14 @@ Problem
 ++++++++++++++++++++++++++++++++++++++++++++
 Navigation between pages is one the most important features in the web development arena. When it comes to mobile web development,
 the design and transition between the pages are even  more critical. This recipe is aiming to the design of nested multiple pages
-and the navigation between them.
+and the navigation between them using jQuery Mobile
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 
 Design of the main page.
     
-    Create a div with the attribute data-role="page" and set the id for future reference
+    Create a div with the attribute data-role="page" and set the id 
     To set the content of the page you need to create another div and add the attribute data-role="content"
     
     Then , since our main page is going to be a list of links to the nested pages, we are going to add a unordered list  or ul
