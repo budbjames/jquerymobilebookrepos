@@ -1,0 +1,36 @@
+////
+
+Author: Ryan Westphal <ryan@trippingthebits.com>
+
+////
+
+#.# Appcache + mobile devices
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+You have made your web app offline with HTML5 appcache, tested it on desktop browsers, and believe there will not be issues in true mobile environments.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+This may sound too obvious for an entire recipe but you absolutely must test your app on physical mobile devices. It's too tempting to test it in Chrome, see that the app appears to function, and forget about it. However, it's not as clean cut as that. Here are some reasons:
+
+* One bad refresh or missing file in your appcache will break the entire offline experience for a user.
+* While jQuery Mobile supports many devices, each one you wish to add offline support might have quirks with HTML5 appcache.
+* You should test that you properly handle web service call failure to give the user the best experience when in a temporarily disconnected situation.
+* Switching your device to Airplane Mode does not always behave the same as truly losing connectivity.
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+An important first step is to put as much as possible into the CACHE section of your manifest file. This includes all third party JavaScript libraries. Linking to jQuery's CDN won't help a user if they hit refresh while underground. You should reserve the NETWORK section for web service endpoints that generate data and images or static data and images that are too big to fit in the appcache as there is usually a 5MB limit.
+
+Also, be aware of external dependencies. Some JavaScript libraries may make file requests to domains that you don't expect. If you include X.js in your CACHE section but that file requires Y.js, your website will no longer function properly offline even if you have * in your NETWORK section. This is because Y.js, being in the NETWORK section, will be requested by the browser after every refresh and the appcache will break when it cannot be found.
+
+HTML5 appcache does not work identically on all browsers for all devices. You should be explicit with what you claim your application supports and then test your claims in real world situations. Here are a few of the issues I've run into while testing on various browsers: they treat a * in the CACHE differently if you're using a secure connection for anything; they don't refresh the cache even if you modify the manifest file and attempt to force a refresh with JavaScript; they return 404 to jQuery Mobile's requests for external pages even if they're in the CACHE section. The only way around the last issue on some devices was to merge all jQuery Mobile page elements into one HTML file and reference them by #id only.
+
+Once your CACHE and NETWORK settings are solid, you should strive to gracefully handle disconnected situations. When writing a desktop app, you can assume network requests won't fail and, when they do, users can deal with an occasional Page Not Found message if the WiFi is flaky for their laptop. However, well designed mobile applications should always continue working. For example, if you are showing a list of data from a web service and the AJAX request fails, you can show a jQuery Mobile dialog with a message explaining that they may need to try again in a minute. Even better in my opinion is to hide the list and display the message subtly in the page itself.
+
+The last point of this recipe is that you can't always trust that Airplane Mode mimics true disconnected situations. I will have to specifically call out Android on this one. On higher profile devices, appcache works mostly as expected when a user loses connectivity naturally. However, if you test by switching to Airplane Mode, you may get errors that users will not get in normal situations. The most noticeable issues include the web browser returning a 404 status for images at URLs clearly in your FALLBACK section and failed requests to a FALLBACK image stop the browser's Back button from working.
+
+If there is anything I hope this recipe prompts you to do, it's that you load your starting page above ground and then attempt to use your web app in the subway.
+
