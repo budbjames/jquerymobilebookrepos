@@ -15,8 +15,34 @@ Mobile web sites don't have access to a smartphone or tablet's camera.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-PhoneGap provides a cross-platform solution for jQuery Mobile web applications to use a smartphone's camera. PhoneGap provides a JavaScript API that can be used to capture photos or video on devices with camera support. 
+Use PhoneGap's camera object to present the device's native camera user interface, and then supply success and failure callbacks to handle the image.
+
+$('#take-picture-button').live('tap',function(event, ui) {
+	navigator.camera.getPicture(captureSuccess, 
+        captureError, 
+        {quality:50,destinationType:navigator.camera.DestinationType.DATA_URL});
+
+The last argument to navigator.camera.getPicture() is the set of options we can pass to PhoneGap. Not all options are supported on all devices.
+
+quality: (0-100) - Integer. Determines JPEG compression
+destinationType: Two options: 
+	FILE_URI: String containing the filename of the image on the device's internal storage
+	DATA_URL: String with the Base-64 encoded image
+sourceType: Three options:
+	PHOTOLIBRARY: Brings up native photo selection user interface for existing photos
+	CAMERA: Brings up native picture taking user interface
+	SAVEDPHOTOALBUM: On devices with a separate saved photo album, brings up appropriate native photo selection user interface
+allowEdit: Boolean. If device supports a native editing interface, show it.
+encodingType: Two options: JPEG or PNG for image encoding and compression.
+targetWidth: Integer. Width of the image to return. 
+targetHeight: Integer. Height of the image to return.
+mediaType: Only used when allowing user to choose from existing photos. Three options:
+	PICTURE: Photos
+	VIDEO: Movies
+	ALLMEDIA: Both
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
+
+PhoneGap provides a cross-platform solution for jQuery Mobile web applications to use a smartphone's camera. PhoneGap provides a JavaScript API that can be used to capture photos or video on devices with camera support. 
 The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
