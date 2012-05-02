@@ -39,18 +39,22 @@ var arrItems = [
 ];
 ----
 
-Once you have got your data set, you need to write some JavaScript to loop over the results and inject them into the list element. This can be done quite easily using jQuery's `.each()` method, and then within that using the `.append()` method to inject the record into the listview. The last step you need to do is refresh the listview using `.listview( 'refresh' )`. This is a very important step, as if you omit it, none of the jQuery Mobile formatting will be applied to the injected items. The refresh method will only run on the newly injected nodes, so you will not have to worry about your existing items being affected.  
+Once you have got your data set, you need to write some JavaScript to loop over the results and inject them into the list element.This can be done quite easily using jQuery's `.each()` method, and then within that using the `.append()` method to inject the record into the listview. However, the `.append()` method updates the DOM each time is it run, so your app's performance will suffer. What we'll do instead is create an empty array (`newItems`), and then use the `.push()` method to insert each item into that array. Once that is done, you can use join the array items with an empty string delimiter to create a single string with your new items markup, which you can then append to your list. This way, the DOM is only manipulated once. The last step you need to do is refresh the listview using `.listview( 'refresh' )`. This is a very important step, as if you omit it, none of the jQuery Mobile formatting will be applied to the injected items. The refresh method will only run on the newly injected nodes, so you will not have to worry about your existing items being affected.
 
 [source, javascript]     
 ----
 $( document ).ready( function() {
   // Set your list element into a variable
   var $myList = $( "#myList" );
-
+  var newItems = [];
+  
   // Loop through your results and append a new <li> onto your list for each result
   $.each( arrItems, function( index, value ) {
-    $myList.append( "<li><a href='index.html?id=" + index + "'>" + value + "</a></li>" );
+    newItems.push( "<li><a href='index.html?id=" + index + "'>" + value + "</a></li>" );
   });
+
+  // Append the new items to your list
+  $myList.append( newItems.join( "" ) );
 
   // Refresh the listview to apply jQuery Mobile formatting to new items
   $myList.listview( "refresh" );
