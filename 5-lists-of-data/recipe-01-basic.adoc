@@ -21,7 +21,7 @@ jQuery Mobile makes it easy to display your information in a mobile-friendly lis
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 .Basic List
-You can easily transform a standard HTML unordered list into a mobile-friendly list element simply by adding `data-inset="true"` attribute to the unordered list element (`<ul>`). jQuery Mobile will add the styling, as well as small arrow icon on the right side of the element to signify that it is a link. When an item in the list is tapped on, the framework will trigger a click event on the first link inside that list item, issue an AJAX request for the URL in the link, create the new page in the DOM, and then start a page transition while directing you to the new page.
+You can easily transform a standard HTML unordered list into a mobile-friendly list simply by adding `data-role="listview"` attribute to an unordered list element (`<ul>`). jQuery Mobile will add the styling, as well as a small arrow icon on the right side of the element to signify that it is a link. When an item in the list is tapped on, the framework will trigger a click event on the first link inside that list item, issue an AJAX request for the URL in the link, create the new page in the DOM, and then start a page transition while directing you to the new page.
 
 [source, html]
 ----
