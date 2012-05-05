@@ -2,21 +2,15 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: James Weaver <james@jwadeweaver.com>
 
 ////
 
-#.# Recipe Title
+#.# Who this book is for?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This book is for anyone interested in learning about how they can benefit from today’s greatest javascript libraries,
+jQuery and jQuery Mobile! 
 
-Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
-
-Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
-
-Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+While you don’t need to know jQuery or jQuery Mobile extensively, it will be beneficial to have an understanding 
+of the basics. However, if you are totally new to jQuery or jQuery Mobile, don’t close the book yet, chapters 1 
+and 2 will provide you with the building blocks of jQuery and jQuery Mobile. 

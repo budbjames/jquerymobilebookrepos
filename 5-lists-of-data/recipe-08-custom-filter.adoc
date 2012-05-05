@@ -1,22 +1,127 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Show how to change the algorithm at a per listview basis, show how to change the algorithm globally, show examples of various types of sort algorithms
 
-Author: John Doe <email@email.com>
+Author: Elijah Manor <elijah.manor@gmail.com>
 
 ////
 
-#.# Recipe Title
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.8 Overriding the Default Algorithm for the Filter Box
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
++++++++
+
+Presenting a list of items is a common way to present information on a mobile device, but it can often be difficult to find specific item that you need. jQuery Mobile provides an easy way to turn on list filtering so the user can quickly narrow down the list to find a particular item. Although a default filter algorithm is provided, it may not suite the needs of your application. How can you provide your own filter algorithm?
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+++++++++
+
+Before we being we need to make sure we have an ordered or unordered list with the `data-role="listview"` attribute. When jQuery Mobile loads the page it will initialize the `listview` widget, which adds behavior and style to the list. In addition we need to provide the `data-filter="true"` atribute that adds the filter box to the top of the list.
+
+You should have a list that looks something like the following characters from Star Trek: The Next Generation.
+
+[source,html]
+----
+<ul id="members" data-role="listview" data-filter="true">
+  <li>
+    <a href="index.html">
+      <h3>Jean-Luc Picard</h3>
+      <p><strong>Captain</strong></p>
+      <p>Patrick Stewart</p>
+    </a>
+  </li>
+  <li>
+    <a href="index.html">
+      <h3>William Thomas "Will" Riker</h3>
+      <p><strong>Commander, later Captain</strong></p>
+      <p>Jonathan Frakes</p>
+    </a>
+  </li>
+  <li>
+    <a href="index.html">
+      <h3>Data</h3>
+      <p><strong>Lt. Commander</strong></p>
+      <p>Brent Spiner</p>
+    </a>
+  </li>
+  <!-- ... More Characters ... -->
+</ul>
+----
+
+TODO: Insert Screenshot Here
 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+++++++++++
+
+Thankfully jQuery Mobile provides an easy way to extend the default algorithm used to filter a list of items. You can change the filter method on an individual list basis or change the default filter method that is used for all lists.
+
+.Change the Filter Method for One List
+
+Once the `listview` widget has been inititalized by jQuery Mobile then you can set the `filterCallback` option to whatever custom filter method you desire. 
+
+The API for getting and setting options in jQuery Mobile widgets is the same as changing jQuery UI widgets options. You must have a jQuery object containing your list, call the `listview` widget, and pass the `option`, `filterCallback`, and filter method arguments. 
+
+See the following code snippet for an example of how to set the `filterCallback` for one `listview` instance.
+
+[source,javascript]
+----
+$( document ).ready(function() {
+  // Change the filterCallback option of the listview widget to a custom filter method
+  $( "#members" ).listview( "option", "filterCallback", $.filterMethods.startsWith );
+});
+----
+
+.Change the Filter Method for All Lists
+
+If you already know that you want all of the lists to share the same filter method then there is another approach you can take. By setting the `filterCallback` property on the `listview` prototype you can set the default filter alorithm for all `listview` widgets. 
+
+The key to remember when using this technique is that you need to run this code during the `mobileinit` event. In order to time your code correctly you will to run your code before the `jquery.mobile-1.1.0.js` file has executed.
+
+See the following code snippet for an example of how to set the `filterCallback` for all `listview` widgets.
+
+[source,javascript]
+----
+// This has to run before jquery.mobile-1.1.0.js has been loaded
+$( document ).bind( "mobileinit",  function() {      
+  // on mobileinit set all listview widgets to use the startsWith filter method by default
+  $.mobile.listview.prototype.options.filterCallback = $.filterMethods.startsWith;
+});
+----
+
+.Custom Filter Methods
+
+Now that we know where and how to override the `filterCallback`, we also need to know what a filter method looks like and how to write one. The method is actually pretty staightforward. The method accepts two parameters (`text` and `searchValue`) that respresent the `text` of the list item being compared against and the `searchValue` that the user entered in the filter textbox. The method is expected to return `true` for the items that should be hidden (or filtered) from the list.
+
+The following is a simple example of some filter methods that you can use. By default jQuery Mobile uses the same logic as presented in the `contains` method below. 
+
+[source,javascript]
+----
+$.filterMethods = {
+  /**
+   * Only display items that start with the filtered text
+   * @param {string} text The text respresentation of the list item
+   * @param {string} searchValue What the user has typed into the filter textbox
+   * @returns {boolean} Return true if you want to hide the item
+   */
+  startsWith: function( text, searchValue ) {
+    return $.trim( text ).toLowerCase().indexOf( searchValue ) !== 0;    
+  },
+  /**
+   * Only display items that contain the filtered text
+   * @param {string} text The text respresentation of the list item
+   * @param {string} searchValue What the user has typed into the filter textbox
+   * @returns {boolean} Return true if you want to hide the item
+   */
+  contains: function( text, searchValue ) {
+    return text.toLowerCase().indexOf( searchValue ) === -1;
+  }
+};​
+----
+
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2485682/[jsFiddle].
+
+Note: If you are interested in a slightly more complex example using more advanced organizational patterns and additional features you can check out this http://jsfiddle.net/gh/gist/jquery/1.7.1/2485519/[jsFiddle]
+
+
+

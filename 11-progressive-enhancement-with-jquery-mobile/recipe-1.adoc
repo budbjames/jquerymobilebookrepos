@@ -1,12 +1,10 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
-Author: John Doe <email@email.com>
+Author: R. Thompson <whynetsolutions@aol.com>
 
 ////
 
-#.# Recipe Title
+#.# What is Progressive Enhancement in a Mobile Context?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
