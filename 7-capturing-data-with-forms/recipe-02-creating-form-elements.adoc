@@ -12,12 +12,50 @@ How to create form elements in jQuery Mobile
 
 Problem
 +++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Standard HTML form elements were designed for mouse and keyboard interactions. Although browsers on mobile devices attempt to
+make the user experience better, the form elements are still not touch-friendly. Certain elements are just too small for fingers.
 
 Solution
 ++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+jQuery Mobile provides a rich set of touch-friendly form elements that are based on native HTML form elements. Using these form elements will provide your user with a better user experience when accessing your website from their mobile devices.
+
+http://jquerymobile.com/demos/1.1.0/docs/forms/forms-all.html
+
+[[FIG1]]
+.Form element gallery
+image::images/7-2-element-gallery.png[]
+
+Standard HTML elements like text inputs are enhanced
+
+jQuery Mobile also provides the option to render smaller versions of the form elements. Simply add the *data-mini="true"* attribute
+to your form control.
+
+http://jquerymobile.com/demos/1.1.0/docs/forms/forms-all-compare.html
+
+Although jQuery Mobile enhances form elements and buttons to be touch-friendly, you can turn off that option so that standard, native
+controls are rendered instead. By adding the *data-role="none"* attribute to any form element, jQuery Mobile will not apply any
+enhancements.
+
+[Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.]
 
 Discussion
 ++++++++++
 The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+
+.Text Inputs
+
+.Textarea
+
+.Search Input
+
+.Flip Switch
+
+.Slider
+
+.Radio Buttons
+
+.Checkboxes
+
+.Select Menus
+
+
