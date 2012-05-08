@@ -1,0 +1,119 @@
+////
+
+author information.
+
+Author: Michael Knox <webdpro@gmail.com>
+
+////
+
+#.# Local Storage and JSON
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+When creating a mobile application performance and network connectivity can become a big issue. This recipe will show you how to store JSON in localStorage and how to access it.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+In this recipe we will be taking a JSON (JavaScript object notation) object and storing it in localStorage as a string. 
+
+We will go over how a simple ajax request cupled with local can store your JSON object as a string for easy access on or off line.
+
+$.ajax({
+  url: http://domain.com/myJSON.js,
+  dataType: 'json',
+  data: data,
+  success: function(data){
+   var myJSON = JSON.stringify(data);
+   localStorage.setItem('someJSON', myJSON);
+	}
+});
+
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+
+With any application performance and network connectivity are always huge factors and can mean the difference between a good application and a great one.
+
+Let's say for example you are building an application for your upcoming company conference. You have spent a few weeks creating and perfecting app, it runs great on all the devices you have tested (thanks to Jquery Mobile). You arrive at the conference only to find out it's in the converted bomb shelter basement of a rundown Vegas hotel, did we mention the walls are lined with led? Looks like your awesome app is now, not that awesome.. If only there was a way that people could have stored the app locally beforehand.. Well lucky for you Html 5 introduced localStorage as a way store (up to 5 megs) and retrieve data. With localStorage you can store JSON strings and retrieve them at any time for instant online or offline response.
+
+The main features we will be focusing on in this recipe will be:
+
+1)localStorage.setItem() / localStorage.getItem()
+2) JSON.stringify()
+3)JSON.parse()
+4)JSON object
+5)mobi.pageShow()
+
+
+
+
+
+
+To start with we need to have a JSON object, we will use a little JQuery to retrieve the object.
+
+$.ajax({
+  url: http://domain.com/myJSON.js,
+  dataType: 'json',
+  data: data,
+  success: function(data){
+
+}
+});
+
+Note: Where URL is would be the path to your JSON file
+
+For demonstration purposes we will assume that the following JSON is returned
+
+[{sessionName:"session1",location:"room1",description:"Uber cool"},{sessionName:"session2",location:"room2",description:"Uber Uber cool"}, {sessionName:"session3",location:"room3",description:"Uber Uber Uber cool"}];
+
+Note: Your json Object would be larger and more complex but this will do.
+
+Now we have our JSON object, but it's just that; a JSON object. You cannot just push JavaScript objects into local storage because localStorage can only accept strings key/values pairs. Thankfully javascript has an operator to help us out, stringify().
+
+stringify is a javascript operator that converts a javascript Object into a string. Using a little javascript we will "stringify" our JSON object and insert it into localStorage.
+
+$.ajax({
+  url: http://domain.com/myJSON.js,
+  dataType: 'json',
+  data: data,
+  success: function(data){
+
+
+var myJSON = JSON.stringify(data);
+localStorage.setItem('someJSON', myJSON);
+
+}
+});
+
+In the code above we have used JQuery to first make an ajax call and store the JSON object in a variable called data. On success we are taking that "data" variable and converting it from a JSON object into a JSON string, next we create a localStorage variable called "someJSON" populated with the JSON string.
+
+The JSON data is stored in localStorage, we can access it on or offline, but first before we can use it we have to convert that data back into a JSON object using JSON.parse(). JSON.parse effectively converts the string back into a JSON object that we can then use JQuery to loop over the 
+
+
+
+
+
+
+// Convert the JSON string back into an object
+var data =  JSON.parse(localStorage.getItem('someJSON'))
+// Hold the output
+var myOutput = "";
+//Loop over our results
+
+$( data ).each( function(){
+
+myOutput = myOutput + this.sessionName + " " + this.location + " " this.description;
+
+}
+
+
+The code above does a few things, first it takes the JSON data and converts it back into a JSON object and stores it in the "data" variable. Next we create an empty variable to hold the output. Finally we use the JQuery ".each()" operator to loop over the JSON object and push the output into the "myOutput" variable.
+
+
+
+
+
+
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+
