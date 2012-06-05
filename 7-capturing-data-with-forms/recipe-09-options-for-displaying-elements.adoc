@@ -18,28 +18,28 @@ Radio buttons can be grouped together by putting them inside a fieldset with dat
 
 Discussion
 ++++++++++
-In the following example there are three radio buttons that we want to group horizontally and also to take upp the full width of its container. The surrounding fieldset is specified as a horiontal control group. In order to style everything we add two classes. One general for all full width groups and one specific to the number of radio buttons in this group.
+In the following example there are three radio buttons that we want to group horizontally and also to take upp the full width of its container. The surrounding fieldset is specified as a horiontal control group. In order to style everything we add two classes. One general for all full width groups and one specific to the number of radio buttons in this group. The following HTML snippet is meant to be part of a jQuery Mobile page.
 
+[source, html]
+----
 <fieldset data-role="controlgroup" data-type="horizontal" class="fullwidth items-3">
-	<input type="radio" name="pay-method" id="pay-method-1" value="credit" checked="checked">
-	<label for="radio-1">Credit</label>
-	<input type="radio" name="pay-method" id="pay-method-2" value="debit">
-	<label for="radio-2">Debit</label>
-	<input type="radio" name="pay-method" id="pay-method-3" value="cash">
-	<label for="radio-3">Cash</label>
+  <input type="radio" name="payment-method" id="payment-method-1" value="credit" checked="checked">
+  <label for="payment-method-1">Credit</label>
+  <input type="radio" name="payment-method" id="payment-method-2" value="debit">
+  <label for="payment-method-2">Debit</label>
+  <input type="radio" name="payment-method" id="payment-method-3" value="cash">
+  <label for="payment-method-3">Cash</label>
 </fieldset>
+----
 
-The CSS 
+In the CSS we set the width of each ui-radio div that jQuery Mobile creates. This width in percent must match the number of items in the group (in this case 100% / 3). Then we make each label use up all of that width. And since we don't want to waste any pixels we will also have to reset some margins.
 
+[source, css]
+----
 .fullwidth.items-2 .ui-radio { width: 50%; }
-.fullwidth.items-3 .ui-radio { width: 33.333333%; }
+.fullwidth.items-3 .ui-radio { width: 33.3333333%; }
 .fullwidth.items-4 .ui-radio { width: 25%; }
 .fullwidth.items-5 .ui-radio { width: 20%; }
-
-.fullwidth label
-{
-	width: 100%;
-	margin-left: 0;
-	margin-right: 0;
-}
-
+.fullwidth .ui-radio { margin-right: 0; }
+.fullwidth .ui-radio label { margin-left: 0; width: 100%; }
+----
