@@ -32,7 +32,7 @@ In the following example there are three radio buttons that we want to group hor
 </fieldset>
 ----
 
-In the CSS we set the width of each ui-radio div that jQuery Mobile creates. This width in percent must match the number of items in the group (in this case 100% / 3). Then we make each label use up all of that width. And since we don't want to waste any pixels we will also have to reset some margins.
+In the CSS we set the width of each ui-radio div that jQuery Mobile creates. This width in percent must match the number of items in the group (in this case 100% / 3). Then we make each label use up all of that width. And since we don't want to waste any pixels we will also reset some margins.
 
 [source, css]
 ----
@@ -42,4 +42,18 @@ In the CSS we set the width of each ui-radio div that jQuery Mobile creates. Thi
 .fullwidth.items-5 .ui-radio { width: 20%; }
 .fullwidth .ui-radio { margin-right: 0; }
 .fullwidth .ui-radio label { margin-left: 0; width: 100%; }
+----
+
+It is not only radio buttons that can be grouped in this manner. Here is a modified set of CSS rules that makes this work for select boxes as well.
+
+[source, css]
+----
+.fullwidth.items-2 .ui-radio, .fullwidth.items-2 .ui-select { width: 50%; }
+.fullwidth.items-3 .ui-radio, .fullwidth.items-3 .ui-select { width: 33.3333333%; }
+.fullwidth.items-4 .ui-radio, .fullwidth.items-4 .ui-select { width: 25%; }
+.fullwidth.items-5 .ui-radio, .fullwidth.items-5 .ui-select { width: 20%; }
+.fullwidth .ui-radio label, .fullwidth .ui-select .ui-btn { width: 100%; }
+.fullwidth .ui-radio, .fullwidth .ui-radio label { margin: 0; }
+.fullwidth .ui-select { margin: 0 -2px; }
+.fullwidth .ui-select:first-child { margin-left: 0; }
 ----
