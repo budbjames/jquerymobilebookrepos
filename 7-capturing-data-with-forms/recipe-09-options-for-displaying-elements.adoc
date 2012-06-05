@@ -10,14 +10,36 @@ Author: Mattias Kihlstrom <mattias@kihlstrom.com>
 
 Problem
 +++++++
-When laying out a form you often want to group elements together. This could be as simple as putting a label just before its input element and wrapping a fieldset around them. But how would you go about if you for instance have two select boxes grouped together horizontally and you also want them to fill up the full width of the screen?
+When designing a form you often want to group elements together. This could be as simple as putting a label just before its input element and wrapping a fieldset around them. But how would you go about if you for instance have three radio buttons grouped together horizontally and you also want them to fill up the full width of the screen?
 
 Solution
 ++++++++
-Select boxes can be grouped together by putting them inside a fieldset with data-role="controlgroup". Adding data-type="horizontal" makes sure they are side by side instead of below each other (as long as the browser supports display: inline-block;). But if you want them to use 100% of the width you will have to add an extra wrapping div and some styling.
-
-[Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.]
+Radio buttons can be grouped together by putting them inside a fieldset with data-role="controlgroup". Adding data-type="horizontal" makes sure they are side by side instead of below each other (as long as the browser supports display: inline-block;). But if you want them to use 100% of the width you will have to add some extra styling, specific to the number of radio buttons in the group.
 
 Discussion
 ++++++++++
-[The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.]
+In the following example there are three radio buttons that we want to group horizontally and also to take upp the full width of its container. The surrounding fieldset is specified as a horiontal control group. In order to style everything we add two classes. One general for all full width groups and one specific to the number of radio buttons in this group.
+
+<fieldset data-role="controlgroup" data-type="horizontal" class="fullwidth items-3">
+	<input type="radio" name="pay-method" id="pay-method-1" value="credit" checked="checked">
+	<label for="radio-1">Credit</label>
+	<input type="radio" name="pay-method" id="pay-method-2" value="debit">
+	<label for="radio-2">Debit</label>
+	<input type="radio" name="pay-method" id="pay-method-3" value="cash">
+	<label for="radio-3">Cash</label>
+</fieldset>
+
+The CSS 
+
+.fullwidth.items-2 .ui-radio { width: 50%; }
+.fullwidth.items-3 .ui-radio { width: 33.333333%; }
+.fullwidth.items-4 .ui-radio { width: 25%; }
+.fullwidth.items-5 .ui-radio { width: 20%; }
+
+.fullwidth label
+{
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
