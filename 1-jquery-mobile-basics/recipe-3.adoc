@@ -139,5 +139,5 @@ a method which allows you to use a single reference that works on both HTTP and 
 In the above code we decided to use the locally hosted css file, while choosing to load the JavaScript files 
 from the jQuery CDN. Most developers suggest the JavaScript files to be placed at the bottom of the HTML page, 
 and the CSS files to be placed at the top of your HTML page in the head section. This makes the script 
-files non-blocking and allowes for rendering the other page's elements. Also, it is good to note that you should 
+files non-blocking and allows for rendering the other page's elements. Also, it is good to note that you should 
 always use a version of the JavaScript libraries that is known to work well with your page.
