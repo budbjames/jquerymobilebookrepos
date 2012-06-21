@@ -25,7 +25,8 @@ Additionally, connection status may be further ascertained in the success and er
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The navigator.onLine property may not always be accurate but it is somewhat useful.  The HTML5 spec says that this property "Returns false if the user agent is definitely offline (disconnected from the network). Returns true if the user agent might be online."  Given that definition, this property does not sound very helpful, but think of it as a first line of defense.  It is useful to establish a baseline, but there may be instances where navigator.onLine === true, but actual network connectivity isn't available.  In order to handle inconsistency with this property we can track our own connection status.
+The navigator.onLine property may not always be accurate but it is somewhat useful.  The HTML5 spec says that this property "Returns false if the user agent is definitely offline (disconnected from the network). Returns true if the user agent might be online."[Hey this needs to be an
+attribution! to http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#browser-state ]  Given that definition, this property does not sound very helpful, but think of it as a first line of defense.  It is useful to establish a baseline, but there may be instances where navigator.onLine === true, but actual network connectivity isn't available.  In order to handle inconsistency with this property we can track our own connection status.
 [source, javascript]
 ----
 //Initialize connection status to navigator.onLine property.
