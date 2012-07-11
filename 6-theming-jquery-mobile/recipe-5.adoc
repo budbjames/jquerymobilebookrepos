@@ -1,0 +1,77 @@
+////
+
+This recipe covers changing page themes on-the-fly
+
+Author: Max Lynch <maxlynch@uwalumni.com>
+
+////
+
+#.# Dynamically Changing Page Themes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Occasionally, we need a way to change the default theme of a page on the fly. For example, we might want to "darken" a page depending on the time of day or to highlight a certain piece of content. We need a way to change the theme after the page has been loaded and enhanced by jQuery Mobile.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+To automatically change page themes, we just need to modify the active theme classes based on the given swatch.
+
+.Dynamically change page themes
+[source,html]
+----
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+<body>
+  <div id="page1" data-role="page" data-theme="e">
+    <div data-role="content">
+    </div>
+  </div>
+  <script>
+    function changeTheme(element, theme) {
+      var oldTheme = element.attr( "data-theme" ) || "c";
+      
+      // Update the data-attribute of this element to the new theme swatch
+      element.attr( "data-theme", theme );
+
+      if ( element.attr( "class" ) ) {
+        /* Theme classes end in "-[a-z]$", so match that */
+        var classPattern = new RegExp( "-" + oldTheme + "$" );
+        theme = "-" + theme;
+
+        var classes =  element.attr( "class" ).split( " " );
+
+        var hadThemeClasses = false;
+        for( var key in classes ) {
+          if( classPattern.test( classes[key] ) ) {
+            hadThemeClasses = true;
+            classes[key] = classes[key].replace( classPattern, theme );
+          }
+        }
+
+
+        element.attr('class', classes.join(' '));
+      }
+    }
+
+    $('#page1').bind('pageinit', function() {
+      setTimeout(function() {
+        changeTheme( $("#page1"), "a" );
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
+----
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+
+In this example, we've created a changeTheme function that will dynamically modify the theme of a given jQuery Mobile element. We could use this function to modify any jQuery Mobile component that supports theming. The meat of the changeTheme function is the element class find and replace, that looks for class names of the type "-N" where N is the theme swatch we are going to be changing
