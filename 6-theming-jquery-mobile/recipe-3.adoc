@@ -26,7 +26,7 @@ hover and pressed interaction states. Within a single theme, you can create up t
 lettered from A-Z, each one having a unique color scheme.  This lets you combine swatch colors
 for different elements in the same webpage; for example, in case you want to style two
 buttons differently in a page, you can assign swatch A to one button and swatch M to the 
-other, thus using two different color <schemes class=""></schemes>
+other, thus using two different color <schemes class=""></schemes>.
 
 In Figure 6-3.1, we can see the ThemeRoller interface, which is divided in three main areas:
 
