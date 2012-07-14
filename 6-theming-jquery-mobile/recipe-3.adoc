@@ -30,6 +30,7 @@ other, thus using two different color <schemes class=""></schemes>
 
 In Figure 6-3.1, we can see the ThemeRoller interface, which is divided in three main areas:
 
+[Figure 6-3.1]
 image::images-themeroller/themeroller-interface.png[]
 
 . The *swatches panel* (A) on the left. Through this panel, you can add or modify a swatch, 
@@ -46,14 +47,17 @@ it is recommended to use a modern web browser that supports CSS gradients, such 
 versions of Chrome, Safari and Firefox.
 
 To start with the tool, browse to http://jquerymobile.com/themeroller/. After this page has loaded, 
-you will see in the preview panel, Figure 6-3.1 (C), some sample swatches A, B, and C. You can start 
-modifying these sample swatches, or in case you already have a theme file you can import it and change 
-only the things you want. As an example, here we will import the jQuery Mobile's default theme file; 
-click on the "Import" button, located at the palette panel (B), and then in the new generated window click 
-the link "Import Default Theme", which will load the contents of the default theme file. Now you can view 
-the loaded theme styles of all elements in the sample pages at the preview panel, Figure 6-3.2, 
-and make modifications.
+you will see in the preview panel, Figure 6-3.1 (C), some sample swatches titled A, B, and C. You can start 
+modifying these sample swatches, or in case you already have created a theme file you can import it and change 
+only the things you want. 
 
+As an example, here we will import the jQuery Mobile's default theme file; click on the "Import" button located 
+at the palette panel (B), then in the new generated window that shows up click the link "Import Default Theme", 
+which will load the contents of the default theme file, and then in the same window click the button "Import". 
+Now you can view the loaded default theme styles of all elements in the sample pages at the preview panel, 
+Figure 6-3.2, and make modifications.
+
+[Figure 6-3.2]
 image::images-themeroller/themeroller-loaded-theme.png[]
 
 Swatches Panel
@@ -62,17 +66,24 @@ The global theme settings of the swatches panel, Figure 6-3.1 (A), can set the _
 the _active state color_ for page elements, the corner _radii_ for groups and buttons, the 
 _icons properties_, and the _box shadow_ styles, as shown in Figure 6-3.3.
 
+[Figure 6-3.3]
 image::images-themeroller/swatches-panel-global-settings-all.png[]
 
 Palette Panel
 ++++++++++++++++++++
-From the palette panel, Figure 6-3.1 (B), click the Inspector button to activate it. Hover over
-the main content area of swatch A, and you will notice that the current element in focus gets a border 
-of a different color. Click at the main content area, and this will automatically show the configuration 
-of Content Body from swatch A at the swatches panel, Figure 6-3.4. It is thus possible to modify settings 
-such as the background color. By clicking with the inspector activated to different parts of a swatch, 
-you can define all styles applied to it.
+The palette panel, Figure 6-3.1 (B), has one of the most useful buttons of the themeroller that adds much 
+to its functionality: the Inspector button. Click the Inspector button to activate it; the button's color 
+will change indicating its active state. You can toggle the Inspector button so as to use it when you want. 
+By hovering over the main content area of swatch A, and you will notice that the current element in "focus" 
+gets a border of a different color; this indicates which element of the page the Inspector is currently 
+targeting. 
 
+Click for example at the main content area, and this will automatically show the configuration 
+of Content Body from swatch A at the swatches panel, like in Figure 6-3.4. It is thus possible to modify 
+settings such as the background color through the swatches panel. By clicking with the inspector activated 
+to different parts of a swatch, i.e. a link or a button, you can define all styles applied to it.
+
+[Figure 6-3.4]
 image::images-themeroller/swatch-configuration.png[]
 
 An easy way to set colors for elements is to use the color palette, Figure 6-3.1 (B), where you can simply
@@ -90,6 +101,9 @@ Exporting your theme
 ^^^^^^^^^^^^^^^^^^^^
 After you have made the changes you want to your theme, you can download it with the "Download Theme"
 button in the swatches panel, or share a link of its current configuration. Enter a name for your 
-theme, Figure 6-3.5, and follow the instructions provided on the new window to include it in your HTML page.
+theme, Figure 6-3.5, and follow the instructions provided on the new window to include it in your HTML page. 
+It should be mentioned that you should keep the uncompressed CSS version of your theme file, because you can 
+edit your theme in the future only by using this file.
 
+[Figure 6-3.5]
 image::images-themeroller/theme.png[]
