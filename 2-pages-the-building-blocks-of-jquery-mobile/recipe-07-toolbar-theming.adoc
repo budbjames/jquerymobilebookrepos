@@ -2,21 +2,47 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Max Lynch <maxlynch@uwalumni.com>
 
 ////
 
-#.# Recipe Title
+#.# Toolbar Theming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+We want to change the look and feel of a toolbar.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+We can easily change the theme of a toolbar by setting the data-theme attribute as show below:
 
+[source, html]
+-----
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+<body>
+  <div data-role="page">
+		<div data-role="header" data-theme="e">
+			<h3>Yellow</h3>
+		</div>
+		<div data-role="content">
+			Content
+		</div>
+		<div data-role="footer" data-theme="b">
+			<h3>Blue</h3>
+		</div>
+	</div>
+</body>
+</html>
+-----
+ 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+In this recipe we've set the data-theme attribute to the theme swatch we want to style the toolbar with.
