@@ -2,21 +2,51 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Max Lynch <maxlynch@uwalumni.com>
 
 ////
 
-#.# Recipe Title
+#.# Toolbars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+We want to display a customary header or footer on a page, complete with a different look and feel from the rest of the page.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+jQuery Mobile provides two default toolbar types: a header and a footer. In addition, we can use the common toolbar styles to create inline toolbars as shown in this example below:
 
+[source, html]
+-----
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+<body>
+  <div data-role="page">
+		<div data-role="header">
+			<h3>Header</h3>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-a">
+				<a href="#" data-role="button" data-inline="true">A button</a>
+			</div>
+		</div>
+		<div data-role="footer">
+			<h3>Footer</h3>
+		</div>
+	</div>
+</body>
+</html>
+-----
+ 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+In this example we've demonstrated how to display a header a footer bar above and below the content of a page, respectfully. In addition, we've demonstrated how to reuse the standard toolbar
+classes in order to embed a toolbar into the content of the page.
