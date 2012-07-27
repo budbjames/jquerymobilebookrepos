@@ -41,19 +41,17 @@ Solution
   </head>
   <body>
     <div id="home" data-role="page" data-theme="b">
-      <div id="home-header" data-role="header" data-position="inline">
-        <select name="language" id="language" data-native-menu="false" data-theme="b">
-			<option value="English">English</option>
-			<option value="French">French</option>
-			<option value="Russian">Russian</option>
-			<option value="Polish">Polish</option>
-		</select>
-		<h1>Home Page</h1> 
+		<div id="home-header" data-role="header" data-position="inline">
+			<select name="language" id="language" data-native-menu="false" data-theme="b">
+				<option value="English">English</option>
+				<option value="French">French</option>
+				<option value="Russian">Russian</option>
+				<option value="Polish">Polish</option>
+			</select>
+			<h1>Home Page</h1> 
 
-	  </div>
-	</div>
-      </div>
-      <div data-role="content"></div> 
+		</div>
+		<div data-role="content"></div> 
     </div>
   </body>
 </html>
