@@ -2,25 +2,52 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: Dave Ferguson <dave@dkferguson.com>
+Author: Max Lynch <maxlynch@uwalumni.com>
 
 ////
 
-2.4 Fixing toolbars to page
+#.# Fixing Toolbars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-I would like to display a navigation bar that is fixed to the top or bottom of the screen.
+We want to display a header or footer toolbar at all times, and float it above the content of the page.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Createing a fixed position navigation bar is very simple.  All it takes is to add the data-position attribute and set set it to "fixed".  The same attribute can be added to either the header, footer, or both
+jQuery Mobile provides fixed positioning support for toolbars. In fact, it's a simple matter of adding data-position="fixed" to the toolbar as shown below:
 
-<div data-role="header" data-position="fixed">
-  <h1>Fixed position header</h1>
-</div>
-
+[source, html]
+-----
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+<body>
+  <div data-role="page">
+		<div data-role="header" data-position="fixed">
+			<h3>Header</h3>
+		</div>
+		<div data-role="content">
+			<div style="height: 1000px">
+				A really tall div
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h3>Footer</h3>
+		</div>
+	</div>
+</body>
+</html>
+-----
+ 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-Not all devices support fixed toolbars.  When a device does not support this function the toolbars are fixed to top and bottom of the page content.  The toolbars will then scroll with the content like a standard toolbar.
+In this recipe we've set the data-position attribute to "fixed" to keep the header and footer toolbars fixed at the top and bottom of the viewport, respectfully.
+
+This keeps the center content padded enough to show the toolbars while allowing the toolbars to stay fixed in pace as the center content scrolls. We've added
+a really tall div to demonstrate the effect.
