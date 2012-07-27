@@ -16,10 +16,13 @@ Author: John Chacko <poonkave@gmail.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Needs to provide an option for user to change website language.
+Sometimes we want to embed controls in the header or footer toolbars on the page. One common reason is to let the user toggle the current language of the page.
+
+In order to this, we need to be able to place a control into the header and position it properly to the right or left side.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
+
 [source, html]
 ---- 
 <!DOCTYPE html>
@@ -30,23 +33,23 @@ Solution
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	<style>
+		#home-header .ui-select { 
+			float: right
+		}
+	</style>
   </head>
   <body>
     <div id="home" data-role="page" data-theme="b">
-      <div data-role="header" data-position="inline">
-        <h1>Home Page</h1> 
-        <div data-role="navbar" data-theme="a" class="ui-bar"> 
-          <div class="ui-grid-b">
-            <div class="ui-block-a"></div>
-            <div class="ui-block-b"></div>
-            <div class="ui-block-c">
-	      <select name="select-choice-1" id="select1" data-native-menu="false" data-theme="b">
-	        <option value="English">English</option>
-	        <option value="French">French</option>
-	        <option value="Russian">Russian</option>
-		<option value="Polish">Polish</option>
-	      </select>
-	    </div>
+      <div id="home-header" data-role="header" data-position="inline">
+        <select name="language" id="language" data-native-menu="false" data-theme="b">
+			<option value="English">English</option>
+			<option value="French">French</option>
+			<option value="Russian">Russian</option>
+			<option value="Polish">Polish</option>
+		</select>
+		<h1>Home Page</h1> 
+
 	  </div>
 	</div>
       </div>
@@ -57,6 +60,4 @@ Solution
  
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-A custom select menu is embeded inside a navbar after header.
-Grid layout is used to align selectbox to the right.
-
+In order to fit the control the right of the header, we've set it to float right. 
