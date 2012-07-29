@@ -3,7 +3,7 @@
 Recipe for collapsible sets
 
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
-TO DO: Complete solution and add full code and screen shots
+
 ////
 
 2.17 Collapsible sets
@@ -15,79 +15,80 @@ You want to use more than one collapsible, but when one collapsible is expanded,
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Use a collapsible set by having your collapsibles inside an additional +div+ container with +data-role="collapsible-set"+: 
-
+Use a collapsible set by having your collapsibles inside an additional +div+ container with +data-role="collapsible-set"+:
 
 [source,html]
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale="1"">
-    <title>Collapsible example</title>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.css" />
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-  </head>
-  <body>
-    <div data-role="page" id="profile">
-      <div data-role="header" data-position="fixed">
-        <h4>Staff Profile</h4>
-      </div>
-      <div data-role="content">
-        <div>
-          <img src="AG.jpg" align="right" width="100" />
-            <span>
-              <h4>Anne-Gaelle Colom <br />Teaching Fellow</h4>
-              Office: N7.122 <br />
-              Drop in: Tuesday 1-2pm<br />
-            </span>
-          </div>
-          <div data-role="collapsible-set">
-            <div data-role="collapsible" data-theme="a" data-content-theme="c" >
-              <h3>Virtual Noticeboard</h3>
-              <dl>
-                <dt>News: </dt>
-                <dd>I am currently working on my recipes for the jQuery Mobile Cookbook...</dd>
-              </dl>
-            </div>
-            <div data-role="collapsible">
-              <h3>Area of expertise</h3>
-              <ul>
-                <li>jQuery Mobile</li>
-                <li>JavaScript</li>
-                <li>Front-end Web development</li>
-                <li>User Experience</li>
-              </ul>
-            </div>
-            <div data-role="collapsible">
-              <h3>Teaching</h3>
-              <p>Teaching details here...</p>
-            </div>
-            <div data-role="collapsible">
-              <h3>Projects</h3>
-              <p>Projects details here...</p>
-            </div>
-          </div> <!-- /collapsible-set -->
-        </div> <!-- /content -->
-        <div data-role="footer">
-          <h4></h4>
-        </div> <!-- /footer -->
-     </div> <!-- /page -->
-  </body>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale="1"">
+   <title>Collapsible example</title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.css" />
+   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+ </head>
+ <body>
+   <div data-role="page" id="profile">
+     <div data-role="header" data-position="fixed">
+       <h4>Staff Profile</h4>
+     </div>
+     <div data-role="content">
+       <div>
+         <img src="AG.jpg" align="right" width="100" />
+           <span>
+             <h4>Anne-Gaelle Colom <br />Teaching Fellow</h4>
+             Office: N7.122 <br />
+             Drop in: Tuesday 1-2pm<br />
+           </span>
+         </div>
+         <div data-role="collapsible-set">
+           <div data-role="collapsible" data-theme="a" data-content-theme="c" >
+             <h3>Virtual Noticeboard</h3>
+             <dl>
+               <dt>News: </dt>
+               <dd>I am currently working on my recipes for the jQuery Mobile Cookbook...</dd>
+             </dl>
+           </div>
+           <div data-role="collapsible">
+             <h3>Area of expertise</h3>
+             <ul>
+               <li>jQuery Mobile</li>
+               <li>JavaScript</li>
+               <li>Front-end Web development</li>
+               <li>User Experience</li>
+             </ul>
+           </div>
+           <div data-role="collapsible">
+             <h3>Teaching</h3>
+             <p>Teaching details here...</p>
+           </div>
+           <div data-role="collapsible">
+             <h3>Projects</h3>
+             <p>Projects details here...</p>
+           </div>
+         </div> <!-- /collapsible-set -->
+       </div> <!-- /content -->
+       <div data-role="footer">
+         <h4></h4>
+       </div> <!-- /footer -->
+    </div> <!-- /page -->
+ </body>
 </html>
 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-A collapsible set is a set of collapsibles that work together. All collapsibles in a set may be collapsed at the same time, and only one collapsible in a set can be expanded at any one time. The collapsibles in the set will look like a block of collapsibles, with the top and bottom rounded corners applied to the top of the first and the bottom of the last collapsibles of the set by default. 
+A collapsible set is a set of collapsibles that work together. All collapsibles in a set may be collapsed at the same time, and only one collapsible in a set can be expanded at any one time. The collapsibles in the set will look like a block of collapsibles, with the top and bottom rounded corners applied to the top of the first and the bottom of the last collapsibles of the set by default.
 
-Just as you are able to add theme to the header and content of the collapsible, you can do the same with the collapsible set, by adding +data-theme+ to the collapsible header, and/or to the collapsible content.
-This will produce <<FIG2-17-1>> and <<FIG2-17-2>>:
+Just as you are able to add theme to the header and content of the collapsible, you can do the same with the collapsible set, by adding +data-theme+ to the collapsible header, and/or to the collapsible content. This will produce <<FIG2-17-1>> and <<FIG2-17-2>>:
+
 
 [[FIG2-17-1]]
 .A Themed Collapsible Set Collapsed
 image::images/Collapsible_Themed_Collapsed.png[]
+Photograph: Joby Sessions for .net magazine
 
 [[FIG2-17-2]]
 .A Themed Collapsible Set Expanded
 image::images/Collapsible_Themed_Expanded.png[]
+Photograph: Joby Sessions for .net magazine
