@@ -16,91 +16,93 @@ You want to display some information in a way that will enable to toggle the vie
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Use a collapsible content block, using a container with data-role="collapsible", see <<EX2-16-1>>: 
+Use a collapsible content block, using a container with data-role="collapsible", see <<EX2-16-1>>:
 
 [[EX2-16-1]]
 .A Collapsible Example
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale="1""> 
-    <title>Collapsible example</title>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.css" />
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
-    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-  </head>
-  <body> 
-    <div data-role="page" id="profile">
-      <div data-role="header" data-position="fixed">
-        <h4>Staff Profile</h4>
-      </div>
-      <div data-role="content">
-        <div>
-          <img src="AG.jpg" align="right" width="100" />
-            <span>
-              <h4>Anne-Gaelle Colom <br />Teaching Fellow</h4>    
-              Office: N7.122 <br />
-              Drop in: Tuesday 1-2pm<br />
-            </span>
-          </div>
-          <div data-role="collapsible">
-            <h3>Virtual Noticeboard</h3>
-            <dl>
-              <dt>News: </dt>
-              <dd>I am currently working on my recipes for the jQuery Mobile Cookbook...</dd>
-            </dl>
-          </div>
-          <div data-role="collapsible">
-            <h3>Area of expertise</h3>
-            <ul>
-              <li>jQuery Mobile</li>
-              <li>JavaScript</li>
-              <li>Front-end Web development</li>
-              <li>User Experience</li>
-            </ul>
-          </div>
-          <div data-role="collapsible">
-            <h3>Teaching</h3>
-            <p>Teaching details here...</p>
-          </div>
-          <div data-role="collapsible">
-            <h3>Projects</h3>
-            <p>Projects details here...</p>
-          </div>
-        </div><!-- /content -->
-        <div data-role="footer">
-          <h4></h4>
-        </div><!-- /footer -->
-     </div><!-- /page -->
-  </body>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale="1"">
+   <title>Collapsible example</title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.css" />
+   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+ </head>
+ <body>
+   <div data-role="page" id="profile">
+     <div data-role="header" data-position="fixed">
+       <h4>Staff Profile</h4>
+     </div>
+     <div data-role="content">
+       <div>
+         <img src="AG.jpg" align="right" width="100" />
+           <span>
+             <h4>Anne-Gaelle Colom <br />Teaching Fellow</h4>   
+             Office: N7.122 <br />
+             Drop in: Tuesday 1-2pm<br />
+           </span>
+         </div>
+         <div data-role="collapsible">
+           <h3>Virtual Noticeboard</h3>
+           <dl>
+             <dt>News: </dt>
+             <dd>I am currently working on my recipes for the jQuery Mobile Cookbook...</dd>
+           </dl>
+         </div>
+         <div data-role="collapsible">
+           <h3>Area of expertise</h3>
+           <ul>
+             <li>jQuery Mobile</li>
+             <li>JavaScript</li>
+             <li>Front-end Web development</li>
+             <li>User Experience</li>
+           </ul>
+         </div>
+         <div data-role="collapsible">
+           <h3>Teaching</h3>
+           <p>Teaching details here...</p>
+         </div>
+         <div data-role="collapsible">
+           <h3>Projects</h3>
+           <p>Projects details here...</p>
+         </div>
+       </div><!-- /content -->
+       <div data-role="footer">
+         <h4></h4>
+       </div><!-- /footer -->
+    </div><!-- /page -->
+ </body>
 </html>
- 
-This will produce <<FIG2-16-1>> and <<FIG2-16-2>>
+
+This will produce <<FIG2-16-1>> and <<FIG2-16-2>>.
 [[FIG2-16-1]]
 .Simple Collapsibles Collapsed
 image::images/Collapsible_Simple_Collapsed.png[]
+Photograph: Joby Sessions for .net magazine
 
 [[FIG2-16-2]]
 .Simple Collapsibles Expanded
 image::images/Collapsible_Simple_Expanded.png[]
+Photograph: Joby Sessions for .net magazine
 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The collapsible content block will by default have content collapsed, so that only the collapsible heading is visible, next to a + sign, that indicates that the content can be expanded. The user can expand (show) the content of the collapsible by touching anywhere on the heading (text or plus icon). The content then appears below the heading in its own content area. The + icon becomes a - icon, indicating that the content can now be collapsed (hidden).
+The collapsible content block will by default have content collapsed, so that only the collapsible heading is visible, next to a “plus” sign, that indicates that the content can be expanded. The user can expand (show) the content of the collapsible by touching anywhere on the heading (text or plus icon). The content then appears below the heading in its own content area. The “plus” icon becomes a “minus” icon, indicating that the content can now be collapsed (hidden).
+
 The heading element *+<h3>Area of expertise</h3>+* in the example above must be immediately inside the collapsible container. It is this heading that will be displayed and clickable when the collapsible content is collapsed. It is possible to have more than one collapsible on the same page, and there is no restriction to the content of a collapsible.
 
-Note that it is also possible to add color to the collapsible header and/or the collapsible content. By default, the collapsible header will inherit theme from the defined page content theme (see Chapter 6 for more information on themes), and the content will have no theme and will simply be displayed on the page below its header. 
-To override this style, you can add *+data-theme+* to the collapsible elements, i.e. to the header, or to the content. Adding *+data-theme+* to the collapsible content will create a visual effect. The collapsible content will no longer be simply displayed on the page, but it will be in a visual container of the color corresponding to the theme specified. 
-The content will still be below the heading, but also visually attached to it. The bottom of the content will have by default a nice rounded corner at the bottom. This can be changed with custom CSS.
+Note that it is also possible to add color to the collapsible header and/or the collapsible content. By default, the collapsible header will inherit theme from the defined page content theme (see Chapter 6 for more information on themes), and the content will have no theme and will simply be displayed on the page below its header. To override this style, you can add *+data-theme+* to the collapsible elements, i.e. to the header or to the content. Adding *+data-theme+* to the collapsible content will create a visual effect. The collapsible content will no longer be simply displayed on the page, but it will be in a visual container of the color corresponding to the theme specified. The content will still be below the heading, but also visually attached to it. The bottom of the content will have by default a nice rounded corner at the bottom. This can be changed with custom CSS.
 
-See the results below <<FIG2-16-3>> and <<FIG2-16-4>> of theming the collapsible and its content by changing the collapsible container to *+<div data-role="collapsible" data-theme="a" data-content-theme="c">+*
-
+See the results below <<FIG2-16-3>> and <<FIG2-16-4>> of theming the collapsible and its content by changing the collapsible container to *+<div data-role="collapsible" data-theme="a" data-content-theme="c">+*.
 
 [[FIG2-16-3]]
 .Themed Collapsibles Collapsed
 image::images/Collapsible_Themed_Collapsed.png[]
+Photograph: Joby Sessions for .net magazine
 
 [[FIG2-16-4]]
 .Collapsibles with Themed Content Expanded
 image::images/Collapsible_Themed_Expanded.png[]
+Photograph: Joby Sessions for .net magazine
