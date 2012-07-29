@@ -10,7 +10,7 @@ Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, as shown in <<FIG2-15-1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size. 
+You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, as shown in <<FIG2-15-1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size.
 
 [[FIG2-15-1]]
 .Layout Grid Example
@@ -18,69 +18,68 @@ image::images/grid_layout_example.png[]
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-You can use layout grids to format your content by having your content setup in a set of specific containers. For the example mentioned above, you will need to start by having the columns in a div with class="ui-grid-c". This corresponds to a four-column grid. This container will then hold the four div containers that will correspond to each of the four columns, each of which has its own class: "ui-block-a" to "ui-block-d": 
+You can use layout grids to format your content by having your content setup in a set of specific containers. For the example mentioned above, you will need to start by having the columns in a div with class="ui-grid-c". This corresponds to a four-column grid. This container will then hold the four div containers that will correspond to each of the four columns, each of which has its own class: "ui-block-a" to "ui-block-d":
 
 [source,html]
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Grid Layout example</title>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
-    <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
-  </head>
-  <body> 
-    <div data-role="page" id="home">
-      <div data-role="header" data-position="fixed">
-        <h4>Choose Contact</h4>
-      </div>
-      <div data-role="content">
-        <div class="ui-grid-c"><!-- defines a four-column grid layout -->
-          <div class="ui-block-a"> <!-- first column -->
-            <img src="todd.jpg" width="64"/><br /><br />
-            <img src="ghislain.jpg" width="64"/><br /><br />
-            <img src="elijah.jpg" width="64"/><br /><br />
-            <img src="addy.jpg" width="64"/><br />
-          </div> <!-- /first column -->
-          <div class="ui-block-b"> <!-- second column -->
-            <img src="anne.jpg" width="64"/><br /><br />
-            <img src="garann.jpg" width="64"/><br /><br />
-            <img src="doug.jpg" width="64"/><br /><br />
-            <img src="paul.jpg" width="64"/><br />
-          </div> <!-- /second column -->
-          <div class="ui-block-c"> <!-- third column -->
-            <img src="scott.jpg" width="64"/><br /><br />
-            <img src="mat.jpg" width="64"/><br /><br />
-            <img src="max.jpg" width="64"/><br /><br />
-            <img src="andy.jpg" width="64"/><br />
-          </div> <!-- /third column -->
-          <div class="ui-block-d"> <!-- fourth column -->
-            <img src="john.jpg" width="64"/><br /><br />
-            <img src="jquerymobile.jpg" width="64"/><br /><br />
-            <img src="mike.jpg" width="64"/><br /><br />
-            <img src="raymond.jpg" width="64"/><br />
-          </div> <!-- /fourth column -->
-        </div> <!-- /grid layout -->
-      </div> <!-- /content -->
-      <div data-role="footer" data-position="fixed">
-        <h4>My Contacts</h4>
-      </div>
-    </div> 
-  </body>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Grid Layout example</title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
+   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+   <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+ </head>
+ <body>
+   <div data-role="page" id="home">
+     <div data-role="header" data-position="fixed">
+       <h4>Choose Contact</h4>
+     </div>
+     <div data-role="content">
+       <div class="ui-grid-c"><!-- defines a four-column grid layout -->
+         <div class="ui-block-a"> <!-- first column -->
+           <img src="todd.jpg" width="64"/><br /><br />
+           <img src="ghislain.jpg" width="64"/><br /><br />
+           <img src="elijah.jpg" width="64"/><br /><br />
+           <img src="addy.jpg" width="64"/><br />
+         </div> <!-- /first column -->
+         <div class="ui-block-b"> <!-- second column -->
+           <img src="anne.jpg" width="64"/><br /><br />
+           <img src="garann.jpg" width="64"/><br /><br />
+           <img src="doug.jpg" width="64"/><br /><br />
+           <img src="paul.jpg" width="64"/><br />
+         </div> <!-- /second column -->
+         <div class="ui-block-c"> <!-- third column -->
+           <img src="scott.jpg" width="64"/><br /><br />
+           <img src="mat.jpg" width="64"/><br /><br />
+           <img src="max.jpg" width="64"/><br /><br />
+           <img src="andy.jpg" width="64"/><br />
+         </div> <!-- /third column -->
+         <div class="ui-block-d"> <!-- fourth column -->
+           <img src="john.jpg" width="64"/><br /><br />
+           <img src="jquerymobile.jpg" width="64"/><br /><br />
+           <img src="mike.jpg" width="64"/><br /><br />
+           <img src="raymond.jpg" width="64"/><br />
+         </div> <!-- /fourth column -->
+       </div> <!-- /grid layout -->
+     </div> <!-- /content -->
+     <div data-role="footer" data-position="fixed">
+       <h4>My Contacts</h4>
+     </div>
+   </div>
+ </body>
 </html>
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-There are 4 layout grids that can be chosen to format your content: 
-* Layout grid a is defined with +<div class="ui-grid-a">+ and is a two-column grid, 
-* Layout grid b is defined with +<div class="ui-grid-b">+ and is a three-column grid, 
-* Layout grid c is defined with +<div class="ui-grid-c">+ and is a four-column grid, 
+There are 4 layout grids that can be chosen to format your content:
+* Layout grid a is defined with +<div class="ui-grid-a">+ and is a two-column grid,
+* Layout grid b is defined with +<div class="ui-grid-b">+ and is a three-column grid,
+* Layout grid c is defined with +<div class="ui-grid-c">+ and is a four-column grid,
 * Layout grid d is defined with +<div class="ui-grid-d">+ and is a five-column grid.
 
-After this definition, you will need to construct the content of each column in the grid. In our example, we have a four-column grid, defined with +<div class="ui-grid-c">, and the four columns are constructed using +<div class="ui-block-a">+ for the first column, +<div class="ui-block-b">+ for the second column, +<div class="ui-block-c">+ for the third column, and finally +<div class="ui-block-d">+ for the fourth column.  
-Each of the defined column can have any type of content. In our example, we simply have images. Any standard page content element can be inserted in a grid column. In some cases, for example if you have collapsibles in a grid, you will need to add an additional container that will ensure that you have extra margin around your elements and these do not overlap into their neighbouring columns.  
+After this definition, you will need to construct the content of each column in the grid. In our example, we have a four-column grid, defined with +<div class="ui-grid-c">, and the four columns are constructed using +<div class="ui-block-a">+ for the first column, +<div class="ui-block-b">+ for the second column, +<div class="ui-block-c">+ for the third column, and finally +<div class="ui-block-d">+ for the fourth column.
+Each of the defined column can have any type of content. In our example, we simply have images. Any standard page content element can be inserted in a grid column. In some cases, for example if you have collapsibles in a grid, you will need to add an additional container that will ensure that you have extra margin around your elements and these do not overlap into their neighbouring columns.
 
 Note that it is possible to have multiple row grids. In this case, you will need to define the layout grid type using the corresponding +ui-grid+ class, and assign block classes in a repeating sequence, so for a +3x3+ grid, this will look like +a, b, c, a, b, c, a, b, c+. The first column in each row must have the ui-block-a class that clears the floats and which will start a new line.
 
-It is possible to only have a small portion of the page content in a layout grid. You do not have to apply that layout to the whole content of the page. For example, you may choose to only have one line of elements in a layout grid to align buttons on the page. 
-
+It is possible to only have a small portion of the page content in a layout grid. You do not have to apply that layout to the whole content of the page. For example, you may choose to only have one line of elements in a layout grid to align buttons on the page.
