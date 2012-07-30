@@ -65,15 +65,17 @@ Lets put all of the information elements we are using into a semantic order.
     </ul>
 ----
 
-To any ```h1, h2, h3, h4, h5``` that jQuery Mobile finds inside the ```li```, it will apply ```ui-li-heading```.
-Also, to any ```p```, jQuery Mobile will apply ```ui-li-desc```.
+To any `h1, h2, h3, h4, h5` that jQuery Mobile finds inside the `li`, it will apply `ui-li-heading`.
+Also, to any `p`, jQuery Mobile will apply `ui-li-desc`.
 
 This produces the below image which has all the information we have but but no visual appeal.
 
-![Restaurant Locator App - Semantic List Item](https://github.com/blackberry/jQuery-Mobile-Samples/raw/master/RestaurantLocator/figures/list-item-noFormatting.png)
+[[FIG1]]
+.Semantic List Item
+image::images/5-3-noFormatting.png[]
 
 Lets change things by moving the distance, price, rating and reviews information to the right.
-We do that placing each of them in a ```div``` with the class ```ui-li-aside```.
+We do that placing each of them in a `div` with the class `ui-li-aside`.
 
 [source, html]
 ----
@@ -94,15 +96,15 @@ We do that placing each of them in a ```div``` with the class ```ui-li-aside```.
 ----
 Already looking better, but still more work to do.
 
-[[FIG1]]
+[[FIG2]]
 .aside
 image::images/5-3-aside.png[]
 
 Next we will replace "3 stars" with 3 actual stars.
 This will only work in jQuery Mobile 1.1.1+
 For this we will make use of the star icon that can be applied to buttons.
-Since we do not want a button, we will only make use of its css classes ```ui-icon-star``` and  ```ui-icon```.
-We will create an empty ```span``` for each star in the restaurant's rating.
+Since we do not want a button, we will only make use of its css classes `ui-icon-star` and  `ui-icon`.
+We will create an empty `span` for each star in the restaurant's rating.
 So our code should look like this for our 3 star bakery:
 
 css:
@@ -135,13 +137,13 @@ html:
     </ul>
 ----
 
-[[FIG2]]
+[[FIG3]]
 .Stars
 image::images/5-3-stars.png[]
 
 Currently the list item is read-only and not selectable.
 Next, we will make the list items selectable so that the user can get more information about the restaurant.
-To do this, we wrap the entire contents of the list item with an ```a```.
+To do this, we wrap the entire contents of the list item with an `a`.
 
 [source, html]
 ----
@@ -163,7 +165,7 @@ To do this, we wrap the entire contents of the list item with an ```a```.
     </ul>
 ----
 
-[[FIG3]]
+[[FIG4]]
 .Clickable
 image::images/5-3-clickable.png[]
 
@@ -221,7 +223,7 @@ Todo:
 
 Our final product:
 
-[[FIG4]]
+[[FIG5]]
 .Final
 image::images/5-3-final.png[]
 
