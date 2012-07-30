@@ -6,7 +6,7 @@ Author: Jason Scott <jasscott@rim.com>
 
 ////
 
-5.3 Custom Formatting
+5.3 Custom Formatting of Lists
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -25,12 +25,13 @@ Discussion
 The idea behind this Restaurant Locator is that we want to present the user
 with a list of nearby restaurants to which they may like to go.
 
-```html
+[source, html]
+----
     <ul data-role='list-view'>
         <li><a>Maman's Bakery</a></li>
         <li><a>West-End Deli</a></li>
     </ul>
-```
+----
 
 We can just leave it like this and force the user to click each item to find out more.
 Instead, lets present the user with more information to make a better decision.
@@ -48,7 +49,8 @@ The order of importance may be different for all users but these are the main fa
 This may seem like a lot of information for a list item on a mobile screen but fortunately jQuery Mobile gives us some tools to help display it in a usable way.
 Lets put all of the information elements we are using into a semantic order.
 
-```html
+[source, html]
+----
     <ul data-role='listview'>
         <li>
             <h1>Maman's Bakery</h1>
@@ -61,7 +63,7 @@ Lets put all of the information elements we are using into a semantic order.
             <span>50 reviews</span>
         </li>
     </ul>
-```
+----
 
 To any ```h1, h2, h3, h4, h5``` that jQuery Mobile finds inside the ```li```, it will apply ```ui-li-heading```.
 Also, to any ```p```, jQuery Mobile will apply ```ui-li-desc```.
@@ -73,7 +75,8 @@ This produces the below image which has all the information we have but but no v
 Lets change things by moving the distance, price, rating and reviews information to the right.
 We do that placing each of them in a ```div``` with the class ```ui-li-aside```.
 
-```html
+[source, html]
+----
     <ul data-role='listview'>
         <li>
             <h1>Maman's Bakery</h1>
@@ -88,10 +91,12 @@ We do that placing each of them in a ```div``` with the class ```ui-li-aside```.
             </div>
         </li>
     </ul>
-```
+----
 Already looking better, but still more work to do.
 
-![Restaurant Locator App - aside](https://github.com/blackberry/jQuery-Mobile-Samples/raw/master/RestaurantLocator/figures/list-item-aside.png)
+[[FIG1]]
+.aside
+image::images/5-3-aside.png[]
 
 Next we will replace "3 stars" with 3 actual stars.
 This will only work in jQuery Mobile 1.1.1+
@@ -102,14 +107,16 @@ So our code should look like this for our 3 star bakery:
 
 css:
 
-```css
+[source, css]
+----
     .ui-li-aside span {
         float: right;
     }
-```
+----
 html:
 
-```html
+[source, html]
+----
     <ul data-role='listview'>
         <li>
             <h1>Maman's Bakery</h1>
@@ -126,15 +133,18 @@ html:
             </div>
         </li>
     </ul>
-```
+----
 
-![Restaurant Locator App - stars](https://github.com/blackberry/jQuery-Mobile-Samples/raw/master/RestaurantLocator/figures/list-item-withStars.png)
+[[FIG2]]
+.Stars
+image::images/5-3-stars.png[]
 
 Currently the list item is read-only and not selectable.
 Next, we will make the list items selectable so that the user can get more information about the restaurant.
 To do this, we wrap the entire contents of the list item with an ```a```.
 
-```html
+[source, html]
+----
     <ul data-role='listview'>
         <li><a href='#'>
             <h1>Maman's Bakery</h1>
@@ -151,9 +161,11 @@ To do this, we wrap the entire contents of the list item with an ```a```.
             </div>
         </a></li>
     </ul>
-```
+----
 
-![Restaurant Locator App - Clickable](https://github.com/blackberry/jQuery-Mobile-Samples/raw/master/RestaurantLocator/figures/list-item-clickable.png)
+[[FIG3]]
+.Clickable
+image::images/5-3-clickable.png[]
 
 That is it for jQuery Mobile specific tricks for this tutorial. Lets clean the rest up with standard html and css.
 
@@ -163,7 +175,8 @@ Todo:
 * Add color to the different categories
 * Fix spacing
 
-```css
+[source, css]
+----
     div.ui-li-aside {
         float: right;
         margin: 0 1em;
@@ -184,9 +197,10 @@ Todo:
     .divider {
         margin-top: .1em;
     }
-```
+----
 
-```html
+[source, html]
+----
     <ul data-role="listview">
         <li><a href="#">
             <h1>Maman's Bakery<hr class='divider'></h1>
@@ -203,11 +217,13 @@ Todo:
             </div>
         </a></li>
     </ul>
-```
+----
 
 Our final product:
 
-![Restaurant Locator App - Clickable](https://github.com/blackberry/jQuery-Mobile-Samples/raw/master/RestaurantLocator/figures/list-item-final.png)
+[[FIG4]]
+.Final
+image::images/5-3-final.png[]
 
-The full complete source is available at https://github.com/blackberry/jQuery-Mobile-Samples/tree/master/RestaurantLocator
+The complete source is available at https://github.com/blackberry/jQuery-Mobile-Samples/
 
