@@ -1,0 +1,208 @@
+////
+
+This recipe will show how to allow 'pinch to zoom' gesture on a specific DOM element(s)
+
+Author: Assaf Damari <asafda@gmail.com>
+
+////
+
+#.# Allow pinch to zoom on a specific DOM element
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Most touch device browsers provides the ability to zoom-in and zoom-out the entire page content by using the pinch to zoom gestures. But sometimes it is needed to allow pinch to zoom only on a specific DOM element without "loosing" the page layout.
+  
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+To achieve this, we can use the touch API, provided by the mobile web browsers, to detect two fingers gesture on a specific DOM element and update its size respectively.
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+1. Bind touch events.
+The basic touch events that are implemented widely across mobile web browsers are:
+	* touchstart: one or more fingers are placed on a DOM element.
+	* touchmove: one or more fingers are dragged along a DOM element.
+	* touchend: one or more fingers are removed from a DOM element.
+	
+Each of these three events includes (among other things) the targetTouches, which is a list of objects that represent the touch information on a specific DOM element.
+We can use this touch information to detect pinch to zoom gestures:
+
+[source,javascript]
+----
+// bind all 'zoomable' DOM elements to the 'touchstart','touchmove' and 'touchend' events
+$(document).on('touchstart', '.zoomable', function(event) {
+	// if the length of the targetTouches list is exactly 2 we can assume a pinch to zoom gestures start
+	if (event.originalEvent.targetTouches.length == 2) {
+		console.log('pinch to zoom gestures start');
+	}
+}).on('touchmove', '.zoomable', function(event) {
+	// if the length of the targetTouches list is exactly 2 we can assume the user is zooming
+	if (event.originalEvent.targetTouches.length == 2) {
+		console.log('there are two fingers touching, and at least one of them is moving');
+	}
+}).on('touchend', '.zoomable', function(e) {
+	// no need here to test the number of touches in the targetTouches list - the gesture ends if one of the fingers is removed
+	console.log('pinch to zoom gestures ends');
+});
+----
+
+2. Calculate the distance between two touch points.
+Each one of the touch points has a 'pageX' and 'pageY' properties that represent the position of the touch relative to the page. We can use them to calculate the distance between the two touch points:
+
+[source,javascript]
+----
+// calculate and return the distance between two touch points
+var getDistance = function (touches) {
+	var dx = touches[0].pageX - touches[1].pageX;
+	var dy = touches[0].pageY - touches[1].pageY;
+	return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+};
+----
+
+3. Calculate and apply the new scale of the 'zoomable' DOM elements.
+On every 'touchmove' event we need to re-calculate and apply the new scale to the 'zoomable' element acording to the pinch to zoom gestures state.
+The calculation is done by comparing the current touch points distance to the distance from the previus 'touchmove' event:
+
+[source,javascript]
+----
+var newDistance = getDistance(event.targetTouches);
+scale += (newDistance - lastDistance) / lastDistance;
+lastDistance = newDistance;
+----
+
+The recommended way to apply the new scale to the 'zoomable' DOM elements is to use CSS transform, here we will use jQuery .css method to apply the matrix transform, with the new scale values on the target element:
+
+[source,javascript]
+----
+var matrix = "matrix(" + scale + ",0,0," + scale + ",0,0)";
+$(event.target).css({
+	"-webkit-transform": matrix,
+	"-ms-transform": matrix,
+	"-moz-transform": matrix,
+	"-o-transform": matrix,
+	"transform": matrix
+});
+----
+
+4. Performance.
+The 'touchmove' events will be triggered many times during a single zoom to pinch gesture, if the calculation in each iteration is more than trivial (as it would be in most cases), we should consider queuing up the touches and render them in a separate loop:
+
+[source,javascript]
+----
+var touchMoveEvents = [];
+$(document).on('touchmove', '.zoomable', function(e) {
+	// use preventDefault to prevent the browsers default touchmove behavior
+	e.preventDefault();
+	//queue up the move touches
+	touchMoveEvents.push(e.originalEvent);
+});
+
+//...
+
+// ~ 60 fps timer
+var timer = setInterval(function () {
+	// the renderMoveTouches method will do the actual work
+	renderMoveTouches();
+}, 15);
+----
+
+Note: using setInterval is not the best way for animation in browsers, but currently, window.requestAnimationFrame method, which is a better for this kind of work, is not widely supported across mobile web browsers.
+
+Putting it all together will look like this:
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zoom to Pinch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <script>
+        $(document).on('pageinit', 'div[data-role="page"]', function(event) {
+            var scale = 1;
+            var distance = 1;
+            var touchMoveEvents = [];
+            
+			// calculate and return the distance between two touch points
+            var getDistance = function (touches) {
+                var dx = touches[0].pageX - touches[1].pageX;
+                var dy = touches[0].pageY - touches[1].pageY;
+                return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+            };
+            
+			// the actual work for each touch move event
+            var renderMoveTouches = function () {
+                var event = touchMoveEvents.pop();
+                if (event) {
+                    if (event.targetTouches.length == 2) {
+                        var newDistance = getDistance(event.targetTouches);
+                        scale += (newDistance - distance) / distance;
+                        distance = newDistance;
+                        var matrix = "matrix(" + scale + ",0,0," + scale + ",0,0)";
+                        $(event.target).css({
+                            "-webkit-transform": matrix,
+                            "-ms-transform": matrix,
+                            "-moz-transform": matrix,
+                            "-o-transform": matrix,
+                            "transform": matrix
+                        });
+                    }
+                }
+            };
+
+			// bind all 'zoomable' DOM elements to the 'touchstart','touchmove' and 'touchend' events
+            $(document).on('touchstart', '.zoomable', function(e) {
+                e.preventDefault();
+                if (e.originalEvent.targetTouches.length == 2) {
+					//set gesture initial values (for example the initial distance between the two fingers in this gesture)
+                    distance = getDistance(e.originalEvent.targetTouches);
+                    scale = $(e.target).jqmData("scale") || 1;
+                }
+            }).on('touchmove', '.zoomable', function(e) {
+                e.preventDefault();
+                touchMoveEvents.push(e.originalEvent);
+            }).on('touchend', '.zoomable', function(e) {
+                $(e.target).jqmData("scale",scale);
+            });
+
+            // 60 fps timer
+            var timer = setInterval(function () {
+                renderMoveTouches();
+            }, 15);
+        });
+	</script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Page Title</h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content">
+            <p class="zoomable">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam viverra feugiat quam,
+                a mollis sapien hendrerit eu. Aliquam eu nisl nisi. Praesent tincidunt elit in nulla
+                tempor hendrerit.
+            </p>
+            <img class="zoomable" src="http://jquerymobile.com/wp-content/uploads/2011/06/jquery-mobile-devices-beta.png" />
+        </div>
+        <!-- /content -->
+        <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+</body>
+</html>
+
+----
+
+
+
+
+
