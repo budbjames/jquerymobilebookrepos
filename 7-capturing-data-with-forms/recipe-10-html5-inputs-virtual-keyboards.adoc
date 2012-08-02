@@ -1,0 +1,75 @@
+////
+
+Author: Adam Stanley <astanley@rim.com>  http://twitter.com/n_adam_stanley
+
+////
+
+7.10 HTML5 inputs and virtual keyboards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+
+Touch screen devices display a virtual keyboard when users interact with HTML form input fields. Developers often use text input fields to display an alphanumeric keyboard.  Ideally, a custom virtual keyboard should be displayed for input fields that represent non-text data (e.g. dates, urls, phone numbers, etc).
+
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+
+Form input field types were enhanced in the HTML5 spec (http://dev.w3.org/html5/html-author/#forms).  These properties allow you to define data-specific input fields that invoke a specific variant of a virtual keyboard when focus is applied to them by a user.
+
+This technique enables you to collect more accurate data from your users and also improves their experience for interacting with your application.
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+Developers should always define their HTML input fields with an appropriate input type.  This technique provides a very high ROI in terms of effort required to generate a highly positive user experience.  
+If the given rendering engine does not support input types, it will simply ignore them. 
+
+Load the following page in your own browser to see which HTML5 input types are supported:
+http://blackberry.github.com/WebWorks-Samples/kitchenSink/html/html5/inputtypes.html
+
+
+The following are examples of different HTML5 input types:
+
+text:
+<input type="text" id="txtText" name="txtText" autocomplete="off" title="Any characters allowed" value="Hello World"/>
+
+password:
+<input type="password" id="txtPassword" name="txtPassword" title="Only numeric characters allowed" value=""/>
+
+tel:
+<input type="tel" id="txtTel" name="txtTel" title="Only numeric characters allowed" value="555 1234"/>
+
+url:
+<input type="url" id="txtUrl" value="http://devblog.blackberry.com"/>
+
+email:
+<input type="email" id="txtEmail" value=""/>
+
+number: 
+<input type="number" id="txtNumber" min="0" max="50" step="1" value="5"/>
+
+range:
+<input type="range" id="txtRange" min="-100" max="100" value="0" step="10"/>
+
+date:
+<input type="date" id="txtDate"  min="1900-01-01" max="1999-12-31" value="1979-01-23"/> 
+
+time:
+<input type="time" id="txtTime" value="13:31"/>
+
+datetime:
+<input type="datetime" id="txtDateTime" value="1979-01-23T04:30:00Z" min="1969-08-15T12:00:00Z" />
+
+month:
+<input type="month" id="txtMonth" value="1976-06"/>
+
+datetime-local:
+<input type="datetime-local" id="txtDateTimeLocal" min="2010-01-01T12:00:00" max="2015-12-31T12:00:00" step="86400" value="2011-10-28T13:33:00"/>
+
+search:
+<input type="search" id="txtSearch" value=""/>
+
+color:
+<input type="color" id="txtColor" value="#FF0000"/>
+
