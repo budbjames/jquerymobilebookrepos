@@ -1,0 +1,66 @@
+////
+
+Author: Adam Stanley <astanley@rim.com>  http://twitter.com/n_adam_stanley
+
+////
+
+13.8 Adding a swipe-down menu to your PlayBook application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Its very easy to interact with the PlayBook bezel to respond to swipe down events.  
+Achieve a "native look and feel" experience with a swipe-down menu for BlackBerry WebWorks applications using jQuery. 
+
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+The BlackBerry Tablet OS and BlackBerry 10 platforms support a system swipe down event that occurs when users drag their finger down from the top bezel of the device.  This event can be captured by a WebWorks API and delegated to jQuery where the animate() method can be used to show and hide page content:
+
+	blackberry.app.event.onSwipeDown(function(e) {
+		$('#menuBar').animate({top : 0}, {queue : false});
+	});
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+A fully-featured example named swipemenu.js can be found in Github (https://github.com/blackberry/WebWorks-Samples/tree/master/swipemenu). swipemenu.js is a JavaScript library that simplifies the creation of custom swipe-down menus for BlackBerry WebWorks application development.
+
+The following steps describe how to create a swipe-down menu for your BlackBerry WebWorks application.
+
+1. Create a menu using HTML and add it to your page:
+
+	<body>
+		<div id="menuBar"> 
+			<input id="btnA" type="button" value="A"/> 
+			<input id="btnB" type="button" value="B"/> 
+		</div>
+	</body>
+
+2. Define CSS that, on initial page load, will hide the menu off-screen at the top of the page:
+
+	#menuBar {
+		top: -100px;
+	}
+
+3. Add a feature element to your Blackberry WebWorks application config.xml document for the API used to detect the swipe down event:
+
+	<!-- BlackBerry Tablet OS API name -->
+	<feature id="blackberry.app.event" required="true" version="1.0.0.0"/>
+	
+	<!-- For BlackBerry 10, the API name is slightly different -->
+		<feature id="blackberry.app" required="true" version="1.0.0.0"/>
+
+4. Using JavaScript, create a listener for the system swipe down event. The following method uses the BlackBerry WebWorks application event API to assign a callback method to the target event:
+
+	// BlackBerry Tablet OS API signature: 
+	blackberry.app.event.onSwipeDown(showMenuBar);
+	
+	// BlackBerry 10 API signature: 
+	blackberry.event.addEventListener('swipedown', showMenuBar);
+
+5. Use the jQuery animate() method to reveal the off-screen menu.  The following function is called when the swipe-down event occurs, and produces a drop down animation effect:
+
+	function showMenuBar() {
+		$('#menuBar').animate({top : 0}, {queue : false});
+	}
+
