@@ -1,0 +1,63 @@
+////
+
+Author: Adam Stanley <astanley@rim.com>  http://twitter.com/n_adam_stanley
+
+////
+
+13.8 Exploring the WebWorks platform APIs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Web developers using the BlackBerry WebWorks SDK to build standalone mobile applications need ways to enrich the functionaliy of their applications beyond the capabilities of HTML5 and jQuery.
+
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+The BlackBerry WebWorks SDK offers web developers a collection of platform APIs.  These APIs enables web application content to be enhanced with functionality from BlackBerry device and platform capabilities.
+
+Examples include: OS system events, address book, BlackBerry Messenger SDK, invoke, payment, push, etc.
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+
+WebWorks platform APIs are provided as JavaScript objects that provide a bridge between web application content and lower level developer APIs written in C/C++ (BlackBerry 10), AIR (BlackBerry Tablet OS), or Java (BlackBerry Smartphone OS 5.0 - 7). 
+
+Example: Listen for changes in battery level.
+
+	blackberry.system.event.deviceBatteryLevelChange(function(level) {
+		alert("Current battery level: " + level);
+	});
+ 
+
+WebWorks APIs are also commonly known as extensions. There are a number of APIs bundled as part of the WebWorks SDK that are available for developers to use: https://developer.blackberry.com/html5/apis/.  However, developers also have the ability to create their own extensions. Examples can be found in Github: https://github.com/blackberry/WebWorks-Community-APIs
+
+
+To use a WebWorks API in your application, you must add a feature element for it to the application's config.xml document.  Doing so will instruct the WebWorks packager to build this feature into your application and make it available at runtime:
+
+	<feature id="blackberry.app" required="true" version="1.0.0.0"/>
+
+	
+If you are developing for BlackBerry 10, you must first add a reference to a WebWorks JavaScript library file in your application.  This file can be located within the Framework/clientFiles folder which is located inside of the WebWorks SDK installation folder.
+
+	<script src="webworks-1.0.1.5.js"></script>
+
+When this WebWorks JavaScript library has been full loaded, it will invoke a document event called "webworksready".  BlackBerry 10 developers are encouraged to listen for this event before they make calls to API methods or properties.  Otherwise the JavaScript objects may not be available to be called.
+
+	document.addEventListener("webworksready", onReady, false);
+
+	function onReady(e) { 
+		console.log("WebWorks APIs are ready");
+	}
+	
+Finally, developers can use the WebWorks platform APIs in their applications.
+
+Example: Taking a photo with the BlackBerry Camera API
+
+	blackberry.media.camera.takePicture(function(filePath) {
+		console.log("Photo : " + filePath);
+	}, function(e) {
+		console.log("Camera closed");
+	}, function(e) {
+		console.log("Error taking photo with camera");
+	});
