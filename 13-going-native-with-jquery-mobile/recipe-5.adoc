@@ -1,0 +1,83 @@
+////
+
+Author: Rahul Ravikumar <rahulrav@outlook.com>  http://twitter.com/tikurahul
+
+////
+
+13.5 jQuery Mobile with Android's JavaScript Bridge
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Native applications on Android can take advantage of the platform, as they have access to many low level interfaces that go beyond the capabilities of the web platform. Some examples include, access to device sensors, Android intents, background services, sandboxed file and sqlite access, core-telephonly / media api's etc.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+You can embed web pages into native Android applications and use the Android WebView to bind JavaScript to rich Android API's.
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+
+A WebView is an Android component, that is capable of rendering a web page. You can use the Android WebView to deliver a web application, packaged as a native Android application. When developing a web application specifically designed for a WebView, you can create interfaces between JavaScript and native Android code. To create a new JavaScript interface bound to native code, you can use the addJavaScriptInterface(), passing it an instance of the native object and a name that identifies the interface in JavaScript.
+
+Example: Defining the JavaScript interface in the Android application
+
+[source,java]
+----
+// All public methods in this class are attached to the JavaScript namespace 
+// when addJavaScriptInterface() is called
+
+/**
+* An interface that can be used for sending an SMS
+*/
+import android.telephony.SmsManager;
+
+public class SmsInterface {
+
+  public void sendMessage(final String phoneNumber, final String message) {
+    // optional : use sent, delivery intents to confirm receipt
+    final SmsManager smsManager = SmsManager.getDefault();
+    smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+  }
+}
+----
+
+Your application will also need to request permission to be able to send an SMS message.
+
+[source,xml]
+----
+<manifest ... >
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    ...
+</manifest>
+----
+
+You can now bind an instance of SmsInterface to make it accessible via JavaScript by calling the addJavaScriptInterface() on the WebView.
+
+[source,java]
+----
+import android.app.Activity;
+import android.os.Bundle;
+
+public class MainActivity extends Activity {
+  @Override
+  public void onCreate(final Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    final WebView webView = (WebView) findViewById(R.id.webview);
+    webView.addJavascriptInterface(new SmsInterface(), "SmsInterface");
+  }
+}
+----
+
+This creates a JavaScript interface called SmsInterface. At this point your jQuery Mobile application running in the WebView has access to this interface.
+
+[source,javascript]
+----
+$('#sendMessage').click(function () {
+  if(window.SmsInterface) {
+    // this interface will exist one addJavaScriptInterface() has been called
+    window.SmsInterface.sendMessage($('#phoneNumber').attr('value'), $('#message').attr('value'));
+  }
+});
+----
