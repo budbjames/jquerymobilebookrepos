@@ -76,7 +76,7 @@ This creates a JavaScript interface called SmsInterface. At this point your jQue
 ----
 $('#sendMessage').click(function () {
   if(window.SmsInterface) {
-    // this interface will exist one addJavaScriptInterface() has been called
+    // this interface will exist once addJavaScriptInterface() has been called
     window.SmsInterface.sendMessage($('#phoneNumber').attr('value'), $('#message').attr('value'));
   }
 });
