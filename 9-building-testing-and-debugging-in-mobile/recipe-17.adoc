@@ -1,0 +1,17 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.17 Take your app to the IOS App Store
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+
+Solution
+++++++++
+
+Discussion
+++++++++++

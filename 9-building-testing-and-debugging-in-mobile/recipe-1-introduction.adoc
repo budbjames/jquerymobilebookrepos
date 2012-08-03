@@ -1,0 +1,10 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.1 Introduction
+~~~~~~~~~~~~~~~~
+
+In this chapter we’ll be going over how to go through the product lifecycle for 4 major platforms Android, Blackberry, Windows Mobile, and IOS. We’ll be discussing how to test locally and remotely on these platforms, how to package your app and Sign it, and finally how to deploy it to its respective platform store.

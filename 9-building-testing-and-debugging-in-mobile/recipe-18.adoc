@@ -1,0 +1,17 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.18 Debugging your Windows Mobile application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+
+Solution
+++++++++
+
+Discussion
+++++++++++

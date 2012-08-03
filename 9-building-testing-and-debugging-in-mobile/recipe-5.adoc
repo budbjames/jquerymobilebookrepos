@@ -1,0 +1,19 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.5 Integrating Automated Unit Testing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+
+Sometimes your application gets big enough that it would be useful to be able to run tests on it to make sure that when you modify things; there are no major breaks. This is what you can use unit testing for. All the major functionality can be written into a test which can be run on each platform you are distributing to.
+
+Solution
+++++++++
+
+Discussion
+++++++++++

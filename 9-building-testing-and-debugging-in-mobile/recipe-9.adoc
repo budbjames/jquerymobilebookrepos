@@ -1,0 +1,19 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.9 Take your app to the Google Play Store
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+
+Your application is finished, fully tested, and now you're ready to send it to the Google Play Store.
+
+Solution
+++++++++
+
+Discussion
+++++++++++

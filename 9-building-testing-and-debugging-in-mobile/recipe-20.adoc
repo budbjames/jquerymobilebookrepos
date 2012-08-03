@@ -1,0 +1,17 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.20 Deploying and testing your app on a Windows Mobile Device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+
+Solution
+++++++++
+
+Discussion
+++++++++++

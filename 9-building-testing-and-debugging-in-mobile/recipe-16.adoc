@@ -1,0 +1,17 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.16 Deploying and Testing your app on a IOS Device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+
+Solution
+++++++++
+
+Discussion
+++++++++++

@@ -1,0 +1,58 @@
+////
+
+Author: Cory Gackenheimer <cory.gack@gmail.com>
+
+////
+
+9.6 Debugging your App on Android
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+When creating any application, testing and debugging is a standard part of the developer workflow.  When building and debugging a mobile application, developers can feel that they are utilizing a crippled toolset.  However, there are many ways in which a developer can debug their device remotely.  This recipe will outline four distinct ways in which that can be accomplished on an Android device.
+
+Solution
+++++++++
+There are two types of solutions any developer can utilize to remotely debug an application running on their device. 
+
+One type is utilizing a third party service that runs a service that will intercept remote calls via a script that you manually add to your application.  Two of the most commonly utilized services of this variety are jsconsole and weinre (WebKit Inspector Remote). 
+
+JsConsole is an application which is hosted at http://jsconsole.com, or you can check out the source from github (https://github.com/remy/jsconsole) and run the service yourself. One then simply adds a script to the jsconsole remote.js file passing an identifier, then tells the service at jsconsole to listen to requests coming from that identified application.  This can be utilizes across browsers and devices but should not be utilized on production code.
+
+Weinre is a service that you can run on your development server and compliment with a script in your applications source that will also echo the content of your webapp to a remote console.  This console is an instance of the open source WebKit Inspector (Chrome, Safari, etc) so it can be more familiar to developers who are used to creating applications utilizing similar tools.  This can be utilized across devices and browsers for the remote client, however the service will always run the webkit inspector.
+
+The other style of remote debugging service is the flavor that is baked directly into a browers developer toolkit. The two that are commonly accessible to Android developers are the remote debugging tools built into Opera's developer tools "Dragonfly" and the Chrome Developer Tools.
+
+Opera has had remote debugging capabilities built into their browser since 2008 with the release of Opera 9.5 beta 1.  The process is to open Dragonfly on your server, initialize remote debugging and listen to a particular port, then mirror that setup on your remote device via Opera Mobile.  These two devices will then communicate with each other allowing you, the developer, to debug your application in the comfort of the robust set of tools that Opera Dragonfly presents you with.
+
+A relative newcomer to the remote debugging game comes via Google Chrome and Google Chrome for Android.  This allows a developer to tether their Android device to their development machine, forward a port allowing remote debugging utilizing the full Chrome Developer Tools on any site they visit using Chrome for Android.  This like the Opera solution, is great for developers not wanting to sacrifice the robustness of their standard development tools to debug mobile applications.
+
+Discussion
+++++++++++
+The first solution for remote device debugging utilizes a service at jsconsole.com. This is a web-based command line utility which can set a listener and bridge the gap between device and the jsconsole's simulated console.  There are two steps to bridge this gap.  First one must type ":listen" in the jsconsole.com window. The ":listen" command can be followed by an optional identifier of the users choosing, but if one is not provided an identifier will be generated.  The second step to utilizing jsconsole.com for remote debugging is to add a script to your HTML file that includes the remote.js file of the jsconsole project and points to the identifier you either specified or were given in the first step.
+
+----
+<script src="http://jsconsole.com/remote.js?IDENTIFIER"></script>
+----
+
+Once this script is in place on your app, jsconsole will allow you to remotely control your app, intercept errors as if you were debugging within the console on your device.
+
+Weinre, or WebKit Inspector Remote, is a server that is composed of three components. The first part is the weinre server which is started by running a .jar file.  This HTTP server will relay the messages between the debug target and debug client. This server is started by running the following in your terminal "java -jar path/to/weinre.jar [options]"  The default HTTP port that the weinre server will debug on is 8080, but this is configurable by passing in the option "--httpPort" and specifying the port you wish to utilize. So if your server lives on ip address 1.2.3 your server will default to running at http://1.2.3.4:8080
+
+Once you have a weinre server running you need to point your web application to that server in order to relay the console between the debug target and debug client.  To do this add the script that points to the location of your webserver and includes the "target/target-script-min.js" file.
+
+----
+<script src="http://1.2.3.4:8080/target/target-script-min.js"></script>
+----
+
+This will allow the server to relay from the debug target to the debug client. Now is the time to fire up the weinre debug client at http://1.2.3.4:8080/client/ to see all the targets that are connected to the server.  You can then select the target you wish to inspect and the inspector window is now in action.  The inspector looks familiar to developers who are used to debugging applications using the WebKit inspector as al your favorite panels are there: "Elements", "Resources", "Network", "Timeline", and of course "Console". You now have weinre running allowing you to remote debug your application in the comfort of your WebKit Inspector.
+
+Remote Debugging has been a standard feature that comes with the Opera Dragonfly toolkit for nearly four years, making it one of the most tested interfaces to remote debugging.  Opera remote debugging requires two things, Opera desktop and Opera Mobile. To get started you'll need to open Opera desktop and open the Dragonfly developer tools.  Once inside Dragonfly, open the "Configurations" menu and select "Remote Debug".  This will start a remote debug listener.  The default port is 7001, but that is configurable to your preference.
+
+Now that you have started your remote debugging session in Dragonfly all you have to do is fire up Opera Mobile on your target device, and enter "opera:debug" in the url. You will now be prompted to provided the ip address of where your Dragonfly remote session was started, along with the port (7001 by default).  After this, you simply select "Connect".  This has now joined your Opera Mobile session with your Opera desktop session. You can open a new tab in Opera Mobile and you'll be able to find that tab in Opera Dragonfly where you'll be able to debug utilizing the full extent of the tools which Dragonfly offers.
+
+One of the most recent additions to the remote debugging scene on Android devices comes from Google Chrome. With the release of Chrome Beta for Android (Android 4 required), Google also released a mechanism to utilize their powerful developer tools when debugging an application on your Android device. To utilize Chrome for Android to debug remotely you'll need three things.  First, you'll need the a Android Debug Bridge (adb) portion of the Android sdk installed on your development machine.  You'll also need an instance of Chrome (stable, beta, dev, canary all work) and Chrome Beta for Android on your Android 4.0 device.
+
+Once these prerequisites are present, you'll need to enable USB debugging via the settings menu on your Android device. Then you connect your device, open Chrome on the device and select "Enable USB Web Debugging" from "Under the Bonnet" in the "Settings" menu.  Next, you need to forward your port on your development host via the adb command "adb forward tcp:9222 localabstract:chrome_devtools_remote".  Now, open Chrome on your development machine and navigate to http:\\localhost:9222. This page will show each tab you have open in Chrome on your Android device. Simply select the tab you wish to inspect and you will then have the opportunity to utilize the full developer tools to debug your jQuery Mobile application.
+
+There are many more applications that provide remote debugging experiences such as Adobe Shadow and custom builds of Weinre like the Catalyst tool by Trigger.io. There is guaranteed to be many more additions to this family of tools in the future such as the remote support that Mozilla is adding to Firefox. The four examples outlined here are each that have a unique utility.  Jsconsole can be a remote debugger for nearly any application on any device but the trade offs are the need to add a script tag to your remote source.  Weinre can be a powerful part of the development cycle but hosting the server and also adding the JavaScript to bridge the debug target to the debug client, though extremely powerful can still be cumbersome. The Opera and Opera Mobile tandem have little overhead to get started, but limit your debugging to Opera. Chrome and Chrome for Android are in a similar situation.  If you like to utilize Chrome Dev Tools and Opera Dragonfly to stay on the cutting edge of developer tools, then these are great solutions, but if you need to find a browser specific issue that isn't present in Chrome or Opera, than another solution will suit you better.  These challenges aren't new to web development and mirror those shared by developers in a non mobile browser. Just as in desktop development, if you are comfortable debugging with a certain setup, then utilize that setup, but understand there are other options that will likely need to be utilized from time to time.

@@ -1,0 +1,19 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.8 Deploying and testing your app on an Android
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+
+You’ve built your application apk but now you need to put it on your android in order to test it. Once your application is on your phone you will need to test it.
+
+Solution
+++++++++
+
+Discussion
+++++++++++

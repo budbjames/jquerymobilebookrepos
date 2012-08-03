@@ -1,0 +1,22 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.3 Testing your application in a desktop browser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
++++++++
+
+You first need to make sure your app *mostly* functions before you put it on a mobile device for testing. We use the browser for that. There are a couple tools you can use in the browser to make this a bit easier.
+
+Solution
+++++++++
+
+
+
+
+Discussion
+++++++++++
