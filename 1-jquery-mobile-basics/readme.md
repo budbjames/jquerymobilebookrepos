@@ -6,6 +6,7 @@ Description:
 
 *Chapter Leader:* <a href="mailto:jsampson@appendto.com">Jonathan Sampson</a>
 
+<a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/introduction.adoc">Introduction</a>
 
 ## Recipes
 
@@ -31,6 +32,7 @@ Description:
 *Problem:*
 
 *Description:* Information describing each and how they differ
+
 ---
 
 ### 4 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-4.adoc">Mobile First Development, create first simple page</a>
