@@ -1,8 +1,9 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
 Author: James Weaver <james@jwadeweaver.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
