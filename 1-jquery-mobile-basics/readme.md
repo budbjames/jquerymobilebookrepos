@@ -9,49 +9,60 @@ Description:
 
 ## Recipes
 
-### 1 - <a href="recipe-1.adoc">Who this book is for</a>
-*author:* 
+### 1 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-1.adoc">Who this book is for</a>
+*author:* <a href="mailto:james@jwadeweaver.com">James Weaver</a>
 
-*description:*
+*Description:* Required knowledge and experience for using this book
 
 ---
 
-### 2 - <a href="recipe-2.adoc">Including jQuery and jQuery Mobile in an HTML Page</a>
+### 2 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">Including jQuery and jQuery Mobile in an HTML Page</a>
 *author:* <a href="mailto:sys.sgx@gmail.com">Panagiotis Tsalaportas</a> (@syssgx)
 
-*description:*
+*Problem:* You want to use the jQuery and jQuery Mobile JavaScript libraries on an HTML page.
+
+*Description:* Information on how to get these libraries and include them in a page
 
 --- 
 
-### 3 - Web app vs Mobile app 
+### 3 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-3.adoc">Web app vs Mobile app</a> 
 *author:* 
 
-*description:*
+*Problem:*
+
+*Description:* Information describing each and how they differ
+---
+
+### 4 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-4.adoc">Mobile First Development, create first simple page</a>
+*author:* 
+
+*Problem:*
+
+*Description:* How to start, how to create first, second and third page by jQuery Mobile
 
 ---
 
-### 4 - Mobile First Development, create first simple page
+### 5 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-5.adoc">What is jQuery?</a>
 *author:* 
 
-*description:*
+*Problem:*
+
+*Description:* The purpose and fame of jQuery
 
 ---
 
-### 5 - What is jQuery?
+### 6 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-6.adoc">A few words about jQuery Mobile</a>
 *author:* 
 
-*description:*
+*Problem:*
+
+*Description:* Brief history and explanation of what jQuery Mobile is
 
 ---
 
-### 6 - A few words about jQuery Mobile
+### 7 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-7.adoc">Beyond the Basics, Now What?</a>
 *author:* 
 
-*description:*
+*Problem:*
 
----
-
-### 7 - Beyond the Basics, Now What?
-*author:* 
-
-*description:*
+*Description:* A brief map of what to do after you've gotten your feet wet
