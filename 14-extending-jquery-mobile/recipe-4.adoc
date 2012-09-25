@@ -1,35 +1,34 @@
 ////
-
+ 
 Author: Casey Justus <caseyjustus@gmail.com>
-
+ 
 ////
-
-#.# Extending the Event Model to Accept More Complex Events.
+ 
+14.5 Extending the Event Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+ 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-One of the unique challenges on mobile devices is handling user input. The size of screens and their keyboards are the biggest limiting factors. There are a few touch events and controls that help, but sometimes that's still not enough.
-
+One of the unique challenges on mobile devices is handling user input. The size of screens and their keyboards are the biggest limiting factors. A few touch events and controls help, but sometimes that's still not enough. You need to extend the event model to accept more complex events.
+ 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-By extending jQuery Mobile's event model you can create complex gestures. These can give the user more options for input. 
-
+By extending jQuery Mobile's event model, you can create complex gestures. These can give users more options for input.
+ 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-For this example we'll listen for a circle.  This will be a clockwise circle to be more specific. We'll be using three touch events for this. They are touchstart, touchmove, and, touchend. In a nutshell we'll use touchstart first.  Then we'll use touchmove listening for changes in x and y coordinates changes.  These changes will have to happen before the touchend. First we'll need to register all three events.
-
+For this example, we'll listen for a circle. This will be a clockwise circle to be more specific. We'll be using three touch events--touchstart, touchmove and touchend. We'll use touchstart first. Then we'll use touchmove listening for changes in x and y coordinates changes. These changes will have to happen before the touchend. First, we'll need to register all three events.
+ 
   // code to establish touch events
-
-Next we'll monitor the changes of the touchmove. Basically we'll be listening for moving to the right, down, left, and then up.  This will be an increase in the page.x, increase in page.y, decrease in page.x, and then decrease in page.y.  
-
+ 
+Next we'll monitor the changes of the touchmove. Basically we'll be listening for moving to the right, down, left, and then up. This will be an increase in the page.x, increase in page.y, decrease in page.x, and then decrease in page.y. 
+ 
   // code for x, y coordinate changes
-
-The function clockwise() now listens for us to gesture a circle. It's very forgiving with how good your circle is. In fact you could draw a square and it would still fire. You could get much more restrictive in your tracking of the x,y coordinates but we won't. That is unless you would like to have a square gesture. But if you're not, it's best to stay as forgiving as possible to avoid user frustration. 
-
-Now let's extend jQuery Mobile to accept our clockwise() function. 
-
+ 
+The function clockwise() now listens for us to gesture a circle. It's very forgiving with how good your circle is. In fact, you could draw a square and it would still fire. You could get much more restrictive in your tracking of the x,y coordinates but we won't—that is, unless you would like to have a square gesture. But if you're not, it's best to stay as forgiving as possible to avoid user frustration.
+ 
+Now let's extend jQuery Mobile to accept our clockwise() function.
+ 
   // code to extend
-
-We now have a jQuery Mobile event for drawing a clockwise circle, but don't feel like you have to stop there. You could create a counter-clockwise circle, a checkmark, or an X just to name a few possibilities.
-
+ 
+We now have a jQuery Mobile event for drawing a clockwise circle, but don't feel like you have to stop there. You could create a counter-clockwise circle, a checkmark or an X, just to name a few possibilities.
