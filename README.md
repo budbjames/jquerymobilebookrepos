@@ -19,6 +19,7 @@ This repository contains the master content for the jQuery Mobile Cookbook
   * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-6.adoc">6 - A few words about jQuery Mobile</a>
   * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-7.adoc">7 - Beyond the Basics, Now What?</a>
 * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/readme.md">Chapter 2 - Pages: The Building Blocks of jQuery Mobile</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-1.adoc">1 - Page anatomy</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-2.adoc">2 - Page event lifecycle</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-3.adoc">3 - Toolbars</a>
