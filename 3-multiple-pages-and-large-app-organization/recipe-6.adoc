@@ -2,11 +2,14 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: Jeffrey Lembeck <jlembeck@gmail.com>
+Author: Unassigned
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Recipe Title
+3.6 Designing clean RESTful services, for both serving json to client side code via ajax, and html for page transitions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

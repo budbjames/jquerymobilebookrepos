@@ -1,6 +1,9 @@
 ﻿////
 
 Author: Oliver Brüning <obruening@yahoo.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 

@@ -2,11 +2,14 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: Vidal Graupera <vidal@vdggroup.com>
+Author: unassigned
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Recipe Title
+3.11 Recipe Title
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

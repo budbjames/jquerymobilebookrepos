@@ -1,15 +1,13 @@
 ////
 
-This recipe shows some options on how to dynamically pull in pages
-
-Author: unassigned
+Author: Unassigned
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-3.3 Options for dynamically pulling in pages
+3.8 Structuring client side code (inc AMD)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

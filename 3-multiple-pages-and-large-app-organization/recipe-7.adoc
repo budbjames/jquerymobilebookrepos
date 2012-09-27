@@ -12,10 +12,13 @@ The solution is for each html document to only contain static content, and to ut
 Perhaps async false required?!
 
 Author: Adrian Pillinger <adrian.pillinger@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Designing pages that can be bookmarked.
+3.7 Designing pages that can be bookmarked.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

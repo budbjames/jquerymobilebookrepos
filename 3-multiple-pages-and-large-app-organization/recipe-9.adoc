@@ -1,15 +1,13 @@
 ////
 
-This recipe shows some options on how to dynamically pull in pages
-
-Author: unassigned
+Author: Unassigned
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-3.3 Options for dynamically pulling in pages
+3.9 Designing clean RESTful services, for both serving json to client side code via ajax, and html for page transitions. Utilising HTTP status codes for clean error handling. Could go hand in hand with client/server side balance. Big topic, but could be focussed on one area, or split.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
