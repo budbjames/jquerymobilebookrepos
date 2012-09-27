@@ -3,6 +3,9 @@
 Improving readability on desktop and mobile devices.
 
 Author: Ray Daly <raydaly@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 

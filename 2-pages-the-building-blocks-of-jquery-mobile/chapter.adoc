@@ -6,8 +6,8 @@ Use this file to organize all of the recipe's into a single document.
 Add include lines to the list below, separated by a blank space, to add more recipes
 
 ////
-[[chapid_1]]
-== jQuery Mobile Basics
+[[chapid_2]]
+== Pages: The building blocks of jQuery Mobile
 
 include::introduction.adoc[]
 

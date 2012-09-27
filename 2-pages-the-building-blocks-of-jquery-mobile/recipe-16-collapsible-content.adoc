@@ -3,11 +3,14 @@
 Recipe(s) for collapsibles 
 
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 Need to check ref id of chapter on linking pages
 ////
 
-2.15 Collapsible Content Blocks
+2.16 Collapsible Content Blocks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

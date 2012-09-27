@@ -3,6 +3,9 @@
 [2.10] Navbars with jQuery Mobile
 
 Author: Kevin Griffin <kevin@kevgriffin.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 

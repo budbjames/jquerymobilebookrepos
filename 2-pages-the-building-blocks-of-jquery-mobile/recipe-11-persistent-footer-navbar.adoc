@@ -3,10 +3,13 @@
 This is a comment block.  Put notes about your recipe here and also your author information.
 
 Author: Max Lynch <maxlynch@uwalumni.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Persistent Footer Navbar
+2.11 Persistent Footer Navbar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

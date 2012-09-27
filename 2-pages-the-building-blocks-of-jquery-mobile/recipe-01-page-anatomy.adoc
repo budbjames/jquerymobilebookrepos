@@ -3,10 +3,13 @@
 jQuery Mobile Page Anatomy
 
 Author: Max Lynch <maxlynch@uwalumni.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Page Anatomy
+2.1 Page Anatomy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -1,12 +1,13 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
 Author: Max Lynch <maxlynch@uwalumni.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Toolbar Theming
+2.7 Toolbar Theming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

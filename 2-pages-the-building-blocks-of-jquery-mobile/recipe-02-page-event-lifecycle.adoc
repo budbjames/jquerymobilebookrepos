@@ -3,10 +3,13 @@
 jQuery Mobile page event lifecycle
 
 Author: Max Lynch <maxlynch@uwalumni.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Page Event Lifecycle
+2.2 Page Event Lifecycle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

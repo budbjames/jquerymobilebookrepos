@@ -8,10 +8,13 @@ Normally contains buttons/icons.
 3.Navbars which can be displayed within header/footer bars or with in page content to show seperate level of buttons/icons/other controls. 
 
 Author: John Chacko <poonkave@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Embedding controls in toolbars
+2.9 Embedding controls in toolbars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

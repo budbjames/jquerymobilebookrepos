@@ -2,7 +2,10 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: Dave Ferguson <dave@dkferguson.com>
+Author: 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
