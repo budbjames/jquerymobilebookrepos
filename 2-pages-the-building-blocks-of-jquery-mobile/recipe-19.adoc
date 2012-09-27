@@ -2,6 +2,9 @@
 XML 2 JQM using XSLT
 
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
