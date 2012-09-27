@@ -6,9 +6,31 @@ Use this file to organize all of the recipe's into a single document.
 Add include lines to the list below, separated by a blank space, to add more recipes
 
 ////
-[[chapid_1]]
-== jQuery Mobile Basics
+[[chapid_3]]
+== Multiple Pages and Large App Organization
 
 include::introduction.adoc[]
 
 include::recipe-1.asc[]
+
+include::recipe-2.asc[]
+
+include::recipe-3.asc[]
+
+include::recipe-4.asc[]
+
+include::recipe-5.asc[]
+
+include::recipe-6.asc[]
+
+include::recipe-7.asc[]
+
+include::recipe-8.asc[]
+
+include::recipe-9.asc[]
+
+include::recipe-10.asc[]
+
+include::recipe-11.asc[]
+
+include::recipe-12.asc[]
