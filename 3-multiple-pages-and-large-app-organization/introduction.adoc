@@ -3,6 +3,9 @@
 This is a comment block.  Put notes about your recipe here and also your author information.
 
 Chapter Leader: John Doe <email@email.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
