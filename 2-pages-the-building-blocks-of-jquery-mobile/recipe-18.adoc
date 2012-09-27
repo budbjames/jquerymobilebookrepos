@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-#.# How to make pages readable on desktops and other wide screens
+2.18 How to make pages readable on desktops and other wide screens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
