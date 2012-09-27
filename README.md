@@ -26,9 +26,7 @@ This repository contains the master content for the jQuery Mobile Cookbook
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-5.adoc">5 - Managing behavior of fixed positioning</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-6.adoc">6 - Fullscreen toolbar positioning</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-7.adoc">7 - Toolbar theming</a>
-*author:* <a href="mailto:maxlynch@uwalumni.com">Max Lynch</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-8.adoc">8 - Toolbar buttons</a>
-*author:* <a href="mailto:"></a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-9.adoc">9 - Embedding controls in toolbars</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-10.adoc">10 - Navbars</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-11.adoc">11 - Persistent footer navbar</a>
