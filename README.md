@@ -10,6 +10,7 @@ This repository contains the master content for the jQuery Mobile Cookbook
 ## Table of Contents
 
 * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/readme.md">Chapter 1 - jQuery Mobile Basics</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-1.adoc">1 - Who this book is for</a>
   * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">2 - jQuery and jQuery Mobile: How to get them</a>
   * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-3.adoc">3 - Web app vs. Mobile App</a>
