@@ -53,6 +53,15 @@ This repository contains the master content for the jQuery Mobile Cookbook
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-10.adoc">10 - Data-binding with knockout.js</a>
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-11.adoc">11 - Using JQM with backbone.js</a>
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-12.adoc">12 - Using JQM with ember.js</a>
+* <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/readme.adoc">Chapter 4 - Navigating through your Apps</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/introduction.adoc">Introduction</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-1.adoc">1 - Wireframing for jQuery Mobile </a>
+  * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-2.adoc">2 - Planning a hierarchy for your App</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-3.adoc">3 - Linking to external pages </a>
+  * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-4.adoc">4 - Executing links as AJAX calls </a>
+  * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-5.adoc">5 - Creating Modal Dialogs </a>
+  * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-6.adoc">6 - Animated Page Transitions </a>
+  * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-7.adoc">7 - OS considerations</a>
 
 
 
