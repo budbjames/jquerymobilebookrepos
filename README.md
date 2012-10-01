@@ -10,13 +10,11 @@ This repository contains the master content for the jQuery Mobile Cookbook
 ## Table of Contents
 
 * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/readme.md">Chapter 1 - jQuery Mobile Basics</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-1.adoc">1 - Who this book is for</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">2 - jQuery and jQuery Mobile: How to get them</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-3.adoc">3 - Web app vs. Mobile App</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-4.adoc">4 - Mobile First Development, create first simple page</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-5.adoc">5 - What is jQuery?</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-6.adoc">6 - A few words about jQuery Mobile</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">2 - What are jQuery and jQuery Mobile?</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-3.adoc">3 - Including jQuery and jQuery Mobile in an HTML Page</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-4.adoc">4 - Creating your First jQuery Mobile Page</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-5.adoc">5 - jQuery Mobile - WebPages and Applications</a>
 * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/readme.md">Chapter 2 - Pages: The Building Blocks of jQuery Mobile</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-1.adoc">1 - Page anatomy</a>
