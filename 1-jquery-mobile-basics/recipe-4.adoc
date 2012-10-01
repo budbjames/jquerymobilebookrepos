@@ -1,18 +1,18 @@
 ////
 
-Author: Grzegorz Wilczyński <gwilczynski@gmail.com>
+Author: Unassigned
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-1.4 Mobile First Development
+1.4 Creating Your First jQuery Mobile Page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-I've created brilliant website about gardening and it looks great on my laptop's screen. There is a lot of active elements on my site e.g. dropdown lists, radio buttons and links. But many of my visitors uses mobile browsers and they are very unhappy when navigating and using active elements on my site. I want to create mobile version of my site I don't have much time and I'm not good as layout designer.
+Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -20,4 +20,4 @@ Describe the solution to your recipe here.  It should be one to two paragraphs l
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
