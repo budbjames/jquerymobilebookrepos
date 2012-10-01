@@ -5,6 +5,10 @@ This is a comment block.  Put notes about your recipe here and also your author 
 Author: Kevin Old <kevin@kevinold.com>
 Bio: Kevin Old is a Senior Software Engineer with several years focused on front-end development and learning good design principles.  He lives in White House, TN with his wife, son, 2 dogs and cat.  You can follow him on Twitter: @kevinold.
 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
 ////
 
 #.# Creating, Customizing, and Overriding Inset Lists

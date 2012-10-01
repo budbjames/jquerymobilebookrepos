@@ -4,6 +4,10 @@ Show how to change the algorithm at a per listview basis, show how to change the
 
 Author: Elijah Manor <elijah.manor@gmail.com>
 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
 ////
 
 5.8 Overriding the Default Algorithm for the Filter Box

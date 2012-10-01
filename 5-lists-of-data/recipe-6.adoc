@@ -6,6 +6,10 @@ Author: Daniel Mohl <danmohl@gmail.com>
 
 Bio: Daniel Mohl is a Microsoft MVP and F# Insider. He blogs at blog.danielmohl.com and you can follow him on Twitter at twitter.com/dmohl.
 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
 ////
 
 5.6 How to Use a List to Layout Form Data

@@ -1,6 +1,11 @@
 ////
 Author: Scott Murphy <stmhawaii@gmail.com>
 Bio: Scott Murphy is an interaction designer and front-end developer living in Honolulu, Hawaii.  You can follow him on github.com/uxder
+
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
 ////
 
 5.7 How to use the Filter Search Box

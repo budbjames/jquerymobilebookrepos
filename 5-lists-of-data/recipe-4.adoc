@@ -5,6 +5,10 @@ Author : Nelson  Vega
 email  : nvegamarrero@gmail.com
 twitter: @nvega
 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
 ////
 
 5.4  Nested multipage   

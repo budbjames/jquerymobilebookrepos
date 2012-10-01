@@ -4,6 +4,10 @@ This is a comment block.  Put notes about your recipe here and also your author 
 
 Author: Jason Scott <jasscott@rim.com>
 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
 ////
 
 5.3 Custom Formatting of Lists

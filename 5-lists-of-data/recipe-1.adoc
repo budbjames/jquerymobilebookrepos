@@ -3,6 +3,10 @@
 Author: Don Walter <don@don-walter.com>
 Bio: Don is an Application and Web Developer living in Villa Hills, KY with his wife and son. You can follow him on Twitter: @donwalter
 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
 ////
 
 5.1 Building a Basic List
