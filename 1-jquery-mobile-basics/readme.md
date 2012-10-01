@@ -59,12 +59,3 @@ Description:
 *Problem:*
 
 *Description:* Brief history and explanation of what jQuery Mobile is
-
----
-
-### 7 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-7.adoc">Beyond the Basics, Now What?</a>
-*author:* 
-
-*Problem:*
-
-*Description:* A brief map of what to do after you've gotten your feet wet
