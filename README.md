@@ -17,7 +17,6 @@ This repository contains the master content for the jQuery Mobile Cookbook
   * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-4.adoc">4 - Mobile First Development, create first simple page</a>
   * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-5.adoc">5 - What is jQuery?</a>
   * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-6.adoc">6 - A few words about jQuery Mobile</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-7.adoc">7 - Beyond the Basics, Now What?</a>
 * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/readme.md">Chapter 2 - Pages: The Building Blocks of jQuery Mobile</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-1.adoc">1 - Page anatomy</a>
@@ -62,6 +61,17 @@ This repository contains the master content for the jQuery Mobile Cookbook
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-5.adoc">5 - Creating Modal Dialogs </a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-6.adoc">6 - Animated Page Transitions </a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-7.adoc">7 - OS considerations</a>
+* <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/readme.adoc">Chapter 5 - Lists of Data</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-1.adoc">1 - Building a Basic List</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-2.adoc">2 - Common Ways to Format List Item Content</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-3.adoc">3 - Create Custom List Formatting</a> 
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-4.adoc">4 - Making a Multipage Nested List</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-6.adoc">6 - How to Use a List to Layout Form Data</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-7.adoc">7 - Providing a Filter Box to Search List Items</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-8.adoc">8 - Overriding the Default Algorithm for the Filter Box</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-9.adoc">9 - Make a List that Contains Dynamic Data</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-10.adoc">10 - Various Ways to Theme a List</a>
+
 
 
 

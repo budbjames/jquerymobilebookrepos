@@ -1,7 +1,5 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
 Author: Don Walter <don@don-walter.com>
 Bio: Don is an Application and Web Developer living in Villa Hills, KY with his wife and son. You can follow him on Twitter: @donwalter
 
