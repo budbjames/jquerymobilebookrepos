@@ -38,7 +38,7 @@ This repository contains the master content for the jQuery Mobile Cookbook
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-17.adoc">17 - Collapsible sets</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-18.adoc">18 - How to make pages readable on desktops and other wide screens</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-19.adoc">19 - Transform a simple XML file into linked jQuery Mobile Pages using XSLT</a>
-* <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/readme.adoc">Chapter 3 - Multiple Pages and Large App Organization</a>
+* <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/readme.md">Chapter 3 - Multiple Pages and Large App Organization</a>
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-1.adoc">1 - Working with structural frameworks</a>
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-2.adoc">2 - The client-side/server-side balance</a>
@@ -52,7 +52,7 @@ This repository contains the master content for the jQuery Mobile Cookbook
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-10.adoc">10 - Data-binding with knockout.js</a>
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-11.adoc">11 - Using JQM with backbone.js</a>
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-12.adoc">12 - Using JQM with ember.js</a>
-* <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/readme.adoc">Chapter 4 - Navigating through your Apps</a>
+* <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/readme.md">Chapter 4 - Navigating through your Apps</a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-1.adoc">1 - Wireframing for jQuery Mobile </a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-2.adoc">2 - Planning a hierarchy for your App</a>
@@ -61,7 +61,7 @@ This repository contains the master content for the jQuery Mobile Cookbook
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-5.adoc">5 - Creating Modal Dialogs </a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-6.adoc">6 - Animated Page Transitions </a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-7.adoc">7 - OS considerations</a>
-* <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/readme.adoc">Chapter 5 - Lists of Data</a>
+* <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/readme.md">Chapter 5 - Lists of Data</a>
   * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-1.adoc">1 - Building a Basic List</a>
   * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-2.adoc">2 - Common Ways to Format List Item Content</a>
   * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-3.adoc">3 - Create Custom List Formatting</a> 
