@@ -58,9 +58,9 @@ This recipe is aiming to the design of nested multiple pages and the navigation 
 
 *Description:*
 
-*Status:* TODO: Look into this. Needs final review & screenshot recommendations
+*Status:* Written & Needs an initial Review
 
-*Percentage Complete:* 80%
+*Percentage Complete:* 60%
 
 ---
 
