@@ -2,69 +2,24 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: Don Walter <don@don-walter.com>
-Bio: Don is an Application and Web Developer living in Villa Hills, KY with his wife and son. You can follow him on Twitter: @donwalter
-
+Author: John Doe <email@email.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-5.9 Make a List that Contains Dynamic Data
+#.# Recipe Title
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You've seen how easy it is to use jQuery Mobile's List View to make easy to use lists and menus for your web applications, but sometimes you might not want to hardcode all of your list items. How can you make a list using dynamic data?
+Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-So far, we've talked about lists containing static data. Lists can be populated dynamically from an array of data, an AJAX call to a web service, or even a local database. You must make sure you have an element on the page to attach the dynamic data to, and then make your call and inject the items into the listview element. This can make it really easy to populate large lists, but keep in mind that the more items you put into your list, the more your application's performance will be affected.
+Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The first thing you must do is place a listview element on your page, this is what the dynamic data will be injected into. Make sure you have some way to select the element you plan to use for injection. In our case, we will give our list an ID, which is really easy to select using jQuery.
-
-[source, html]
-----
-<ul data-role="listview" id="myList"></ul>
-----
-
-Once you have got your list element on the page, you will need to get your data in order. For this example, we are using an array of strings, but you can also make an AJAX call to a web service, or use local storage data. Our array will look as follows:
-
-[source, javascript]     
-----
-var arrItems = [
-  "Ben Folds Five",
-  "Cake",
-  "Gomez",
-  "Guster"
-];
-----
-
-Once you have got your data set, you need to write some JavaScript to loop over the results and inject them into the list element.This can be done quite easily using jQuery's `.each()` method, and then within that using the `.append()` method to inject the record into the listview. However, the `.append()` method updates the DOM each time is it run, so your app's performance will suffer. What we'll do instead is create an empty array (`newItems`), and then use the `.push()` method to insert each item into that array. Once that is done, you can use join the array items with an empty string delimiter to create a single string with your new items markup, which you can then append to your list. This way, the DOM is only manipulated once. The last step you need to do is refresh the listview using `.listview( 'refresh' )`. This is a very important step, as if you omit it, none of the jQuery Mobile formatting will be applied to the injected items. The refresh method will only run on the newly injected nodes, so you will not have to worry about your existing items being affected.
-
-[source, javascript]     
-----
-$( document ).ready( function() {
-  // Set your list element into a variable
-  var $myList = $( "#myList" );
-  var newItems = [];
-  
-  // Loop through your results and append a new <li> onto your list for each result
-  $.each( arrItems, function( index, value ) {
-    newItems.push( "<li><a href='index.html?id=" + index + "'>" + value + "</a></li>" );
-  });
-
-  // Append the new items to your list
-  $myList.append( newItems.join( "" ) );
-
-  // Refresh the listview to apply jQuery Mobile formatting to new items
-  $myList.listview( "refresh" );
-});
-----
-
-You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2552018/[jsFiddle].
-
-If you'd like to see an AJAX example, you can see view, run, and modify one from http://jsfiddle.net/gh/gist/jquery/1.7.1/2552031/[jsFiddle].
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.

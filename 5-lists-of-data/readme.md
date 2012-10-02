@@ -17,6 +17,10 @@ Description:
 
 *Description:* Basic List, Read-only List, Numbered List
 
+*Status:* Written & Reviewed. Needs final review & screenshot recommendations
+
+*Percentage Complete:* 90%
+
 ---
 
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-2.adoc">Common Ways to Format List Item Content</a>
@@ -26,6 +30,10 @@ Description:
 
 *Description:* Thumbnails, Split Button, Icons, Count Bubbles, Separate Dividers, Inset
 
+*Status:* Written & Reviewed. Needs final review & screenshot recommendations
+
+*Percentage Complete:* 90%
+
 --- 
 
 ### 3 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-3.adoc">Create Custom List Formatting</a> 
@@ -34,6 +42,10 @@ Description:
 *Problem:* There are times where you have a lot of information to display or you want to display list items in a unique way to make your application stand out.
 
 *Description:* Show how to build a semi-complex list item layout
+
+*Status:* TODO: Look into this. Needs final review & screenshot recommendations
+
+*Percentage Complete:* 10%
 
 ---
 
@@ -46,47 +58,71 @@ This recipe is aiming to the design of nested multiple pages and the navigation 
 
 *Description:*
 
+*Status:* TODO: Look into this. Needs final review & screenshot recommendations
+
+*Percentage Complete:* 80%
+
 ---
 
-### 6 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-6.adoc">How to Use a List to Layout Form Data</a>
+### 5 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-5.adoc">How to Use a List to Layout Form Data</a>
 *author:* <a href="mailto:danmohl@gmail.com">Daniel Mohl</a>
 
 *Problem:* Traditional web applications often use various techniques to layout forms. However, creating web based applications for mobile devices requires a shift in design thinking. One very common and easy approach in jQuery Mobile is to use a list to layout form elements. By using a list you can quickly create a form that automatically takes on the look and feel of the rest of your mobile application. Let's look at how this can be achieved.
 
 *Description:* Show how to enable the standard filter search box, show how to filter with hidden data
 
+*Status:* Written and Reviewed. Needs final review & screenshot recommendations
+
+*Percentage Complete:* 90%
+
 ---
 
-### 7 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-7.adoc">Providing a Filter Box to Search List Items</a>
+### 6 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-6.adoc">Providing a Filter Box to Search List Items</a>
 *author:* <a href="mailto:stmhawaii@gmail.com">Scott Murphy</a>
 
 *Problem:* Lists are a common way to display lots of information to the user. Unfortunately, when the list gets too long it become difficult to find the information you need.
 
 *Description:*
 
+*Status:* Written and Reviwed. Needs final review & screenshot recommendations
+
+*Percentage Complete:* 90%
+
 ---
 
-### 8 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-8.adoc">Overriding the Default Algorithm for the Filter Box</a>
+### 7 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-7.adoc">Overriding the Default Algorithm for the Filter Box</a>
 *author:* <a href="mailto:elijah.manor@gmail.com">Elijah Manor</a>
 
 *Problem:* Presenting a list of items is a common way to present information on a mobile device, but it can often be difficult to find specific item that you need. jQuery Mobile provides an easy way to turn on list filtering so the user can quickly narrow down the list to find a particular item. Although a default filter algorithm is provided, it may not suite the needs of your application. How can you provide your own filter algorithm?
 
 *Description:* Show how to change the algorithm at a per listview basis, show how to change the algorithm globally, show examples of various types of sort algorithms
 
+*Status:* Written and Reviwed. Needs final review & screenshot recommendations
+
+*Percentage Complete:* 90%
+
 ---
 
-### 9 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-9.adoc">Make a List that Contains Dynamic Data</a>
+### 8 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-8.adoc">Make a List that Contains Dynamic Data</a>
 *author:* <a href="mailto:don@don-walter.com">Don Walter</a>
 
 *Problem:* You've seen how easy it is to use jQuery Mobile's List View to make easy to use lists and menus for your web applications, but sometimes you might not want to hardcode all of your list items. How can you make a list using dynamic data?
 
 *Description:* Cover pulling in data from AJAX and refreshing the listview, possibly cover performance considerations of a long list
 
+*Status:* Written and Reviwed. Needs final review & screenshot recommendations
+
+*Percentage Complete:* 90%
+
 ---
 
-### 10 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-10.adoc">Various Ways to Theme a List</a>
-*author:* 
+### 9 - <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-9.adoc">Various Ways to Theme a List</a>
+*author:* <a href="mailto:kevin@kevinold.com">Kevin Old</a> 
 
 *Problem:*
 
 *Description:*
+
+*Status:*
+
+*Percentage Complete:* 10%

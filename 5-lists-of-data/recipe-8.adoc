@@ -1,8 +1,9 @@
 ////
 
-Show how to change the algorithm at a per listview basis, show how to change the algorithm globally, show examples of various types of sort algorithms
+This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: Elijah Manor <elijah.manor@gmail.com>
+Author: Don Walter <don@don-walter.com>
+Bio: Don is an Application and Web Developer living in Villa Hills, KY with his wife and son. You can follow him on Twitter: @donwalter
 
 Chapter Leader approved: <date>
 Copy edited: <date>
@@ -10,122 +11,60 @@ Tech edited: <date>
 
 ////
 
-5.8 Overriding the Default Algorithm for the Filter Box
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.9 Make a List that Contains Dynamic Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
-+++++++
-
-Presenting a list of items is a common way to present information on a mobile device, but it can often be difficult to find specific item that you need. jQuery Mobile provides an easy way to turn on list filtering so the user can quickly narrow down the list to find a particular item. Although a default filter algorithm is provided, it may not suite the needs of your application. How can you provide your own filter algorithm?
+++++++++++++++++++++++++++++++++++++++++++++
+You've seen how easy it is to use jQuery Mobile's List View to make easy to use lists and menus for your web applications, but sometimes you might not want to hardcode all of your list items. How can you make a list using dynamic data?
 
 Solution
-++++++++
-
-Before we being we need to make sure we have an ordered or unordered list with the `data-role="listview"` attribute. When jQuery Mobile loads the page it will initialize the `listview` widget, which adds behavior and style to the list. In addition we need to provide the `data-filter="true"` atribute that adds the filter box to the top of the list.
-
-You should have a list that looks something like the following characters from Star Trek: The Next Generation.
-
-[source,html]
-----
-<ul id="members" data-role="listview" data-filter="true">
-  <li>
-    <a href="index.html">
-      <h3>Jean-Luc Picard</h3>
-      <p><strong>Captain</strong></p>
-      <p>Patrick Stewart</p>
-    </a>
-  </li>
-  <li>
-    <a href="index.html">
-      <h3>William Thomas "Will" Riker</h3>
-      <p><strong>Commander, later Captain</strong></p>
-      <p>Jonathan Frakes</p>
-    </a>
-  </li>
-  <li>
-    <a href="index.html">
-      <h3>Data</h3>
-      <p><strong>Lt. Commander</strong></p>
-      <p>Brent Spiner</p>
-    </a>
-  </li>
-  <!-- ... More Characters ... -->
-</ul>
-----
-
-TODO: Insert Screenshot Here
+++++++++++++++++++++++++++++++++++++++++++++
+So far, we've talked about lists containing static data. Lists can be populated dynamically from an array of data, an AJAX call to a web service, or even a local database. You must make sure you have an element on the page to attach the dynamic data to, and then make your call and inject the items into the listview element. This can make it really easy to populate large lists, but keep in mind that the more items you put into your list, the more your application's performance will be affected.
 
 Discussion
-++++++++++
+++++++++++++++++++++++++++++++++++++++++++++
+The first thing you must do is place a listview element on your page, this is what the dynamic data will be injected into. Make sure you have some way to select the element you plan to use for injection. In our case, we will give our list an ID, which is really easy to select using jQuery.
 
-Thankfully jQuery Mobile provides an easy way to extend the default algorithm used to filter a list of items. You can change the filter method on an individual list basis or change the default filter method that is used for all lists.
-
-.Change the Filter Method for One List
-
-Once the `listview` widget has been inititalized by jQuery Mobile then you can set the `filterCallback` option to whatever custom filter method you desire. 
-
-The API for getting and setting options in jQuery Mobile widgets is the same as changing jQuery UI widgets options. You must have a jQuery object containing your list, call the `listview` widget, and pass the `option`, `filterCallback`, and filter method arguments. 
-
-See the following code snippet for an example of how to set the `filterCallback` for one `listview` instance.
-
-[source,javascript]
+[source, html]
 ----
-$( document ).ready(function() {
-  // Change the filterCallback option of the listview widget to a custom filter method
-  $( "#members" ).listview( "option", "filterCallback", $.filterMethods.startsWith );
+<ul data-role="listview" id="myList"></ul>
+----
+
+Once you have got your list element on the page, you will need to get your data in order. For this example, we are using an array of strings, but you can also make an AJAX call to a web service, or use local storage data. Our array will look as follows:
+
+[source, javascript]     
+----
+var arrItems = [
+  "Ben Folds Five",
+  "Cake",
+  "Gomez",
+  "Guster"
+];
+----
+
+Once you have got your data set, you need to write some JavaScript to loop over the results and inject them into the list element.This can be done quite easily using jQuery's `.each()` method, and then within that using the `.append()` method to inject the record into the listview. However, the `.append()` method updates the DOM each time is it run, so your app's performance will suffer. What we'll do instead is create an empty array (`newItems`), and then use the `.push()` method to insert each item into that array. Once that is done, you can use join the array items with an empty string delimiter to create a single string with your new items markup, which you can then append to your list. This way, the DOM is only manipulated once. The last step you need to do is refresh the listview using `.listview( 'refresh' )`. This is a very important step, as if you omit it, none of the jQuery Mobile formatting will be applied to the injected items. The refresh method will only run on the newly injected nodes, so you will not have to worry about your existing items being affected.
+
+[source, javascript]     
+----
+$( document ).ready( function() {
+  // Set your list element into a variable
+  var $myList = $( "#myList" );
+  var newItems = [];
+  
+  // Loop through your results and append a new <li> onto your list for each result
+  $.each( arrItems, function( index, value ) {
+    newItems.push( "<li><a href='index.html?id=" + index + "'>" + value + "</a></li>" );
+  });
+
+  // Append the new items to your list
+  $myList.append( newItems.join( "" ) );
+
+  // Refresh the listview to apply jQuery Mobile formatting to new items
+  $myList.listview( "refresh" );
 });
 ----
 
-.Change the Filter Method for All Lists
+You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2552018/[jsFiddle].
 
-If you already know that you want all of the lists to share the same filter method then there is another approach you can take. By setting the `filterCallback` property on the `listview` prototype you can set the default filter alorithm for all `listview` widgets. 
-
-The key to remember when using this technique is that you need to run this code during the `mobileinit` event. In order to time your code correctly you will to run your code before the `jquery.mobile-1.1.0.js` file has executed.
-
-See the following code snippet for an example of how to set the `filterCallback` for all `listview` widgets.
-
-[source,javascript]
-----
-// This has to run before jquery.mobile-1.1.0.js has been loaded
-$( document ).bind( "mobileinit",  function() {      
-  // on mobileinit set all listview widgets to use the startsWith filter method by default
-  $.mobile.listview.prototype.options.filterCallback = $.filterMethods.startsWith;
-});
-----
-
-.Custom Filter Methods
-
-Now that we know where and how to override the `filterCallback`, we also need to know what a filter method looks like and how to write one. The method is actually pretty staightforward. The method accepts two parameters (`text` and `searchValue`) that respresent the `text` of the list item being compared against and the `searchValue` that the user entered in the filter textbox. The method is expected to return `true` for the items that should be hidden (or filtered) from the list.
-
-The following is a simple example of some filter methods that you can use. By default jQuery Mobile uses the same logic as presented in the `contains` method below. 
-
-[source,javascript]
-----
-$.filterMethods = {
-  /**
-   * Only display items that start with the filtered text
-   * @param {string} text The text respresentation of the list item
-   * @param {string} searchValue What the user has typed into the filter textbox
-   * @returns {boolean} Return true if you want to hide the item
-   */
-  startsWith: function( text, searchValue ) {
-    return $.trim( text ).toLowerCase().indexOf( searchValue ) !== 0;    
-  },
-  /**
-   * Only display items that contain the filtered text
-   * @param {string} text The text respresentation of the list item
-   * @param {string} searchValue What the user has typed into the filter textbox
-   * @returns {boolean} Return true if you want to hide the item
-   */
-  contains: function( text, searchValue ) {
-    return text.toLowerCase().indexOf( searchValue ) === -1;
-  }
-};​
-----
-
-You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2485682/[jsFiddle].
-
-Note: If you are interested in a slightly more complex example using more advanced organizational patterns and additional features you can check out this http://jsfiddle.net/gh/gist/jquery/1.7.1/2485519/[jsFiddle]
-
-
-
+If you'd like to see an AJAX example, you can see view, run, and modify one from http://jsfiddle.net/gh/gist/jquery/1.7.1/2552031/[jsFiddle].
