@@ -6,6 +6,8 @@ Description:
 
 *Chapter Leader:* <a href="mailto:">Andy Matthews</a>
 
+<a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/introduction.adoc">Introduction</a>
+
 ## Recipes
 
 ### 1 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-1.adoc">Default Page Themes</a>
