@@ -3,10 +3,13 @@
 This recipe covers changing page themes on-the-fly
 
 Author: Max Lynch <maxlynch@uwalumni.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Dynamically Changing Page Themes
+6.5 Dynamically Changing Page Themes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

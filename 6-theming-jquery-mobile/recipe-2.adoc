@@ -1,13 +1,13 @@
 ////
 
-Author: John Doe <email@email.com>
+Author: Unassigned
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-6.1 Default Page Themes
+6.2 Themes and Swatches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
