@@ -7,6 +7,10 @@ This repository contains the master content for the jQuery Mobile Cookbook
 * jQuery Core Style Guidelines - http://docs.jquery.com/JQuery_Core_Style_Guidelines
 * jQuery Mobile Documentation - http://jquerymobile.com/demos/1.1.1/
 
+## Legal Agreements
+
+Each recipe author must sign a [release form](https://rightsignature.com/forms/jQueryMobileCookb-58d54f/token/87121d9b978) for their writing. 
+
 ## Table of Contents
 
 * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/readme.md">Chapter 1 - jQuery Mobile Basics</a>
