@@ -1,9 +1,10 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+This recipe shows how to use a normal list as well as an inset list to layout form elements.
 
-Author: Kevin Old <kevin@kevinold.com>
-Bio: Kevin Old is a Senior Software Engineer with several years focused on front-end development and learning good design principles.  He lives in White House, TN with his wife, son, 2 dogs and cat.  You can follow him on Twitter: @kevinold.
+Author: Daniel Mohl <danmohl@gmail.com>
+
+Bio: Daniel Mohl is a Microsoft MVP and F# Insider. He blogs at blog.danielmohl.com and you can follow him on Twitter at twitter.com/dmohl.
 
 Chapter Leader approved: <date>
 Copy edited: <date>
@@ -11,31 +12,162 @@ Tech edited: <date>
 
 ////
 
-#.# Creating, Customizing, and Overriding Inset Lists
+5.6 How to Use a List to Layout Form Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You may want a list to appear contained in a page or form and adjust it's styling.
+
+Traditional web applications often use various techniques to layout forms. However, creating web based applications for mobile devices requires a shift in design thinking. One very common and easy approach in jQuery Mobile is to use a list to layout form elements. By using a list you can quickly create a form that automatically takes on the look and feel of the rest of your mobile application. Let's look at how this can be achieved.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-<ul data-role="listview" data-inset="true">
-    <li>Moe</li>
-    <li>Curly</li>
-    <li>Larry</li>
-</ul>
+
+To accomplish the goal, all that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item. The following, which is also available as a jsFiddle at http://jsfiddle.net/gh/gist/jquery/1.7.1/2512225/, provides an example:
+
+[source, html]
+----
+<div data-role="page" id="surveyPage">
+  <div data-role="content">
+    <form action="#surveyCompletePage" method="get" data-ajax="false">
+      <ul data-role="listview" data-theme="d" > 
+        <li data-role="fieldcontain">
+          <label for="yourName">Your Name:</label>
+          <input type="text" name="yourName" id="yourName" value="" />
+        </li>
+        <li>
+          <label>Favorite Language:</label>
+          <fieldset data-role="controlgroup">
+            <input type="radio" name="favoriteLanguage" id="javaScript" value="javaScript"/>
+            <label for="javaScript">JavaScript</label>
+            <input type="radio" name="favoriteLanguage" id="ruby" value="ruby" />
+            <label for="ruby">Ruby</label>
+            <input type="radio" name="favoriteLanguage" id="fsharp" value="fsharp" />
+            <label for="fsharp">F#</label>
+            <input type="radio" name="favoriteLanguage" id="coffeeScript" value="coffeeScript" />
+            <label for="coffeeScript">CoffeeScript</label>
+            <input type="radio" name="favoriteLanguage" id="java" value="java" />
+            <label for="java">Java</label>
+            <input type="radio" name="favoriteLanguage" id="csharp" value="csharp" />
+            <label for="csharp">C#</label>
+          </fieldset>
+        </li>
+        <li>
+          <label>Do you use this language to develop for the:</label>
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <input type="radio" name="languageUse" id="usedForClientSide" value="usedForClientSide"/>
+            <label for="usedForClientSide">Client</label>
+            <input type="radio" name="languageUse" id="usedForServerSide" value="usedForServerSide" />
+            <label for="usedForServerSide">Server</label>
+            <input type="radio" name="languageUse" id="usedForBoth" value="usedForBoth" />
+            <label for="usedForBoth">Both</label>
+          </fieldset>	
+        </li>
+        <li>	
+          <label>How many hours per week do you write server-side code?</label>
+          <div>							
+            <input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
+          </div>
+        </li>
+        <li>
+          <fieldset class="ui-grid-a">
+            <div class="ui-block-a"><a href="#" data-role="button" data-theme="d">Cancel</a></div>
+            <div class="ui-block-b"><button type="submit" data-theme="b">Save</button></div>
+          </fieldset>
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>
+
+<div data-role="page" id="surveyCompletePage">
+  <div data-role="content">
+  Thanks for completing this survey
+  </div>    
+</div>​
+----
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-////
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
-////
 
-Add the data-inset="true" attribute to any list to make it an inset list.  Inset lists have the same abilities of normal list views.  The customizations can be any of the following:
+This solution allows you to quickly setup a form that renders just like any other list without custom client-side code. The attributes of the form element work exactly like they would outside of a list. In this example, I'm using a data-role attribute with the value fieldcontain on the first list item to allow the two child elements to be visually grouped. Additionally, the label elements are associated with the appropriate input elements through the use of for attributes with values that match the input element's id. All of this is pretty standard forms related functionality provided by jQuery Mobile. You will learn more about forms in chapter 7. 
 
-Read only
-Search filter bar - Add 'data-filter="true"'
-Divided data
+The solution shown above demonstrates how easy it is to blend jQuery Mobile forms features with list functionality. Conveniently, the things that you have already learned about lists and that you will learn about forms (in recipes found later in this book) apply in exactly the same way as they do when not combined. For example, to make the list shown above into an inset list, simply change the unordered list element to look like this:
 
+[source, html]
+----
+<ul data-role="listview" data-theme="d" data-inset="true"> 
+----
 
+Bonus
+++++++++++++++++++++++++++++++++++++++++++++
+
+As a bonus, you may run into scenarios where the list needs to dynamically display different form elements depending on input to other elements. One option for accomplishing this is to slightly modify the list elements and then add a little bit of JavaScript. The following example quickly illustrates the concept.
+
+[source, html]
+----
+<!-- Non-relevant code omitted -->
+<li>
+  <label>Favorite Language:</label>
+  <fieldset data-role="controlgroup">
+    <input type="radio" name="favoriteLanguage" id="javaScript" value="javaScript" data-dependency-class="clientAndServerSide"/>
+    <label for="javaScript">JavaScript</label>
+    <input type="radio" name="favoriteLanguage" id="ruby" value="ruby" data-dependency-class="serverSide" />
+    <label for="ruby">Ruby</label>
+    <input type="radio" name="favoriteLanguage" id="fsharp" value="fsharp" data-dependency-class="clientAndServerSide" />
+    <label for="fsharp">F#</label>
+    <input type="radio" name="favoriteLanguage" id="coffeeScript" value="coffeeScript" data-dependency-class="clientAndServerSide" />
+    <label for="coffeeScript">CoffeeScript</label>
+    <input type="radio" name="favoriteLanguage" id="java" value="java" data-dependency-class="serverSide" />
+    <label for="java">Java</label>
+    <input type="radio" name="favoriteLanguage" id="csharp" value="csharp" data-dependency-class="clientAndServerSide" />
+    <label for="csharp">C#</label>
+  </fieldset>
+</li>
+<li class="toggleElement clientAndServerSide">
+  <label>Do you use this language for development on the:</label>
+  <fieldset data-role="controlgroup" data-type="horizontal">
+    <input type="radio" name="languageUse" id="usedForClientSide" value="usedForClientSide"/>
+    <label for="usedForClientSide">Client</label>
+    <input type="radio" name="languageUse" id="usedForServerSide" value="usedForServerSide" />
+    <label for="usedForServerSide">Server</label>
+    <input type="radio" name="languageUse" id="usedForBoth" value="usedForBoth" />
+    <label for="usedForBoth">Both</label>
+  </fieldset>	
+</li>
+<li class="toggleElement serverSide">	
+  <label>How many hours per week do you write server-side code?</label>
+  <div>
+    <input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
+  </div>
+</li>
+<!-- Non-relevant code omitted -->
+----
+
+Dynamic display of a dependency question can now be achieved with JavaScript such as this:
+
+[source, javascript]     
+----
+$( document ).on( "pagebeforeshow", "#surveyPage", function() {
+  var $page = $( this );    
+
+  // Hide all dependency questions
+  $page.find( ".toggleElement" ).hide();
+  // Bind an event handler to the change JavaScript event to 
+  // toggle the visibility of the dependency questions
+  $( "input[name=favoriteLanguage]" ).change(function() {
+    var $input = $( this ), 
+      $page = $input.closest( "[data-role='page']" ),
+      classToShow;
+
+    // Hide all dependency questions
+    $page.find( ".toggleElement" ).hide();
+    // Get the value of the data-dependency-class attribute 
+    classToShow = $input.data( "dependencyClass" );
+    // Show the appropriate dependency question
+    $page.find( "." + classToShow ).show();
+  });
+});
+----
+
+A jsFiddle for this example can be found at http://jsfiddle.net/gh/gist/jquery/1.7.1/2512243/
