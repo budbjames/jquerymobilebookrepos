@@ -1,0 +1,220 @@
+////
+
+HTML5 IndexedDB
+
+Author: Ido Green <greenido@gmail.com>
+
+Bio: Ido is a Developer Advocate for Google. He has been a developer and building companies for more then 18 years. He still likes to develop web applications, but only ones with amazing UX. He has a wide array of skills and experience, including Java, php, perl, JavaScript--and all aspects of agile development and scaling systems. His last book with O'reilly is all about "Web Workers: Multithreaded Programs in JavaScript".
+
+////
+
+10.3 HTML5 IndexedDB
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Using HTML5 IndexedDB to store user information in cases where you need a real database on the client side.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+The following code outlines a simple use case that demos the usage of HTML5 IndexedDB API in order to save todo items.
+
+----
+include::recipe-4-code/jqm_indexeddb.html[]
+----
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+IndexedDB is a powerful way to store data on the client side. It's an evolving web standard for the storage of significant amounts of structured data and for high performance searches on this data using indexes. IndexedDB is also an Object Store. It is not the same as a Relational Database, which has tables, with collections rows and columns. It is an important and fundamental difference and affects the way that you design and build your applications.
+Why do we need to use it? Well, On November 18, 2010, the W3C announced that Web SQL database is a deprecated specification. In other words, the Web SQL spec will receive no new updates and browser vendors aren't encouraged to support this technology. The replacement is indexedDB which is currently supported on: IE1 0, FF 14+, Chrome 21+, Chrome For Android and soon on other mobile browsers. You can read more about the differances between WebSQL and IndexedDB in an article I've wrote on html5rock: http://www.html5rocks.com/en/tutorials/webdatabase/websql-indexeddb/
+
+For more: 
+* https://developer.mozilla.org/en-US/docs/IndexedDB
+* http://caniuse.com/#search=indexeddb 
+
+Create the DB
+~~~~~~~~~~~~~
+In IndexedDB, we need a bit more code at the initialization phase because we wish to handle the prefix per browser (webkit, moz, etc). This enable us to have cleaner code during our application. Moreover, when more browsers implement this feature, we could use the window object without any prefix so our code is ready for that.
+
+[html,source]
+====
+var dbName = "jqm-todo";
+var dbVersion = 1.0;
+var todoDB = {};
+var indexedDB = window.indexedDB || window.webkitIndexedDB ||
+  window.mozIndexedDB;
+// for shorter code later
+if ('webkitIndexedDB' in window) {
+  window.IDBTransaction = window.webkitIDBTransaction;
+  window.IDBKeyRange = window.webkitIDBKeyRange;
+}
+todoDB.indexedDB = {};
+todoDB.indexedDB.db = null;
+
+// In JQM we wish to bind it to the page init so we are openning our DB when all the other components are in place. The other part is to bind the 'addItem' click event so we will add a new item on each click event.
+$(document).bind('pageinit', function() {
+  console.log("-- lets start the party --");
+  todoDB.indexedDB.open();
+  $("#addItem").click(function() {
+    addTodo();
+  });
+});
+====
+
+
+Create An Object Store
+~~~~~~~~~~~~~~~~~~~~~~
+ An objectStore is like a database table. One IndexedDB may have many objectStores, each one holds a collection of related objects. Our todo app is simple and only needs one objectStore for all our todos. When the indexedDB is opened for the very first time, or when you change the version of your schema, an event onupgradeneeded is run. We will need it to setup our objectStore. This part of the code is a bit complicated as we still need to support Chrome with db.setVersion and create a new object store inside our setVersion request. In FireFox once we have a new version the request.onupgradeneeded will be called. The main point, is that we must have our space for data (=object store) and once we initilize it we can work with it (read/write) and have fun.
+
+[html,source]
+====
+todoDB.indexedDB.open = function() {
+var request = indexedDB.open(dbName, dbVersion);
+
+request.onsuccess = function(e) {
+  console.log ("success our DB: " + dbName + " is open and ready for work");
+  todoDB.indexedDB.db = e.target.result;
+  var db = todoDB.indexedDB.db;
+  if (db.setVersion) {
+    console.log("in old setVersion: "+ db.setVersion);
+      if (db.version != dbVersion) {
+          var req = db.setVersion(dbVersion);
+          req.onsuccess = function () {
+            if(db.objectStoreNames.contains("todo")) {
+              db.deleteObjectStore("todo");
+            }
+
+            var store = db.createObjectStore("todo", {keyPath: "timeStamp"});
+            var trans = req.result;
+            trans.oncomplete = function(e) {
+              console.log("== oncomplete transaction ==");
+              todoDB.indexedDB.getAllTodoItems();
+            }
+          };
+      }
+      else {
+          todoDB.indexedDB.getAllTodoItems();
+      }
+  }
+  else {
+      todoDB.indexedDB.getAllTodoItems();
+  }
+}
+
+request.onupgradeneeded = function(e) {
+  console.log ("Going to upgrade our DB");
+  
+  todoDB.indexedDB.db = e.target.result;
+  var db = todoDB.indexedDB.db;
+  if(db.objectStoreNames.contains("todo")) {
+    db.deleteObjectStore("todo");
+  }
+
+  var store = db.createObjectStore("todo",
+  {keyPath: "timeStamp"});
+
+  todoDB.indexedDB.getAllTodoItems();
+}
+
+request.onfailure = todoDB.indexedDB.onerror;
+request.onerror = function(e) {
+  console.error("Err:"+e);
+}
+};
+====
+
+Adding Item
+~~~~~~~~~~~
+In the first line we get a quick reference to the database object todoDB.indexedDB.db. The second step is to initiate a 'readwrite' transaction and get a reference to our object store. 
+Now that the application has access to the object store, we can issue a  put command with a  JSON object. In our case, it's the todo item text and a timeStamp as key. It is our unique key for the object and is used as the "keyPath". When the call to put is successful, our request.onsuccess event is triggered, and we are able to render the contents on the screen.
+
+====
+todoDB.indexedDB.addTodo = function(todoText) {
+  var db = todoDB.indexedDB.db;
+  var trans = db.transaction(['todo'], "readwrite");
+  var store = trans.objectStore("todo");
+
+  var data = {
+    "text": todoText,
+    "timeStamp": new Date().getTime()
+  };
+
+  // Inserting our data to the object store
+  var request = store.put(data);
+
+  // When it's all good - render the items in JQM list to the user.
+  request.onsuccess = function(e) {
+    todoDB.indexedDB.getAllTodoItems();
+  };
+
+  request.onerror = function(e) {
+    console.error("Error Adding an item: ", e);
+  };
+};
+
+====
+
+Delete Item
+~~~~~~~~~~~
+In order to remove a todo item we start a transaction, reference the Object Store with your object in and issue a delete command with the unique ID of your object.
+
+====
+todoDB.indexedDB.deleteTodo = function(id) {
+  var db = todoDB.indexedDB.db;
+  var trans = db.transaction(["todo"], "readwrite");
+  var store = trans.objectStore("todo");
+
+  var request = store.delete(id);
+
+  request.onsuccess = function(e) {
+    todoDB.indexedDB.getAllTodoItems();
+  };
+
+  request.onerror = function(e) {
+    console.error("Error deleteing: ", e);
+  };
+};
+====
+
+Render Item
+~~~~~~~~~~~
+We use here the powerful lists of JQM. First we built a new li item that will contain our text and 'delete' button. Second, we binding the click event of the delete button to our deleteTodo function. Then, we are in the fun part of adding some data-* attributes to customize our delete button to look good. Finnaly, we appending the new elements to the ul and call the trigger function to ask for some JQM rendering power. 
+
+====
+function renderTodo(row) {
+  var todos = document.getElementById("todoItems");
+  var li = document.createElement("li");
+  var a = document.createElement("a");
+  var t = document.createTextNode(row.text);
+
+  a.addEventListener("click", function() {
+    todoDB.indexedDB.deleteTodo(row.timeStamp);
+  }, false);
+
+  // some fun with jquery mobile data attributes
+  a.setAttribute("href", "#");
+  a.setAttribute("data-iconpos", "notext");
+  a.setAttribute("data-role", "button");
+  a.setAttribute("data-icon", "delete"); 
+  a.setAttribute("data-inline", "true");
+  
+  li.appendChild(a);
+  li.appendChild(t);
+  todos.appendChild(li)
+  // And lets create the new il item with its markup
+  $("#todoItems").trigger('create'); 
+}
+====
+
+
+[Warning]
+====
+Easy HTML5 feature detection is not trivial, you should leverage a well tested third party library to perform this task.  One such library is Modernizr - http://www.modernizr.com.
+You can also check out site like: http://caniuse.com in order to see which browsers will support this feature.
+====
+
+
+
+
+
+
