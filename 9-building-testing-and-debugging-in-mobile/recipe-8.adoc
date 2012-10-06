@@ -1,6 +1,6 @@
 ////
 
-Author: Levi DeHaan <levi@levidehaan.com>
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
@@ -15,5 +15,13 @@ You’ve built your application apk but now you need to put it on your android i
 Solution
 ++++++++
 
+In the previous recipes, we have learned how to remotely debug your application using various tools including remote debugging servers and browser developer tools. You have also learned how to get your application built into an Android apk file using Apache Cordova. Using Cordova, you have been able to load the apk file directly onto your device, however you could also download the apk from anywhere you decide to place it on the web, to have it install onto your device. Now let us investigate how you can test and debug your application after it has been loaded onto your Android device.
+
 Discussion
 ++++++++++
+
+Testing your application as an Android Application is a critical part of the development lifecycle. While testing the functionality of the application on a desktop and mobile browser can give you a good feel for how your jQuery Mobile application will look and feel in the context of the native application experience on a portable device, it cannot give us a full grasp of the functionality until you run the Android application on your devices. Things that naturally work in the context of a web browser, either mobile or desktop, such as links to external sites and remote content, may behave in a manner that is not as intuitive on a mobile WebView. This is why it is imperative to test your application on your device and note any inconsistencies that you find. 
+
+Some common issues that occur in testing such applications are, as previously mentioned, links to external sites and remote resources that may not function as expected within the context of the Android WebView. Another important point to consider is how your jQuery Mobile application will perform if the phone is not connected to the internet, be it in airplane mode or somewhere without connectivity. In such a case should, depending on the particular uses of your application, you may wish to present your users with a fallback that works offline as a subset of the fully connected application.
+
+When testing you may encounter issues or scenarios within your application which were not seen in earlier testing in your mobile and desktop browsers. Two likely causes for this inconsistancy are issues within the Android application or setup preventing expected behavior, or limitations of the specific WebView you are targeting creates an issue within your HTML, JavaScript, or CSS that you could not forsee. Luckily, if you are testing on your device you have options for deciphering these issues. For what appear to be HTML, JavaScrip, CSS issues, a common use is to inject a script into your HTML file that allows you to utilze a remote inspector just as 'weinre' (WEbkit INspector REmote) which you can run the server locally or utilize a service such as http://debug.phonegap.com. This will give you the familiar debugging toolset from WebKit based browsers in order to track down any issues within your code. If you suspect the issue lies outside of your HTML, CSS, and JavaScript, then you'll need to investigate the Android logs that are sent to your computer via USB Debugging. If you are using Eclipes you can navigate through your application when connected and follow the logs presented to see things such as external links loading. These should appear in the 'Log Cat' section of Eclipse and ,as an example, clicking a link to the jQuery Mobile website should look similar to 'CordovaWebView - >>> loadUrl(http://jquerymobile.com/)'. The log output should give you a clear indications of exceptions or warnings that may be a cause of the inconsistancies found in testing your application. These methods are simply a few of many and various techniques for testing and debugging a jQuery Mobile application as a native Android application, which can be useful in many testing scenarios.

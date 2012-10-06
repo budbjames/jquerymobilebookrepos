@@ -1,6 +1,6 @@
 ////
 
-Author: Levi DeHaan <levi@levidehaan.com>
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
@@ -15,5 +15,36 @@ We have an app that works in the browser, now we want to test out how its going 
 Solution
 ++++++++
 
+To get our jQuery Mobile application running as a native application on an Android device we will choose to render the application within a WebView. A WebView is a native view in Android that will display webpages but is different from a typical desktop or mobile browser in that it lacks common browser elements such as a back button. As such, a WebView is perfect for rendering our jQuery Mobile application in a way that we can package it as a native app. We will choose to utilize Apache Cordova (Phonegap) which besides having some great native device features exposed across multiple platforms, utilizes a WebView to render web applications on devices.
+
 Discussion
 ++++++++++
+
+To build an Android application from jQuery Mobile using Cordova is fairly straightforward, and after getting through the initial setup quite simple. First, we need a copy Cordova which as of this writing can be found from the Cordova Apache incubator site, or the PhoneGap website. Now is also a good time to make sure you have Eclipse installed as well as the Android SDK and ADT Plugin. Second we create a new 'Android Application Project' in Eclipse. Continuing through the wizard to create a new Android 'Activity' we now need to get our jQuery Mobile App into the app. We do this by creating two folders within the application structure 'libs' - which will hold the cordova.jar file, and 'assets/www' - which is home to our jQuery Mobile masterpiece. Now we need to tell Eclipse to use the cordova.jar file in the build. Do this by right-clicking the 'libs' folder and adding the jar to the Build Path. The next step is telling our Activity that we want to load our HTML into the WebView, we do this by editing the main java file under the src directory to look like this:
+
+----
+package com.example.jqmsample;
+
+import android.os.Bundle;
+import android.app.Activity;
+//Add reference to cordova
+import org.apache.cordova.*;
+
+//extend DroidGap instead of default Activity
+public class MainActivity extends DroidGap {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //Tell the application to load our jQuery Mobile app
+        super.loadUrl("file:///android_asset/www/index.html");
+    }
+}
+----
+
+Now we add our code to the 'www' directory (in this example - index.html) and we can build our application for Android. However, it is likely that we may want to load resources from a website like code.jquery.com or some other CDN. To do this we need to specify these permissions in a file within the project called 'AndroidManifest.xml'. There are many settings we could set here, all of which can be found in the Cordova and Android documentation sites, but what we want. is to add the following to our xml file:
+
+----
+<uses-permission android:name="android.permission.INTERNET" />
+----
+Just as it looks, this will allow us access to the internet from our application. To deploy this application to our Android device, we simply enable USB Debugging on our device settings, connect to our computer and select Run As > Android Application within Eclipse. We are now up and running on Android.

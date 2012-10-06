@@ -68,11 +68,11 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-2.adoc">2 - Common Ways to Format List Item Content</a>
   * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-3.adoc">3 - Create Custom List Formatting</a> 
   * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-4.adoc">4 - Making a Multipage Nested List</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-6.adoc">6 - How to Use a List to Layout Form Data</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-7.adoc">7 - Providing a Filter Box to Search List Items</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-8.adoc">8 - Overriding the Default Algorithm for the Filter Box</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-9.adoc">9 - Make a List that Contains Dynamic Data</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-10.adoc">10 - Various Ways to Theme a List</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-5.adoc">5 - How to Use a List to Layout Form Data</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-6.adoc">6 - Providing a Filter Box to Search List Items</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-7.adoc">7 - Overriding the Default Algorithm for the Filter Box</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-8.adoc">8 - Make a List that Contains Dynamic Data</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-9.adoc">9 - Various Ways to Theme a List</a>
 * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/readme.md">Chapter 6 - Theming jQuery Mobile</a>
   * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-1.adoc">1 - Default Page Themes</a>
