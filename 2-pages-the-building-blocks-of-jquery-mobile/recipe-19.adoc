@@ -1,5 +1,4 @@
 ////
-XML 2 JQM using XSLT
 
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 Chapter Leader approved: <date>
@@ -8,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.19 Transforming XML to linked jQuery Mobile pages using XSLT
+2.19 Transforming XML to Linked jQuery Mobile Pages Using XSLT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -25,7 +24,7 @@ Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 You can write the content in XML and transform it to jQuery Mobile pages using XSLT. You can then link your XML file and your XSLT file by either adding the reference of the +.xsl+ file on the second line of your XML file, or by using PHP or other server-side techniques to load both files and do the transformation on the server.
 
-To produce the example described above, it would be inefficient to hardcode all these pages. Instead, you can create an XML file to store your contact details, see <<EX2-19-1>>:
+To produce the described example, it would be inefficient to hardcode all these pages. Instead, you can create an XML file to store your contact details, see <<EX2-19-1>>:
 
 [[EX2-19-1]]
 .contacts.xml
@@ -165,14 +164,14 @@ The first thing you need to do is to write your XML file so that it can hold all
 
 <<EX2-19-2>> holds the rules to transform <<EX2-19-1>> to the final HTML file and holds the jQuery Mobile code that will be used on the page.
 
-The XSL file starts by specifying that we will match the whole XML document. We then load the jQuery Mobile libraries and specify the title of the document.
+The XSL file starts by specifying that you will match the whole XML document. You then load the jQuery Mobile libraries and specify the title of the document.
 
-We want to have one page per contact, so for each +contact+ in the XML document, the rule is to create a new jQuery Mobile page. Each jQuery Mobile page constructed here will have a fixed header that contains a previous button to go to the previous page unless this is the first page (with a slide transition in the reverse direction), a next button to go to the next page unless this is the last page (with a slide transition), and contact followed by the contact short name as heading (Contact Todd, Contact Anne and Contact Scott in our example). Each page content container is composed of the picture of the contact followed by a horizontal group container for the three button links to the contact email address using the mailto protocol, the contact telephone number using the tel protocol and the contact iMessage details using the sms protocol. Finally, each page also has a fixed footer. You will note that although the fixed footer contains no text, we still have and empty <h4></h4> to ensure that the footer has the required height which will be identical to that of the header, hence ensuring the desired balance between the header and the footer.
+You want to have one page per contact, so for each +contact+ in the XML document, the rule is to create a new jQuery Mobile page. Each jQuery Mobile page constructed here will have a fixed header that contains a previous button to go to the previous page unless this is the first page (with a slide transition in the reverse direction), a next button to go to the next page unless this is the last page (with a slide transition), and contact followed by the contact short name as heading (Contact Todd, Contact Anne and Contact Scott in our example). Each page content container is composed of the picture of the contact followed by a horizontal group container for the three button links to the contact email address using the mailto protocol, the contact telephone number using the tel protocol and the contact iMessage details using the sms protocol. Finally, each page also has a fixed footer. You will note that although the fixed footer contains no text, you still have and empty <h4></h4> to ensure that the footer has the required height that will be identical to that of the header, hence ensuring the desired balance between the header and the footer.
 
-No style was specified, so the default  swatch +”a”+ is used to display the header and footer, while the  swatch +”c”+ is used to display the content and the content elements. This is standard jQuery Mobile default style.
+No style was specified, so the default swatch +”a”+ is used to display the header and footer, while the swatch +”c”+ is used to display the content and the content elements. This is standard jQuery Mobile default style.
 
 You could modify the XSL file to allow for perpetual navigation, so that the first page has a previous button that links to the last page, and the last page has a next button that links to the first page.
 
 In this example, choosing to view the next contact will bring the corresponding contact page with a slide transition, while the previous button will bring the page for the previous contact using the reverse slide transition, to give an impression of natural flow. It is possible to change this by modifying the +data-transition+ and +data-direction+ attributes. It is also possible to modify the previous and next buttons to display icons only by adding the +data-iconpos="notext"+ attribute to the page link.  
 
-This technique described here is applicable in particular when you have pages describing artifacts, products or blog posts, where the display rules can be reused and only the content changes.
+This technique is applicable in particular when you have pages describing artifacts, products or blog posts, where the display rules can be reused and only the content changes.

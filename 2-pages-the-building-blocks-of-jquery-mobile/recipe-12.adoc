@@ -1,7 +1,5 @@
 ////
 
-Why and how to add icons. Demonstrate the various positions an icon can be located. 
-
 Author: Adam Bradley <adambradley25@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
@@ -10,16 +8,16 @@ Tech edited: <date>
 ////
 
 
-2.12 Navbar icons
+2.12 Navbar Icons
 ~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++
-Like with any application, or even your car's dashboard, icons help users quickly identify an expected outcome when an interaction occurs. 
+You want to add icons to your Navbar. 
 
 Solution
 ++++++++
-By default, jQuery Mobile comes with a basic set of icons which can be easily displayed within various elements, including navbars. After jQuery Mobile performs its progressive enhancement magic, the assigned icons help to provide users with a familiar "app-like" appearance. Along with choosing which icon to display for each navbar link, author's can also customize an icon's position relative to each nav link's text.
+Like with any application, or even your car's dashboard, icons help users quickly identify an expected outcome when an interaction occurs. By default, jQuery Mobile comes with a basic set of icons that can be easily displayed within various elements, including Navbars. After jQuery Mobile performs its progressive enhancement magic, the assigned icons help to provide users with a familiar "app-like" appearance. Along with choosing which icon to display for each Navbar link, you can also customize an icon's position relative to each nav link's text.
 
 .Navbar with Icons
 [source,html]
@@ -37,9 +35,9 @@ By default, jQuery Mobile comes with a basic set of icons which can be easily di
 
 Discussion
 ++++++++++
-Out of the box, jQuery Mobile provides a standard set of icons commonly used, such as "home", "info" or "search" icons. __See ########## for more information on jQuery Mobile icons.__ By using the 'data-icon' attribute, authors can assign icons to individual. By default they will be positioned on top of their link's text, which is also customizable.
+Out of the box, jQuery Mobile provides a standard set of icons commonly used, such as "home", "info" or "search" icons. __See ########## for more information on jQuery Mobile icons.__ By using the 'data-icon' attribute, you can assign icons to individual. By default, they will be positioned on top of their link's text, which is also customizable.
 
-By using the 'data-iconpos' attribute within the navbar container, authors are able to override the default _top_ icon positioning. Vaild 'data-iconpos' values include: __left, right, top, bottom__.
+By using the 'data-iconpos' attribute within the Navbar container, you are able to override the default _top_ icon positioning. Vaild 'data-iconpos' values include: __left, right, top, bottom__.
 
 .Navbar with Bottom Positioned Icons
 [source,html]
@@ -47,5 +45,5 @@ By using the 'data-iconpos' attribute within the navbar container, authors are a
 <div data-role="navbar" data-iconpos="bottom">
 ----
 
-Notice in the example above the 'data-iconpos="bottom"' is not assigned to an individual link, but instead to the  navbar container.
+Notice in the provided example the 'data-iconpos="bottom"' is not assigned to an individual link but instead to the  Navbar container.
 

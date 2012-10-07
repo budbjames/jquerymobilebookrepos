@@ -18,16 +18,16 @@ Tech edited: <date>
 
 ////
 
-3.7 Designing pages that can be bookmarked.
+3.7 Designing Bookmarkable Pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Internet users commonly bookmark pages in their web browser, and often come to expect this functionality. In the single page application model used by jQuery Mobile the first page loaded in the web application is never re-fetched from the server. Therefore, bookmarked pages will behave as the first page when they are opened at a later date. This means that any bookmarked page that displays dynamic data, populated server-side will not be refreshed in the browser during the applications lifecycle.
+Internet users commonly bookmark pages in their web browser and often come to expect this functionality. In the single page application model used by jQuery Mobile, the first page loaded in the web application is never re-fetched from the server. Therefore, bookmarked pages will behave as the first page when they are opened at a later date. This means that any bookmarked page that displays dynamic data, populated server-side will not be refreshed in the browser during the applications lifecycle. You want to design a page that can be bookmarked. 
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-To solve this problem, the server-side generated dynamic content is separated out from the page view, and instead the page remains primarily as static content, while dynamic data is provided by clean RESTful web services. The dynamic data is now fetched separately to the page via ajax calls in response to the jQuery Mobile event fired to notify listeners that the page has been created.
+To solve this problem, the server-side generated dynamic content is separated out from the page view and instead the page remains primarily as static content, while dynamic data is provided by clean RESTful web services. The dynamic data is now fetched separately to the page via AJAX calls in response to the jQuery Mobile event fired to notify listeners that the page has been created.
 
 
 Example here.
@@ -35,20 +35,20 @@ Example here.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-This problem is not a universal issue that all applications will need to solve. However, if this problem must be solved it will require some changes to the application's architecture. Therefore it is worth considering this early in a project.
+This problem is not a universal issue that all applications will need to solve. However, if this problem must be solved it will require some changes to the application's architecture. Therefore, it is worth considering this early in a project.
 
 
-When The Problem Applies
+When the Problem Applies
 
-It is common for developers to design a jQuery Mobile application as a set of separate server-side generated resources that are linked together. As a user transitions between pages in the application, jQuery Mobile fetches the resource via an ajax call and loads the freshly generated content into the view. This design is clean and works very well so long as the following are satisfied:
+It is common for developers to design a jQuery Mobile application as a set of separate server-side generated resources that are linked together. As a user transitions between pages in the application, jQuery Mobile fetches the resource via an AJAX call and loads the freshly generated content into the view. This design is clean and works very well so long as the following are satisfied:
 
 * The content on the home page does not require a refresh each time a user navigates back it.
 * The requirements of the application do not include page bookmarking.
 
-The problem presents itself when the application combines the following two conditions.
+The problem presents itself when the application combines the following two conditions:
 
-* Pages need to be bookmarked
-* The current application is designed to generate dynamic pages server-side
+* Pages need to be bookmarked.
+* The current application is designed to generate dynamic pages server-side.
 
 
 How The Solution Works
@@ -57,9 +57,9 @@ How The Solution Works
 
 
 
-Gracefully Degrading without Javascript
+Gracefully Degrading without JavaScript
 
-When a jQuery Mobile application is opened in a browser with javascript disabled, it no longer behaves as a single page application, and instead degrades gracefully into a simple set of linked web pages that will not have the refresh issue this recipe solves. However, without javascript the proposed solution would leave the application only displaying static content.
+When a jQuery Mobile application is opened in a browser with JavaScript disabled, it no longer behaves as a single page application and instead degrades gracefully into a simple set of linked web pages that will not have the refresh issue this recipe solves. However, without JavaScript the proposed solution would leave the application displaying only static content.
 
-If we consider the scenario in which an application must support both browsers with and without javascript, we then need to combine techniques. Pages should be generated dynamically server-side to satisfy the non-javascript environments, and additionally ajax calls should be used to solve the refresh problem in javascript environments.
+If we consider the scenario in which an application must support both browsers with and without JavaScript, we then need to combine techniques. Pages should be generated dynamically server-side to satisfy the non-JavasSript environments, and additionally AJAX calls should be used to solve the refresh problem in JavaScript environments.
 
