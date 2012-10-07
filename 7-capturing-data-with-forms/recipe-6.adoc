@@ -3,10 +3,13 @@
 author information.
 
 Author: Michael Knox <webdpro@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Form Submittal and AJAX
+7.6 Form Submittal and AJAX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

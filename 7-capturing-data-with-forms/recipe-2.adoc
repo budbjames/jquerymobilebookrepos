@@ -4,6 +4,10 @@ Author: Teren Teh <teren@tixocloud.com>
 
 How to create form elements in jQuery Mobile
 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
 ////
 
 7.2 Creating form elements in jQuery Mobile

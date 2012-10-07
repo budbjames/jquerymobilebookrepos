@@ -1,10 +1,13 @@
 ////
 
 Author: Anu Shahi <anu.shahi@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Form Validation
+7.8 Form Validation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

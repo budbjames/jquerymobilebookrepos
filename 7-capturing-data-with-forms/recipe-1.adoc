@@ -4,6 +4,10 @@ Author: Adam Bradley <adambradley25@gmail.com>
 
 Discuss form UX on mobile devices. Explain how native inputs are hard to use on small devices and how jQM enhances them to be touch friendly.
 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
 ////
 
 7.1 Getting started with jQuery Mobile Forms

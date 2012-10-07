@@ -1,8 +1,12 @@
 ////
 
-Author: Teren Teh <teren@tixocloud.com>
+Author: unassigned
 
 Generate jQuery UI Mobile elements on-the-fly
+
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
