@@ -45,7 +45,7 @@ many:
 
 * You can start using the JavaScript libraries right away, without having to download any files.
 * You'll experience decreased latency. Any users that are not physically near your server will be able to download the
-libraries faster through the closest CDN server; this is better than forcing the users to download
+libraries faster through the closest CDN server; this is better than forcing users to download
 jQuery from your own server independently from their location.
 * Your server will produce less traffic, as these files will be downloaded from the CDN server.
 * Perhaps the greatest benefit of using a CDN is that your website visitors might not have to download 
