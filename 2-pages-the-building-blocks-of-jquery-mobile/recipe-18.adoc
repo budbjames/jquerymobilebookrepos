@@ -1,7 +1,5 @@
 ////
 
-Improving readability on desktop and mobile devices.
-
 Author: Ray Daly <raydaly@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
@@ -9,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.18 How to make pages readable on desktops and other wide screens
+2.18 Making Pages Readable on Desktops and Other Wide Screens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -18,7 +16,7 @@ Your app looks fine on the phone but not on your desktop monitor. Text lines are
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Limit the maximum width of the page to a comfortable number, and center the content.
+Limit the maximum width of the page to a comfortable number and center the content.
 
 [source, css]
 ---- 
@@ -38,6 +36,6 @@ It is very easy when working with jQuery Mobile to concentrate on how your app l
 
 A simple solution to this problem is to use CSS to set the max-width of your app to 790px. Then, using a left and right margin of auto, the app will center in the desktop browser regardless of the width.
 
-This avoids the problem of lines of text that are too long for comfortable reading. This is a simple way to improve the cross-device 'readability' of your app.
+This avoids the problem of lines of text that are too long for comfortable reading and is a simple way to improve the cross-device 'readability' of your app.
 
 
