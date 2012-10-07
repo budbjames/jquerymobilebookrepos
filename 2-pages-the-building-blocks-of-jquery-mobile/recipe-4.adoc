@@ -1,7 +1,5 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
 Author: Max Lynch <maxlynch@uwalumni.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
@@ -14,11 +12,11 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-We want to display a header or footer toolbar at all times, and float it above the content of the page.
+You want to display a header or footer toolbar at all times and float it above the content of the page.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-jQuery Mobile provides fixed positioning support for toolbars. In fact, it's a simple matter of adding data-position="fixed" to the toolbar as shown below:
+jQuery Mobile provides fixed positioning support for toolbars. In fact, it's a simple matter of adding data-position="fixed" to the toolbar as shown:
 
 [source, html]
 -----
@@ -50,7 +48,6 @@ jQuery Mobile provides fixed positioning support for toolbars. In fact, it's a s
  
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-In this recipe we've set the data-position attribute to "fixed" to keep the header and footer toolbars fixed at the top and bottom of the viewport, respectfully.
+You've now set the data-position attribute to "fixed" to keep the header and footer toolbars fixed at the top and bottom of the viewport, respectively.
 
-This keeps the center content padded enough to show the toolbars while allowing the toolbars to stay fixed in pace as the center content scrolls. We've added
-a really tall div to demonstrate the effect.
+This keeps the center content padded enough to show the toolbars while allowing the toolbars to stay fixed in pace as the center content scrolls. A really tall div demonstrates the effect.
