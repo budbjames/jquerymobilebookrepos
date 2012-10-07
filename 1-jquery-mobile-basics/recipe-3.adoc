@@ -17,10 +17,10 @@ You want to use the jQuery and jQuery Mobile JavaScript libraries on an HTML pag
 Solution
 ++++++++
 There are in total three ways you can include the jQuery and jQuery Mobile libraries to your 
-project. Each of the first two ways uses a different approach, while the third one is somehow 
-a combination between the previous two. Let's have a look:
+project. Each of the first two ways uses a different approach, while the third is 
+a combination of the previous two. Let's have a look:
 
-* The first and easiest solution, is to simply use a CDN-hosted version of the libraries, like 
+* The first and easiest solution, is to simply use a CDN-hosted version of the libraries, such as 
 Google's CDN or jQuery's CDN. This is the most commonly suggested solution for web developers.
 * The second solution, is to manually download jQuery and jQuery Mobile and host these files on 
 your own server.
@@ -40,13 +40,13 @@ Using a CDN
 +++++++++++
 A Content Delivery Network is a distributed network of servers, containing copies of data across 
 various physical locations. Its purpose is to deliver identical files to the users, by choosing the
-closest optimal available server in the network. The advantages of using this technique are quite 
+closest optimal available server in the network. The advantages of using this technique are 
 many: 
 
 * You can start using the JavaScript libraries right away, without having to download any files.
-* Decreased latency. Any users that are not physically near your server will be able to download the
+* You'll experience decreased latency. Any users that are not physically near your server will be able to download the
 libraries faster through the closest CDN server; this is better than forcing the users to download
-jQuery from your own server independetly from their location.
+jQuery from your own server independently from their location.
 * Your server will produce less traffic, as these files will be downloaded from the CDN server.
 * Perhaps the greatest benefit of using a CDN is that your website visitors might not have to download 
 the jQuery libraries at all. It is very likely that your visitors already have a copy of the JavaScript 
@@ -57,15 +57,15 @@ CDN-hosted version of jQuery, instead of remaking this request it tries to load 
 file from the browser cache, which leads to increased responsiveness.
 
 The disadvantages of a Content Delivery Network are that the JavaScript files will be available only if 
-the CDN is online, and also if you are building native appplications using jQuery and jQuery Mobile and
-the user's device is not connected to the internet, you will not be able to use their functionaly. 
+the CDN is online, and if you are building native applications using jQuery and jQuery Mobile and
+the user's device is not connected to the internet, you will not be able to use their functionally. 
 It is thus recommended to choose the locally hosted files if you plan on deploying HTML5 offline apps.
 
 [IMPORTANT]
 ====
 The jQuery Mobile library requires the jQuery core library to be also included in order to use it. 
 As a consequence, you have to include both of these libraries in every HTML page of your project,
-along with any css files needed by jQuery Mobile. It is important to also check the compatibility 
+along with any CSS files needed by jQuery Mobile. It is important to also check the compatibility 
 between the different versions of jQuery and jQuery Mobile: for example, jQuery v1.7.1 is only
 compatible with jQuery Mobile versions equal or greater than v1.1.0.
 ====
@@ -73,7 +73,7 @@ compatible with jQuery Mobile versions equal or greater than v1.1.0.
 In this book, we will choose the official jQuery Content Delivery Network for our projects.
 There are two types of files in each library you can choose to include in your page: one is the 
 uncompressed version and is used for debugging purposes only, and the other is the minified and
-compressed version, which is targeting final distribution. The minified version has a preffix _min_
+compressed version, which is targeting final distribution. The minified version has a prefix _min_
 added to its filename, and does not contain any spaces, line-breaks, or comments.
 
 The CDN-hosted version can be included in your HTML page with the following lines of code:
@@ -86,7 +86,7 @@ The CDN-hosted version can be included in your HTML page with the following line
 
 [NOTE]
 ====
-The JavaScript files must be included in your project in the above order.
+The JavaScript files must be included in your project in the order shown.
 ====
 
 While you are developing your project, you might want to use the filenames without the prefix _min_
@@ -119,7 +119,7 @@ to your current working directory.
 Using the combined approach
 +++++++++++++++++++++++++++
 In case you want the benefits of using a CDN network, but you also want to make your application work 
-even if there is no internet connection available, then you can combine the above two techniques. This
+even if there is no Internet connection available, you can combine the two aforementioned techniques. This
 approach is mainly used in the popular HTML5 Boilerplate template, and focuses on how the JavaScript
 files will be loaded. You can load the CSS files whichever way you want:
 
@@ -133,11 +133,11 @@ files will be loaded. You can load the CSS files whichever way you want:
 
 [NOTE]
 ====
-If you wonder why the above script references do not have an "http" in the beginning, this is simply
-a method which allows you to use a single reference that works on both HTTP and HTTPS connections.
+If you wonder why the script references do not have an "http" in the beginning, this is simply
+a method that allows you to use a single reference that works on both HTTP and HTTPS connections.
 ====
 
-In the above code we decided to use the locally hosted css file, while choosing to load the JavaScript files 
+In the code displayed, we decided to use the locally hosted CSS file, while choosing to load the JavaScript files 
 from the jQuery CDN. Most developers suggest the JavaScript files to be placed at the bottom of the HTML page, 
 and the CSS files to be placed at the top of your HTML page in the head section. This makes the script 
 files non-blocking and allows for rendering the other page's elements. Also, it is good to note that you should 
