@@ -9,4 +9,4 @@ Chapter Leader: Max Lynch <maxlynch@uwalumni.com>
 Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Pages are the fundamental building block of jQuery Mobile. Pages contain most of the content of an application, and help separate different screens in the application. Pages support rich navigation features, and provide standard ways to present information and navigational aids. In this chapter we will explain several core features of pages, and how to use them.
+Pages are the fundamental building block of jQuery Mobile. Pages contain most of the content of an application and help separate different screens in the application. Pages support rich navigation features and provide standard ways to present information and navigational aids. This chapter will explain several core features of pages and how to use them.

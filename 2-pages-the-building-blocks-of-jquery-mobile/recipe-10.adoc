@@ -1,7 +1,5 @@
 ////
 
-[2.10] Navbars with jQuery Mobile
-
 Author: Kevin Griffin <kevin@kevgriffin.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
@@ -14,7 +12,7 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You would like to provide a navigation bar for your users to use that allows them to easily move to particular portions of your application.
+You want to provide a navigation bar for your users that allows them to easily move to particular portions of your application.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -32,8 +30,8 @@ Solution
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The inclusion of a navigation bar is simple to do.  In the above code camp, you can see that we are creating a div with the assigned data-role of "navbar".
+The inclusion of a navigation bar is simple task. In the provided code camp, you are creating a div with the assigned data-role of "navbar".
 
-Inside of the div, you'll want to create an unordered list (ul) for each of the items you would like to include.  There is no limit to the number of list items (li) that you can include.  If you have five or less items, they will be rendered on a single line.  More than five items will be rendered wrapped across multiple lines.
+Inside of the div, you'll want to create an unordered list (ul) for each of the items you would like to include. There is no limit to the number of list items (li) that you can include. If you have five or fewer items, they will be rendered on a single line. More than five items will be rendered wrapped across multiple lines.
 
-The location of the navbar is not important.  You may render it anywhere on the page, including within headers and footers.  
+The location of the navbar is not important. You may render it anywhere on the page, including within headers and footers.  

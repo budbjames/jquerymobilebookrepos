@@ -12,11 +12,11 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-We want to change the look and feel of a toolbar.
+You want to change the look and feel of a toolbar.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-We can easily change the theme of a toolbar by setting the data-theme attribute as show below:
+You can easily change the theme of a toolbar by setting the data-theme attribute as show:
 
 [source, html]
 -----
@@ -46,4 +46,9 @@ We can easily change the theme of a toolbar by setting the data-theme attribute 
  
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-In this recipe we've set the data-theme attribute to the theme swatch we want to style the toolbar with.
+This recipe demonstrates how to set the data-theme attribute to the theme swatch you want to use to style the toolbar.
+
+jQueryMobile supports three types of toolbars:
+1. Header bars, which are displayed as the topmost item before page content. Normally used to show page title and buttons/icons.
+2. Footer bars, which are displayed as the bottommost item after page content. Normally contains buttons/icons.
+3. Navbars, which can be displayed within header/footer bars or within page content to show separate level of buttons/icons/other controls.

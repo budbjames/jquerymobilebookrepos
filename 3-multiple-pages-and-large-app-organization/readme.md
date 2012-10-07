@@ -38,11 +38,11 @@ Description:
 ---
 
 ### 4 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-4.adoc">How multipages works, how to use multipage pattern</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:sys.sgx@gmail.com">Panagiotis Tsalaportas</a> (@syssgx) - Date 6-10-2012
 
 *Problem:* 
 
-*Description:* 
+*Description:* How multipages works
 
 ---
 

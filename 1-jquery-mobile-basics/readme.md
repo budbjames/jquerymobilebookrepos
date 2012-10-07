@@ -34,7 +34,7 @@ Description: Provides an introduction to jQuery Mobile and its dependency, jQuer
 
 ### 4 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-4.adoc">Creating your First jQuery Mobile Page</a>
 
-*author:* Unassigned
+*author:* <a href="mailto:sys.sgx@gmail.com">Panagiotis Tsalaportas</a> (@syssgx) - Date 6-10-2012
 
 *Description:* Creating your first jQuery Mobile page. Cover the role that various elements and data-attributes play in determining the layout and function of a standard jQuery Mobile page.
 

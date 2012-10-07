@@ -9,12 +9,12 @@ Tech edited: <date>
 
 ////
 
-2.5 Managing behavior of fixed positioning
+2.5 Managing Behavior of Fixed Positioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-I would like to control how fix position tool bars are displayed.
+You want to control how fix position tool bars are displayed.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
