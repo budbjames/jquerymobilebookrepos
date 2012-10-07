@@ -7,12 +7,12 @@ Tech edited: <date>
 
 ////
 
-3.2 The client-side/server-side balance
+3.2 The Client-Side/Server-Side Balance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-At the begining web sites used to present static content only and web servers used to deliver pure html files. The world is changing though and all of us expect dynamic content. Servers can be responsible for storage, creation and preparation of data for presentation. But why servers should be responsible for all of that things? When should this job be shared between web servers and web browsers?
+Websites used to present static content only and web servers used to deliver pure HTML files. The world is changing though and all of us expect dynamic content. Servers can be responsible for storage, creation and preparation of data for presentation. But why servers should be responsible? When should this job be shared between web servers and web browsers?
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
