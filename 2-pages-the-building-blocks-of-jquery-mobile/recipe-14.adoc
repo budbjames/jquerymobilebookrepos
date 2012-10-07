@@ -81,10 +81,10 @@ Create the page as a standard jQuery Mobile page, and add the data-rel="dialog" 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-Anne's picture here is a link to the page with the +id+ +contact_anne+ (Note that the code for the content before and after that picture in the page content container has been removed for clarity). +contact_anne+ is the id of a standard jQuery Mobile page which is in the same file as the picture which was clicked, which allows the page to be called by simply linking to its +id+ using the +#id+ key.
+Anne's picture here is a link to the page with the +id+ +contact_anne+ (Note that the code for the content before and after that picture in the page content container has been removed for clarity). +contact_anne+ is the id of a standard jQuery Mobile page, which is in the same file as the picture that was clicked, which allows the page to be called by simply linking to its +id+ using the +#id+ key.
 
 By adding the +data-rel="dialog"+ as an attribute to the link to the +contact_anne+ page +id+, the page will not be displayed in full screen like all standard pages. Instead, it will come as a dialog box floating in the middle of the screen.
 
-It is possible to add a +data-transition+ optional attribute that will define the transition used to bring the dialog box. By default, the reverse set transition is used when leaving the page. In the example above, the transition +"pop"+ was used to open the dialog page.
+It is possible to add a +data-transition+ optional attribute that will define the transition used to bring the dialog box. By default, the reverse set transition is used when leaving the page. In the provided example, the transition +"pop"+ was used to open the dialog page.
 
-Note that it is possible to customise the look of the dialog by setting the +data-overlay-theme+ attribute and/or changing or removing the default 10% top margin.
+Note that it is possible to customize the look of the dialog by setting the +data-overlay-theme+ attribute and/or changing or removing the default 10% top margin.
