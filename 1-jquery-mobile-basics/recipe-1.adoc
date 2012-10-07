@@ -7,10 +7,10 @@ Tech edited: <date>
 
 ////
 
-1.1 Who this book is for?
+1.1 Who Is This Book For?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This book is for anyone interested in learning about how they can benefit from today’s greatest javascript libraries,
+This book is for anyone interested in learning about how they can benefit from today’s greatest JavaScript libraries,
 jQuery and jQuery Mobile! 
 
 While you don’t need to know jQuery or jQuery Mobile extensively, it will be beneficial to have an understanding 
