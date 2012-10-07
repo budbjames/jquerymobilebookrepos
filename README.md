@@ -64,6 +64,7 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-6.adoc">6 - Animated Page Transitions </a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-7.adoc">7 - OS considerations</a>
 * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/readme.md">Chapter 5 - Lists of Data</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-1.adoc">1 - Building a Basic List</a>
   * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-2.adoc">2 - Common Ways to Format List Item Content</a>
   * <a href="/jquerymobilecookbook/book/blob/master/5-lists-of-data/recipe-3.adoc">3 - Create Custom List Formatting</a> 
