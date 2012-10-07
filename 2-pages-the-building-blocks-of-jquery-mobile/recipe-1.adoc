@@ -14,12 +14,13 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Pages are the fundamental building block of jQuery Mobile apps. jQuery Mobile offers a convenient structure that can be used to quickly build pages, though it does not require a specific structure. In this recipe we will demonstrate the structure of a simple jQuery Mobile page, complete with a page header, a page content area, and page footer.
+You need to set up a jQuery Mobile page with a page header, a page content area and page footer.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
+Pages are the fundamental building block of jQuery Mobile apps. jQuery Mobile offers a convenient structure that can be used to quickly build pages, though it does not require a specific structure.
 
-In jQuery Mobile, pages placed inside of the <body> element of the main document. We can include different components by using the data-role attribute. Below we have created a simple page with a basic header, content area, and footer:
+In jQuery Mobile, pages are placed inside of the <body> element of the main document. You can include different components by using the data-role attribute. Here's the code to create a simple page with a basic header, content area and footer:
 
 .A Simple jQuery Mobile Page
 [source,html]
@@ -52,5 +53,5 @@ In jQuery Mobile, pages placed inside of the <body> element of the main document
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 
-In the example page, we have a header, content area, and footer which are standard jQuery Mobile components that make up a page. As mentioned, we can put anything we like inside of a page, though the standard header, content, and footer sections have many nice built in features that make it easier to incorporate common mobile features such as navigation bars, or back buttons.
+In the example page, you have a header, content area and footer, which are standard jQuery Mobile components that make up a page. As mentioned, you can put anything you like inside of a page, though the standard header, content and footer sections have many nice built-in features that make it easier to incorporate common mobile features such as navigation bars or back buttons.
 
