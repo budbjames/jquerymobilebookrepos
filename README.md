@@ -81,6 +81,20 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-4.adoc">4 - Creating your First jQuery Mobile Page</a>
   * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-5.adoc">5 - Designing and using custom icons</a>
   * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-6.adoc">6 - Examples of Themes</a>
+* <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/readme.md">Chapter 7 - Capturing Data with Forms
+</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/introduction.adoc">Introduction</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-1.adoc">1 - Getting started with jQuery Mobile Forms</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-2.adoc">2 - Creating common form elements</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-3.adoc">3 - Special form elements</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-4.adoc">4 - Theming forms</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-5.adoc">5 - Using native form elements</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-6.adoc">6 - Form submittal and AJAX</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-7.adoc">7 - Generating elements on-the-fly</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-8.adoc">8 - Form Validation</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-9.adoc">9 - Options for Displaying Elements</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-10.adoc">10 - HTML5 Inputs and Virtual Keyboards</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-11.adoc">11 - Uploading Files and Multi-part Requests</a>
 
 
 
