@@ -10,7 +10,7 @@ Tech edited: <date>
 
 ////
 
-5.8 Overriding the Default Algorithm for the Filter Box
+5.7 Overriding the Default Algorithm for the Filter Box
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
