@@ -14,11 +14,11 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-We want to display a customary header or footer on a page, complete with a different look and feel from the rest of the page.
+You want to display a customary header or footer on a page, complete with a different look and feel from the rest of the page.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-jQuery Mobile provides two default toolbar types: a header and a footer. In addition, we can use the common toolbar styles to create inline toolbars as shown in this example below:
+jQuery Mobile provides two default toolbar types: a header and a footer. In addition, you can use the common toolbar styles to create inline toolbars as shown in this example:
 
 [source, html]
 -----
@@ -51,5 +51,4 @@ jQuery Mobile provides two default toolbar types: a header and a footer. In addi
  
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-In this example we've demonstrated how to display a header a footer bar above and below the content of a page, respectfully. In addition, we've demonstrated how to reuse the standard toolbar
-classes in order to embed a toolbar into the content of the page.
+This example demonstrates how to display a header a footer bar above and below the content of a page, respectively. In addition, it shows how to reuse the standard toolbar classes in order to embed a toolbar into the content of the page.
