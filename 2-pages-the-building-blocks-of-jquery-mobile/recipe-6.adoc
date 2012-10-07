@@ -9,12 +9,12 @@ Tech edited: <date>
 
 ////
 
-2.6 Fullscreen toolbar positioning
+2.6 Fullscreen Toolbar Positioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-I would like to be able to display a toolbar that will expand to match the width of the screen.
+You want to be able to display a toolbar that will expand to match the width of the screen.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
