@@ -42,6 +42,6 @@ Description: Provides an introduction to jQuery Mobile and its dependency, jQuer
 
 ### 5 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-5.adoc">jQuery Mobile - WebPages and Applications</a>
 
-*author:* Unassigned
+*author:* <a href="mailto:cory.gack@gmail.com">Cory Gackenheimer</a> (@cgack) - 7 October 2012
 
 *Description:* Discuss the various ways in which a jQuery Mobile experience can be delivered to a user: via the web browser, or wrapped as a Native app in something like PhoneGap.
