@@ -12,7 +12,3 @@ include::recipe-3.asc[]
 include::recipe-4.asc[]
 
 include::recipe-5.asc[]
-
-include::recipe-6.asc[]
-
-include::recipe-7.asc[]
