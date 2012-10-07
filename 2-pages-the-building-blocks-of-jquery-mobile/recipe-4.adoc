@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.4 Fixing Toolbars
+2.4 Fixing Toolbars to the Page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
