@@ -21,19 +21,6 @@ Description:
 
 *Percentage Complete:* 10%
 
-
-
-### 1 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-1.adoc">template for now</a>
-*author:* <a href="mailto:TODO">TODO</a>
-
-*Problem:* 
-
-*Description:* 
-
-*Status:* 
-
-*Percentage Complete:* 10%
-
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-2.adoc">geo location</a>
 *author:* <a href="mailto:TODO">TODO</a>
 
@@ -68,3 +55,13 @@ Description:
 
 *Percentage Complete:* 90%
 
+### 5 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-4-websql.adoc">WebSQL</a>
+*author:* <a href="http://plus.ly/greenido">Ido Green</a>
+
+*Problem:* Using HTML5 WebSQL to store user information in cases where you are on mobile Safari.
+
+*Description:* TODO. 
+
+*Status:* 
+
+*Percentage Complete:* 20%
