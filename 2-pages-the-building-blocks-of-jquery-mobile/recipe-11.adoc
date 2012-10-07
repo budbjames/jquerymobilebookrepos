@@ -1,7 +1,5 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
 Author: Max Lynch <maxlynch@uwalumni.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
@@ -14,15 +12,13 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-We want to position a NavBar at the bottom of our app and keep it at the bottom regardless of page transitions and navigation.
+You want to position a Navbar at the bottom of your app and keep it at the bottom regardless of page transitions and navigation.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-In this example, we combine the fixed positioning support for toolbars with a Nav Bar embedded in the footer toolbar. This gives us the desired
-effect of a Nav Bar fixed to the bottom of the app that stays there regardless of the content of the page.
+You can combine the fixed positioning support for toolbars with a Navbar embedded in the footer toolbar. This gives you the desired effect of a Navbar fixed to the bottom of the app that stays there regardless of the content of the page.
 
-We also duplicate this toolbar across several pages, giving us the effect of a Nav Bar which stays at the bottom despite navigation and changing
-page content.
+You can also duplicate this toolbar across several pages, giving you the effect of a Navbar that stays at the bottom despite navigation and changing page content.
 
 [source, html]
 ----
@@ -71,6 +67,4 @@ page content.
  
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-In this recipe we've added a page footer to each page we want the toolbar to reside on. We've also set the toolbars position to "fixed". In order to provide the effect of the toolbar 
-persisting across page navigations, we set the data-id of the toolbar to the same value on each page. Also, to indicate the current page on the Nav Bar, we added
-the class="ui-btn-active ui-state-persist" to each active button for the page. 
+This recipe demonstrates how to add a page footer to each page where you want the toolbar to residen. You've also set the toolbars position to "fixed". In order to provide the effect of the toolbar persisting across page navigations, you set the data-id of the toolbar to the same value on each page. Also, to indicate the current page on the Navbar, you added the class="ui-btn-active ui-state-persist" to each active button for the page. 
