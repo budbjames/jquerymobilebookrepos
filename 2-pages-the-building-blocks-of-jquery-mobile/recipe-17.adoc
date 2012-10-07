@@ -1,7 +1,5 @@
 ////
 
-Recipe for collapsible sets
-
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 Chapter Leader approved: <date>
 Copy edited: <date>
@@ -9,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.17 Collapsible sets
+2.17 Collapsible Sets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
