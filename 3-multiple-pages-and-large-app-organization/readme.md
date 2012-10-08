@@ -101,7 +101,7 @@ Description:
 ---
 
 ### 11 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-11.adoc">Using JQM with backbone.js</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:jcreamer@appendto.com">Jonathan Creamer</a>
 
 *Problem:* 
 
