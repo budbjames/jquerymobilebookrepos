@@ -1,30 +1,35 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
 Author: Kevin Old <kevin@kevinold.com>
+Bio: 
+>>> TODO: Insert some information above about yourself in the Bio:
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-5.9 Various Ways to Theme a List 
+5.9 Various Ways to Theme a List
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
+
 You would like to theme your jQuery Mobile site with complimenting colors for your brand.  You may also wish to include icons or images to help users with identification.
+>>> TODO: "complimenting" should be "complementing" or "complementary"
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
+
 jQuery Mobile provides 6 default themes and an architecture which allows you to customize most elements of a list.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
+
 To add a theme to an element in jQuery Mobile, the "data-theme" attribute is used.  Themes are named A-E, the default being C.
 
 A basic list with Theme C applied.
+>>> TODO: You might say, "The following is a basic..." to attach this statement with the markup following. Be careful not to say "above" or "below" because these snippets could be on the next page.
 
 [source, html]
 ----
@@ -37,6 +42,8 @@ A basic list with Theme C applied.
 ----
 
 Here we incorporate an inset list, multiple themes for the list styling for the list itself, divider and count bubbles.
+>>> TODO: Same idea as mentioned in the previous TODO. "In the next snippet of markup we are incorporating an..."
+>>> NOTE: I think it is fine combining some of the element as you've done. Two or three is probably okay, but any more might be hard for the reader to comprehend all of the changes. I think at the very end it might be okay to combine a whole lot of things you showed throughout the recipe to reveal the power of a themed list. A before & after shot might even be impressive side-by-side?
 
 [source, html]
 ----
