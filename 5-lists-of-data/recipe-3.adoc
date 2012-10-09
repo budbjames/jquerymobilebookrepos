@@ -15,19 +15,16 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-There are times where you have a lot of inforamtion to display or you want to display list items in a unique way to make your application stand out.
+You have a lot of information to display or you want to display list items in a unique way to make your application stand out.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-This example is to illustrate how to make a semi-complex list with rich formatting using jQuery Mobile. 
-jQuery Mobile provides some classes to assist with making a custom list but additional css will be required. 
-To demonstrate how to build a custom list we are going to create the list-view of a Restaurant Locator application.
+You can make a semi-complex list with rich formatting using jQuery Mobile. jQuery Mobile provides some classes to assist with making a custom list but additional CSS will be required. To demonstrate how to build a custom list, let's create the list-view of a Restaurant Locator application.
 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The idea behind this Restaurant Locator is that we want to present the user
-with a list of nearby restaurants to which they may like to go.
+The idea behind this Restaurant Locator is that we want to present the user with a list of nearby restaurants.
 
 [source, html]
 ----
@@ -37,8 +34,7 @@ with a list of nearby restaurants to which they may like to go.
     </ul>
 ----
 
-We can just leave it like this and force the user to click each item to find out more.
-Instead, lets present the user with more information to make a better decision.
+We can just leave it like this and force the user to click each item to find out more. Instead, let's present the user with more information to make a better decision.
 
 Information needed for a Restaurant Locator
 
@@ -50,15 +46,14 @@ Information needed for a Restaurant Locator
 * Address
 
 The order of importance may be different for all users but these are the main factors we will use to help them choose.
-This may seem like a lot of information for a list item on a mobile screen but fortunately jQuery Mobile gives us some tools to help display it in a usable way.
-Lets put all of the information elements we are using into a semantic order.
+This may seem like a lot of information for a list item on a mobile screen but fortunately jQuery Mobile gives us some tools to help display it in a usable way. Let's put all of the information elements we are using into a semantic order.
 
 [source, html]
 ----
     <ul data-role='listview'>
         <li>
             <h1>Maman's Bakery</h1>
-            <p>This french style bakery will leave you dreaming of Paris</p>
+            <p>This French style bakery will leave you dreaming of Paris</p>
             <p>1523 Main St., Toronto</p>
             <p>Categories: French, Bakery, Pastries</p>
             <p>3.1 km N</p>
@@ -69,24 +64,22 @@ Lets put all of the information elements we are using into a semantic order.
     </ul>
 ----
 
-To any `h1, h2, h3, h4, h5` that jQuery Mobile finds inside the `li`, it will apply `ui-li-heading`.
-Also, to any `p`, jQuery Mobile will apply `ui-li-desc`.
+To any `h1, h2, h3, h4, h5` that jQuery Mobile finds inside the `li`, it will apply `ui-li-heading`. Also, to any `p`, jQuery Mobile will apply `ui-li-desc`.
 
-This produces the below image which has all the information we have but but no visual appeal.
+This produces the image shown, which has all the information we have but no visual appeal.
 
 [[FIG1]]
 .Semantic List Item
 image::images/5-3-noFormatting.png[]
 
-Lets change things by moving the distance, price, rating and reviews information to the right.
-We do that placing each of them in a `div` with the class `ui-li-aside`.
+Let's change things by moving the distance, price, rating and reviews information to the right. We do that placing each of them in a `div` with the class `ui-li-aside`.
 
 [source, html]
 ----
     <ul data-role='listview'>
         <li>
             <h1>Maman's Bakery</h1>
-            <p>This french style bakery will leave you dreaming of Paris</p>
+            <p>This French style bakery will leave you dreaming of Paris</p>
             <p>1523 Main St., Toronto</p>
             <p>Categories: French, Bakery, Pastries</p>
             <div class='ui-li-aside'>
@@ -98,18 +91,15 @@ We do that placing each of them in a `div` with the class `ui-li-aside`.
         </li>
     </ul>
 ----
-Already looking better, but still more work to do.
+It's already looking better, but still more work to do.
 
 [[FIG2]]
 .aside
 image::images/5-3-aside.png[]
 
-Next we will replace "3 stars" with 3 actual stars.
-This will only work in jQuery Mobile 1.1.1+
-For this we will make use of the star icon that can be applied to buttons.
-Since we do not want a button, we will only make use of its css classes `ui-icon-star` and  `ui-icon`.
-We will create an empty `span` for each star in the restaurant's rating.
-So our code should look like this for our 3 star bakery:
+Next, we will replace "3 stars" with 3 actual stars. This will only work in jQuery Mobile 1.1.1+.
+
+For this, we will use the star icon that can be applied to buttons. Since we do not want a button, we will only make use of its CSS classes `ui-icon-star` and `ui-icon`. We will create an empty `span` for each star in the restaurant's rating. So our code should look like this for our 3 star bakery:
 
 css:
 
@@ -126,7 +116,7 @@ html:
     <ul data-role='listview'>
         <li>
             <h1>Maman's Bakery</h1>
-            <p>This french style bakery will leave you dreaming of Paris</p>
+            <p>This French style bakery will leave you dreaming of Paris</p>
             <p>1523 Main St., Toronto</p>
             <p>Categories: French, Bakery, Pastries</p>
             <div class='ui-li-aside'>
@@ -145,16 +135,14 @@ html:
 .Stars
 image::images/5-3-stars.png[]
 
-Currently the list item is read-only and not selectable.
-Next, we will make the list items selectable so that the user can get more information about the restaurant.
-To do this, we wrap the entire contents of the list item with an `a`.
+Currently the list item is read-only and not selectable. Next, we will make the list items selectable so that the user can get more information about the restaurant. To do this, we wrap the entire contents of the list item with an `a`.
 
 [source, html]
 ----
     <ul data-role='listview'>
         <li><a href='#'>
             <h1>Maman's Bakery</h1>
-            <p>This french style bakery will leave you dreaming of Paris</p>
+            <p>This French style bakery will leave you dreaming of Paris</p>
             <p>1523 Main St., Toronto</p>
             <p>Categories: French, Bakery, Pastries</p>
             <div class='ui-li-aside'>
@@ -173,9 +161,7 @@ To do this, we wrap the entire contents of the list item with an `a`.
 .Clickable
 image::images/5-3-clickable.png[]
 
-That is it for jQuery Mobile specific tricks for this tutorial. Lets clean the rest up with standard html and css.
-
-Todo:
+That's it for jQuery Mobile specific tricks for this tutorial. Let's clean up the rest with standard HTML and CSS.
 
 * Make the Distance and Price larger
 * Add color to the different categories
@@ -210,7 +196,7 @@ Todo:
     <ul data-role="listview">
         <li><a href="#">
             <h1>Maman's Bakery<hr class='divider'></h1>
-            <p>This french style bakery will leave you dreaming of Paris</p>
+            <p>This French style bakery will leave you dreaming of Paris</p>
             <p class="address">1523 Main St, Toronto</p>
             <p>Categories: <span class='categories'>French, Bakery, Pastries</span></p>
             <div class="ui-li-aside">
