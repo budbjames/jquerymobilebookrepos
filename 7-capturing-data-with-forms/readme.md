@@ -22,7 +22,7 @@ Not a recipe
 ---
 
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-2.adoc">Creating common form elements</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:cory.gack@gmail.com">Cory Gackenheimer</a>
 
 *Problem:* Standard HTML form elements were designed for mouse and keyboard interactions. Although browsers on mobile devices attempt to make the user experience better, the form elements are still not touch-friendly. Certain elements are just too small for fingers.
 
