@@ -16,11 +16,11 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-By default, jQuery Mobile does a nice job of styling your lists to look nice on mobile devices, but sometimes your application requires a specific appearance. How can we alter the styling of a list and implement some common formatting techniques?
+By default, jQuery Mobile does a nice job of styling your lists to look nice on mobile devices, but sometimes your application requires a specific appearance. You want to alter the styling of a list and implement some common formatting techniques.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-You can apply a variety of formatting options to your lists to both increase readability and add more information. You can apply an inset to your list which will give the list left and right margins, as well as rounded corners. In cases where you might want to have more than one action per list item, you can create a split button list. You can add thumbnails or icons, add count bubbles to show the number of results for a particular list item, add dividers to your list to help separate information, and format your text content in just about any way you want. There are many options to customize your list to suit the data you would like to display.
+You can apply a variety of formatting options to your lists to both increase readability and add more information. You can apply an inset to your list that will give the list left and right margins, as well as rounded corners. In cases where you might want to have more than one action per list item, you can create a split button list. You can add thumbnails or icons, add count bubbles to show the number of results for a particular list item, add dividers to your list to help separate information, and format your text content in just about any way you want. You have several options to customize your list to suit the data you would like to display.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -41,11 +41,11 @@ An inset list is just a standard list that sits inside the content area with a m
 .Inset List
 image::images/5-2-inset.png[]
 
-You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2519857/[jsFiddle].
+You can view, run and modify the provided code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2519857/[jsFiddle].
 
 
 .List Dividers
-List dividers can be used to help organize and group your list item. To make a list divider, simply add `data-role="list-divider"` to a list item. You can also specify the theme for the divider row by adding `data-dividertheme="d"` attribute to the list (`<ul>` or `<ol>`), and specifying the theme letter you would like to use.
+List dividers can be used to help organize and group your list item. To make a list divider, simply add `data-role="list-divider"` to a list item. You can also specify the theme for the divider row by adding `data-dividertheme="d"` attribute to the list (`<ul>` or `<ol>`) and specifying the theme letter you would like to use.
 
 [source, html]
 ----
@@ -64,11 +64,11 @@ List dividers can be used to help organize and group your list item. To make a l
 .List Dividers
 image::images/5-2-list-dividers.png[]
 
-You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521774/[jsFiddle].
+You can view, run and modify the provided code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521774/[jsFiddle].
 
 
 .Count Bubbles
-Count bubbles can be helpful when you want your users to be given an indicator of how many results exist for each list item. A count bubble can easily be added by wrapping the count inside a `<span>` tag with a class of `ui-li-count`. jQuery Mobile will wrap the count into a bubble, and align it to the right.
+Count bubbles can be helpful when you want your users to be given an indicator of how many results exist for each list item. A count bubble can easily be added by wrapping the count inside a `<span>` tag with a class of `ui-li-count`. jQuery Mobile will wrap the count into a bubble and align it to the right.
 
 [source, html]
 ----
@@ -85,11 +85,11 @@ Count bubbles can be helpful when you want your users to be given an indicator o
 .Count Bubbles
 image::images/5-2-count-bubbles.png[]
 
-You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521786/[jsFiddle].
+You can view, run and modify the provided code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521786/[jsFiddle].
 
 
 .Text Formatting
-The jQuery Mobile framework also allows you to easily format your list item content with headers, descriptions, and other secondary information using nothing more than the HTML tags that you already know. You can add headers or paragraphs, make items bold or italicized, or just about any other text formatting you'd like to add.
+The jQuery Mobile framework also allows you to easily format your list item content with headers, descriptions and other secondary information using nothing more than the HTML tags that you already know. You can add headers or paragraphs, make items bold or italicized, or perform just about any other text formatting you desire.
 
 [source, html]
 ----
@@ -123,7 +123,7 @@ The jQuery Mobile framework also allows you to easily format your list item cont
 .Text Formatting
 image::images/5-2-text-formatting.png[]
 
-You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521793/[jsFiddle].
+You can view, run and modify the provided code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521793/[jsFiddle].
 
 
 .Thumbnails
@@ -160,11 +160,11 @@ Thumbnails can easily be added to the left of a list item simply by adding an im
 .Thumbnails
 image::images/5-2-thumbnails.png[]
 
-You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521798/[jsFiddle].
+You can view, run and modify the provided code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521798/[jsFiddle].
 
 
 .Icons
-Icons can be inserted to the left of a list item the same way thumbnails can. The only difference is that you need to add a class of `ui-li-icon` to the image element. Icon images do not get auto resized to the correct dimensions, and should be no larger than 16px x 16px for the cleanest appearance.
+Icons can be inserted to the left of a list item the same way thumbnails can. The only difference is that you need to add a class of `ui-li-icon` to the image element. Icon images do not get auto resized to the correct dimensions and should be no larger than 16px x 16px for the cleanest appearance.
 
 [source, html]
 ----
@@ -194,11 +194,11 @@ Icons can be inserted to the left of a list item the same way thumbnails can. Th
 .Icons
 image::images/5-2-icons.png[]
 
-You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521800/[jsFiddle].
+You can view, run and modify the provided code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521800/[jsFiddle].
 
 
 .Split Button Lists
-Sometimes, you need a list element to have multiple actions assigned to it. Maybe you would like to give your users the ability to view an item's details, or purchase that item, both from the same list element. This can be done with a split button list. To do this, you just need to add a second link inside the `li`, and jQuery Mobile does the rest. You can take this a step further and customize the right split icon, if you'd like. To do this, you just need to add a `data-split-icon` attribute with whatever icon name you'd like to use. You can also theme the split button swatch color with a `data-split-theme` attribute.
+Sometimes, you need a list element to have multiple actions assigned to it. Maybe you would like to give your users the ability to view an item's details or purchase that item, both from the same list element. This can be done with a split button list. To do this, you just need to add a second link inside the `li`, and jQuery Mobile does the rest. You can take this a step further and customize the right split icon, if you'd like. To do this, you just need to add a `data-split-icon` attribute with whatever icon name you desire. You can also theme the split button swatch color with a `data-split-theme` attribute.
 
 [source, html]
 ----
@@ -234,4 +234,4 @@ Sometimes, you need a list element to have multiple actions assigned to it. Mayb
 .Split Button List
 image::images/5-2-split-button-list.png[]
 
-You can view, run, and modify the above code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521833/[jsFiddle].
+You can view, run and modify the provided code example from http://jsfiddle.net/gh/gist/jquery/1.7.1/2521833/[jsFiddle].
