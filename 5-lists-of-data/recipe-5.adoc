@@ -17,13 +17,13 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-
-Traditional web applications often use various techniques to layout forms. However, creating web based applications for mobile devices requires a shift in design thinking. One very common and easy approach in jQuery Mobile is to use a list to layout form elements. By using a list you can quickly create a form that automatically takes on the look and feel of the rest of your mobile application. Let's look at how this can be achieved.
+You want to quickly create a form that automatically takes on the look and feel of the rest of your mobile application.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
+Traditional web applications often use various techniques to lay out forms. However, creating web-based applications for mobile devices requires a shift in design thinking. One very common and easy approach in jQuery Mobile is to use a list to lay out form elements. 
 
-To accomplish the goal, all that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item. The following, which is also available as a jsFiddle at http://jsfiddle.net/gh/gist/jquery/1.8.2/2512225/, provides an example:
+All that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item. The following, which is also available as a jsFiddle at http://jsfiddle.net/gh/gist/jquery/1.8.2/2512225/, provides an example:
 
 [source, html]
 ----
@@ -89,10 +89,9 @@ To accomplish the goal, all that you need to do is wrap your list in a form elem
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
+This solution allows you to quickly set up a form that renders just like any other list without custom client-side code. The attributes of the form element work exactly like they would outside of a list. In this example, we are using a data-role attribute with the value fieldcontain on the first list item to allow the two child elements to be visually grouped. Additionally, the label elements are associated with the appropriate input elements through the use of for attributes with values that match the input element's id. All of this is pretty standard forms related functionality provided by jQuery Mobile. You will learn more about forms in Chapter 7. 
 
-This solution allows you to quickly setup a form that renders just like any other list without custom client-side code. The attributes of the form element work exactly like they would outside of a list. In this example, I'm using a data-role attribute with the value fieldcontain on the first list item to allow the two child elements to be visually grouped. Additionally, the label elements are associated with the appropriate input elements through the use of for attributes with values that match the input element's id. All of this is pretty standard forms related functionality provided by jQuery Mobile. You will learn more about forms in chapter 7. 
-
-This example demonstrates how easy it is to blend jQuery Mobile forms features with list functionality. Conveniently, the things that you have already learned about lists and that you will learn about forms (in recipes found later in this book) apply in exactly the same way as they do when not combined. For example, to make the previously shown list into an inset list, simply change the unordered list element to look like this:
+The solution shown demonstrates how easy it is to blend jQuery Mobile forms features with list functionality. Conveniently, the things that you have already learned about lists and that you will learn about forms (in recipes found later in this book) apply in exactly the same way as they do when not combined. For example, to make the previously shown list into an inset list, simply change the unordered list element to look like this:
 
 [source, html]
 ----
@@ -102,7 +101,7 @@ This example demonstrates how easy it is to blend jQuery Mobile forms features w
 Bonus
 ++++++++++++++++++++++++++++++++++++++++++++
 
-As a bonus, you may run into scenarios where the list needs to dynamically display different form elements depending on input to other elements. One option for accomplishing this is to slightly modify the list elements and then add a little bit of JavaScript. The following example quickly illustrates the concept.
+As a bonus, you may run into scenarios where the list needs to dynamically display different form elements depending on input to other elements. One option for accomplishing this is to slightly modify the list elements and then add a little bit of JavaScript. The following example quickly illustrates the concept:
 
 [source, html]
 ----
