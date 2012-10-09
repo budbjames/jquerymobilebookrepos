@@ -1,0 +1,146 @@
+////
+
+HTML5 WebSQL
+
+Author: Ido Green <greenido@gmail.com>
+
+Bio: Ido is a Developer Advocate for Google. He has been a developer and building companies for more then 18 years. He still likes to develop web applications, but only ones with amazing UX. He has a wide array of skills and experience, including Java, php, perl, JavaScript--and all aspects of agile development and scaling systems. His last book with O'reilly is all about "Web Workers: Multithreaded Programs in JavaScript".
+
+////
+
+10.3 HTML5 WebSQL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Using HTML5 WebSQL to store user information in cases where you need a SQL database on the client side.
+
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+The following code outlines a simple use case that demos the usage of HTML5 WebSQL API in order to save todo items.
+
+----
+include::recipe-5-code/jqm_WebSQL.html[]
+----
+
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+Web SQL Database is a an API for storing data in SQLite that can be queried using a variant of SQL. The imprtant thing to remember is that as of November 2010 the W3C announced that Web SQL database is a deprecated specification.In other words, the Web SQL spec will receive no new updates and browser vendors aren't encouraged to support this technology. This API is currently supported by Google Chrome. Opera, Safari (so no IE and FF support). If you have a web app that currently using WebSQL and you wish to migrate your code to indexedDB - You can use an article I've wrote on html5rock: http://www.html5rocks.com/en/tutorials/webdatabase/websql-WebSQL/ that explain the process.
+
+For more: 
+* http://www.w3.org/TR/webdatabase/
+* http://caniuse.com/#search=WebSQL 
+
+Create the DB and a Table
+~~~~~~~~~~~~~~~~~~~~~~~~~
+In WebSQL, we are openning the database and then in case we don't have a table we create one. The SQL syntax is strigth forward. 
+
+[html,source]
+====
+function initDB() {
+  database = openDatabase('todos', '1.0', 'todos with JQM', 2*1024*1024);
+  if (database) {
+    database.transaction(function(tx) {
+      tx.executeSql("CREATE TABLE IF NOT EXISTS tasks (id REAL UNIQUE, text TEXT)", []);
+    });
+  }
+}
+====
+
+Adding Item
+~~~~~~~~~~~
+In our example we are using the todo item as value and a timeStamp as key. 
+
+====
+function addTodo() {
+  var todo = document.getElementById("todo");
+  var task = {
+    "id": new Date().getTime(),
+    "text": todo.value };
+  
+  database.transaction(function(tx) {
+    tx.executeSql('INSERT INTO tasks (id, text) values (?, ?)', [task.id, task.text]);
+  });
+}
+====
+
+Delete Item/Items
+~~~~~~~~~~~~~~~~~
+In order to remove a todo item we start with a confirmation from the user. Better safe then sorry, no?
+Then we run a database.transaction that will delete one item in deleteTodo function or all the items in cleanAll.
+You can note that in cleanAll we are dropping the table. On the next run we will create a new one.
+
+====
+function deleteTodo(id, text) {
+  if (confirm("Are you sure you want to Delete "+ text +"?")) {
+    database.transaction(function(tx) {
+      tx.executeSql('DELETE FROM tasks WHERE id=?', [id]); 
+    });
+    showAll();
+  }
+  
+}
+
+function cleanAll() {
+  if (confirm("Are you sure you want to delete all Todos?")) {
+    database.transaction(function(tx) {
+      tx.executeSql('DROP TABLE IF EXISTS tasks', []) 
+      showAll();
+    });
+  }
+}
+====
+
+Render Item
+~~~~~~~~~~~
+We use here the powerful lists of JQM. First we built a new li item that will contain our text and 'delete' button. Second, we binding the click event of the delete button to our deleteTodo function. Then, we are in the fun part of adding some data-* attributes to customize our delete button to look good. Finnaly, we appending the new elements to the ul and call the trigger function to ask for some JQM rendering power. The SQL stetment that bring all the items and let us loop over them is: 'SELECT * FROM tasks' in a real world senario you might want to use WHERE as in most cases you will want to limit the items you are returning back.
+
+====
+function showAll() {
+  document.getElementById("todoItems").innerHTML = "" ; 
+  database.transaction(function(tx) {
+    tx.executeSql('SELECT * FROM tasks', [], function (tx, results) {
+      var len = results.rows.length
+      
+      for (var i = 0; i < len; i++) {
+        var li = document.createElement("li");
+        var t = document.createTextNode(results.rows.item(i).text);
+        var a = document.createElement("a");
+        a.textContent = " [Delete]";
+        a.setAttribute('data-key', results.rows.item(i).id);
+        a.setAttribute('data-val', results.rows.item(i).text);
+
+        a.setAttribute("href", "#");
+        a.setAttribute("data-iconpos", "notext");
+        a.setAttribute("data-role", "button");
+        a.setAttribute("data-icon", "delete"); 
+        a.setAttribute("data-inline", "true");
+
+        a.addEventListener("click", function() {
+          deleteTodo(this.getAttribute("data-key"),this.getAttribute("data-val") );
+        }, false);
+        li.appendChild(a);
+        li.appendChild(t);
+        
+        document.getElementById("todoItems").appendChild(li);
+        $("#todoItems").trigger('create'); 
+      }
+    });        
+  });
+}
+====
+
+
+[Warning]
+====
+1. Please note that since November 18, 2010, the W3C announced that Web SQL database is a deprecated specification. This is a recommendation for web developers to no longer use the technology as effectively the spec will receive no new updates and browser vendors aren't encouraged to support this technology. 
+
+2. HTML5 feature detection is not trivial, you should leverage a well tested third party library to perform this task.  One such library is Modernizr - http://www.modernizr.com.
+You can also check out site like: http://caniuse.com in order to see which browsers will support this feature.
+====
+
+
+
+
+
+
