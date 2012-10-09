@@ -4,7 +4,7 @@
 
 Description: 
 
-*Chapter Leader:* <a href="mailto:eperelman@appendto.com">Eli Perelman</a>
+*Chapter Leader:* <a href="mailto:eli@eliperelman.com">Eli Perelman</a>
 
 <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/introduction.adoc">Introduction</a>
 
