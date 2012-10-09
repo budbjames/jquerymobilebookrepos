@@ -11,17 +11,16 @@ Tech edited: <date>
 
 ////
 
-4.3 Linking to external pages
+4.3 Linking to External Pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-////Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
-You would like to provide a button or text link directing to another domain
+You want to provide a button or text link directing to another domain.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-The default behavior for jQuery Mobile links are to load content via Ajax.  You may use the 'rel="external"'attribute to make a link point to an external source.
+The default behavior for jQuery Mobile links are to load content via AJAX.  You may use the 'rel="external"'attribute to make a link point to an external source.
 
 [source, html]
 ----
