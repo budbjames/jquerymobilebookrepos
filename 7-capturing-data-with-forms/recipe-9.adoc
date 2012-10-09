@@ -1,62 +1,78 @@
 ////
 
-Author: Mattias Kihlstrom <mattias@kihlstrom.com>
+Author: Adam Stanley <astanley@rim.com>  http://twitter.com/n_adam_stanley
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-7.9 Options for Displaying Elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+7.10 HTML5 inputs and virtual keyboards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
-+++++++
-When designing a form you often want to group elements together. This could be as simple as putting a label just before its input element and wrapping a fieldset around them. But how would you go about if you for instance have three radio buttons grouped together horizontally and you also want them to fill up the full width of the screen?
+++++++++++++++++++++++++++++++++++++++++++++
+
+Touch screen devices display a virtual keyboard when users interact with HTML form input fields. Developers often use text input fields to display an alphanumeric keyboard.  Ideally, a custom virtual keyboard should be displayed for input fields that represent non-text data (e.g. dates, urls, phone numbers, etc).
+
 
 Solution
-++++++++
-Radio buttons can be grouped together by putting them inside a fieldset with data-role="controlgroup". Adding data-type="horizontal" makes sure they are side by side instead of below each other (as long as the browser supports display: inline-block;). But if you want them to use 100% of the width you will have to add some extra styling, specific to the number of radio buttons in the group.
+++++++++++++++++++++++++++++++++++++++++++++
+
+Form input field types were enhanced in the HTML5 spec (http://dev.w3.org/html5/html-author/#forms).  These properties allow you to define data-specific input fields that invoke a specific variant of a virtual keyboard when focus is applied to them by a user.
+
+This technique enables you to collect more accurate data from your users and also improves their experience for interacting with your application.
 
 Discussion
-++++++++++
-In the following example there are three radio buttons that we want to group horizontally and also to take upp the full width of its container. The surrounding fieldset is specified as a horiontal control group. In order to style everything we add two classes. One general for all full width groups and one specific to the number of radio buttons in this group. The following HTML snippet is meant to be part of a jQuery Mobile page.
+++++++++++++++++++++++++++++++++++++++++++++
+Developers should always define their HTML input fields with an appropriate input type.  This technique provides a very high ROI in terms of effort required to generate a highly positive user experience.  
+If the given rendering engine does not support input types, it will simply ignore them. 
 
-[source, html]
-----
-<fieldset data-role="controlgroup" data-type="horizontal" class="fullwidth items-3">
-  <input type="radio" name="payment-method" id="payment-method-1" value="credit" checked="checked">
-  <label for="payment-method-1">Credit</label>
-  <input type="radio" name="payment-method" id="payment-method-2" value="debit">
-  <label for="payment-method-2">Debit</label>
-  <input type="radio" name="payment-method" id="payment-method-3" value="cash">
-  <label for="payment-method-3">Cash</label>
-</fieldset>
-----
+Load the following page in your own browser to see which HTML5 input types are supported:
+http://blackberry.github.com/WebWorks-Samples/kitchenSink/html/html5/inputtypes.html
 
-In the CSS we set the width of each ui-radio div that jQuery Mobile creates. This width in percent must match the number of items in the group (in this case 100% / 3). Then we make each label use up all of that width. And since we don't want to waste any pixels we will also reset some margins.
 
-[source, css]
-----
-.fullwidth.items-2 .ui-radio { width: 50%; }
-.fullwidth.items-3 .ui-radio { width: 33.3333333%; }
-.fullwidth.items-4 .ui-radio { width: 25%; }
-.fullwidth.items-5 .ui-radio { width: 20%; }
-.fullwidth .ui-radio { margin-right: 0; }
-.fullwidth .ui-radio label { margin-left: 0; width: 100%; }
-----
+The following are examples of different HTML5 input types:
 
-It is not only radio buttons that can be grouped in this manner. Here is a modified set of CSS rules that makes this work for select boxes as well.
+text:
+<input type="text" id="txtText" name="txtText" autocomplete="off" title="Any characters allowed" value="Hello World"/>
 
-[source, css]
-----
-.fullwidth.items-2 .ui-radio, .fullwidth.items-2 .ui-select { width: 50%; }
-.fullwidth.items-3 .ui-radio, .fullwidth.items-3 .ui-select { width: 33.3333333%; }
-.fullwidth.items-4 .ui-radio, .fullwidth.items-4 .ui-select { width: 25%; }
-.fullwidth.items-5 .ui-radio, .fullwidth.items-5 .ui-select { width: 20%; }
-.fullwidth .ui-radio label, .fullwidth .ui-select .ui-btn { width: 100%; }
-.fullwidth .ui-radio, .fullwidth .ui-radio label { margin: 0; }
-.fullwidth .ui-select { margin: 0 -2px; }
-.fullwidth .ui-select:first-child { margin-left: 0; }
-----
+password:
+<input type="password" id="txtPassword" name="txtPassword" title="Only numeric characters allowed" value=""/>
+
+tel:
+<input type="tel" id="txtTel" name="txtTel" title="Only numeric characters allowed" value="555 1234"/>
+
+url:
+<input type="url" id="txtUrl" value="http://devblog.blackberry.com"/>
+
+email:
+<input type="email" id="txtEmail" value=""/>
+
+number: 
+<input type="number" id="txtNumber" min="0" max="50" step="1" value="5"/>
+
+range:
+<input type="range" id="txtRange" min="-100" max="100" value="0" step="10"/>
+
+date:
+<input type="date" id="txtDate"  min="1900-01-01" max="1999-12-31" value="1979-01-23"/> 
+
+time:
+<input type="time" id="txtTime" value="13:31"/>
+
+datetime:
+<input type="datetime" id="txtDateTime" value="1979-01-23T04:30:00Z" min="1969-08-15T12:00:00Z" />
+
+month:
+<input type="month" id="txtMonth" value="1976-06"/>
+
+datetime-local:
+<input type="datetime-local" id="txtDateTimeLocal" min="2010-01-01T12:00:00" max="2015-12-31T12:00:00" step="86400" value="2011-10-28T13:33:00"/>
+
+search:
+<input type="search" id="txtSearch" value=""/>
+
+color:
+<input type="color" id="txtColor" value="#FF0000"/>
+
