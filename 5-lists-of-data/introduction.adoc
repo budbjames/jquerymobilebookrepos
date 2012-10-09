@@ -8,4 +8,4 @@ Chapter Leader: Elijah Manor <emano@appendto.com>
 
 Introduction
 ~~~~~~~~~~~~
-Lists are a common way of quickly representing data to a user. In addition lists are also the most common way to provide a user with a way to navigate from page to page in a web application. jQuery Mobile makes it really easy to leverage an ordered or unordered list and transform it into a rich and user friendly control. This chapter will guide you on the various ways to structure, format, and theme a list to meet your application's needs.
+Lists are a common way of quickly representing data to a user. In addition, lists are also the most common way to provide a user with a way to navigate from page to page in a web application. jQuery Mobile makes it really easy to leverage an ordered or unordered list and transform it into a rich and user-friendly control. This chapter will guide you on the various ways to structure, format and theme a list to meet your application's needs.
