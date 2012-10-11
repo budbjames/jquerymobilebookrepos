@@ -33,7 +33,7 @@ You can create a jQuery Mobile enhanced text input by simply adding to your appl
 <input type="text" name="demo" id="demo" value="" />
 ----
 
-image::images/7-2-basictext.png[]
+image::images/recipe-2.1.png[]
 
 In many cases you may want to be able to group form elements together visually. This can be done utlizing a data attribute 'data-role="fieldcontain"'
 
@@ -44,7 +44,7 @@ In many cases you may want to be able to group form elements together visually. 
 </div> 
 ----
 
-image::images/7-2-textcontained.png[]
+image::images/recipe-2.2.png[]
 
 data- attributes::
 [horizontal]
@@ -63,7 +63,7 @@ Search inputs on your form are generated in a specific way by jQuery Mobile. You
 <input type="search" name="search" id="searchinput" />
 ----
 
-image::images/7-2-searchinput.png[]
+image::images/recipe-2.3.png[]
 
 data- attributes::
 [horizontal]
@@ -82,7 +82,7 @@ When you add an input type of range to your jQuery Mobile application, by defaul
 <input type="range" name="slider" id="slider" value="42" min="0" max="100" />
 ----
 
-image::images/7-2-slider.png[]
+image::images/recipe-2.4.png[]
 
 
 data- attributes::
@@ -111,7 +111,7 @@ As you build a select menu in your application, it will be styled like a jQuery 
 </select>
 ----
 
-image::images/7-2-selectmenu.png[]
+image::images/recipe-2.5.png[]
 
 If you wish to override the native menu and utilize the custom select menu, you can set a custom data- attribute to do so on an individual select. If you wish to remove the native menus throughout your application you will need to set the nativeMenu option to false during jQuery Mobile initialization as follows:
 
@@ -121,7 +121,7 @@ $(document).bind('mobileinit',function(){
 });
 ----
 
-image::images/7-2-customselect.png[]
+image::images/recipe-2.6.png[]
 
 data- attributes::
 [horizontal]
@@ -154,7 +154,7 @@ A toggle is a special variation on the select list. This is created by adding th
 </select>
 ----
 
-image:images/7-2-switch.png[]
+image:images/recipe-2.7.png[]
 
 data- attributes::
 [horizontal]
@@ -188,7 +188,7 @@ vertical
 </fieldset>
 ----
 
-image::images/7-2-radiovertical.png[]
+image::images/recipe-2.8.png[]
 
 horizontal
 ----
@@ -208,7 +208,7 @@ horizontal
 </fieldset>
 ----
 
-image::images/7-2-radiohorizontal.png[]
+image::images/recipe-2.9.png[]
 
 data- attributes::
 [horizontal]
@@ -226,7 +226,7 @@ When you add an input type of checkbox to your form, it will be enhanced as well
 <input type="checkbox" id="agree" name="agree" /><label for="agree">Agree</label>
 ----               
 
-image:images/7-2-checkbox.png[]
+image:images/recipe-2.10.png[]
 
 ----
 <fieldset data-role="controlgroup" >
@@ -235,7 +235,7 @@ image:images/7-2-checkbox.png[]
 </fieldset>    
 ----
 
-image:images/7-2-checkboxvertical.png[]
+image:images/recipe-2.11.png[]
 
 ----
 <fieldset data-role="controlgroup" data-type="horizontal">
@@ -244,7 +244,7 @@ image:images/7-2-checkboxvertical.png[]
 </fieldset>
 ----
 
-image:images/7-2-checkboxhorizontal.png[]
+image:images/recipe-2.12.png[]
 
 data- attributes::
 [horizontal]
