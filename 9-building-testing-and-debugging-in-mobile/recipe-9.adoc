@@ -1,6 +1,6 @@
 ////
 
-Author: Levi DeHaan <levi@levidehaan.com>
+Author: Cory Gackenheimer <cory.gack@gmail.com> 
 
 ////
 
@@ -15,5 +15,17 @@ Your application is finished, fully tested, and now you're ready to send it to t
 Solution
 ++++++++
 
+Once you have created your Android application and deployed it to your device, the next step is to create the signed apk file that you will submit and publish within the Android ecosystem. Your primary target will likely be the Google Play Store and this recipe will walk through the steps necessary to package and submit your application with all the in store assets required.
+
+There are three critical steps in getting your application onto Google Play. Registering with Google if you do not have an Android developer account. Next you need to generate a signed apk file for your application. Lastly, you need to upload all of the assets to your Android Developer Console to stage and deploy your application.
+
 Discussion
 ++++++++++
+
+The first step to deploying your jQuery Mobile Android Application is to visit the Google Play Android Developer Console at http://developer.android.com and register for a publisher account. To get a publisher account you will be charged a one time fee of 25 US Dollars in order to place you applications in the Google Play Store. There is also an opportunity at the point to register a Google Checkout Merchant Account which will allow you to submit paid applications to the Store if you so choose.
+
+Next, its back to Eclipse (or the Command Line) to build a signed apk file for your application. At this point its a great idea to remove all the debugging and logging items you may have had in place during testing. In Eclipse, creating a signed apk is done with the help of a useful wizard to walk you through the steps. First you need to right-click on your project in Eclipse and select 'Export'. From this menu you will want to choose 'Export Android Application' to get the signing process started. Now the wizard will ask you for the location of your keystore, and help you create one if it does not currently exist. Then you will have to assign a key alias from the keystore to sign the apk. The last step is to confirm the destination of your apk file, make note of this location so you know where to find it at upload time.
+
+Now you one final step to get your application to the Google Play Store. This step starts by signing into your Android Developer Console at https://play.google.com/apps/publish/ then clicking the 'Upload Application' button. Now is the time to recollect the location of your signed apk as you will need to upload that file to get the ball rolling. Once this file is uploaded, Google will tell you all the permissions and details that your app will be requesting of its users. Proceeding to the next part of the submission process you will need to have handy a few items to upload with your application. The required extra assets, on top of what is included in your apk, are at least two screenshots of your application along with one 512px x 512px High Resolution Application Icon. There are other options available such as Feature Graphics, Promotional Graphics and videos, but to submit your application to the store these are not required. Once these are set you then give your application a Title, Description, and assign it a Type and Category. 
+
+Since you have created your Android publishers account, signed your apk, and uploaded it with all your extra assets to the Developer Console you can now Save and Publish you application to the Google Play Store.

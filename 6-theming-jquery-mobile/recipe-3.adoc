@@ -14,20 +14,20 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to create a custom themes fast, without having to deal with CSS code.
+You want to create a custom theme fast, without having to deal with CSS code.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 The ThemeRoller tool is the easiest way to create custom jQuery Mobile themes. It has 
-similar functionality with the jQuery UI ThemeRoller, and allows you to customize themes 
-through a web interface with instant preview of the changes you make. What is more, it
-is open source under the standard jQuery project licences.
+similar functionality to the jQuery UI ThemeRoller and allows you to customize themes 
+through a web interface with instant preview of the changes you make. What's more, it
+is open source under the standard jQuery project licenses.
 
 Pages built with jQuery Mobile can have different customized styles with swatches.
 _Swatches_ define the look and feel for a bar, a content block, and a button with normal, 
 hover and pressed interaction states. Within a single theme, you can create up to 26 swatches 
 lettered from A-Z, each one having a unique color scheme.  This lets you combine swatch colors
-for different elements in the same webpage; for example, in case you want to style two
+for different elements in the same web page. For example, if you want to style two
 buttons differently in a page, you can assign swatch A to one button and swatch M to the 
 other, thus using two different color <schemes class=""></schemes>.
 
@@ -38,25 +38,25 @@ image::images-themeroller/themeroller-interface.png[]
 
 . The *swatches panel* (A) on the left. Through this panel, you can add or modify a swatch, 
 and change the global theme settings.
-. The *palette panel* (B) at the right-top. With the new version of jQuery Mobile 1.1.0 this 
-panel has added many new buttons. The main functionality is controling the inspector and allowing 
+. The *palette panel* (B) at the top right. With the new version of jQuery Mobile 1.1.0, this 
+panel has added many new buttons. The main functionality is controlling the inspector and allowing 
 for downloading, importing or sharing a link to a theme.
 . The *preview panel* (C) on the right, that shows you in real-time each change you make.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-Let's see then how the above panels can customize a theme. Note that for the ThemeRoller tool
+Let's see then how these panels can customize a theme. Note that for the ThemeRoller tool
 it is recommended to use a modern web browser that supports CSS gradients, such as the new 
 versions of Chrome, Safari and Firefox.
 
 To start with the tool, browse to http://jquerymobile.com/themeroller/. After this page has loaded, 
-you will see in the preview panel, Figure 6-3.1 (C), some sample swatches titled A, B, and C. You can start 
-modifying these sample swatches, or in case you already have created a theme file you can import it and change 
+you will see some sample swatches titled A, B and C in the preview panel, Figure 6-3.1 (C). You can start 
+modifying these sample swatches or, in case you already have created a theme file, you can import it and change 
 only the things you want. 
 
-As an example, here we will import the jQuery Mobile's default theme file; click on the "Import" button located 
-at the palette panel (B), then in the new generated window that shows up click the link "Import Default Theme", 
-which will load the contents of the default theme file, and then in the same window click the button "Import". 
+As an example, we will import the jQuery Mobile's default theme file. Click on the "Import" button located 
+at the palette panel (B). In the new generated window that appears, click the link "Import Default Theme", 
+which will load the contents of the default theme file, and then in the same window click the "Import" button. 
 Now you can view the loaded default theme styles of all elements in the sample pages at the preview panel, 
 Figure 6-3.2, and make modifications.
 
@@ -74,26 +74,26 @@ image::images-themeroller/swatches-panel-global-settings-all.png[]
 
 Palette Panel
 ++++++++++++++++++++
-The palette panel, Figure 6-3.1 (B), has one of the most useful buttons of the themeroller that adds much 
+The palette panel, Figure 6-3.1 (B), has one of the most useful buttons of the ThemeRoller that adds much 
 to its functionality: the Inspector button. Click the Inspector button to activate it; the button's color 
 will change indicating its active state. You can toggle the Inspector button so as to use it when you want. 
 By hovering over the main content area of swatch A, and you will notice that the current element in "focus" 
 gets a border of a different color; this indicates which element of the page the Inspector is currently 
 targeting. 
 
-Click for example at the main content area, and this will automatically show the configuration 
+Click, for example, at the main content area, and this will automatically show the configuration 
 of Content Body from swatch A at the swatches panel, like in Figure 6-3.4. It is thus possible to modify 
 settings such as the background color through the swatches panel. By clicking with the inspector activated 
-to different parts of a swatch, i.e. a link or a button, you can define all styles applied to it.
+to different parts of a swatch (i.e., a link or button), you can define all styles applied to it.
 
 [Figure 6-3.4]
 image::images-themeroller/swatch-configuration.png[]
 
 An easy way to set colors for elements is to use the color palette, Figure 6-3.1 (B), where you can simply
 drag one of the default colors onto an element, or even get new colors by changing the lightness and
-saturation. In addition, more colors can be found through the integrated Adobe Kuler Application, that
-can be launched by clicking the link "Adobe Kuler swatches"; this application, is based on the 
-Adobe Kuler Community where people share their color palletes for easy integration. 
+saturation. In addition, more colors can be found through the integrated Adobe Kuler Application, which
+can be launched by clicking the link "Adobe Kuler swatches". This application is based on the 
+Adobe Kuler Community where people share their color palettes for easy integration. 
 
 Preview Panel
 +++++++++++++
@@ -103,7 +103,7 @@ can be added to the theme through the swatches panel or by clicking "Add swatch"
 Exporting your theme
 ^^^^^^^^^^^^^^^^^^^^
 After you have made the changes you want to your theme, you can download it with the "Download Theme"
-button in the swatches panel, or share a link of its current configuration. Enter a name for your 
+button in the swatches panel or share a link of its current configuration. Enter a name for your 
 theme, Figure 6-3.5, and follow the instructions provided on the new window to include it in your HTML page. 
 It should be mentioned that you should keep the uncompressed CSS version of your theme file, because you can 
 edit your theme in the future only by using this file.

@@ -1,101 +1,27 @@
 ////
 
-author information.
+Author: unassigned
 
-Author: Michael Knox <webdpro@gmail.com>
+Generate jQuery UI Mobile elements on-the-fly
+
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-7.6 Form Submittal and AJAX
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7.7 Generating elements dynamically
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
-When creating a Mobile Web site or Mobile App using Jquery Mobile submitting data back to the server can be a cutial part of your application. Due to the nature of Jquery Mobile and it AJAX navigation traditional form submission can become an issue. 
++++++++
+Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
-To solve this problem we will discuss how to submit your form using Jquery and Jquery mobile to your backend server
+++++++++
+Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-
-Most web / mobile application require some kind of interaction between the user and the backend, let it be signing in or sending an email each requires a form to be submitted in some capacity. Most are familiar with the mechanism of the form submission, you have a main page and a response page. The main page collects the data and posts the form data to the response page, the response page then stores the data ( or sends an email etc). 
-
-When dealing with a JQuery Mobile app we need think in terms of Asyncronous request because Jquery Mobile's primary navigation is Asyncronous (AJAX). So to submit a form we need to submit our form in the same fashion.
-
-To start with we will use a simple email form that we will send off to our backend and process.
-
-<div id="mail">
-<form id="sendMail">
-  <p>
-    <label for="name">Enter your name</label>
-    <input type="text" name="name" id="name">
-  </p>
-  <p>
-    <label for="email">Enter your email</label>
-    <input type="text" name="email" id="email">
-  </p>
-  <p>
-    <label for="msg">Message</label>
-    <textarea name="msg" id="msg" cols="45" rows="5"></textarea>
-  </p>
-<p>
-    <input type="submit" name="sendMail" id="sendMail" value="Send Mail">
-  </p>
-</form>
-</div>
-
-This is just a basic form, not much going on here just a basic input form. The next set is adding in the JavaScript code to grab the input data and submit it back to the server for processing.
-
-First we add a click handeler to listen for the form submit
-
-$(document).on("click","#sendMail" function(){
-sendEmail();
-}
-
-What we have done is create a click handler to fire the sendEmail function when its clicked
-
-The sendEmail function will do the heavy lifing and sending of the AJAX request
-
-function sendEmail()
-// set the variables
-var name = $("#name").val();
-var email = $("#email").val();
-var msg = $("#msg").val();
-//Submit form
-$.ajax({
-  url: http://domain.com/processRequest,
-  type:post  
-  data:{ 
-  name: name,
-  email:email,
-  msg:msg
-  },
-  success: function(data){
-  $("#mail).html("Message sent!")  
-   },
-error: function(){
-  $("#mail).html("There was an error!")  }
-});
-
-
-Lets brake down what is going on in the sendEmail function. first we set our variables to grab the contents of the form.
-(If you have a large form you should consider the serialize() method)
-
-Next we start our ajax request. We start with the URL that will handle the request. This URL will be the page on your server that will take the inputs and process the data (The response page)
-
-We need to state what format this submission will be in (most of the time you will use post especially for large input types) Both post and get are supported depending on your needs.
-
-The next step is to set the data that will be sent to the server, this is done by setting the data attribute and assigning it values. In this case we have name, email and msg all set with the variables set at the top. 
-
-The last part is setting our success and error attributes. If the form is submitted successfully we will place a message in the mail div that reads "Message Sent!" if we encounter and error we will display the message "There was an error!" 
-
-
-
-
-
-
+++++++++++
+The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
