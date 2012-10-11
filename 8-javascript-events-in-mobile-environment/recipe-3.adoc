@@ -1,0 +1,97 @@
+////
+ 
+Author: Author: John Chacko <poonkave@gmail.com>
+ 
+////
+ 
+#.# Custom routing with pagebeforechange
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Problem
+++++++++++++++++++++++++++++++++++++++++++++
+Application got a fixed  button 'Accounts'.
+Clicking 'Accounts' will check user already logged in or not.If not then redirect to Login page.
+ 
+Solution
+++++++++++++++++++++++++++++++++++++++++++++
+[source,html] ---- <!DOCTYPE html>
+<html>
+<head>
+<title>Custom routing with pagebeforechange</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+<body>
+<div id="home" data-role="page">
+                <div data-role="header">
+                                <h3>Home - </h3>
+                </div>
+                <div data-role="content">
+                                Home -Content
+                </div>
+                <div data-role="footer" class="ui-bar"  data-position="fixed">
+                                <a href="#account" data-role="button" data-icon="gear">Account</a>
+                </div>
+</div>
+<div id="login" data-role="page">
+                <div data-role="header">
+                                <h3>Welcome to login</h3>
+                </div>
+                <div data-role="content">
+                                This is login page
+                                <a href="#account" id="logMeIn" data-role="button" data-icon="check">Log me In</a>
+                </div>
+                <div data-role="footer" class="ui-bar"  data-position="fixed">
+                                <a href="#home" data-role="button" data-icon="home">Home</a>
+                </div>
+</div>
+<div id="account" data-role="page">
+                <div data-role="header">
+                                <h3>Welcome to Account</h3>
+                </div>
+                <div data-role="content">
+                                This is Account page
+                </div>
+                <div data-role="footer" class="ui-bar"  data-position="fixed">
+                                <a href="#home" data-role="button" data-icon="home">Home</a>
+                </div>
+</div>
+<script>
+                var loggedIn = false;
+                $(document).bind("pagebeforechange", function (e, data) {
+                                if (typeof data.toPage === "string") {
+                                                var u = $.mobile.path.parseUrl(data.toPage),
+                                                re = /^#account/;
+                                                if (u.hash.search(re) !== -1) {
+                                                                //assuming a global variable  'loggedIn' is set to 1 once user is logged in.
+                                                                //In real time scenario this can be managed by cookie or suitable way.
+ 
+                                                                if (loggedIn != 1) { //if user not logged in then reroute to login
+                                                                                alert("Please log in ");
+                                                                                $.mobile.changePage("#login");
+                                                                                e.preventDefault();
+                                                                }
+                                                }
+                                }
+                });
+ 
+                $("#login").bind("pageshow", function (event, ui) {
+                                $("#logMeIn").bind("click",function(){
+                                                loggedIn = true;
+                                });
+                });
+  </script>
+</body>
+</html>
+ 
+Discussion
+++++++++++++++++++++++++++++++++++++++++++++
+When user clicks on 'Account' button he must be taken to Accounts page unless he is not already checked in.
+In order to achieve this a listener is attached to 'pagebeforechange' event.
+Since this event fire for all pages a check is done to know whether its for '#account' page.
+If so then check whether user is already logged in or not. If logged in then leave it for default behaviour.
+If user not logged in then re route to '#login' page and prevent default behaviour.
+Once logged in next time clicking 'Account' button will take user directly to '#account' page.
