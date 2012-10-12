@@ -9,7 +9,7 @@ Author: Author: John Chacko <poonkave@gmail.com>
  
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Application got a fixed  button 'Accounts'.
+Application got a fixed  footer button 'Accounts'.
 Clicking 'Accounts' will check user already logged in or not.If not then redirect to Login page.
  
 Solution
