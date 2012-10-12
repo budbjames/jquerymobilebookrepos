@@ -88,7 +88,7 @@ Solution
  
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-When user clicks on 'Account' button he must be taken to Accounts page unless he is not already checked in.
+When user clicks on 'Account' button he must be taken to login page unless he is not already logged in.
 In order to achieve this a listener is attached to 'pagebeforechange' event.
 Since this event fire for all pages a check is done to know whether its for '#account' page.
 If so then check whether user is already logged in or not. If logged in then leave it for default behaviour.
