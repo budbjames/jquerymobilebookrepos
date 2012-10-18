@@ -1,17 +1,29 @@
 ////
 
-Author: Levi DeHaan <levi@levidehaan.com>
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.15 Packaging your application for Deployment to an IOS Device
+9.15 Packaging your application for Deployment to an iOS Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++
+You have built and tested your jQuery Mobile application on your desktop and mobile browsers. Now it is time to turn your application into a native iOS application, which is not a simple as loading your HTML, JS, and CSS onto a webserver.
 
 Solution
 ++++++++
+There are many places where you as a developer can turn in order to expose your web application to the native iOS ecosystem. Most of these will make use of an iOS feature known as the UIWebView. This will render your application in what is essentially a web browser without the address bar and navigation buttons. Arguably the most popular of these frameworks is Apache Cordova (aka PhoneGap) because of its relative ease of use and cross-platform support.
 
 Discussion
 ++++++++++
+As you begin the process of packaging your application for deployment on your iOS device, you'll need to make sure you have all the tools in order. To be sure you can build on your Mac, you'll need Xcode, at least version 4.3 or higher. With Xcode, you'll also want to download the Xcode command line tools (which is done via Xcode Preferences). You will also want to download Apache Cordova (PhoneGap). Along with these tools you will also need an iOS device, and an Apple Developer account with a certificate so you can provision your device.
+
+Current versions of Apache Cordova install by simply extracting the downloaded Cordova source to the destination of your choice. Navigate to this directory in your Terminal application of choice, then get to the subdirectory 'bin'. Here you will need to run the following command in the terminal to initialize new project:
+
+----
+$ ./create ~/jQueryMobile/ios/app com.example.jQueryMobileApp JQueryMobileApp
+----
+Here '~/jQueryMobile/ios/app' should be the path to your project on your computer, and 'com.example.jQueryMobileApp' is the name you will be assigning the iOS application. 'JQueryMobileApp' is the name of the application as identified in Xcode. The './create' command will initialize an iOS application that will have a 'www' folder within the project structure. Inside the 'www' folder is where you will place your jQuery Mobile application. The Objective-C code points to index.html as the default page to load into the UIWebView, so that is a great place to put your jQuery Mobile application.
+
+You can build, test, and deploy your application to the iOS Simulator through Xcode or through the Cordova command line tools, when you are satisfied with the results of this, you will now be ready to package you application and get it onto an actual iOS device. To do this, you will need to sign on to the Apple developer site with your Apple ID.
