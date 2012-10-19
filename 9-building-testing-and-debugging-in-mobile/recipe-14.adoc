@@ -1,6 +1,6 @@
 ////
 
-Author: Levi DeHaan <levi@levidehaan.com>
+Author: Cory Gackenheimer <cory.gack@gmail.com
 
 ////
 
@@ -10,9 +10,11 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 Problem
 +++++++
+You have created a remarkable jQuery Mobile application. You have debugged and tested successfully on a desktop browser, but now you must debug on your iOS device which can be more difficult and less intuitive than debugging in a desktop browser.
 
 Solution
 ++++++++
+Fortunately for you as a developer, the mobile remote debugging sector of developer tooling is growing more robust each day. There several options available to a developer, where you can append a debug script to your jQuery Mobile application, access a remote server that will relay information from and to your mobile device. Some of these projects are wholly web-based, while others may require some local server installation in order to work properly.
 
 Discussion
 ++++++++++
