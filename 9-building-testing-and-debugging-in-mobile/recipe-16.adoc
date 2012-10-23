@@ -1,6 +1,6 @@
 ////
 
-Author: Levi DeHaan <levi@levidehaan.com>
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
@@ -9,9 +9,14 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 Problem
 +++++++
+You have created your jQuery Mobile application and created an Apache Cordova project in Xcode on your Mac. Now you need to get the application on your devices for testing. 
 
 Solution
 ++++++++
+Deploying to your iOS device can be accomplished in a couple of ways. One is directly through your Xcode interface that will deliver your application directly to your provisioned device. A second solution is to send the application through a provisioning service that will distribute your iOS application to a set of invited and provisioned devices.
 
 Discussion
 ++++++++++
+In order for you to deploy your application to your device via Xcode, you will first need to make sure you have provisioned your device through the Apple Developer Center's iOS Provisioning Portal. Once you have your device provisioned, you can connect it to your Mac. From within Xcode you can now navigate to the Organizer window. The organizer window has a "Devices" section in which you should see your device listed. Select your device and select "Use for Debugging" and follow the provisioning steps that follow.  Now your device should be available from the Xcode Run Targets. Running the application with your device selected will load and launch your application on your device and you will be able to test from there. Testing within Xcode gives you the advantage of being able to manage and see the code that is executed during runtime, versus a visual and user experience testing that happens in a typical test environment without access to the code.
+
+Now imagine that you have a large number of iOS devices and iOS device testers that will need to test your application before you distribute it to the App Store. To do this, it does not make sense to run the test through Xcode for each device. Luckily there are distribution platforms that will allow you to get your application to the hands of your testers easily. TestFlightApp is one of these platforms and allows you to invite users to test on their devices. To provision to these remote devices, once your testers have received the invitation, they are able to download the TestFlight App on their devices which will provision the device for them. You can then set these users up on a distribution list and send them new versions of your archived iOS application as you make them available. Tools like this are valuable assests amongst distributed or large testing teams.
