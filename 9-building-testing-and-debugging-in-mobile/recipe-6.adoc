@@ -37,15 +37,25 @@ The first solution for remote device debugging utilizes a service at jsconsole.c
 
 Once this script is in place on your app, jsconsole will allow you to remotely control your app, intercept errors as if you were debugging within the console on your device.
 
-Weinre, or WebKit Inspector Remote, is a server that is composed of three components. The first part is the weinre server which is started by running a .jar file.  This HTTP server will relay the messages between the debug target and debug client. This server is started by running the following in your terminal "java -jar path/to/weinre.jar [options]"  The default HTTP port that the weinre server will debug on is 8080, but this is configurable by passing in the option "--httpPort" and specifying the port you wish to utilize. So if your server lives on ip address 1.2.3 your server will default to running at http://1.2.3.4:8080
+Weinre, or WebKit Inspector Remote, is a server that is composed of three components. The first part is the weinre server which is a node.js application you. You can install this application on any device that runs node.js by getting its npm module.
+
+----
+$ npm install weinre
+----
+
+This HTTP server will relay the messages between the debug target and debug client. This server is started by running the following in your terminal 
+----
+$ node path/to/weinre [options]
+----
+The default HTTP port that the weinre server will debug on is 8080, but this is configurable by passing in the option "--httpPort" and specifying the port you wish to utilize. Your server will default to running at http://localhost:8080 but the IP address or Hostname is configurable through the option "--boundHost".
 
 Once you have a weinre server running you need to point your web application to that server in order to relay the console between the debug target and debug client.  To do this add the script that points to the location of your webserver and includes the "target/target-script-min.js" file.
 
 ----
-<script src="http://1.2.3.4:8080/target/target-script-min.js"></script>
+<script src="http://localhost:8080/target/target-script-min.js#IDENTIFIER"></script>
 ----
 
-This will allow the server to relay from the debug target to the debug client. Now is the time to fire up the weinre debug client at http://1.2.3.4:8080/client/ to see all the targets that are connected to the server.  You can then select the target you wish to inspect and the inspector window is now in action.  The inspector looks familiar to developers who are used to debugging applications using the WebKit inspector as al your favorite panels are there: "Elements", "Resources", "Network", "Timeline", and of course "Console". You now have weinre running allowing you to remote debug your application in the comfort of your WebKit Inspector.
+This will allow the server to relay from the debug target to the debug client. Now is the time to fire up the weinre debug client at "http://localhost:8080/client/#IDENTIFIER" to see all the targets that are connected to the server.  You can then select the target you wish to inspect and the inspector window is now in action.  The inspector looks familiar to developers who are used to debugging applications using the WebKit inspector as al your favorite panels are there: "Elements", "Resources", "Network", "Timeline", and of course "Console". You now have weinre running allowing you to remote debug your application in the comfort of your WebKit Inspector.
 
 Remote Debugging has been a standard feature that comes with the Opera Dragonfly toolkit for nearly four years, making it one of the most tested interfaces to remote debugging.  Opera remote debugging requires two things, Opera desktop and Opera Mobile. To get started you'll need to open Opera desktop and open the Dragonfly developer tools.  Once inside Dragonfly, open the "Configurations" menu and select "Remote Debug".  This will start a remote debug listener.  The default port is 7001, but that is configurable to your preference.
 
