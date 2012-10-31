@@ -1,7 +1,10 @@
 ////
  
 Author: Author: John Chacko <poonkave@gmail.com>
- 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date> 
+
 ////
  
 8.3 Custom routing with pagebeforechange

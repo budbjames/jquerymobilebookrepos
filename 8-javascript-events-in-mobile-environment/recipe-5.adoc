@@ -3,6 +3,9 @@
 This recipe will show you when the pagebeforeload event is fired and how you can intercept it and get in the middle of the page loading sequence.
 
 Author: Javed Anwar <javed_anwar@yahoo.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 

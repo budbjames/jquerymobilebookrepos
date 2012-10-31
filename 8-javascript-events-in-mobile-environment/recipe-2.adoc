@@ -4,10 +4,13 @@ Notes
 -----
 
 Author: Adrian Pillinger <adrian.pillinger@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Using the pageinit() event in place of $(document).ready() and onload.
+8.2 Using the pageinit() event in place of $(document).ready() and onload.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

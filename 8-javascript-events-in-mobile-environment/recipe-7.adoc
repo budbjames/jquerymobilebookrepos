@@ -1,10 +1,13 @@
 ////
 
-Author: Casey Justus <caseyjustus@gmail.com>
+Author: 
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Creating an image gallery with the swipe event
+8.7 Creating an image gallery with the swipe event
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -3,10 +3,13 @@
 This recipe will show how to allow 'pinch to zoom' gesture on a specific DOM element(s)
 
 Author: Assaf Damari <asafda@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Allow pinch to zoom on a specific DOM element
+8.9 Allow pinch to zoom on a specific DOM element
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

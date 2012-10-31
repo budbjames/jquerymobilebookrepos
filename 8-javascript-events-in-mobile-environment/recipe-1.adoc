@@ -8,13 +8,14 @@ Notes
 * List out the other default settings which can be modified.
 
 Author: Kinshuk Kar <kinshuk.kar@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
-#.# Recipe Title
+8.1 Using mobileinit to configure jQuery Mobile defaults.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Using mobileinit to configure jQuery Mobile defaults.
-
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
