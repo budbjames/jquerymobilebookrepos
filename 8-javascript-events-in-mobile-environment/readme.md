@@ -1,10 +1,10 @@
-# Chapter 4
+# Chapter 8
 
-## Navigating through your Apps
+## JavaScript Events in a Mobile Environment
 
 Description: 
 
-*Chapter Leader:* <a href="mailto:"></a>
+*Chapter Leader:* <a href="mailto:mike@appendto.com">Mike Hostetler</a>
 
 <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/introduction.adoc">Introduction</a>
 
