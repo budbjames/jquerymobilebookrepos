@@ -96,6 +96,17 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-9.adoc">9 - Options for Displaying Elements</a>
   * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-10.adoc">10 - HTML5 Inputs and Virtual Keyboards</a>
   * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-11.adoc">11 - Uploading Files and Multi-part Requests</a>
+* <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/readme.md">Chapter 8 - JavaScript Events in a Mobile Environment</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/introduction.adoc">Introduction</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-1.adoc">1 - Using mobileinit to configure jQuery Mobile defaults.</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-2.adoc">2 - Using pageinit in place of document.ready</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-3.adoc">3 - Custom routing with pagebeforechange</a> 
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-4.adoc">4 - Touchevents</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-5.adoc">5 - pagebeforeload</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-6.adoc">6 - touch vs click</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-7.adoc">7 - Creating an image gallery with the swipe event</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-8.adoc">8 - Events Diagram</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-9.adoc">9 - Enable zoom/pinch on a specific DOM element </a>
 
 
 
