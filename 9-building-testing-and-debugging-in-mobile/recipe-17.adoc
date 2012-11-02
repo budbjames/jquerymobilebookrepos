@@ -1,6 +1,6 @@
 ////
 
-Author: Levi DeHaan <levi@levidehaan.com>
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
@@ -9,9 +9,22 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 Problem
 +++++++
+You have built your jQuery Mobile application and deployed it to your iOS device for testing. It is now time to submit your application to the iOS app store.
 
 Solution
 ++++++++
+There is a clearly defined process for taking an application from a built testable build, and creating a packaged application that you can submit to the iTunes App Store for review and release. These steps are straightforward, and depending on review queue time, you should be able to get your application deployed to the store in a short period.
 
 Discussion
 ++++++++++
+The first thing you will need to do in order to deploy an application to the iTunes App Store is to create an iTunes Connect record. This will hold the details that will be displayed to users of the App Store when they discover your application. When you log in to iTunes Connect you will need to provide the following items: 
+1) A tentative ship date
+2) A description of your application
+3) A 512px x 512px icon for your application
+4) A screenshot of your application
+4) A version number for your application
+5) A bundle ID that will match your app ID
+
+The screenshot, bundleID, and icon image all should be setup in Xcode before you even get to iTunes Connect. Once you are in iTunes Connect you simply fill out the information required and you should be ready for the next step, submission.
+
+To submit your application is ready to be submitted you will need to revisit the iOS Provisioning Center on the web, and assign a distribution provisioning profile (similar to how you provisioned for testing), but select the App Store provisioning method. Next you will need to build your application for archiving within Xcode and be sure to utilize your newly created distribution certificate to sign the application. From here you will validate the archive, then submit your application to Apple so that it may be evaluated via the application approval process. Once you application passes through the Apple submission and approval process you can utilize your iTunes Connect account to set the date you will ship your jQuery Mobile application to the App Store.
