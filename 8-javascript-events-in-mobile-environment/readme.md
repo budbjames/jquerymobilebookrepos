@@ -38,7 +38,7 @@ Description:
 ---
 
 ### 4 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-4.adoc">Touchevents</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:cory.gack@gmail.com">Cory Gackenheimer</a> (3 Nov, 2012)
 
 *Problem:*
 
