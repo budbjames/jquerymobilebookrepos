@@ -2,7 +2,7 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: 
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -10,16 +10,78 @@ Tech edited: <date>
 ////
 
 8.4 Touch events
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
-You want to be able to display a toolbar that will expand to match the width of the screen.
++++++++
+Designing an application targeted for mobile devices, you will want to utilize many of the common and intuitive touch interactions that your users are familiar with on their devices.
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+++++++++
+jQuery Mobile comes bundled with many ways in which to interact with your device utilizing through touch. There are five special events that jQuery Mobile utilized for touch: tap, taphold, swipe, swipe left and swipe right. These events help to manage a more native mobile interaction with your mobile application. Each of these events is configured with common defaults that are typical for most interactions, but in the spirit of extensibility, these events can be highly customized to suit specific needs for your jQuery Mobile application.
 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+++++++++++
+
+.The tap event
+The tap event is a quick touch, it is defined as a touch that is less than the duration of the taphold threshold which defaults to 750ms. The usage of the tap event is in the same vein as all jQuery and jQuery Mobile events.
+
+----
+$( "#tappable" ).bind( "tap", function( event ) { 
+	//awesome tap handler
+});
+----
+
+.The taphold event
+The taphold event fires if you hold a tap longer than the duration of the taphold threshold (defaults at 750ms). 
+----
+$( "#tapholdable" ).bind( "taphold", function( event ) { 
+	//awesome taphold handler
+});
+----
+
+If you decide you want to change the taphold threshold, this is simply accomplished by directly setting the option as follows:
+----
+<script src="jquery.min.js"></script>
+<script>
+	$( document ).bind( "mobileinit", function() {
+		$.event.special.tap.tapholdThreshold = 350;	
+	});
+</script>
+<script src="jquery-mobile.min.js"></script>
+----
+
+.The swipe event
+The swipe event utilizes a precise combination of horizontal and vertical touch duration and distance to determine if the event is indeed a swipe. The default detection for a swipe is a touch that moves horizontal at least 30 pixels and does not move vertical more than 75 pixels. It must also be a touch that lasts less than 1 second to be determined it is a swipe.  These options are configurable as well, just as the tapholdThreshold.
+----
+$( "#swipeMe" ).bind( "swipe", function( event ) {
+	//swipe handler
+});
+----
+
+If you need to change the default configuration for a swipe you can do so when your application is initialized
+----
+<script src="jquery.min.js"></script>
+<script>
+	$( document ).bind( "mobileinit", function() {
+		$.event.special.swipe.durationThreshold  = 800; default: 1000ms
+		$.event.special.swipe.horizontalDistanceThreshold = 45; //default: 30px
+		$.event.special.swipe.verticalDistanceThreshold = 90; //default: 75px
+	});
+</script>
+<script src="jquery-mobile.min.js"></script>
+----
+
+.The swiperight and swipeleft events
+If you decide you only want to perform an action when a user swipes to a certain direction (right or left), you can bind to those events specifically. These events are just extensions of the swipe event that fire if the swipe starts at a position greater or less than where it stops.
+----
+//swipe right
+$( "#swipeRight" ).bind( "swiperight", function( event ) {
+	//swipe right handler
+});
+
+//swipe left
+$( "#swipeLeft" ).bind( "swipeleft", function( event ) {
+	//swipe left handler
+});
+----
