@@ -40,7 +40,7 @@ Not a recipe
 ---
 
 ### 4 - <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-4.adoc">Using native form elements</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:cory.gack@gmail.com">Cory Gackenheimer</a> (17 Nov 2012)
 
 *Problem:* 
 
