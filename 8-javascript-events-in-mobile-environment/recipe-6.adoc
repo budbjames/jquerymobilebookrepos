@@ -1,6 +1,6 @@
 ////
 
-Author: Unassigned
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -8,16 +8,42 @@ Tech edited: <date>
 ////
 
 8.6 Touch vs. Click
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
++++++++
+You want to add great touch interaction to your jQuery Mobile application but managing bindings to touch and click events is problematic. Some mobile browsers are enhanced for touch support by adding touch events. On touch supported browsers these events are also followed by a click event - after a 300 millisecond delay - which can present interesting opportunities when developing mobile applications.
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+++++++++
+jQuery Mobile has abstracted touch and click functionality to combat some of the issues that are problematic within the touch interfaces. These are presented in the form of virtual mouse events. As a developer you can utilize these virtual mouse events to register events and let jQuery Mobile handle the registering the correct mouse or touch event in order to produce the most efficient response possible.
 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+++++++++++
+The virtual mouse events are registered within your jQuery Mobile application in the same manner as any other event, choose them to normalize your event handling between the touch and mouse events you wish to capture.
+
+Virtual Mouse Events::
+[horizontal]
+	vmouseover;;
+		normalizes touch and mouseover events
+	vmouseout;;
+		normalizes touch and mouseout events
+	vmousedown;;
+		normalizes touchstart and mousedown events
+	vmousemove;;
+		normalizes the touchmove and mousemove events
+	vmouseup;;
+		normalizes the touchend and mouseup events
+	vclick;;
+		normalizes touchend and mouseup events
+		note::: Since on touch devices the click event is triggered 300 milliseconds after the initial tap, the vclick event is triggered after vmouseup.  If your application is designed to move or alter content on initial tap, the target of the subsequent click event that is triggered will possibly be different than the target of the originating tap. If you plan to manipulate content on touch, it is recommended to utilize the click event instead of the vclick event.
+	vmousecancel;;
+		normalizes touch and mousecancel events
+
+
+Here is an example of how you could register the vmouseover handler, the other events can be registered similarly with the above event targets.
+----
+$( "#vmousetarget" ).on( "vmouseover", function( event ) {
+	//normalized event handler
+});
+----
