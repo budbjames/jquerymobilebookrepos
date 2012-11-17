@@ -1,6 +1,6 @@
 ////
 
-Author: unassigned
+Author: Cory Gackenheimer <cory.gack@gmail.com
 
 How to have jQuery Mobile NOT enhance input elements
 
@@ -10,18 +10,53 @@ Tech edited: <date>
 
 ////
 
-7.5 Using native form elements
+7.4 Using native form elements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Problem
 +++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+You have created a spectacular jQuery Mobile application, however you wish to bypass the automatic enhancement of form elements, and instead utilize the native device functionality of those elements.
 
 Solution
 ++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+By default, jQuery Mobile will enhance form elements that you present in your application. There may be times you wish to utilize the native elements in place of the jQuery Mobile versions. To allow for this jQuery Mobile has a built in override system that allows the user to select one element or groups of form elements to be bypassed during the page creation process.
 
 Discussion
 ++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+As you have seen, jQuery Mobile will create rich touch-friendly form elements when you initialize and application. The elements are perfect for rich touch interaction, but they may not be the exact native feel that you wish to have in your application. There are many reasons why you might choose to omit the enhancement, but regardless of the reasons, what follows are examples of how to tell jQuery Mobile to not enhance your form elements.
+
+.Single element omission
+To omit a single element, one can simply add the data- attribute 'data-role="none"' to your form element.
+----
+<input type="range" id="slider" value="10" min="0" max="100" data-role="none" />
+----
+This will tell jQuery Mobile to skip enhancement of that particular form element.
+
+.Multiple element omission by container
+You can also omit a group of elements within a container if you first set the ignoreContentDisabled flag during the jQuery Mobile initialization, then set the container to not enhance the items within.
+----
+<script src="jquery.js"></script>
+<script>
+//This needs to be set before jQuery Mobile is loaded but after jQuery
+ $(document).bind("mobileinit", function() { 
+ 	$.extend( $.mobile, {
+ 		ignoreContentDisabled: true
+ 	});
+ });
+ </script>
+ <script src="jquery-mobile.js"></script>
+---- 
+
+Later in the markup set your container to not enhance form elements within a container set the data- attribute 'data-enhance="false"'
+----
+<div data-enhance="false">
+	<label for="slider1">slider1:</label>
+	<input type="range" name="slider1" id="slider1" value="0" min="0" max="100" />
+	<label for="slider2">slider2:</label>
+	<input type="range" name="slider1" id="slider2" value="100" min="0" max="100" />
+	<label for="textinput">Text Box:</label>
+	<input type="text"  name="textinput" id="textinput" />
+</div>
+----
+
