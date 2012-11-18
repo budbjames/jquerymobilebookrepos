@@ -6,7 +6,7 @@ Author: John Doe <email@email.com>
 
 ////
 
-13.1 Using jQuery with PhoneGap
+13.3 jQuery Mobile and WebWorks / Playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

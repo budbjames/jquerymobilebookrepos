@@ -162,7 +162,16 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-6.adoc">6 - Why make your application work offline?</a>
   * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-7.adoc">7 - Offline storage alternatives</a>
   * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-8.adoc">8 - Make your webapp offline with Android</a>
-
+* <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/introduction.adoc">Chapter 13 - Going Native with jQuery Mobile</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-1.adoc">1 - Using jQuery with PhoneGap</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-2.adoc">2 - Exploring the PhoneGap Device APIs</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-3.adoc">3 - jQuery Mobile and WebWorks / Playbook</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-4.adoc">4 - Using jQuery Mobile with PhoneGap's Camera</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-5.adoc">5 - jQuery Mobile with Android's JavaScript Bridge</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-6.adoc">6 - Overview of available frameworks for building native apps</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-7.adoc">7 - Using jQuery Mobile with Nimblekit</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-8.adoc">8 - Adding a swipe-down menu to your PlayBook application</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-9.adoc">9 - Exploring the WebWorks platform APIs</a>
 
 
 
