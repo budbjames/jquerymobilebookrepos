@@ -1,6 +1,6 @@
 ////
 
-Author: Cory Gackenheimer <cory.gack@gmail.com
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 How to have jQuery Mobile NOT enhance input elements
 
