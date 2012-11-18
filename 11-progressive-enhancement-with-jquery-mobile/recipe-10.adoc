@@ -1,10 +1,10 @@
 ////
 
-Author: Randy Weinstein
+Author: 
 
 ////
 
-#.# Responsive Images based on Screen Dimensions
+11.10 Responsive Images based on Screen Dimensions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

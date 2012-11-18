@@ -1,10 +1,10 @@
 ////
 
-Author: R. Thompson <whynetsolutions@aol.com>
+Author: 
 
 ////
 
-#.# How Graded Browser Support Works
+11.2 How Graded Browser Support Works
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -6,7 +6,7 @@ Author: Shishir Ramam <sramam@gmail.com>
 
 ////
 
-#.# Mobile device Orientation: Events and CSS
+11.12 Mobile device Orientation: Events and CSS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -17,7 +17,7 @@ From portrait to landscape and landscape to portrait.
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 There are two ways to deal with this -
-1. binding to the 'orientationchange' javascript event, triggered when the orientation is changed.
+1. binding to the 'orientationchange' JavaScript event, triggered when the orientation is changed.
 2. applying an alternative style sheet. 
 
 Binding to the orientationchange event on the window.
@@ -52,24 +52,18 @@ If you'd rather apply these styles via css, css media queries can be used to adv
 
 A working fiddle of this recipe can be found at http://jsfiddle.net/sramam/cTvXP/
 To keep the illustration simple, this is a very minimal example. You might need
-to adjust the css media queries to make it work on your device. 
-
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+to adjust the CSS media queries to make it work on your device. 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 
 
-The css media query based approach are preferable when all orientation based 
+The CSS media query based approach are preferable when all orientation based 
 
 
 While both methods are equally valid, application needs may point you in one direction or another.
 
-The javascript based method allows you to do data driven computations and adjust
+The JavaScript based method allows you to do data driven computations and adjust
 the layout or some aspect of presentation in the app. One example might be recomputing
 gutter margins in a photo-grid.
 
-The discussion of your recipe should be where you break down
-a description of the problem you are solving.  It is the primary
-discussion place and should be where code examples are put.
-It could be 4-6 paragraphs long.

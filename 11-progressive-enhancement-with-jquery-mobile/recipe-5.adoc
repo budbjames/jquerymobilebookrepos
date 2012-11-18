@@ -1,10 +1,10 @@
 ////
 
-Author: R. Thompson <whynetsolutions@aol.com>
+Author: 
 
 ////
 
-#.# Revealing Dynamic Content with Modals
+11.5 Revealing Dynamic Content with Modals
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

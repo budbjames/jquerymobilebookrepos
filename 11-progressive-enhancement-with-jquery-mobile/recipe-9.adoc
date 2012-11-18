@@ -1,10 +1,10 @@
 ////
 
-Author: Randy Weinstein
+Author: 
 
 ////
 
-#.# Adjusting Columns Based on Viewport Width
+11.9 Adjusting Columns Based on Viewport Width
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

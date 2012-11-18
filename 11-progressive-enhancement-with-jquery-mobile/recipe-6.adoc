@@ -1,10 +1,10 @@
 ////
 
-Author: Mike Sumner
+Author: 
 
 ////
 
-#.# Dividing Content Using Tabs
+11.6 Dividing Content Using Tabs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -1,10 +1,10 @@
 ////
 
-Author: R. Thompson <whynetsolutions@aol.com>
+Author: 
 
 ////
 
-#.# What is Progressive Enhancement in a Mobile Context?
+11.1 What is Progressive Enhancement in a Mobile Context?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

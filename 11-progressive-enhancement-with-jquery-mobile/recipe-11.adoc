@@ -4,7 +4,7 @@ Author: Unassigned
 
 ////
 
-#.# Responsive Images based on Screen Density
+11.11 Responsive Images based on Screen Density
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

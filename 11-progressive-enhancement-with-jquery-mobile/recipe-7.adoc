@@ -1,10 +1,10 @@
 ////
 
-Author: Randy Weinstein
+Author: 
 
 ////
 
-#.# Switching Between Dialogs and Collapsible Panels
+11.7 Switching Between Dialogs and Collapsible Panels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

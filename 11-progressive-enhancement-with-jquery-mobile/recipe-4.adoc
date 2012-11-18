@@ -4,7 +4,7 @@ Author: Unassigned
 
 ////
 
-#.# Adding AJAX to Form Submits
+11.4 Adding AJAX to Form Submits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
