@@ -4,7 +4,7 @@ Author: Ryan Westphal <ryan@trippingthebits.com>
 
 ////
 
-#.# Appcache + mobile devices
+12.2 Appcache + mobile devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
