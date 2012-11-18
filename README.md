@@ -138,8 +138,8 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-7.adoc">7 - Video</a>
   * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-8.adoc">8 - Uploading Photos on iOS</a>
   * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-9.adoc">9 - Game Development</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-10.adoc">Getting Started with jQuery Mobile and Google Maps</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-11.adoc">Combining pages, tweets, and maps</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-10.adoc">10 - Getting Started with jQuery Mobile and Google Maps</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-11.adoc">11 - Combining pages, tweets, and maps</a>
 * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/introduction.adoc">11 - Progressive Enhancement with jQuery Mobile</a>
   * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-1.adoc">1 - What is Progressive Enhancement in a Mobile Context?</a>
   * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-2.adoc">2 - How Graded Browser Support Works</a>
