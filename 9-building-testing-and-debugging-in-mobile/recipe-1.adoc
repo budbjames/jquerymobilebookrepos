@@ -1,0 +1,70 @@
+////
+
+Author: Levi DeHaan <levi@levidehaan.com>
+
+////
+
+9.1 Sample App
+~~~~~~~~~~~~~~
+
+For the rest of this chapter we will be using the below sample application code in order to test, debug, build, and deploy.
+We won't be going over the code for this small sample very much, the main purpose is to show how to test, debug, build and deploy to each platform.
+The same examples for tests and debugging will be used for each platform in order to maintain a consistent expectation of output.
+
+We'll be using the jQuery CDN for the jQuery and jQuery Mobile files, you will need to make sure you have an internet connection when testing this code.
+
+*Create a folder called sampleApp (or really whatever you wish to call it)
+*Create a index.html file
+*Create a main.js file
+
+Populate these files with the below text or grab the examples code from ___?
+
+[[EX1]]
+.The HTML (index.html)
+====
+----
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Sample App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+  <script src="main.js"></script>
+  </head>
+  <body>
+    <div data-role="page">
+    
+	<div data-role="header">
+    		<h1>Sample Header</h1>
+    	</div>
+
+    	<div data-role="content">	
+    		<p>Sample App</p>
+    	</div>
+
+    	<div data-role="footer">
+    		<h4>Sample Footer</h4>
+    	</div><!-- /footer -->
+
+    </div>    
+  </body>
+</html>
+
+----
+
+
+[[EX1]]
+.The JavaScript (main.js)
+====
+----
+
+var sampleObject = { stuff: "has stuff" };
+//debugger;
+//console.log("cheese");
+//console.log(sampleObject);
+
+----

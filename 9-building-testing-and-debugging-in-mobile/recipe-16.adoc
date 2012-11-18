@@ -4,19 +4,27 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.16 Deploying and Testing your app on a IOS Device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.16 Take your app to the IOS App Store
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++
-You have created your jQuery Mobile application and created an Apache Cordova project in Xcode on your Mac. Now you need to get the application on your devices for testing. 
+You have built your jQuery Mobile application and deployed it to your iOS device for testing. It is now time to submit your application to the iOS app store.
 
 Solution
 ++++++++
-Deploying to your iOS device can be accomplished in a couple of ways. One is directly through your Xcode interface that will deliver your application directly to your provisioned device. A second solution is to send the application through a provisioning service that will distribute your iOS application to a set of invited and provisioned devices.
+There is a clearly defined process for taking an application from a built testable build, and creating a packaged application that you can submit to the iTunes App Store for review and release. These steps are straightforward, and depending on review queue time, you should be able to get your application deployed to the store in a short period.
 
 Discussion
 ++++++++++
-In order for you to deploy your application to your device via Xcode, you will first need to make sure you have provisioned your device through the Apple Developer Center's iOS Provisioning Portal. Once you have your device provisioned, you can connect it to your Mac. From within Xcode you can now navigate to the Organizer window. The organizer window has a "Devices" section in which you should see your device listed. Select your device and select "Use for Debugging" and follow the provisioning steps that follow.  Now your device should be available from the Xcode Run Targets. Running the application with your device selected will load and launch your application on your device and you will be able to test from there. Testing within Xcode gives you the advantage of being able to manage and see the code that is executed during runtime, versus a visual and user experience testing that happens in a typical test environment without access to the code.
+The first thing you will need to do in order to deploy an application to the iTunes App Store is to create an iTunes Connect record. This will hold the details that will be displayed to users of the App Store when they discover your application. When you log in to iTunes Connect you will need to provide the following items: 
+1) A tentative ship date
+2) A description of your application
+3) A 512px x 512px icon for your application
+4) A screenshot of your application
+4) A version number for your application
+5) A bundle ID that will match your app ID
 
-Now imagine that you have a large number of iOS devices and iOS device testers that will need to test your application before you distribute it to the App Store. To do this, it does not make sense to run the test through Xcode for each device. Luckily there are distribution platforms that will allow you to get your application to the hands of your testers easily. TestFlightApp is one of these platforms and allows you to invite users to test on their devices. To provision to these remote devices, once your testers have received the invitation, they are able to download the TestFlight App on their devices which will provision the device for them. You can then set these users up on a distribution list and send them new versions of your archived iOS application as you make them available. Tools like this are valuable assests amongst distributed or large testing teams.
+The screenshot, bundleID, and icon image all should be setup in Xcode before you even get to iTunes Connect. Once you are in iTunes Connect you simply fill out the information required and you should be ready for the next step, submission.
+
+To submit your application is ready to be submitted you will need to revisit the iOS Provisioning Center on the web, and assign a distribution provisioning profile (similar to how you provisioned for testing), but select the App Store provisioning method. Next you will need to build your application for archiving within Xcode and be sure to utilize your newly created distribution certificate to sign the application. From here you will validate the archive, then submit your application to Apple so that it may be evaluated via the application approval process. Once you application passes through the Apple submission and approval process you can utilize your iTunes Connect account to set the date you will ship your jQuery Mobile application to the App Store.

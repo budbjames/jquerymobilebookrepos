@@ -4,8 +4,8 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 ////
 
-9.12 Deploying and Testing your app on a BlackBerry
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.12 Take your app to the BlackBerry AppWorld
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++

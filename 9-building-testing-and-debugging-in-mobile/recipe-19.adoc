@@ -4,8 +4,8 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 ////
 
-9.19 Packaging your application for deployment to a Windows Mobile Device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.19 Deploying and testing your app on a Windows Mobile Device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++

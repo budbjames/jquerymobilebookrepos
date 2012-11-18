@@ -1,27 +1,31 @@
 ////
 
-Author: Cory Gackenheimer <cory.gack@gmail.com>
+Author: Cory Gackenheimer <cory.gack@gmail.com> 
 
 ////
 
-9.8 Deploying and testing your app on an Android
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.8 Take your app to the Google Play Store
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++
 
-You’ve built your application apk but now you need to put it on your android in order to test it. Once your application is on your phone you will need to test it.
+Your application is finished, fully tested, and now you're ready to send it to the Google Play Store.
 
 Solution
 ++++++++
 
-In the previous recipes, we have learned how to remotely debug your application using various tools including remote debugging servers and browser developer tools. You have also learned how to get your application built into an Android apk file using Apache Cordova. Using Cordova, you have been able to load the apk file directly onto your device, however you could also download the apk from anywhere you decide to place it on the web, to have it install onto your device. Now let us investigate how you can test and debug your application after it has been loaded onto your Android device.
+Once you have created your Android application and deployed it to your device, the next step is to create the signed apk file that you will submit and publish within the Android ecosystem. Your primary target will likely be the Google Play Store and this recipe will walk through the steps necessary to package and submit your application with all the in store assets required.
+
+There are three critical steps in getting your application onto Google Play. Registering with Google if you do not have an Android developer account. Next you need to generate a signed apk file for your application. Lastly, you need to upload all of the assets to your Android Developer Console to stage and deploy your application.
 
 Discussion
 ++++++++++
 
-Testing your application as an Android Application is a critical part of the development lifecycle. While testing the functionality of the application on a desktop and mobile browser can give you a good feel for how your jQuery Mobile application will look and feel in the context of the native application experience on a portable device, it cannot give us a full grasp of the functionality until you run the Android application on your devices. Things that naturally work in the context of a web browser, either mobile or desktop, such as links to external sites and remote content, may behave in a manner that is not as intuitive on a mobile WebView. This is why it is imperative to test your application on your device and note any inconsistencies that you find. 
+The first step to deploying your jQuery Mobile Android Application is to visit the Google Play Android Developer Console at http://developer.android.com and register for a publisher account. To get a publisher account you will be charged a one time fee of 25 US Dollars in order to place you applications in the Google Play Store. There is also an opportunity at the point to register a Google Checkout Merchant Account which will allow you to submit paid applications to the Store if you so choose.
 
-Some common issues that occur in testing such applications are, as previously mentioned, links to external sites and remote resources that may not function as expected within the context of the Android WebView. Another important point to consider is how your jQuery Mobile application will perform if the phone is not connected to the internet, be it in airplane mode or somewhere without connectivity. In such a case should, depending on the particular uses of your application, you may wish to present your users with a fallback that works offline as a subset of the fully connected application.
+Next, its back to Eclipse (or the Command Line) to build a signed apk file for your application. At this point its a great idea to remove all the debugging and logging items you may have had in place during testing. In Eclipse, creating a signed apk is done with the help of a useful wizard to walk you through the steps. First you need to right-click on your project in Eclipse and select 'Export'. From this menu you will want to choose 'Export Android Application' to get the signing process started. Now the wizard will ask you for the location of your keystore, and help you create one if it does not currently exist. Then you will have to assign a key alias from the keystore to sign the apk. The last step is to confirm the destination of your apk file, make note of this location so you know where to find it at upload time.
 
-When testing you may encounter issues or scenarios within your application which were not seen in earlier testing in your mobile and desktop browsers. Two likely causes for this inconsistancy are issues within the Android application or setup preventing expected behavior, or limitations of the specific WebView you are targeting creates an issue within your HTML, JavaScript, or CSS that you could not forsee. Luckily, if you are testing on your device you have options for deciphering these issues. For what appear to be HTML, JavaScrip, CSS issues, a common use is to inject a script into your HTML file that allows you to utilze a remote inspector just as 'weinre' (WEbkit INspector REmote) which you can run the server locally or utilize a service such as http://debug.phonegap.com. This will give you the familiar debugging toolset from WebKit based browsers in order to track down any issues within your code. If you suspect the issue lies outside of your HTML, CSS, and JavaScript, then you'll need to investigate the Android logs that are sent to your computer via USB Debugging. If you are using Eclipes you can navigate through your application when connected and follow the logs presented to see things such as external links loading. These should appear in the 'Log Cat' section of Eclipse and ,as an example, clicking a link to the jQuery Mobile website should look similar to 'CordovaWebView - >>> loadUrl(http://jquerymobile.com/)'. The log output should give you a clear indications of exceptions or warnings that may be a cause of the inconsistancies found in testing your application. These methods are simply a few of many and various techniques for testing and debugging a jQuery Mobile application as a native Android application, which can be useful in many testing scenarios.
+Now you one final step to get your application to the Google Play Store. This step starts by signing into your Android Developer Console at https://play.google.com/apps/publish/ then clicking the 'Upload Application' button. Now is the time to recollect the location of your signed apk as you will need to upload that file to get the ball rolling. Once this file is uploaded, Google will tell you all the permissions and details that your app will be requesting of its users. Proceeding to the next part of the submission process you will need to have handy a few items to upload with your application. The required extra assets, on top of what is included in your apk, are at least two screenshots of your application along with one 512px x 512px High Resolution Application Icon. There are other options available such as Feature Graphics, Promotional Graphics and videos, but to submit your application to the store these are not required. Once these are set you then give your application a Title, Description, and assign it a Type and Category. 
+
+Since you have created your Android publishers account, signed your apk, and uploaded it with all your extra assets to the Developer Console you can now Save and Publish you application to the Google Play Store.

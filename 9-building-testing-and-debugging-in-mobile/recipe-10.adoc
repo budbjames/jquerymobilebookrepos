@@ -4,13 +4,11 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 ////
 
-9.10 Debugging your BlackBerry application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.10 Packaging your app for deployment to a BlackBerry
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++
-
-
 
 Solution
 ++++++++

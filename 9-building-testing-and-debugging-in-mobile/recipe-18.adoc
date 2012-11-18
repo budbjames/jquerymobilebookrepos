@@ -4,8 +4,8 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 ////
 
-9.18 Debugging your Windows Mobile application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.18 Packaging your application for deployment to a Windows Mobile Device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++

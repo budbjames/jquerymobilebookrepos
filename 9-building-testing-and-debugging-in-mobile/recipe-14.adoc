@@ -1,39 +1,29 @@
 ////
 
-Author: Cory Gackenheimer <cory.gack@gmail.com
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-
-9.14 Debugging Your IOS App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.14 Packaging your application for Deployment to an iOS Device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++
-You have created a remarkable jQuery Mobile application. You have debugged and tested successfully on a desktop browser, but now you must debug on your iOS device which can be more difficult and less intuitive than debugging in a desktop browser.
+You have built and tested your jQuery Mobile application on your desktop and mobile browsers. Now it is time to turn your application into a native iOS application, which is not a simple as loading your HTML, JS, and CSS onto a webserver.
 
 Solution
 ++++++++
-Fortunately for you as a developer, the mobile remote debugging sector of developer tooling is growing more robust each day. There several options available to a developer, where you can append a debug script to your jQuery Mobile application, access a remote server that will relay information from and to your mobile device. Some of these projects are wholly web-based, while others may require some local server installation in order to work properly.
+There are many places where you as a developer can turn in order to expose your web application to the native iOS ecosystem. Most of these will make use of an iOS feature known as the UIWebView. This will render your application in what is essentially a web browser without the address bar and navigation buttons. Arguably the most popular of these frameworks is Apache Cordova (aka PhoneGap) because of its relative ease of use and cross-platform support.
 
 Discussion
 ++++++++++
-The first solution for remote device debugging utilizes a service at jsconsole.com. This is a web-based command line utility which can set a listener and bridge the gap between device and the jsconsole's simulated console.  There are two steps to bridge this gap.  First one must type ":listen" in the jsconsole.com window. The ":listen" command can be followed by an optional identifier of the users choosing, but if one is not provided an identifier will be generated.  The second step to utilizing jsconsole.com for remote debugging is to add a script to your HTML file that includes the remote.js file of the jsconsole project and points to the identifier you either specified or were given in the first step.
+As you begin the process of packaging your application for deployment on your iOS device, you'll need to make sure you have all the tools in order. To be sure you can build on your Mac, you'll need Xcode, at least version 4.3 or higher. With Xcode, you'll also want to download the Xcode command line tools (which is done via Xcode Preferences). You will also want to download Apache Cordova (PhoneGap). Along with these tools you will also need an iOS device, and an Apple Developer account with a certificate so you can provision your device.
+
+Current versions of Apache Cordova install by simply extracting the downloaded Cordova source to the destination of your choice. Navigate to this directory in your Terminal application of choice, then get to the subdirectory 'bin'. Here you will need to run the following command in the terminal to initialize new project:
 
 ----
-<script src="http://jsconsole.com/remote.js?IDENTIFIER"></script>
+$ ./create ~/jQueryMobile/ios/app com.example.jQueryMobileApp JQueryMobileApp
 ----
+Here '~/jQueryMobile/ios/app' should be the path to your project on your computer, and 'com.example.jQueryMobileApp' is the name you will be assigning the iOS application. 'JQueryMobileApp' is the name of the application as identified in Xcode. The './create' command will initialize an iOS application that will have a 'www' folder within the project structure. Inside the 'www' folder is where you will place your jQuery Mobile application. The Objective-C code points to index.html as the default page to load into the UIWebView, so that is a great place to put your jQuery Mobile application.
 
-Once this script is in place on your app, jsconsole will allow you to remotely control your app, intercept errors as if you were debugging within the console on your device.
-
-Weinre, or WebKit Inspector Remote, is a server that will also bridge the gap between your target device and a desktop debugging client. This can be installed locally, or you can utilize many of the readily available Weinre services available to web developers. One example of these remote debugging services can be found at http://debug.phonegap.com where you will not need to run the server locally at all. This setup is similar to jsconsole where you will name a secret identifier that you will attach to the script you insert into your. So if you utilize your same IDENTIFIER you will need to add the following script to your cordova project:
-
-----
-<script src="http://debug.phonegap.com/target/target-script-min.js#IDENTIFIER"></script>
-----
-
-Then you'll need to point your browser to the following debug client, 'http://debug.phonegap.com/client/#IDENTIFIER'. Since the Weinre project is based on the WebKit inspector, it works best on a WebKit based browser.
-
-Another popular remote inspection tool is Edge Inspect from Adobe. Edge Inspect is another tool that extends the functionality of the Weinre service. To get started with Edge inpect you'll need a couple things. One you will need to have the free mobile application installed on your device. You will also need the Edge Inspect extension for the Google Chrome browser installed on your desktop or laptop. The third piece required is the Edge Inspect application you will install and run on your Mac or PC. These three components together will help you to run the service to identify and synchronize your mobile devices to your desktop browser, provided they are running on the same wifi network. Edge Inspect allows you to browse the sites you wish to debug on Chrome and all of your devices will shadow that browsing. Along with the Chrome inspector, if you toggle inspection on the Edge Inspect browser extension panel, you will get Weinre version of the inspector tools for use inspecting your remote devices.
-
-The mobile remote debugging space is growing fast and there are certain to be many more innovations that help bridge the gap between the comfort of desktop debugging and the need to debug on a mobile device. The solutions listed in this recipe is only a small sampling of what is available and of what may come in the future of remote debugging.
+You can build, test, and deploy your application to the iOS Simulator through Xcode or through the Cordova command line tools, when you are satisfied with the results of this, you will now be ready to package you application and get it onto an actual iOS device. To do this, you will need to sign on to the Apple developer site with your Apple ID. Once there you will be able to setup provisioning in the iOS provisioning portal. This will enable your developer application signing certificates and provisioning profiles. Once you have obtained these, you can return to Xcode and utilize the Xcode Organizer to fetch these items and setup a connected device. You should now be able to target your build to your specific iOS device connected via Xcode and test directly on the device instead of the simulators.

@@ -4,47 +4,24 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.7 Packaging your application for deployment to an Android Device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.7 Deploying and testing your app on an Android
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++
 
-We have an app that works in the browser, now we want to test out how its going to look on the phone or tablet itself.
+You’ve built your application apk but now you need to put it on your android in order to test it. Once your application is on your phone you will need to test it.
 
 Solution
 ++++++++
 
-To get our jQuery Mobile application running as a native application on an Android device we will choose to render the application within a WebView. A WebView is a native view in Android that will display webpages but is different from a typical desktop or mobile browser in that it lacks common browser elements such as a back button. As such, a WebView is perfect for rendering our jQuery Mobile application in a way that we can package it as a native app. We will choose to utilize Apache Cordova (Phonegap) which besides having some great native device features exposed across multiple platforms, utilizes a WebView to render web applications on devices.
+In the previous recipes, we have learned how to remotely debug your application using various tools including remote debugging servers and browser developer tools. You have also learned how to get your application built into an Android apk file using Apache Cordova. Using Cordova, you have been able to load the apk file directly onto your device, however you could also download the apk from anywhere you decide to place it on the web, to have it install onto your device. Now let us investigate how you can test and debug your application after it has been loaded onto your Android device.
 
 Discussion
 ++++++++++
 
-To build an Android application from jQuery Mobile using Cordova is fairly straightforward, and after getting through the initial setup quite simple. First, we need a copy Cordova which as of this writing can be found from the Cordova Apache incubator site, or the PhoneGap website. Now is also a good time to make sure you have Eclipse installed as well as the Android SDK and ADT Plugin. Second we create a new 'Android Application Project' in Eclipse. Continuing through the wizard to create a new Android 'Activity' we now need to get our jQuery Mobile App into the app. We do this by creating two folders within the application structure 'libs' - which will hold the cordova.jar file, and 'assets/www' - which is home to our jQuery Mobile masterpiece. Now we need to tell Eclipse to use the cordova.jar file in the build. Do this by right-clicking the 'libs' folder and adding the jar to the Build Path. The next step is telling our Activity that we want to load our HTML into the WebView, we do this by editing the main java file under the src directory to look like this:
+Testing your application as an Android Application is a critical part of the development lifecycle. While testing the functionality of the application on a desktop and mobile browser can give you a good feel for how your jQuery Mobile application will look and feel in the context of the native application experience on a portable device, it cannot give us a full grasp of the functionality until you run the Android application on your devices. Things that naturally work in the context of a web browser, either mobile or desktop, such as links to external sites and remote content, may behave in a manner that is not as intuitive on a mobile WebView. This is why it is imperative to test your application on your device and note any inconsistencies that you find. 
 
-----
-package com.example.jqmsample;
+Some common issues that occur in testing such applications are, as previously mentioned, links to external sites and remote resources that may not function as expected within the context of the Android WebView. Another important point to consider is how your jQuery Mobile application will perform if the phone is not connected to the internet, be it in airplane mode or somewhere without connectivity. In such a case should, depending on the particular uses of your application, you may wish to present your users with a fallback that works offline as a subset of the fully connected application.
 
-import android.os.Bundle;
-import android.app.Activity;
-//Add reference to cordova
-import org.apache.cordova.*;
-
-//extend DroidGap instead of default Activity
-public class MainActivity extends DroidGap {
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //Tell the application to load our jQuery Mobile app
-        super.loadUrl("file:///android_asset/www/index.html");
-    }
-}
-----
-
-Now we add our code to the 'www' directory (in this example - index.html) and we can build our application for Android. However, it is likely that we may want to load resources from a website like code.jquery.com or some other CDN. To do this we need to specify these permissions in a file within the project called 'AndroidManifest.xml'. There are many settings we could set here, all of which can be found in the Cordova and Android documentation sites, but what we want. is to add the following to our xml file:
-
-----
-<uses-permission android:name="android.permission.INTERNET" />
-----
-Just as it looks, this will allow us access to the internet from our application. To deploy this application to our Android device, we simply enable USB Debugging on our device settings, connect to our computer and select Run As > Android Application within Eclipse. We are now up and running on Android.
+When testing you may encounter issues or scenarios within your application which were not seen in earlier testing in your mobile and desktop browsers. Two likely causes for this inconsistancy are issues within the Android application or setup preventing expected behavior, or limitations of the specific WebView you are targeting creates an issue within your HTML, JavaScript, or CSS that you could not forsee. Luckily, if you are testing on your device you have options for deciphering these issues. For what appear to be HTML, JavaScrip, CSS issues, a common use is to inject a script into your HTML file that allows you to utilze a remote inspector just as 'weinre' (WEbkit INspector REmote) which you can run the server locally or utilize a service such as http://debug.phonegap.com. This will give you the familiar debugging toolset from WebKit based browsers in order to track down any issues within your code. If you suspect the issue lies outside of your HTML, CSS, and JavaScript, then you'll need to investigate the Android logs that are sent to your computer via USB Debugging. If you are using Eclipes you can navigate through your application when connected and follow the logs presented to see things such as external links loading. These should appear in the 'Log Cat' section of Eclipse and ,as an example, clicking a link to the jQuery Mobile website should look similar to 'CordovaWebView - >>> loadUrl(http://jquerymobile.com/)'. The log output should give you a clear indications of exceptions or warnings that may be a cause of the inconsistancies found in testing your application. These methods are simply a few of many and various techniques for testing and debugging a jQuery Mobile application as a native Android application, which can be useful in many testing scenarios.

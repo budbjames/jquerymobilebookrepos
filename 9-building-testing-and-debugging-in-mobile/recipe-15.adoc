@@ -4,26 +4,19 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.15 Packaging your application for Deployment to an iOS Device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9.15 Deploying and Testing your app on a IOS Device
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 +++++++
-You have built and tested your jQuery Mobile application on your desktop and mobile browsers. Now it is time to turn your application into a native iOS application, which is not a simple as loading your HTML, JS, and CSS onto a webserver.
+You have created your jQuery Mobile application and created an Apache Cordova project in Xcode on your Mac. Now you need to get the application on your devices for testing. 
 
 Solution
 ++++++++
-There are many places where you as a developer can turn in order to expose your web application to the native iOS ecosystem. Most of these will make use of an iOS feature known as the UIWebView. This will render your application in what is essentially a web browser without the address bar and navigation buttons. Arguably the most popular of these frameworks is Apache Cordova (aka PhoneGap) because of its relative ease of use and cross-platform support.
+Deploying to your iOS device can be accomplished in a couple of ways. One is directly through your Xcode interface that will deliver your application directly to your provisioned device. A second solution is to send the application through a provisioning service that will distribute your iOS application to a set of invited and provisioned devices.
 
 Discussion
 ++++++++++
-As you begin the process of packaging your application for deployment on your iOS device, you'll need to make sure you have all the tools in order. To be sure you can build on your Mac, you'll need Xcode, at least version 4.3 or higher. With Xcode, you'll also want to download the Xcode command line tools (which is done via Xcode Preferences). You will also want to download Apache Cordova (PhoneGap). Along with these tools you will also need an iOS device, and an Apple Developer account with a certificate so you can provision your device.
+In order for you to deploy your application to your device via Xcode, you will first need to make sure you have provisioned your device through the Apple Developer Center's iOS Provisioning Portal. Once you have your device provisioned, you can connect it to your Mac. From within Xcode you can now navigate to the Organizer window. The organizer window has a "Devices" section in which you should see your device listed. Select your device and select "Use for Debugging" and follow the provisioning steps that follow.  Now your device should be available from the Xcode Run Targets. Running the application with your device selected will load and launch your application on your device and you will be able to test from there. Testing within Xcode gives you the advantage of being able to manage and see the code that is executed during runtime, versus a visual and user experience testing that happens in a typical test environment without access to the code.
 
-Current versions of Apache Cordova install by simply extracting the downloaded Cordova source to the destination of your choice. Navigate to this directory in your Terminal application of choice, then get to the subdirectory 'bin'. Here you will need to run the following command in the terminal to initialize new project:
-
-----
-$ ./create ~/jQueryMobile/ios/app com.example.jQueryMobileApp JQueryMobileApp
-----
-Here '~/jQueryMobile/ios/app' should be the path to your project on your computer, and 'com.example.jQueryMobileApp' is the name you will be assigning the iOS application. 'JQueryMobileApp' is the name of the application as identified in Xcode. The './create' command will initialize an iOS application that will have a 'www' folder within the project structure. Inside the 'www' folder is where you will place your jQuery Mobile application. The Objective-C code points to index.html as the default page to load into the UIWebView, so that is a great place to put your jQuery Mobile application.
-
-You can build, test, and deploy your application to the iOS Simulator through Xcode or through the Cordova command line tools, when you are satisfied with the results of this, you will now be ready to package you application and get it onto an actual iOS device. To do this, you will need to sign on to the Apple developer site with your Apple ID. Once there you will be able to setup provisioning in the iOS provisioning portal. This will enable your developer application signing certificates and provisioning profiles. Once you have obtained these, you can return to Xcode and utilize the Xcode Organizer to fetch these items and setup a connected device. You should now be able to target your build to your specific iOS device connected via Xcode and test directly on the device instead of the simulators.
+Now imagine that you have a large number of iOS devices and iOS device testers that will need to test your application before you distribute it to the App Store. To do this, it does not make sense to run the test through Xcode for each device. Luckily there are distribution platforms that will allow you to get your application to the hands of your testers easily. TestFlightApp is one of these platforms and allows you to invite users to test on their devices. To provision to these remote devices, once your testers have received the invitation, they are able to download the TestFlight App on their devices which will provision the device for them. You can then set these users up on a distribution list and send them new versions of your archived iOS application as you make them available. Tools like this are valuable assests amongst distributed or large testing teams.
