@@ -1,14 +1,26 @@
-////
-COMMENT BLOCK
-
-Use this file to organize all of the recipe's into a single document.
-
-Add include lines to the list below, separated by a blank space, to add more recipes
-
-////
-[[chapid_1]]
-== jQuery Mobile Basics
+[[chapid_10]]
+== HTML5 Features
 
 include::introduction.adoc[]
 
+include::recipe-1.adoc[]
+
+include::recipe-2.adoc[]
+
+include::recipe-3.adoc[]
+
+include::recipe-4.adoc[]
+
+include::recipe-5.adoc[]
+
+include::recipe-6.adoc[]
+
+include::recipe-7.adoc[]
+
+include::recipe-8.adoc[]
+
+include::recipe-9.adoc[]
+
 include::recipe-10.adoc[]
+
+include::recipe-11.adoc[]

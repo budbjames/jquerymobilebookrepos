@@ -107,6 +107,19 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-7.adoc">7 - Creating an image gallery with the swipe event</a>
   * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-8.adoc">8 - Events Diagram</a>
   * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-9.adoc">9 - Enable zoom/pinch on a specific DOM element </a>
+* <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/introduction.adoc">Introduction</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-1.adoc">1 - Keeping up with HTML5 features and compatibility</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-2.adoc">2 - HTML 5 Geo-location</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-3.adoc">3 - HTML5 Local storage</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-4.adoc">4 - IndexedDB</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-5.adoc">5 - WebSQL</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-6.adoc">6 - Audio</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-7.adoc">7 - Video</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-8.adoc">8 - Uploading Photos on iOS</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-9.adoc">9 - Game Development</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-10.adoc">Getting Started with jQuery Mobile and Google Maps</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-11.adoc">Combining pages, tweets, and maps</a>
+
 
 
 

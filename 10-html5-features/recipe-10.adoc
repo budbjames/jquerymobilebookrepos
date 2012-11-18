@@ -1,7 +1,7 @@
+////
+
 Chapter 10 Recipe 10
 Getting started with jQuery Mobile and Google maps.
-
-////
 
 Recipe for getting started with jQuery Mobile and Google Maps
 

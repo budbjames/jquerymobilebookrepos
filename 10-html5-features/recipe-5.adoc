@@ -4,11 +4,11 @@ HTML5 WebSQL
 
 Author: Ido Green <greenido@gmail.com>
 
-Bio: Ido is a Developer Advocate for Google. He has been a developer and building companies for more then 18 years. He still likes to develop web applications, but only ones with amazing UX. He has a wide array of skills and experience, including Java, php, perl, JavaScript--and all aspects of agile development and scaling systems. His last book with O'reilly is all about "Web Workers: Multithreaded Programs in JavaScript".
+Bio: Ido is a Developer Advocate for Google. He has been a developer and building companies for more then 18 years. He still likes to develop web applications, but only ones with amazing UX. He has a wide array of skills and experience, including Java, php, perl, JavaScript--and all aspects of agile development and scaling systems. His last book with O'Reilly is all about "Web Workers: Multithreaded Programs in JavaScript".
 
 ////
 
-10.3 HTML5 WebSQL
+10.5 HTML5 WebSQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -93,7 +93,7 @@ function cleanAll() {
 
 Render Item
 ~~~~~~~~~~~
-We use here the powerful lists of JQM. First we built a new li item that will contain our text and 'delete' button. Second, we binding the click event of the delete button to our deleteTodo function. Then, we are in the fun part of adding some data-* attributes to customize our delete button to look good. Finnaly, we appending the new elements to the ul and call the trigger function to ask for some JQM rendering power. The SQL stetment that bring all the items and let us loop over them is: 'SELECT * FROM tasks' in a real world senario you might want to use WHERE as in most cases you will want to limit the items you are returning back.
+We use here the powerful lists of JQM. First we built a new li item that will contain our text and 'delete' button. Second, we binding the click event of the delete button to our deleteTodo function. Then, we are in the fun part of adding some data-* attributes to customize our delete button to look good. Finally, we appending the new elements to the ul and call the trigger function to ask for some JQM rendering power. The SQL statement that bring all the items and let us loop over them is: 'SELECT * FROM tasks' in a real world scenario you might want to use WHERE as in most cases you will want to limit the items you are returning back.
 
 ====
 function showAll() {

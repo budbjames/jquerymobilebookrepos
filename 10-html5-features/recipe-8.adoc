@@ -4,7 +4,7 @@ Author: Ryan Westphal <ryan@trippingthebits.com>
 
 ////
 
-#.# Uploading Photos on iOS
+10.8 Uploading Photos on iOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

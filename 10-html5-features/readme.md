@@ -4,13 +4,13 @@
 
 Description: 
 
-*Chapter Leader:* <a href="mailto:TODO">TODO</a>
+*Chapter Leader:* <a href="mailto:raymondcamden@gmail.com">Raymond Camden</a>
 
 <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/introduction.adoc">Introduction</a>
 
 ## Recipes
 
-### 1 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-1.adoc">template for now</a>
+### 1 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-1.adoc">Keeping up with HTML5 features and compatibility</a>
 *author:* <a href="mailto:TODO">TODO</a>
 
 *Problem:* 
@@ -21,8 +21,8 @@ Description:
 
 *Percentage Complete:* 10%
 
-### 2 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-2.adoc">geo location</a>
-*author:* <a href="mailto:TODO">TODO</a>
+### 2 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-2.adoc">HTML 5 Geo-location</a>
+*author:* <a href="mailto:rhernandez@overridethis.com">Roberto Hernandez</a>
 
 *Problem:* 
 
@@ -33,8 +33,8 @@ Description:
 *Percentage Complete:* 40%
 
 
-### 3 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-3.adoc">local storage</a>
-*author:* <a href="mailto:TODO">TODO</a>
+### 3 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-3.adoc">HTML5 Local storage</a>
+*author:* <a href="mailto:rhernandez@overridethis.com">Roberto Hernandez</a>
 
 *Problem:* Using HTML5 localstorage to store user information.
 
@@ -44,7 +44,7 @@ Description:
 
 *Percentage Complete:* 80%
 
-### 4 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-4-indexeddb.adoc">IndexedDB</a>
+### 4 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-4.adoc">IndexedDB</a>
 *author:* <a href="http://plus.ly/greenido">Ido Green</a>
 
 *Problem:* Using HTML5 IndexedDB to store user information in cases where you need a real database on the client side.
@@ -55,7 +55,7 @@ Description:
 
 *Percentage Complete:* 90%
 
-### 5 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-4-websql.adoc">WebSQL</a>
+### 5 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-5.adoc">WebSQL</a>
 *author:* <a href="http://plus.ly/greenido">Ido Green</a>
 
 *Problem:* Using HTML5 WebSQL to store user information in cases where you are on mobile Safari.
@@ -65,3 +65,45 @@ Description:
 *Status:* 
 
 *Percentage Complete:* 20%
+
+### 6 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-6.adoc">Audio</a>
+*author:* <a href="mailto:"></a>
+
+*Problem:* 
+
+*Description:* 
+
+### 7 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-7.adoc">Video</a>
+*author:* <a href="mailto:"></a>
+
+*Problem:* 
+
+*Description:* 
+
+### 8 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-8.adoc">Uploading Photos on iOS</a>
+*author:* <a href="mailto:ryan@trippingthebits.com">Ryan Westphal</a>
+
+*Problem:* 
+
+*Description:* 
+
+### 9 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-9.adoc">Game Development</a>
+*author:* <a href="mailto:"></a>
+
+*Problem:* 
+
+*Description:* 
+
+### 10 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-10.adoc">Getting Started with jQuery Mobile and Google Maps</a>
+*author:* <a href="mailto:coloma@westminster.ac.uk">Anne-Gaelle Colom</a>
+
+*Problem:* 
+
+*Description:* 
+
+### 11 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-11.adoc">Combining pages, tweets, and maps</a>
+*author:* <a href="mailto:ryan@trippingthebits.com">Ryan Westphal</a>
+
+*Problem:* 
+
+*Description:* 
