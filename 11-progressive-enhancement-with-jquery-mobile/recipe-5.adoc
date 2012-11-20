@@ -1,20 +1,80 @@
-////
+How to dynamically reveal content using modals
+=================
+<whynetsolutions@github.com>
 
-Author: 
+Dynamically revealing content using modals 
+-----------------
+Solution:
+Retreave browser type/capabilities
 
-////
+When the window is located in another HTML page from the server, jQuery Mobile performs (internally) an Ajax call to the server to load the contents of the window and insert it into the flow of windows. Both files must be located on our server, otherwise the Ajax call can not be performed by jQuery Mobile.
 
-11.5 Revealing Dynamic Content with Modals
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Index.html file that contains the first window
 
-Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+<!DOCTYPE html>
+<html>
+<head>
+<meta name=viewport content="user-scalable=no,width=device-width" />
+<link rel="stylesheet" href="http://code.jquery.com/mo
+bile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.j
+s"></script>
+<script src="http://code.jquery.com/mobile/1.0.1/jquer
+y.mobile-1.0.1.min.js"></script>
+<script>
+$("document").bind('pageinit' , function (evt,data){
+<p>Load page2 via dialog </p>
+<h2><a href="index-2.html" data-inline="true" data-theme="b" data-rel="dialog">Page 2 Dialog 1</a></h2>});
+</script>
+</head>
+<body>
+<div data-role="1st_page“>
+<div data-role="header">
+<h1> Dynamically revealing content </h1>
+<h1><a href="index-2.html" data-role="button" data-inline="true">Next Page</a></h1>
+<h1><a href="index.html" data-role="button" data-inline="true">Prev Page</a></h1>
+</header>
+<div id="logo" style="background-image:url(jquery_appendto.jpg);width:550px;height:247px"></div>
+<a href="http://www.jQueryMobileCookbook.com" data-role="button" data-inline="true">www.jQueryMobileCookbook.com</a> 
+<a href="http://www.appendto.com" data-role="button" data-inline="true">www.AppendTo.com</a> </div>
+<a href="index-2.html">Next Page</a>
+</div>
+</div>
+</body>
+</html>
 
-Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+index2.html file containing the second window
+When multiple windows are placed in the second HTML page, only the first included on the page is inserted by jQuery Mobile.
 
-Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+<!DOCTYPE html>
+<html>
+<head>
+<meta name=viewport content="user-scalable=no,width=device-width" />
+<link rel="stylesheet" href="http://code.jquery.com/mo
+bile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.j
+s"></script>
+<script src="http://code.jquery.com/mobile/1.0.1/jquer
+y.mobile-1.0.1.min.js"></script>
+<script>
+</head>
+<body>
+<div data-role="1st_page“>
+<div data-role="header">
+<h1> Dynamically revealing content </h1>
+</header>
+<a href="index-3.html">Next Page</a>
+</div>
+<div data-role="content">
+2nd Page Content
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+Screen Cap:Picture1.png
+Screen Cap:Picture2.png 
+-------------------
+Apply Ajax on a div for dynamic content pages to be inserted into the DOM dynamically, also by using the pagebeforehide, pagebeforeshow, pagehide, pageshow , pageload functions. 
+We can control how a page loads content into the Dom, then add events to handle the object and usage within the application.
