@@ -12,7 +12,7 @@ Description:
 
 ### 1 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-1.adoc">Default Page Themes</a>
 
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:whynetsolutions@aol.com"></a>
 
 *Description:* Theme swatches set on pages and how they impact child component themes. Detailed information
 
