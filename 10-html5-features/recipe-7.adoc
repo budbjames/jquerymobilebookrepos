@@ -1,22 +1,80 @@
-////
+Keeping up with HTML5 features and compatibility
+=================
+<whynetsolutions@github.com>
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Problem: Using New HTML5 attributes
+-----------------
+Solution:
 
-Author: John Doe <email@email.com>
+<!DOCTYPE html>
+<html>
+<head>
+<title> Keeping up with HTML5 features and compatibility</title>
+<link rel="stylesheet" href="http://code.jquery.com/mo
+bile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.j
+s"></script>
+<script src="http://code.jquery.com/mobile/1.0.1/jquer
+y.mobile-1.0.1.min.js"></script>
+</head>
+<body>
+<div data-role="header">
+<h1>HTML5 Input Types</h1>
+</header>
+<div data-role="content">
+<fieldset>
+    <legend>Sliders</legend>
+    <label for="Volume">Volume Level</label>
+    <input id="Volume" name="Volume increase" type="range" min="-100" max="100" value="0" step="20">
+    <label for="slider2">Volume booster </label>
+    <input id="slider2" name="slider2" type="range" min="-100" max="100" value="0" step="50">
+</fieldset>
+<fieldset>
+    <legend>Date and time</legend>
+    <label for="time">Time</label>
+    <input id="time" name="time" type="time" value="12:00"><br/><br/>
+    <label for="date">Date</label>
+    <input id="date" name="date" type="date" value="2012-13-07">
+    <label for="week">Week</label>
+    <input id="week" name="week" type="week" value="2012-W45">
+    <label for="month">Month</label>
+    <input id="month" name="month" type="month" value="2012-07"><br/><br/>
+    <label for="datetime">Datetime</label>
+    <input id="datetime" name="datetime" type="datetime" value="11:22 AM 7/13/2012"><br/><br/>
+</fieldset>
+<fieldset>
+    <legend></legend>
+    <label for="email">Email address</label>
+    <input id="email" name="email" type="email">
+    <label for="website">Website</label>
+    <input id="website" name="website" type="url" address="http://"><br/><br/>
+    <label for="query">Search</label>
+    <input id="query" name="query" type="search" size="30" search_box="search"><br/><br/>
+    <label for="phone">Telephone</label>
+    <input id="phone" name="phone" type="tel" autofocus><br/><br/>
+    <label for="bgcolor">Color</label>
+    <input id="bgcolor" name="bgcolor" type="color"><span></span>
+</fieldset>
+</div>
+</body>
+</html>
+ Screen Cap:Picture1.png
+-----------------
+Most mobile ingredients consumed by a user on the internet contain some type of web form to input data, down to simple search fields is a form. 
+Most modern web applications are geared for HTML 5, which has increased the scope on input types for specific uses, such as url, email, date, etc. for this recipe we will take a look at what's on the menu for new HTML 5 input types,
+To use input types simply make sure that you add a <label> before using an input type.
 
-////
-
-10.7 Video
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
-
-Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
-
-Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+HTML5 new input types:
+01. Using sliders: <input type="range"> 
+02. Using telephone numbers: <input type="tel">  
+03. Using search boxes: <input type="search"> 
+04. Using color pickers: <input type="color"> 
+05. Using local dates and times: <input type="datetime-local">
+06. Using calendar date pickers: <input type="date">
+07. Using email addresses: <input type="email"> 
+08. Using web addresses: <input type="url">   
+09. Using months: <input type="month"> 
+10. Using weeks: <input type="week"> 
+11. Using timestamps: <input type="time"> 
+12. Using precise, absolute date+time stamps: <input type="datetime"> 
+13. Using spinboxes: <input type="number">
