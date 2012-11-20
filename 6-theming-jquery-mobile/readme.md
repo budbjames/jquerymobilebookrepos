@@ -12,7 +12,7 @@ Description:
 
 ### 1 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-1.adoc">Default Page Themes</a>
 
-*author:* <a href="mailto:whynetsolutions@aol.com"></a>
+*author:* <a href="mailto:"></a>
 
 *Description:* Theme swatches set on pages and how they impact child component themes. Detailed information
 
@@ -52,6 +52,6 @@ Description:
 
 ### 6 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-6.adoc">Examples of Themes</a>
 
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:whynetsolutions@aol.com"></a>
 
 *Description:* A bundle of ready-made sample themes with code of the color combinations and styles
