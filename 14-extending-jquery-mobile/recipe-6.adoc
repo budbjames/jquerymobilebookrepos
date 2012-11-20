@@ -6,7 +6,7 @@ Author: John Doe <email@email.com>
 
 ////
 
-14.4 Data attributes
+14.6 Plugins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

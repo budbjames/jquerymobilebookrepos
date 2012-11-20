@@ -6,7 +6,7 @@ Author: John Doe <email@email.com>
 
 ////
 
-#.# Recipe Title
+14.1 jQuery Mobile Framework "Boot" Process
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

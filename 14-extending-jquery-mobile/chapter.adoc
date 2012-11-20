@@ -1,14 +1,16 @@
-////
-COMMENT BLOCK
-
-Use this file to organize all of the recipe's into a single document.
-
-Add include lines to the list below, separated by a blank space, to add more recipes
-
-////
-[[chapid_1]]
-== jQuery Mobile Basics
+[[chapid_14]]
+== Extending jQuery Mobile
 
 include::introduction.adoc[]
 
 include::recipe-1.asc[]
+
+include::recipe-2.asc[]
+
+include::recipe-3.asc[]
+
+include::recipe-4.asc[]
+
+include::recipe-5.asc[]
+
+include::recipe-6.asc[]
