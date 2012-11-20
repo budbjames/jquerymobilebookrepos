@@ -1,20 +1,140 @@
-////
+Mobile Progressive Enhancement
+=================
 
-Author: 
+<whynetsolutions@github.com>
 
-////
+Problem:  What is Progressive Enhancement in a Mobile Context?
+-----------------
+Solution:
 
-11.1 What is Progressive Enhancement in a Mobile Context?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In its simplest conceptualization, progressive enhancement is the separation of HTML, CSS and JavaScript. That’s it, really. If you had to remember one thing about progressive enhancement, it should be that.
+Think of these web technologies as being in layers, with HTML as the first layer, CSS being the second, and JavaScript (and other client-side technologies that deal with site interactivity, such as Flash or Java applets) as being the third.
+Markup: Start out with semantic and well-structured HTML for flexibility and interoperability.
+Styling: Progressively enhance the look-and-feel of a design by adding support for browsers with greater features (e.g. WebKit browsers, IE9, Firefox and mobile browsers).
+Behavior: Enhance the site with rich, interactive features on web browsers with JavaScript.
+Accessibility: Content is within reach to all visitors.
+Portability: Cross-browser and cross-device support.
+Modularity: Having decoupled components with smart boundaries makes site builds easier and more fault-tolerant.
+Site Performance: Improvements in terms of (perceived) page loading times (which affects usability) is more readily implemented.
 
-Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
 
-Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+Progressive enhancement in mobile context allows the browsers that supports CSS3 to deliver the total enhanced user experience to mobile as well as the desktop user.
+Developers using HTML5, CSS3 and JavaScript to create better web apps, more engaging rich internet apps that give the most features in the area of browser response and user experience to date.
+By utilizing a separate Cascading Style Sheets (CSS) for each page or page elements then adding some JavaScript
+allows you to create a unique user interface and at the same time deliver a truly different user experience (UX) for the mobile environment. 
+You can use section id or div to apply the data-role or manipulating the DOM.
 
-Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+<!DOCTYPE html>
+<html>
+<head>
+<title>1st_Page</title>
+<link rel="stylesheet" href="http://code.jquery.com/mo
+bile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.j
+s"></script>
+<script src="http://code.jquery.com/mobile/1.0.1/jquer
+y.mobile-1.0.1.min.js"></script>
+</head>
+<normbody id="1st_page">
+<mobilebody id="1st_page">
+<opticbody id="1st_page">
+<mobilebody id="content">
+<opticbody id="content">
+<div data-role="content" id="content" />
+<div id=" FlimamentGroup_Logo " style="background-image:url(flimament-group.jpg);width:350px;height:200px"></div>
+<a href="http://www.FilamentGroup.com" data-role="button" data-inline="true"> www.FilimentGroup.com </a>
+</div>
+ </div>
+</div>
+<normbody id="footer">
+<mobilebody id="footer">
+
+<div data-role="footer" id="footer" />
+</mobilebody>
+</html> 
+
+Apply CSS  
+# FlimamentGroup_Logo {background url" flimament-group.jpg"; width:350px; height:200px;}
+.normbody #1st_page{ font-size:20pt;
+font-family:"Times New Roman", serif;
+background-color:#fff
+}
+.mobilebody #1st_page {
+font-size:18pt;
+font-family:"Times New Roman", serif;
+background-color:#fff
+}
+.opticbody #1st_page {
+font-size:18pt;
+font-family:"Times New Roman", serif;
+background-color:#fff
+}
+.normbody #content{ display:block;
+font-size: 18pt;
+position:inherit;
+width: 100%;
+}
+
+.mobilebody #content {
+display:block;
+font-size: 18pt;
+position:inherit;
+width: 100%;
+}
+.opticbody #content{ display:block;
+font-size: 18pt;
+position:inherit;
+width: 100%;
+}
+
+.normbody #footer{ border: 2px black solid;
+padding: 2pt;
+}
+.mobilebody #footer {
+border: 2px black solid;
+padding: 2pt;
+}
+.opticbody #footer {
+border: 2px black solid;
+padding: 2pt;
+}
+
+
+To serve each corresponding style sheet to the appropriate device browser, this short script can detect the screen width of the display:
+
+function setStyleForSize() {
+if (screen.width <= 480) {
+document.body.className = "mobilebody";
+}
+else {
+document.body.className = "normbody";
+}
+}
+function addEventHandler(oNode, evt, oFunc) {
+if (typeof(window.event) != "undefined")
+oNode.attachEvent("on"+evt, oFunc);
+else
+oNode.addEventListener(evt, oFunc, true);
+}
+addEventHandler(window, "load", function() { setStyleForSize(); } );
+addEventHandler(window, "resize", function() { setStyleForSize(); } );
+function setStyleForSize() {
+if (screen.width <= 300) {
+document.body.className = "opticbody";
+}
+else {
+document.body.className = "mobilebody";
+}
+}
+function addEventHandler(oNode, evt, oFunc) {
+if (typeof(window.event) != "undefined")
+oNode.attachEvent("on"+evt, oFunc);
+else
+oNode.addEventListener(evt, oFunc, true);
+}
+addEventHandler(window, "load", function() { setStyleForSize(); } );
+addEventHandler(window, "resize", function() { setStyleForSize(); } );
+Screen Cap:Picture1.png
+-------------
+When the screen width is less than 480, the mobile styles are applied and if the screen width is less than 300, the optic styles are applied to the documents body content. Otherwise, the regular styles are applied, rendering the full desktop experience.
+
