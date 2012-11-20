@@ -1,23 +1,66 @@
-////
+Examples of Themes
+=================
+<whynetsolutions@github.com>
 
-Author: Unassigned
-Chapter Leader approved: <date>
-Copy edited: <date>
-Tech edited: <date>
+Problem: Changing jQuery Mobile Themes
+-----------------
+Solution:
 
-////
-
-6.6 Examples of Themes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
-
-Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
-
-Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+ <!DOCTYPE html> 
+ <html> 
+ <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title> Example of Themes</title> 
+<meta name=viewport content="user-scalable=no,width=device-width" />
+<link rel="stylesheet" href="http://code.jquery.com/mo
+bile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.j
+s"></script>
+<script src="http://code.jquery.com/mobile/1.0.1/jquer
+y.mobile-1.0.1.min.js"></script>
+<script>
+ </head> 
+ <body> 
+ <div data-role="page" class="1st_page">
+ <div data-role="header" data-theme="a">
+ <h1>Examples of Themes</h1>
+ </div>
+ <div data-role="content">
+ <ul data-role="listview" data-inset="true">
+ <li><a href=" jquerymobilecookbook.com">jQueryMobileCookbook.com</a></li>
+ <li><a href=" filamentgroup.com ">FilamentGroup.com</a></li>
+ <li><a href=" appendto.com ">AppendTo.com</a></li>
+ <li><a href=" whynetsolutions.com ">WhyNetSolutions.com</a></li>
+ <li><a href=" oreilly.com ">Oreilly.com</a></li>  
+ <li><a href=" fluentconf.com ">FluentConf.com</a></li>
+ </ul>
+ </div>
+ <div data-role="footer" class="footer"  data-theme="a">
+ <p>&copy; 2012 jQuery Mobile Cookbook</p>
+ </div>
+ </div>
+ </body>
+ </html>
+ScreenCap:Picture1.png
+<div data-role="header" data-theme="A">
+<div data-role="footer" class="footer" data-theme="A"> 
+<div data-role="header" data-theme="B">
+<div data-role="footer" class="footer" data-theme="B">
+ 
+<div data-role="header" data-theme="C">
+<div data-role="footer" class="footer" data-theme="C">
+ 
+<div data-role="header" data-theme="D">
+<div data-role="footer" class="footer" data-theme="D">
+ 
+<div data-role="header" data-theme="E">
+<div data-role="footer" class="footer" data-theme="E">
+ 
+<div data-role="header" data-theme="F">
+<div data-role="footer" class="footer" data-theme="F">
+ 
+-----------------
+On today’s JQM codeVeggie menu we have prepared a theme style change using CSS, simplifying the development process. 
+There are five default themes in total; each theme has a total of twenty six color variant swatches.
+Swatches are assigned by using any of 26 letters  for each theme, styles can also be applied to buttons; listviews or any page element.
