@@ -1,20 +1,139 @@
-////
+Graded Browser Support
+=================
+<whynetsolutions@github.com>
 
-Author: 
+Problem:  How graded browser support works 
+-----------------
+Browser now fall into three grades A, B and C
+A - Full enhanced experience with Ajax based animation page transitions.
+B - Enhanced experience except without Ajax navigation features
+C - Basic non enhanced HTML experience that is still functional.
+HTML CODE THE BROWSER BACK BUTTON
 
-////
+<!DOCTYPE html>
+<html>
+<head>
+<title> Graded Browser Support</title>
+<link rel="stylesheet" href="http://code.jquery.com/mo
+bile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.j
+s"></script>
+<script src="http://code.jquery.com/mobile/1.0.1/jquer
+y.mobile-1.0.1.min.js"></script>
+</head>
+<div data-role=1stpage >
+<div data-role="header">
+<h1>Graded Browser Support</h1>
+<a href="index.html" data-role="button" data-inline="true">Back</a>
+</header>
+</div>
+<div data-role=”content”>
+<div data-role="content">
+<div id="logo" style="background-image:url(khan-logo.png);width:178px;height:250px"></div>
+<a href="http://www.khanacademy.org/" data-role="button" data-inline="true">www.khanacademy.org</a> 
+</div>
+<div data-role="footer" data-theme="a">
+&copy 2012 jQuery Mobile Cookbook 
+</div>
+</body>
+</html>  
+Screen Cap:Picture1.png
+Example:
+A-Grade browser support
+Firefox Desktop 4-9
+Mobile Firefox
+Skyfire 4.1 
+UC Browser 
+Opera
+Opera Desktop 10-11
+Fennec
+B-Grade browser support
+Blackberry v5.0 and up
+IOS v2.2.1 and up
+Windows phone 7    
+Android v1.5 and up
+Symbian V3.0 and up
+Palm WebOS v1.4 and up
+C-Grade browser support
+Blackberry v5.0 and up
+IOS v2.2.1 and up
+Windows phone 7 	 
+Android v1.5 and up
+Symbian V3.0 and up
+Palm WebOS v1.4 and up
+Reference: http://jquerymobile.com/gbs/
+A-grade – Full enhanced experience with Ajax-based animated page transitions.
+·	Apple iOS 3.2-5.0 - Tested on the original iPad (4.3 / 5.0), iPad 2 (4.3), original iPhone (3.1), iPhone 3 (3.2), 3GS (4.3), 4 (4.3 / 5.0), and 4S (5.0)
+·	Android 2.1-2.3 – Tested on the HTC Incredible (2.2), original Droid (2.2), HTC Aria (2.1), Google Nexus S (2.3). Functional on 1.5 & 1.6 but performance may be sluggish, tested on Google G1 (1.5)
+·	Android 3.1 (Honeycomb)  – Tested on the Samsung Galaxy Tab 10.1 and Motorola XOOM
+·	Android 4.0 (ICS)  – Tested on a Galaxy Nexus S. Note: transition performance can be poor on upgraded devices
+·	Windows Phone 7-7.5 – Tested on the HTC Surround (7.0) HTC Trophy (7.5), LG-E900 (7.5), Nokia Lumia 800
+·	Blackberry 6.0 – Tested on the Torch 9800 and Style 9670
+·	Blackberry 7 – Tested on BlackBerry® Torch 9810
+·	Blackberry Playbook (1.0-2.0) – Tested on PlayBook
+·	Palm WebOS (1.4-2.0) – Tested on the Palm Pixi (1.4), Pre (1.4), Pre 2 (2.0)
+·	Palm WebOS 3.0 – Tested on HP TouchPad
+·	Firebox Mobile (10 Beta) – Tested on Android 2.3 device
+·	Chrome for Android (Beta) – Tested on Android 4.0 device
+·	Skyfire 4.1 - Tested on Android 2.3 device
+·	Opera Mobile 11.5: Tested on Android 2.3
+·	Meego 1.2 – Tested on Nokia 950 and N9
+·	Samsung bada 2.0 – Tested on a Samsung Wave 3, Dolphin browser
+·	UC Browser – Tested on Android 2.3 device
+·	Kindle 3 and Fire - Tested on the built-in WebKit browser for each
+·	Nook Color 1.4.1 – Tested on original Nook Color, not Nook Tablet
+·	Chrome Desktop 11-17 - Tested on OS X 10.7 and Windows 7
+·	Safari Desktop 4-5 - Tested on OS X 10.7 and Windows 7
+·	Firefox Desktop 4-9 – Tested on OS X 10.7 and Windows 7
+·	Internet Explorer 7-9 – Tested on Windows XP, Vista and 7
+·	Opera Desktop 10-11 - Tested on OS X 10.7 and Windows 7
+B-grade – Enhanced experience except without Ajax navigation features.
+·	Blackberry 5.0: Tested on the Storm 2 9550, Bold 9770
+·	Opera Mini (5.0-6.5) - Tested on iOS 3.2/4.3 and Android 2.3
+·	Nokia Symbian^3 - Tested on Nokia N8 (Symbian^3), C7 (Symbian^3), also works on N97 (Symbian^1)
+C-grade – Basic, non-enhanced HTML experience that is still functional
+·	Blackberry 4.x - Tested on the Curve 8330
+·	Windows Mobile - Tested on the HTC Leo (WinMo 5.2)
+·	All older smartphone platforms and featurephones – Any device that doesn’t support media queries will receive the basic, C grade experience
 
-11.2 How Graded Browser Support Works
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C-Grade browsers gives the appearance and functions without the full featured experience such as a browsers back link.
+Which you can apply the attribute data-rel="back" on an anchor
+By using an href that correctly points to the URL of the web page, you can achieve the required results.
+Reference: http://jquerymobile.com/test/docs/about/platforms.html
+jQuery Mobile Supported Platforms
+A-grade - Full enhanced experience with Ajax-based animated page transitions.
+·	Apple iOS 3.2*-6.0 - Tested on the original iPad (4.3 / 5.0), iPad 2 (4.3), iPad 3 (5.1 / 6.0), original iPhone (3.1), iPhone 3 (3.2), 3GS (4.3), 4 (4.3 / 5.0), and 4S (5.1 / 6.0)
+·	Android 2.1-2.3 - Tested on the HTC Incredible (2.2), original Droid (2.2), HTC Aria (2.1), Google Nexus S (2.3). Functional on 1.5 & 1.6 but performance may be sluggish, tested on Google G1 (1.5)
+·	Android 3.2 (Honeycomb)  - Tested on the Samsung Galaxy Tab 10.1 and Motorola XOOM
+·	Android 4.0 (ICS)  - Tested on a Galaxy Nexus. Note: transition performance can be poor on upgraded devices
+·	Android 4.1 (Jelly Bean)  - Tested on a Galaxy Nexus and Galaxy 7
+·	Windows Phone 7-7.5 - Tested on the HTC Surround (7.0) HTC Trophy (7.5), LG-E900 (7.5), Nokia Lumia 800
+·	Blackberry 6.0 - Tested on the Torch 9800 and Style 9670
+·	Blackberry 7 - Tested on BlackBerry® Torch 9810
+·	Blackberry Playbook (1.0-2.0) - Tested on PlayBook
+·	Palm WebOS (1.4-2.0) - Tested on the Palm Pixi (1.4), Pre (1.4), Pre 2 (2.0)
+·	Palm WebOS 3.0 - Tested on HP TouchPad
+·	Firefox Mobile 15 - Tested on Android 2.3 and 4.1 devices
+·	Chrome for Android 18 - Tested on Android 4.0 and 4.1 devices
+·	Skyfire 4.1 - Tested on Android 2.3 device
+·	Opera Mobile 11.5-12: Tested on Android 2.3
+·	Meego 1.2 - Tested on Nokia 950 and N9
+·	Tizen (pre-release) - Tested on early hardware
+·	Samsung Bada 2.0 - Tested on a Samsung Wave 3, Dolphin browser
+·	UC Browser - Tested on Android 2.3 device
+·	Kindle 3 and Fire - Tested on the built-in WebKit browser for each
+·	Nook Color 1.4.1 - Tested on original Nook Color, not Nook Tablet
+·	Chrome Desktop 11-21 - Tested on OS X 10.7 and Windows 7
+·	Safari Desktop 4-5 - Tested on OS X 10.7 and Windows 7
+·	Firefox Desktop 4-15 - Tested on OS X 10.7 and Windows 7
+·	Internet Explorer 7-10 - Tested on Windows XP, Vista and 7
+·	Opera Desktop 10-12 - Tested on OS X 10.7 and Windows 7
+B-grade - Enhanced experience except without Ajax navigation features.
+·	Blackberry 5.0*: Tested on the Storm 2 9550, Bold 9770
+·	Opera Mini 7 - Tested on iOS 5.1 and Android 2.3
+·	Nokia Symbian^3 - Tested on Nokia N8 (Symbian^3), C7 (Symbian^3), also works on N97 (Symbian^1)
+C-grade - Basic, non-enhanced HTML experience that is still functional
+·	Blackberry 4.x - Tested on the Curve 8330
+·	Windows Mobile - Tested on the HTC Leo (WinMo 5.2)
+·	All older smartphone platforms and featurephones - Any device that doesn't support media queries will receive the basic, C grade experience
 
-Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
-
-Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
-
-Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
