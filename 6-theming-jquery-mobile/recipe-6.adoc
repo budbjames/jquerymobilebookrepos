@@ -6,9 +6,9 @@ Problem: Changing jQuery Mobile Themes
 -----------------
 Solution:
 
- <!DOCTYPE html> 
- <html> 
- <head>
+<!DOCTYPE html> 
+<html> 
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <title> Example of Themes</title> 
@@ -20,46 +20,46 @@ s"></script>
 <script src="http://code.jquery.com/mobile/1.0.1/jquer
 y.mobile-1.0.1.min.js"></script>
 <script>
- </head> 
- <body> 
- <div data-role="page" class="1st_page">
- <div data-role="header" data-theme="a">
- <h1>Examples of Themes</h1>
- </div>
- <div data-role="content">
- <ul data-role="listview" data-inset="true">
- <li><a href=" jquerymobilecookbook.com">jQueryMobileCookbook.com</a></li>
- <li><a href=" filamentgroup.com ">FilamentGroup.com</a></li>
- <li><a href=" appendto.com ">AppendTo.com</a></li>
- <li><a href=" whynetsolutions.com ">WhyNetSolutions.com</a></li>
- <li><a href=" oreilly.com ">Oreilly.com</a></li>  
- <li><a href=" fluentconf.com ">FluentConf.com</a></li>
- </ul>
- </div>
- <div data-role="footer" class="footer"  data-theme="a">
- <p>&copy; 2012 jQuery Mobile Cookbook</p>
- </div>
- </div>
- </body>
- </html>
-ScreenCap:Picture1.png
+</head> 
+<body> 
+<div data-role="page" class="1st_page">
+<div data-role="header" data-theme="a">
+<h1>Examples of Themes</h1>
+</div>
+<div data-role="content">
+<ul data-role="listview" data-inset="true">
+<li><a href=" jquerymobilecookbook.com">jQueryMobileCookbook.com</a></li>
+<li><a href=" filamentgroup.com ">FilamentGroup.com</a></li>
+<li><a href=" appendto.com ">AppendTo.com</a></li>
+<li><a href=" whynetsolutions.com ">WhyNetSolutions.com</a></li>
+<li><a href=" oreilly.com ">Oreilly.com</a></li>  
+<li><a href=" fluentconf.com ">FluentConf.com</a></li>
+</ul>
+</div>
+<div data-role="footer" class="footer"  data-theme="a">
+<p>&copy; 2012 jQuery Mobile Cookbook</p>
+</div>
+</div>
+</body>
+</html>
+[[Fig1.png]]
 <div data-role="header" data-theme="A">
 <div data-role="footer" class="footer" data-theme="A"> 
+[[Fig2.png]]
 <div data-role="header" data-theme="B">
 <div data-role="footer" class="footer" data-theme="B">
- 
+[[Fig3.png]]
 <div data-role="header" data-theme="C">
 <div data-role="footer" class="footer" data-theme="C">
- 
+[[Fig4.png]]
 <div data-role="header" data-theme="D">
 <div data-role="footer" class="footer" data-theme="D">
- 
+[[Fig5.png]]
 <div data-role="header" data-theme="E">
 <div data-role="footer" class="footer" data-theme="E">
- 
+[[Fig6.png]]
 <div data-role="header" data-theme="F">
 <div data-role="footer" class="footer" data-theme="F">
- 
 -----------------
 On today’s JQM codeVeggie menu we have prepared a theme style change using CSS, simplifying the development process. 
 There are five default themes in total; each theme has a total of twenty six color variant swatches.
