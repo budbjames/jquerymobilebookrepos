@@ -172,11 +172,13 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-7.adoc">7 - Using jQuery Mobile with Nimblekit</a>
   * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-8.adoc">8 - Adding a swipe-down menu to your PlayBook application</a>
   * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-9.adoc">9 - Exploring the WebWorks platform APIs</a>
-
-
-
-
-
+* <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/introduction.adoc">Chapter 14 - Extending jQuery Mobile</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-1.adoc">1 - jQuery Mobile Framework "Boot" Process</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-2.adoc">2 - Understanding $.mobile.widget and the Widget Factory</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-3.adoc">3 - Building a Custom Widget</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-4.adoc">4 - Data attributes</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-5.adoc">5 - Extending the Event Model</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-6.adoc">6 - Plugins</a>
 
 
 
