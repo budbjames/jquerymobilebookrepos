@@ -2,7 +2,7 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: 
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -10,16 +10,54 @@ Tech edited: <date>
 ////
 
 2.8 Toolbar Buttons
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
++++++++
+You have begun to build your jQuery Mobile application and have built some toolbars for your project, but you need to add some buttons to those toolbars.
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+++++++++
+The jQuery Mobile framework has built in functionality that will allow you to easily build and style buttons within the toolbars of your application. By following a few simple steps you will be able to easily build buttons that are styled to fit into the jQuery Mobile theme which you are utilizing.
 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+++++++++++
+To add buttons to your jQuery Mobile toolbars, all you must simply do is to insert an anchor tag inside of your toolbar. This will add a button that is styled with the current theme of your toolbar.
+
+----
+<div data-role="header"> <!-- toolbar -->
+	<h1> Toolbar </h1> <!-- toolbar Header -->
+	<a href="#">Button</a> <!-- toolbar button -->
+</div>
+----
+
+If you wish to style your toolbar utilizing a different style swatch than is present in the current theme, this can be done by adding the data- attribute 'data-theme' to your anchor and specifying which swatch you choose to utilize.
+
+----
+<div data-role="header"> <!-- toolbar -->
+	<h1> Toolbar </h1> <!-- toolbar Header -->
+	<a href="#">Button</a> <!-- toolbar button -->
+</div>
+----
+
+In addition to theming differences available to toolbar buttons, you may also add icons from you jQuery Mobile icon set so that you are able to have the additional UI elements of icons showcased on your buttons. For a header this could look something like the following: 
+
+----
+<div data-role="header"> <!-- toolbar -->
+	<h1> Toolbar </h1> <!-- toolbar Header -->
+	<a href="#" data-theme='e' data-icon="arrow-l">Button</a> <!-- toolbar button -->
+  	<a href="#" data-theme='e' data-icon="arrow-r" data-iconpos="right">Button</a> <!-- toolbar button -->
+</div><!-- /header -->
+----
+
+In general when you add buttons to the header there are two places where they will be placed. The first  button will be aligned to the left, and the second will be aligned to the right on the same row as the toolbars heading. An subsequent anchors will still become buttons, but will be aligned below that first row of the toolbar without the automatic left and right alignments. This is similar to how footer toolbar buttons are aligned. These are aligned generically to the left side of the toolbar. An example of this type of footer would look like:
+
+----
+  <div data-role="footer">
+    <a href="#" data-icon="arrow-u">footer button</a>
+    <a href="#" data-icon="arrow-d">footer button</a>
+    <a href="#">footer button</a>
+  </div>
+----
+
+You can see that adding buttons to a jQuery Mobile toolbar is a straightforward as adding an anchor element to your jQuery mobile page.
