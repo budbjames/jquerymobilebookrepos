@@ -26,7 +26,7 @@ Description:
 
 
 ### 3 - <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-3.adoc">jQuery Mobile and WebWorks / Playbook</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:dcarrith@gmail.com">David Carrithers</a>
 
 *Problem:* 
 
