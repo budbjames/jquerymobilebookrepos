@@ -107,7 +107,8 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-7.adoc">7 - Creating an image gallery with the swipe event</a>
   * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-8.adoc">8 - Events Diagram</a>
   * <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-9.adoc">9 - Enable zoom/pinch on a specific DOM element </a>
-* <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/introduction.adoc">9 - Building, Testing, and Debugging in Mobile</a>
+* <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/readme.adoc">9 - Building, Testing, and Debugging in Mobile</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/recipe-1.adoc">1 - Sample App</a>
   * <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/recipe-2.adoc">2 - Testing your application in a desktop browser</a>
   * <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/recipe-3.adoc">3 - App Analytics - Tracking your users</a>
@@ -128,7 +129,8 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/recipe-18.adoc">18 - Packaging your application for deployment to a Windows Mobile Device</a>
   * <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/recipe-19.adoc">19 - Deploying and testing your app on a Windows Mobile Device</a>
   * <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/recipe-20.adoc">20 - Take your app to the Windows Mobile Marketplace</a>
-* <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/introduction.adoc">Chapter 10 - HTML5 Features</a>
+* <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/readme.adoc">Chapter 10 - HTML5 Features</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-1.adoc">1 - Keeping up with HTML5 features and compatibility</a>
   * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-2.adoc">2 - HTML 5 Geo-location</a>
   * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-3.adoc">3 - HTML5 Local storage</a>
@@ -140,7 +142,8 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-9.adoc">9 - Game Development</a>
   * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-10.adoc">10 - Getting Started with jQuery Mobile and Google Maps</a>
   * <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-11.adoc">11 - Combining pages, tweets, and maps</a>
-* <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/introduction.adoc">11 - Progressive Enhancement with jQuery Mobile</a>
+* <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/readme.adoc">11 - Progressive Enhancement with jQuery Mobile</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-1.adoc">1 - What is Progressive Enhancement in a Mobile Context?</a>
   * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-2.adoc">2 - How Graded Browser Support Works</a>
   * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-3.adoc">3 - Adding AJAX to Page Links</a>
@@ -153,7 +156,8 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-10.adoc">10 - Responsive Images based on Screen Dimensions</a>
   * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-11.adoc">11 - Responsive Images based on Screen Density</a>
   * <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-12.adoc">12 - Mobile device Orientation: Events and CSS</a>
-* <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/introduction.adoc">Chapter 12 - Offline Apps with jQuery Mobile</a>
+* <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/readme.adoc">Chapter 12 - Offline Apps with jQuery Mobile</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-1.adoc">1 - Cache Manifests Syntax and Usage</a>
   * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-2.adoc">2 - Appcache + mobile devices</a>
   * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-3.adoc">3 - Detecting connection status</a>
@@ -162,7 +166,8 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-6.adoc">6 - Why make your application work offline?</a>
   * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-7.adoc">7 - Offline storage alternatives</a>
   * <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-8.adoc">8 - Make your webapp offline with Android</a>
-* <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/introduction.adoc">Chapter 13 - Going Native with jQuery Mobile</a>
+* <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/readme.adoc">Chapter 13 - Going Native with jQuery Mobile</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-1.adoc">1 - Using jQuery with PhoneGap</a>
   * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-2.adoc">2 - Exploring the PhoneGap Device APIs</a>
   * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-3.adoc">3 - jQuery Mobile and WebWorks / Playbook</a>
@@ -172,13 +177,11 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-7.adoc">7 - Using jQuery Mobile with Nimblekit</a>
   * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-8.adoc">8 - Adding a swipe-down menu to your PlayBook application</a>
   * <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-9.adoc">9 - Exploring the WebWorks platform APIs</a>
-* <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/introduction.adoc">Chapter 14 - Extending jQuery Mobile</a>
+* <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/readme.adoc">Chapter 14 - Extending jQuery Mobile</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-1.adoc">1 - jQuery Mobile Framework "Boot" Process</a>
   * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-2.adoc">2 - Understanding $.mobile.widget and the Widget Factory</a>
   * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-3.adoc">3 - Building a Custom Widget</a>
   * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-4.adoc">4 - Data attributes</a>
   * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-5.adoc">5 - Extending the Event Model</a>
   * <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-6.adoc">6 - Plugins</a>
-
-
-
