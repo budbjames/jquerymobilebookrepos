@@ -20,7 +20,7 @@ Description:
 
 ###2 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-2.adoc">Themes and Swatches</a>
 
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:dcarrith@gmail.com">David Carrithers</a>
 
 *Description:* More theme customization based on the jQm website themes page
 
