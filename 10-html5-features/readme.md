@@ -67,7 +67,7 @@ Description:
 *Percentage Complete:* 20%
 
 ### 6 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-6.adoc">Audio</a>
-*author: David Carrithers* <a href="mailto:dcarrith@gmail.com">dcarrith@gmail.com</a> 2012-11-23
+*author: <a href="mailto:dcarrith@gmail.com">David Carrithers</a>*
 
 *Problem:* 
 
