@@ -20,7 +20,7 @@ Description:
 ---
 
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-2.adoc">The client-side/server-side balance</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:dcarrith@gmail.com">David Carrithers</a>
 
 *Problem:* 
 
