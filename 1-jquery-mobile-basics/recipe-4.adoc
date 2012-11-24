@@ -10,12 +10,6 @@ Tech edited: <date>
 1.4 Including jQuery and jQuery Mobile in an HTML page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Problem
-+++++++
-You want to use the jQuery and jQuery Mobile JavaScript libraries on an HTML page.
-
-Solution
-++++++++
 There are in total three ways you can include the jQuery and jQuery Mobile libraries to your 
 project. Each of the first two ways uses a different approach, while the third is 
 a combination of the previous two. Let's have a look:
@@ -29,8 +23,6 @@ two techniques and "use" them both. So, this way you first choose to load the CD
 of the libraries, and in case the CDN is for some reason unreachable then the next automatically
 chosen option is to load the files hosted locally on your server.
 
-Discussion
-++++++++++
 Including jQuery and jQuery Mobile is pretty much the same thing as including any other external
 JavaScript file in your HTML page. What the above solutions actually do, is to change _where_ these
 files are going to be loaded from, your server or a CDN server. This, of course, introduces both
@@ -79,9 +71,9 @@ added to its filename, and does not contain any spaces, line-breaks, or comments
 The CDN-hosted version can be included in your HTML page with the following lines of code:
 
 ----
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 ----
 
 [NOTE]
@@ -100,14 +92,14 @@ jQuery from http://www.jquery.com, and the latest version of the ZIP package for
 from http://www.jquerymobile.com/download. The ZIP package has a filename similar to jquery.mobile-x.zip
 where _x_ is the current version of the library, for example 1.1.0.
 
-After you extract the packages' contents, copy the folder _images/_ and the files _jquery.mobile-1.1.0.min.css_,
-_jquery-1.7.1.min.js_, _jquery.mobile-1.1.0.min.js_ to your current working directory, and add the following
+After you extract the packages' contents, copy the folder _images/_ and the files _jquery.mobile-1.2.0.min.css_,
+_jquery-1.8.2.min.js_, _jquery.mobile-1.2.0.min.js_ to your current working directory, and add the following
 lines of code to your HTML page:
 
 ----
-<link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" />
-<script src="jquery-1.7.1.min.js"></script>
-<script src="jquery.mobile-1.1.0.min.js"></script>
+<link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+<script src="jquery-1.8.2.min.js"></script>
+<script src="jquery.mobile-1.2.0.min.js"></script>
 ----
 
 [NOTE]
@@ -124,11 +116,11 @@ approach is mainly used in the popular HTML5 Boilerplate template, and focuses o
 files will be loaded. You can load the CSS files whichever way you want:
 
 ----
-<link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" />
-<script src="//code.jquery.com/jquery-1.7.1.min.js"></script>
-<script>window.jQuery || document.write('<script src="jquery-1.7.1.min.js"><\/script>')</script>
-<script src="//code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="jquery.mobile-1.1.0.min.js"><\/script>')</script>
+<link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+<script src="//code.jquery.com/jquery-1.8.2.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery-1.8.2.min.js"><\/script>')</script>
+<script src="//code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery.mobile-1.2.0.min.js"><\/script>')</script>
 ----
 
 [NOTE]
