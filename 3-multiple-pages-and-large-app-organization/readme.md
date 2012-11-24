@@ -47,7 +47,7 @@ Description:
 ---
 
 ### 5 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-5.adoc">Performance comparison example of multipage pattern</a>
-*author:* <a href="mailto:obruening@yahoo.com">Oliver Brüning</a>
+*author:* <a href="mailto:"></a>
 
 *Problem:* 
 
@@ -100,7 +100,16 @@ Description:
 
 ---
 
-### 11 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-11.adoc">Using JQM with backbone.js</a>
+### 11 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-11.adoc">Using Knockout.js on Multipage Documents</a>
+*author:* <a href="mailto:obruening@yahoo.com">Oliver Brüning</a>
+
+*Problem:* 
+
+*Description:* 
+
+---
+
+### 12 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-12.adoc">Using JQM with backbone.js</a>
 *author:* <a href="mailto:jcreamer@appendto.com">Jonathan Creamer</a>
 
 *Problem:* 
@@ -109,7 +118,7 @@ Description:
 
 ---
 
-### 12 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-12.adoc">Using JQM with ember.js</a>
+### 13 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-13.adoc">Using JQM with ember.js</a>
 *author:* <a href="mailto:"></a>
 
 *Problem:* 

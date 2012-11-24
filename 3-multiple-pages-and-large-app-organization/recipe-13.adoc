@@ -1,15 +1,13 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
-Author: unassigned
+Author: Unassigned
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-3.5 Performance comparison example of multipage pattern
+3.12 Using JQM with ember.js
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

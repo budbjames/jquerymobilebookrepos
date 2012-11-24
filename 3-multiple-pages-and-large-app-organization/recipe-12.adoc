@@ -1,13 +1,15 @@
 ////
 
-Author: Unassigned
+This is a comment block.  Put notes about your recipe here and also your author information.
+
+Author: unassigned
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-3.12 Using JQM with ember.js
+3.11 Recipe Title
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

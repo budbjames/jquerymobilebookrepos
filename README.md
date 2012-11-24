@@ -52,8 +52,9 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-8.adoc">8 - Structuring client side code (inc AMD)</a>
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-9.adoc">9 - Designing clean RESTful services, for both serving json to client side code via ajax, and html for page transitions. Utilising HTTP status codes for clean error handling. Could go hand in hand with client/server side balance. Big topic, but could be focussed on one area, or split.</a>
   * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-10.adoc">10 - Data-binding with knockout.js</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-11.adoc">11 - Using JQM with backbone.js</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-12.adoc">12 - Using JQM with ember.js</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-11.adoc">11 - Using Knockout.js on Multipage Documents</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-12.adoc">12 - Using JQM with backbone.js</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-13.adoc">13 - Using JQM with ember.js</a>
 * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/readme.md">Chapter 4 - Navigating through your Apps</a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-1.adoc">1 - Wireframing for jQuery Mobile </a>
