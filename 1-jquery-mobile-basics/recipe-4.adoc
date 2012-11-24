@@ -69,11 +69,11 @@ added to its filename, and does not contain any spaces, line-breaks, or comments
 
 The CDN-hosted version can be included in your HTML page with the following lines of code:
 
-----
+-----
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-----
+-----
 
 [NOTE]
 ====
@@ -95,11 +95,11 @@ After you extract the packages' contents, copy the folder _images/_ and the file
 _jquery-1.8.2.min.js_, _jquery.mobile-1.2.0.min.js_ to your current working directory, and add the following
 lines of code to your HTML page:
 
-----
+-----
 <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
 <script src="jquery-1.8.2.min.js"></script>
 <script src="jquery.mobile-1.2.0.min.js"></script>
-----
+-----
 
 [NOTE]
 ====
@@ -114,13 +114,13 @@ even if there is no Internet connection available, you can combine the two afore
 approach is mainly used in the popular HTML5 Boilerplate template, and focuses on how the JavaScript
 files will be loaded. You can load the CSS files whichever way you want:
 
-----
+-----
 <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
 <script src="//code.jquery.com/jquery-1.8.2.min.js"></script>
 <script>window.jQuery || document.write('<script src="jquery-1.8.2.min.js"><\/script>')</script>
 <script src="//code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 <script>window.jQuery || document.write('<script src="jquery.mobile-1.2.0.min.js"><\/script>')</script>
-----
+-----
 
 [NOTE]
 ====
