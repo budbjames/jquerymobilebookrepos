@@ -18,7 +18,8 @@ In January 2006 at a Barcamp in NYC, John Resig showed off three things.  One of
 
 jQuery allows JavaScript developers to take native code like this:
 
------
+[source,javascript]
+----
   if (browserType == "gecko")
     document.poppedLayer = 
       eval('document.getElementByID("HiddenDiv")');
@@ -29,13 +30,14 @@ jQuery allows JavaScript developers to take native code like this:
     document.poppedLayer = 
       eval('document.layers("HiddenDiv")');
   document.poppedLayer.style.visibility = "visible";
------
+----
 
 and write one line of code like this:
 
------
+[source,javascript]
+----
   $("#HiddenDiv").show();
------
+----
 
 Today, jQuery is the most popular JavaScript library in use today.  According to Built With Trends jQuery is used on over 59.2% of the top 10,000 sites as tracked by Built With Trends as of November 2012.  That number continues to climb at a steady rate.  You can see the latest percentages at http://trends.builtwith.com/javascript/jQuery.
 
