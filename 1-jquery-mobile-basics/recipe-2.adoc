@@ -1,8 +1,8 @@
 ////
 
-Author: John Chacko
+Author: John Chacko <johns221b@gmail.com>
 Chapter Leader approved: <date>
-Copy edited: <date>
+Copy edited: Ralph Whitbeck <rwhitbeck@appendto.com> Nov 23, 2012
 Tech edited: <date>
 
 ////
@@ -10,49 +10,47 @@ Tech edited: <date>
 1.2 What is jQuery?
 ~~~~~~~~~~~~~~~~~~~
 
-JavaScript adds behaviour to web pages and make it more interactive and helped in building 
-a lot of web applications which behaves similar to desktop applications.
-Products like Gmail,Yahoo Mail explored the possibilities of JavaScript and brought 
-desktop like experience to users in browsers.
+JavaScript is a scripting language that adds behaviors and interactions to the web.  JavaScript has been around since 1995 but it was the introduction of Ajax (Asynchronous JavaScript and XML) which was nothing more the interrelated technologies used together to make asynchronous web applications.  Google made this technique mainstream by making it's GMail web application asynchronous.  Since then JavaScript's popularity has exploded. 
 
-jQuery is not a replacement for JavaScript, but can be considered as a helper library which simplifies JavaScript.
-jQuery changed the way JavaScript is written.
-As the jQuery’s tag line states, its  all about adding more  behaviour to web pages by writing less.
-When web applications became more interactive , cross browser scripting needed extra effort from developers. 
-jQuery helped in reducing that effort and made cross browser scripting 
-,ie, selecting and manipulating DOM elements, DOM traversal, creating animations, handling events, 
-and developing Ajax applications, easy.
+JavaScript however isn't perfect and each browser vendor has a different interpretation on how to implement the specification (ECMAScript).  Because of these differences JavaScript can work just fine in one browser but completely differently in another.  Web developers found themselves writing tons of code to handle all these cross-browser "quirks". 
 
-jQuery was released in January 2006 at BarCamp NYC by John Resig. 
-jQuery is free, open source software, dual-licensed under the MIT License or the GNU General Public License, Version 2. 
+In January 2006 at a Barcamp in NYC, John Resig showed off three things.  One of those was jQuery, a JavaScript library that abstracts away cross-browser "quirks" and allows the developer to not have to think about it.  They essentially can "Write less, do more." which is the jQuery tag line.  jQuery is free, open source software that is licensed under the MIT license (http://jquery.org/license/).
 
-As per wiki, jQuery is used by over 52% of the 10,000 most visited websites and 
-is the most popular JavaScript library in use today. 
+jQuery allows JavaScript developers to take native code like this:
 
+-----
+  if (browserType == "gecko")
+    document.poppedLayer = 
+      eval('document.getElementByID("HiddenDiv")');
+  else if (browserType == "ie")
+    document.poppedLayer = 
+      eval('document.getElementByID("HiddenDiv")');
+  else 
+    document.poppedLayer = 
+      eval('document.layers("HiddenDiv")');
+  document.poppedLayer.style.visibility = "visible";
+-----
 
-Problem
-++++++++++++++++++++++++++++++++++++++++++++
-1.Dynamically add a simple span with red background color to a div and that div to body using native JavaScript and jQuery. 
+and write one line of code like this:
 
-Solution
-Native JavaScript
-         
-  var _div = document.createElement("div");
-  var _span = document.createElement("span");
-  _span.innerHTML = "span contents";
-  _span.style.backgroundColor = "red";
-  _div.appendChild(_span);
-  document.body.appendChild(_div);  
+-----
+  $("#HiddenDiv").show();
+-----
 
-jQuery
+Today, jQuery is the most popular JavaScript library in use today.  According to Built With Trends jQuery is used on over 59.2% of the top 10,000 sites as tracked by Built With Trends as of November 2012.  That number continues to climb at a steady rate.  You can see the latest percentages at http://trends.builtwith.com/javascript/jQuery.
 
-  $("body")
-    .append($("<div>"))
-    .append($("<span>span contents</span>").css("background", "red"));
+A line of jQuery can be broken down into three parts. 
 
-++++++++++++++++++++++++++++++++++++++++++++
-Its sure that  native JavaScript programmers initially feels jQuery syntax too complex, but they will soon feel jQuery 
-life easy when compared to coding in native JavaScript and to worry less about cross browser inconsistencies.
+-----
+$("div").hide();
+-----
 
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving. It is the primary discussion place and should be where code examples are put. It could be 4-6 paragraphs long.
+First you need to declare and call the jQuery object.  We do that by calling it's alias '$'.  
+
+Next we select the elements on the page '("div")'.  The jQuery object will take any selectors that conform to the CSS 1-3 specs plus some pseudo selectors that are apart of jQuery. In our example about we will select all the div's on a page. 
+
+The combined jQuery object and selector returns a jQuery Collection that can then have worked performed on.  jQuery has a rich API that allows you to do something on the returned collection.  In our example we are visibly hiding all the div elements on the page.
+
+Some broad actions you can perform using jQuery are things like selecting and manipulating DOM elements, DOM traversal, creating animations, handling events, and developing Ajax applications, easily.
+
+You can find out more about the jQuery API at http://api.jquery.com.  This book assumes you have a good understanding of how jQuery works. 
