@@ -16,11 +16,13 @@ Description: Provides an introduction to jQuery Mobile and its dependency, jQuer
 
 ---
 
-###2 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">What are jQuery and jQuery Mobile?</a>
+###2 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">What are jQuery?</a>
 
-*author:*  Awaiting Status Approval from Master Author
+*author:*  <a href="mailto:johns221b@gmail.com">
 
-*Description:* Cover the basics of what jQuery is, why it exists, and what role it plays in jQuery Mobile. Give a cursory rundown on what jQuery Mobile is, and what problems it solves.
+*status:* Chapter leader review
+
+*Description:* Cover the basics of what jQuery is, why it exists. Give a cursory rundown on what jQuery is, and what problems it solves.
 
 ---
 
