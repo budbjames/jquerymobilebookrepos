@@ -4,7 +4,7 @@
 
 Description: 
 
-*Chapter Leader:* <a href="mailto:">Andy Matthews</a>
+*Chapter Leader:* <a href="mailto:andy@commadelimited.com">Andy Matthews</a>
 
 <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/introduction.adoc">Introduction</a>
 
