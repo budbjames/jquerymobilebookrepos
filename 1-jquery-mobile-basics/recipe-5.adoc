@@ -1,6 +1,6 @@
 ////
 
-Author: Cory Gackenheimer 
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: Ralph Whitbeck <rwhitbeck@appendto.com> Nov 23, 2012
 Tech edited: <date>

@@ -2,7 +2,7 @@
 
 Author: James Weaver <james@jwadeweaver.com>
 Chapter Leader approved: <date>
-Copy edited: <date>
+Copy edited: Ralph Whitbeck <rwhitbeck@appendto.com> Nov 23, 2012
 Tech edited: <date>
 
 ////
@@ -10,9 +10,6 @@ Tech edited: <date>
 1.1 Who Is This Book For?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This book is for anyone interested in learning about how they can benefit from today’s greatest JavaScript libraries,
-jQuery and jQuery Mobile! 
+This book was written by members of the jQuery and jQuery Mobile community.  It's purpose is to teach other developers in the community how to tackle common tasks while working with jQuery Mobile. 
 
-While you don’t need to know jQuery or jQuery Mobile extensively, it will be beneficial to have an understanding 
-of the basics. However, if you are totally new to jQuery or jQuery Mobile, don’t close the book yet, chapters 1 
-and 2 will provide you with the building blocks of jQuery and jQuery Mobile. 
+This book assumes you have a good understanding of how to use jQuery. While you don't need to know jQuery Mobile extensively, it will be beneficial to have an understanding of the basics. However, if you are totally new to jQuery Mobile, don't close the book yet, this chapter will provide you with tasks that provide the building blocks of developing with jQuery Mobile. 
