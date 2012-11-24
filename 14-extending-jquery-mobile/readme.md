@@ -50,7 +50,7 @@ Description:
 
 
 ### 6 - <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-6.adoc">Plugins</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:rwhitbeck@appendto.com">Ralph Whitbeck</a> Nov 24, 2012
 
 *Problem:* 
 
