@@ -1,13 +1,144 @@
 ////
 
-Author: Unassigned
+Author: Panagiotis Tsalaportas <sys.sgx@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-1.4 Creating Your First jQuery Mobile Page
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.4 Including jQuery and jQuery Mobile in an HTML page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Problem
++++++++
+You want to use the jQuery and jQuery Mobile JavaScript libraries on an HTML page.
 
+Solution
+++++++++
+There are in total three ways you can include the jQuery and jQuery Mobile libraries to your 
+project. Each of the first two ways uses a different approach, while the third is 
+a combination of the previous two. Let's have a look:
+
+* The first and easiest solution, is to simply use a CDN-hosted version of the libraries, such as 
+Google's CDN or jQuery's CDN. This is the most commonly suggested solution for web developers.
+* The second solution, is to manually download jQuery and jQuery Mobile and host these files on 
+your own server.
+* The third solution, which has recently been getting more supporters, is to combine the previous 
+two techniques and "use" them both. So, this way you first choose to load the CDN-hosted version 
+of the libraries, and in case the CDN is for some reason unreachable then the next automatically
+chosen option is to load the files hosted locally on your server.
+
+Discussion
+++++++++++
+Including jQuery and jQuery Mobile is pretty much the same thing as including any other external
+JavaScript file in your HTML page. What the above solutions actually do, is to change _where_ these
+files are going to be loaded from, your server or a CDN server. This, of course, introduces both
+advantages and disadvantages, and thus we have to take a closer look to all of the techniques.
+
+Using a CDN
++++++++++++
+A Content Delivery Network is a distributed network of servers, containing copies of data across 
+various physical locations. Its purpose is to deliver identical files to the users, by choosing the
+closest optimal available server in the network. The advantages of using this technique are 
+many: 
+
+* You can start using the JavaScript libraries right away, without having to download any files.
+* You'll experience decreased latency. Any users that are not physically near your server will be able to download the
+libraries faster through the closest CDN server; this is better than forcing users to download
+jQuery from your own server independently from their location.
+* Your server will produce less traffic, as these files will be downloaded from the CDN server.
+* Perhaps the greatest benefit of using a CDN is that your website visitors might not have to download 
+the jQuery libraries at all. It is very likely that your visitors already have a copy of the JavaScript 
+libraries in their browser cache, and that's due to the fact that some of the most trafficked sites
+on the Internet choose to deliver these libraries through the same CDNs. When a browser sees an HTTP
+request to a location that has been accessed before, as for example a location pointing to the same 
+CDN-hosted version of jQuery, instead of remaking this request it tries to load the local copy of the 
+file from the browser cache, which leads to increased responsiveness.
+
+The disadvantages of a Content Delivery Network are that the JavaScript files will be available only if 
+the CDN is online, and if you are building native applications using jQuery and jQuery Mobile and
+the user's device is not connected to the internet, you will not be able to use their functionally. 
+It is thus recommended to choose the locally hosted files if you plan on deploying HTML5 offline apps.
+
+[IMPORTANT]
+====
+The jQuery Mobile library requires the jQuery core library to be also included in order to use it. 
+As a consequence, you have to include both of these libraries in every HTML page of your project,
+along with any CSS files needed by jQuery Mobile. It is important to also check the compatibility 
+between the different versions of jQuery and jQuery Mobile: for example, jQuery v1.7.1 is only
+compatible with jQuery Mobile versions equal or greater than v1.1.0.
+====
+
+In this book, we will choose the official jQuery Content Delivery Network for our projects.
+There are two types of files in each library you can choose to include in your page: one is the 
+uncompressed version and is used for debugging purposes only, and the other is the minified and
+compressed version, which is targeting final distribution. The minified version has a prefix _min_
+added to its filename, and does not contain any spaces, line-breaks, or comments.
+
+The CDN-hosted version can be included in your HTML page with the following lines of code:
+
+----
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+----
+
+[NOTE]
+====
+The JavaScript files must be included in your project in the order shown.
+====
+
+While you are developing your project, you might want to use the filenames without the prefix _min_
+for debugging, as for example _http://code.jquery.com/jquery-1.7.1.js_. When your project is ready
+you can then include the minified compressed versions of the files.
+
+Using files hosted locally
+++++++++++++++++++++++++++
+If you are willing to host the library files yourself, you can download the latest version of
+jQuery from http://www.jquery.com, and the latest version of the ZIP package for jQuery Mobile 
+from http://www.jquerymobile.com/download. The ZIP package has a filename similar to jquery.mobile-x.zip
+where _x_ is the current version of the library, for example 1.1.0.
+
+After you extract the packages' contents, copy the folder _images/_ and the files _jquery.mobile-1.1.0.min.css_,
+_jquery-1.7.1.min.js_, _jquery.mobile-1.1.0.min.js_ to your current working directory, and add the following
+lines of code to your HTML page:
+
+----
+<link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" />
+<script src="jquery-1.7.1.min.js"></script>
+<script src="jquery.mobile-1.1.0.min.js"></script>
+----
+
+[NOTE]
+====
+Because you are hosting the library files yourself, you must also add the _images/_ folder
+to your current working directory.
+====
+
+Using the combined approach
++++++++++++++++++++++++++++
+In case you want the benefits of using a CDN network, but you also want to make your application work 
+even if there is no Internet connection available, you can combine the two aforementioned techniques. This
+approach is mainly used in the popular HTML5 Boilerplate template, and focuses on how the JavaScript
+files will be loaded. You can load the CSS files whichever way you want:
+
+----
+<link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" />
+<script src="//code.jquery.com/jquery-1.7.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery-1.7.1.min.js"><\/script>')</script>
+<script src="//code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery.mobile-1.1.0.min.js"><\/script>')</script>
+----
+
+[NOTE]
+====
+If you wonder why the script references do not have an "http" in the beginning, this is simply
+a method that allows you to use a single reference that works on both HTTP and HTTPS connections.
+====
+
+In the code displayed, we decided to use the locally hosted CSS file, while choosing to load the JavaScript files 
+from the jQuery CDN. Most developers suggest the JavaScript files to be placed at the bottom of the HTML page, 
+and the CSS files to be placed at the top of your HTML page in the head section. This makes the script 
+files non-blocking and allows for rendering the other page's elements. Also, it is good to note that you should 
+always use a version of the JavaScript libraries that is known to work well with your page.

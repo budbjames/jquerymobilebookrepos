@@ -20,7 +20,7 @@ Description: Provides an introduction to jQuery Mobile and its dependency, jQuer
 
 ###2 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">What are jQuery?</a>
 
-*author:*  <a href="mailto:johns221b@gmail.com">
+*author:*  <a href="mailto:johns221b@gmail.com">John Chacko</a>
 
 *status:* Chapter leader review
 
@@ -28,19 +28,22 @@ Description: Provides an introduction to jQuery Mobile and its dependency, jQuer
 
 ---
 
-### 3 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-3.adoc">Including jQuery and jQuery Mobile in an HTML Page</a>
+### 3 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-3.adoc">What is jQuery Mobile?</a>
 
-*author:* <a href="mailto:sys.sgx@gmail.com">Panagiotis Tsalaportas</a> (@syssgx)
+*author:* <a href="mailto:rwhitbeck@appendto.com">Ralph Whitbeck</a>
 
-*Description:* Information on how to get these libraries and include them in a page
+*Description:* Cover the basics of what jQuery Mobile is...what problem it solves.  Talk about progressive enhancement and the graded browser support.
 
 ---
 
-### 4 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-4.adoc">Creating your First jQuery Mobile Page</a>
+### 4 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-4.adoc">Including jQuery and jQuery Mobile in an HTML Page</a>
 
-*author:* <a href="mailto:sys.sgx@gmail.com">Panagiotis Tsalaportas</a> (@syssgx) - 6-10-2012
+*author:* <a href="mailto:sys.sgx@gmail.com">Panagiotis Tsalaportas</a> (@syssgx)
 
-*Description:* Creating your first jQuery Mobile page. Cover the role that various elements and data-attributes play in determining the layout and function of a standard jQuery Mobile page.
+*status:* Needs to be reformatted
+
+*Description:* Information on how to get these libraries and include them in a page
+
 
 ---
 
