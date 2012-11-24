@@ -37,5 +37,3 @@ include::12-offline-apps-with-jquery-mobile/chapter.adoc[]
 include::13-going-native-with-jquery-mobile/chapter.adoc[]
 
 include::14-extending-jquery-mobile/chapter.adoc[]
-
-include::15-jquery-mobile-performance-tuning/chapter.adoc[]
