@@ -2,16 +2,16 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Jeff Linwood <jlinwood@gmail.com>
 
 ////
 
-13.1 Using jQuery with PhoneGap
+13.1 Using jQuery Mobile with PhoneGap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Mobile web sites aren't native apps.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++

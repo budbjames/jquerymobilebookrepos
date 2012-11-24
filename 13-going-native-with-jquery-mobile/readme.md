@@ -11,7 +11,7 @@ Description:
 ## Recipes
 
 ### 1 - <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-1.adoc">Using jQuery with PhoneGap</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:jlinwood@gmail.com">Jeff Linwood</a> 11/23/2012
 
 *Problem:* 
 
