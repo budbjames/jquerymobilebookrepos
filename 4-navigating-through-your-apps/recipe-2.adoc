@@ -1,6 +1,6 @@
 ////
 
-Author: Unassigned
+Author: Larry Roth <ldroth@gmail.com> Nov. 24, 2012
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
