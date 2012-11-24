@@ -34,7 +34,7 @@ Description:
 
 ---
 
-### 4 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-4.adoc">Creating your First jQuery Mobile Page</a>
+### 4 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-4.adoc">Designing and using custom icons</a>
 
 *author:* <a href="mailto:"></a>
 
@@ -42,7 +42,7 @@ Description:
 
 ---
 
-### 5 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-5.adoc">Designing and using custom icons</a>
+### 5 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-5.adoc">Dynamically Changing Page Themes</a>
 
 *author:* <a href="mailto:maxlynch@uwalumni.com">Max Lynch</a>
 

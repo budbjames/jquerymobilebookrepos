@@ -79,8 +79,8 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
   * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-1.adoc">1 - Default Page Themes</a>
   * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-2.adoc">2 - Themes and Swatches</a>
   * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-3.adoc">3 - The ThemeRoller tool</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-4.adoc">4 - Creating your First jQuery Mobile Page</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-5.adoc">5 - Designing and using custom icons</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-4.adoc">4 - Designing and using custom icons</a>
+  * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-5.adoc">5 - Dynamically Changing Page Themes</a>
   * <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-6.adoc">6 - Examples of Themes</a>
 * <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/readme.md">Chapter 7 - Capturing Data with Forms
 </a>
