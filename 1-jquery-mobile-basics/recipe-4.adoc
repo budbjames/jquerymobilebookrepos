@@ -81,7 +81,7 @@ The JavaScript files must be included in your project in the order shown.
 ====
 
 While you are developing your project, you might want to use the filenames without the prefix _min_
-for debugging, as for example _http://code.jquery.com/jquery-1.7.1.js_. When your project is ready
+for debugging, as for example _http://code.jquery.com/jquery-1.8.2.js_. When your project is ready
 you can then include the minified compressed versions of the files.
 
 Using files hosted locally
