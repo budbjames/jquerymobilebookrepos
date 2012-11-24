@@ -58,8 +58,7 @@ It is thus recommended to choose the locally hosted files if you plan on deployi
 The jQuery Mobile library requires the jQuery core library to be also included in order to use it. 
 As a consequence, you have to include both of these libraries in every HTML page of your project,
 along with any CSS files needed by jQuery Mobile. It is important to also check the compatibility 
-between the different versions of jQuery and jQuery Mobile: for example, jQuery v1.7.1 is only
-compatible with jQuery Mobile versions equal or greater than v1.1.0.
+between the different versions of jQuery and jQuery Mobile.
 ====
 
 In this book, we will choose the official jQuery Content Delivery Network for our projects.
