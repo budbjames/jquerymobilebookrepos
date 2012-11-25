@@ -92,7 +92,7 @@ Description:
 ---
 
 ### 10 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-10.adoc">Data-binding with knockout.js</a>
-*author: <a href="mailto:buddy@refactorthis.net">Buddy James</a>
+*author:* <a href="mailto:buddy@refactorthis.net">Buddy James</a>
 
 *Problem:* 
 
