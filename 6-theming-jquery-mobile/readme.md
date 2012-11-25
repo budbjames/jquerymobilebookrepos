@@ -52,6 +52,6 @@ Description:
 
 ### 6 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-6.adoc">Examples of Themes</a>
 
-*author:* <a href="mailto:whynetsolutions@aol.com"></a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.THOMPSON</a>
 
 *Description:* A bundle of ready-made sample themes with code of the color combinations and styles
