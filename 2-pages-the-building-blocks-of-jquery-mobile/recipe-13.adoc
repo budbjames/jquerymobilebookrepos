@@ -2,7 +2,8 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: 
+Author: Courtney Hall <courtney@bluerad.com> http://bluerad.com
+
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -14,7 +15,7 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Theming the navbar for your jQuery mobile application
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
