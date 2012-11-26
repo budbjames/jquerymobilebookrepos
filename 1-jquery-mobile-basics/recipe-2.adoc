@@ -39,7 +39,7 @@ and write one line of code like this:
   $("#HiddenDiv").show();
 ----
 
-Today, jQuery is the most popular JavaScript library in use today.  According to Built With Trends jQuery is used on over 59.2% of the top 10,000 sites as tracked by Built With Trends as of November 2012.  That number continues to climb at a steady rate.  You can see the latest percentages at http://trends.builtwith.com/javascript/jQuery.
+Today, jQuery is the most popular JavaScript library in use. jQuery is used on over 59.2% of the top 10,000 sites as tracked by Built With Trends as of November 2012.  That number continues to climb at a steady rate.  You can see the latest percentages at http://trends.builtwith.com/javascript/jQuery.
 
 A line of jQuery can be broken down into three parts. 
 
