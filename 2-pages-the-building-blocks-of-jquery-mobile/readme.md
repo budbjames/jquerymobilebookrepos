@@ -121,11 +121,11 @@ In order to this, we need to be able to place a control into the header and posi
 ---
 
 ### 13 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-13.adoc">Theming navbars</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:courtney@bluerad.com">Courtney Hall</a> [November 25, 2012]
 
-*Problem:*
+*Problem:* We want to select an alternative theme for our navbar(s).
 
-*Description:* 
+*Description:* A brief synopsis of how to change our navbar from the default implementation.
 
 ---
 
