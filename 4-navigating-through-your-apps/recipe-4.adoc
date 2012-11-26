@@ -1,6 +1,6 @@
 ////
 
-Author: Unassigned
+Author: Tyson Cadenhead <tcadenhead@appendto.com> Nov. 26, 2012
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
