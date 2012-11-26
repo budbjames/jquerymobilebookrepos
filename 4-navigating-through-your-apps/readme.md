@@ -38,7 +38,7 @@ Description:
 ---
 
 ### 4 - <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-4.adoc">Executing links as AJAX calls </a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a> Nov 26, 2012
 
 *Problem:*
 
