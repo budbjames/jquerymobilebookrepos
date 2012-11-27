@@ -74,7 +74,7 @@ Description:
 ---
 
 ### 8 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-8.adoc">Structuring client side code (inc AMD)</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a>
 
 *Problem:* 
 
