@@ -36,5 +36,3 @@ include::recipe-15.asc[]
 include::recipe-16.asc[]
 
 include::recipe-17.asc[]
-
-include::recipe-18.asc[]

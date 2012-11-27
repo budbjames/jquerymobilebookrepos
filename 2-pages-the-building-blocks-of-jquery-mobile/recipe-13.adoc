@@ -1,7 +1,5 @@
 ////
 
-Recipe(s) for Dialogs
-
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 Chapter Leader approved: <date>
 Copy edited: <date>
@@ -9,24 +7,20 @@ Tech edited: <date>
 
 ////
 
-2.13 Page Dialogs
+2.14 Formatting Content With Layout Grids
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to display a small page to the user in a way that will not look like or behave like a standard page. Instead, you want this to be more like a dialog box. For example, when you click on the second picture on the screen below, see Figure <<FIG2-14-1>> you want a small dialog window to appear that will offer various ways to contact that person, see Figure <<FIG2-14-2>>.
+You want to organize your content in up to five columns on the page. For example, you want to have a screen that will display icons or images in four columns, as shown in <<FIG2-15-1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size.
 
-[[FIG2-14-1]]
-.A Page with a Link with +data-rel="dialog"+
+[[FIG2-15-1]]
+.Layout Grid Example
 image::images/grid_layout_example.png[]
-
-[[FIG2-14-2]]
-.The Dialog Page
-image::images/dialog_example.png[]
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Create the page as a standard jQuery Mobile page, and add the data-rel="dialog" attribute to the link to that page:
+You can use layout grids to format your content by having your content setup in a set of specific containers. For the aforementioned example, you will need to start by having the columns in a div with class="ui-grid-c". This corresponds to a four-column grid. This container will then hold the four div containers that will correspond to each of the four columns, each of which has its own class: "ui-block-a" to "ui-block-d":
 
 [source,html]
 <html>
@@ -36,13 +30,6 @@ Create the page as a standard jQuery Mobile page, and add the data-rel="dialog" 
    <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
    <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
-   <style>
-     .pic {
-       padding-right: 15px;
-       valign: middle;
-       width: 64px
-     }
-   </style>
  </head>
  <body>
    <div data-role="page" id="home">
@@ -50,30 +37,35 @@ Create the page as a standard jQuery Mobile page, and add the data-rel="dialog" 
        <h4>Choose Contact</h4>
      </div>
      <div data-role="content">
-       <!-- some code here -->
-
-       <a href="#contact_anne" data-rel="dialog" data-transition="pop">
-         <img src="anne.png" width="64"/>
-       </a>
-
-       <!-- some code here -->
+       <div class="ui-grid-c"><!-- defines a four-column grid layout -->
+         <div class="ui-block-a"> <!-- first column -->
+           <img src="todd.jpg" width="64"/><br /><br />
+           <img src="ghislain.jpg" width="64"/><br /><br />
+           <img src="elijah.jpg" width="64"/><br /><br />
+           <img src="addy.jpg" width="64"/><br />
+         </div> <!-- /first column -->
+         <div class="ui-block-b"> <!-- second column -->
+           <img src="anne.jpg" width="64"/><br /><br />
+           <img src="garann.jpg" width="64"/><br /><br />
+           <img src="doug.jpg" width="64"/><br /><br />
+           <img src="paul.jpg" width="64"/><br />
+         </div> <!-- /second column -->
+         <div class="ui-block-c"> <!-- third column -->
+           <img src="scott.jpg" width="64"/><br /><br />
+           <img src="mat.jpg" width="64"/><br /><br />
+           <img src="max.jpg" width="64"/><br /><br />
+           <img src="andy.jpg" width="64"/><br />
+         </div> <!-- /third column -->
+         <div class="ui-block-d"> <!-- fourth column -->
+           <img src="john.jpg" width="64"/><br /><br />
+           <img src="jquerymobile.jpg" width="64"/><br /><br />
+           <img src="mike.jpg" width="64"/><br /><br />
+           <img src="raymond.jpg" width="64"/><br />
+         </div> <!-- /fourth column -->
+       </div> <!-- /grid layout -->
      </div> <!-- /content -->
      <div data-role="footer" data-position="fixed">
-        <h4>My Contacts</h4>
-     </div>
-   </div>
-   <div data-role="page" id="contact_anne" >
-     <div data-role="header" >
-       <h1>Contact Anne</h1>
-     </div>
-     <div data-role="content">  
-       <img src="anne.png" class="pic" align="left" />       
-       <div data-role="controlgroup" data-type="horizontal" data-mini="true">
-         <legend>Anne-Gaelle Colom</legend>
-         <a href="mailto:coloma@wmin.ac.uk" data-role="button">Email</a>
-         <a href="tel:01234567890" data-role="button">Tel</a>
-         <a href="sms:coloma@wmin.ac.uk" data-role="button">iMessage</a>
-       </div>
+       <h4>My Contacts</h4>
      </div>
    </div>
  </body>
@@ -81,10 +73,16 @@ Create the page as a standard jQuery Mobile page, and add the data-rel="dialog" 
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-Anne's picture here is a link to the page with the +id+ +contact_anne+ (Note that the code for the content before and after that picture in the page content container has been removed for clarity). +contact_anne+ is the id of a standard jQuery Mobile page, which is in the same file as the picture that was clicked, which allows the page to be called by simply linking to its +id+ using the +#id+ key.
+You can choose from four layout grids to format your content:
+* Layout grid a is defined with +<div class="ui-grid-a">+ and is a two-column grid
+* Layout grid b is defined with +<div class="ui-grid-b">+ and is a three-column grid
+* Layout grid c is defined with +<div class="ui-grid-c">+ and is a four-column grid
+* Layout grid d is defined with +<div class="ui-grid-d">+ and is a five-column grid
 
-By adding the +data-rel="dialog"+ as an attribute to the link to the +contact_anne+ page +id+, the page will not be displayed in full screen like all standard pages. Instead, it will come as a dialog box floating in the middle of the screen.
+After this definition, you will need to construct the content of each column in the grid. In our example, you have a four-column grid, defined with +<div class="ui-grid-c">, and the four columns are constructed using +<div class="ui-block-a">+ for the first column, +<div class="ui-block-b">+ for the second column, +<div class="ui-block-c">+ for the third column, and finally +<div class="ui-block-d">+ for the fourth column.
 
-It is possible to add a +data-transition+ optional attribute that will define the transition used to bring the dialog box. By default, the reverse set transition is used when leaving the page. In the provided example, the transition +"pop"+ was used to open the dialog page.
+Each of the defined columns can have any type of content. In this example, you simply have images. Any standard page content element can be inserted in a grid column. In some cases, for example if you have collapsibles in a grid, you will need to add an additional container that will ensure that you have extra margin around your elements and these do not overlap into their neighboring columns.
 
-Note that it is possible to customize the look of the dialog by setting the +data-overlay-theme+ attribute and/or changing or removing the default 10% top margin.
+Note that it is possible to have multiple row grids. In this case, you will need to define the layout grid type using the corresponding +ui-grid+ class, and assign block classes in a repeating sequence, so for a +3x3+ grid, this will look like +a, b, c, a, b, c, a, b, c+. The first column in each row must have the ui-block-a class that clears the floats and which will start a new line.
+
+It is possible to only have a small portion of the page content in a layout grid. You do not have to apply that layout to the whole content of the page. For example, you may choose to only have one line of elements in a layout grid to align buttons on the page.

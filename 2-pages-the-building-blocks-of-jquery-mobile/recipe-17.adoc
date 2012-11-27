@@ -1,41 +1,177 @@
 ////
 
-Author: Ray Daly <raydaly@gmail.com>
+Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-2.17 Making Pages Readable on Desktops and Other Wide Screens
+2.18 Transforming XML to Linked jQuery Mobile Pages Using XSLT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Your app looks fine on the phone but not on your desktop monitor. Text lines are too long to read comfortably.
+You want to create multiple pages that will look similar, and it seems inefficient to repeat the same code. You also want to link all those pages one after the other.
+
+For example, you want to develop a page for each of your contacts where you can just click a button to send them an email, call them or send them an iMessage. You also want to be able to navigate through all those pages, as shown <<FIG2-19-1>>:
+
+[[FIG2-19-1]]
+.Navigating through contacts
+image::images/contacts.png[]
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Limit the maximum width of the page to a comfortable number and center the content.
+You can write the content in XML and transform it to jQuery Mobile pages using XSLT. You can then link your XML file and your XSLT file by either adding the reference of the +.xsl+ file on the second line of your XML file, or by using PHP or other server-side techniques to load both files and do the transformation on the server.
 
-[source, css]
----- 
-.jqpage { max-width: 790px; margin-left: auto; margin-right: auto;}
-----
+To produce the described example, it would be inefficient to hardcode all these pages. Instead, you can create an XML file to store your contact details, see <<EX2-19-1>>:
 
-and give each div with a data-role of page a class of jqpage:
+[[EX2-19-1]]
+.contacts.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="contacts.xsl" ?>
+<myContacts>
+ <contact>
+   <contact_id>contact_1</contact_id>
+   <surname>Parker</surname>
+   <forename>Todd</forename>
+   <shortName>Todd</shortName>
+   <picture>todd.jpg</picture>
+   <email>xxxx@xxxx.com</email>
+   <tel>1234567890</tel>
+   <imessage>1234567890</imessage>
+ </contact>
+ <contact>
+   <contact_id>contact_2</contact_id>
+   <surname>Colom</surname>
+   <forename>Anne-Gaelle</forename>
+   <shortName>Anne</shortName>
+   <picture>anne.png</picture>
+   <email>coloma@wmin.ac.uk</email>
+   <tel>1234567890</tel>
+   <imessage>coloma@wmin.ac.uk</imessage>
+ </contact>
+ <contact>
+   <contact_id>contact_3</contact_id>
+   <surname>Jehl</surname>
+   <forename>Scott</forename>
+   <shortName>Scott</shortName>
+   <picture>scott.png</picture>
+   <email>yyyy@yyyy.com</email>
+   <tel>1234567890</tel>
+   <imessage>1234567890</imessage>
+ </contact>
+</myContacts>
 
-[source, html]
----- 
-<div id="load" data-role="page" class="jqpage">
-----
+And then create an XSL file to transform the XML into an HTML that will contain some jQuery Mobile, see <<EX2-19-2>>:
+
+[[EX2-19-2]]
+.contacts.xsl
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xsl:stylesheet  [
+ <!ENTITY nbsp   "&#160;">
+ <!ENTITY copy   "&#169;">
+ <!ENTITY reg    "&#174;">
+ <!ENTITY trade  "&#8482;">
+ <!ENTITY mdash  "&#8212;">
+ <!ENTITY ldquo  "&#8220;">
+ <!ENTITY rdquo  "&#8221;">
+ <!ENTITY pound  "&#163;">
+ <!ENTITY yen    "&#165;">
+ <!ENTITY euro   "&#8364;">
+]>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+ <xsl:output method="html" encoding="UTF-8" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+ <xsl:template match="/">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+     <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
+       <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+       <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+       <title>MyContacts</title>
+       <style>
+         .pic {
+           margin: 0 15 15 15;
+           align: center;
+           width: 190px;
+         }
+       </style>
+     </head>   
+     <body>
+       <xsl:for-each select="myContacts/contact">
+         <div data-role="page">
+           <xsl:attribute name="id"><xsl:value-of select="contact_id" /></xsl:attribute>
+           <div data-role="header" data-position="fixed">
+             <xsl:if test="position() != 1" >
+               <a data-transition="slide" data-direction="reverse">
+                 <xsl:attribute name="href">#<xsl:value-of select="preceding-sibling::contact[1]/contact_id" /></xsl:attribute>
+                 <xsl:attribute name="data-direction">reverse</xsl:attribute>
+                 <xsl:attribute name="class">ui-btn-left</xsl:attribute>
+                 <xsl:attribute name="data-icon">arrow-l</xsl:attribute>
+                 <xsl:attribute name="data-iconpos">left</xsl:attribute>
+                 Previous
+               </a>
+             </xsl:if>
+             <h1>Contact <xsl:value-of select="shortName" /></h1>
+             <xsl:if test="position() != last()" >
+               <a data-transition="slide">
+                 <xsl:attribute name="href">#<xsl:value-of select="following-sibling::contact/contact_id" /></xsl:attribute>
+                 <xsl:attribute name="class">ui-btn-right</xsl:attribute>
+                 <xsl:attribute name="data-icon">arrow-r</xsl:attribute>
+                 <xsl:attribute name="data-iconpos">right</xsl:attribute>
+                 Next
+               </a>
+             </xsl:if>
+           </div> <!-- /header -->
+           <div data-role="content" align="center">
+             <h2><xsl:value-of select="forename" />&nbsp;<xsl:value-of select="surname" /></h2>
+             <img class="pic">
+               <xsl:attribute name="src"><xsl:value-of select="picture"></xsl:attribute>
+             </img>
+             <div data-role="controlgroup" data-type="horizontal" >
+               <a>
+                 <xsl:attribute name="href">mailto:<xsl:value-of select="email" /></xsl:attribute>
+                 <xsl:attribute name="data-role">button</xsl:attribute>
+                 Email
+               </a>
+               <a>
+                 <xsl:attribute name="href">tel:<xsl:value-of select="tel" /></xsl:attribute>
+                 <xsl:attribute name="data-role">button</xsl:attribute>
+                 Tel
+               </a>
+               <a>
+                 <xsl:attribute name="sms">iMessage<xsl:value-of select="imessage" /></xsl:attribute>
+                 <xsl:attribute name="data-role">button</xsl:attribute>
+                 iMessage
+               </a>
+             </div>              
+           </div> <!-- /content -->
+           <div data-role="footer" data-position="fixed">
+             <h4></h4>
+           </div> <!-- /footer -->
+         </div> <!-- page -->
+       </xsl:for-each>
+     </body>
+   </html>
+ </xsl:template>
+</xsl:stylesheet>
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-It is very easy when working with jQuery Mobile to concentrate on how your app looks on a small screen. However, some people will use their desktop browser to view your jQuery Mobile website.
+The first thing you need to do is to write your XML file so that it can hold all the details you will need. <<EX2-19-1>> is very simple and holds names and contact details. The +shortName+ was added to be used on the page header in case you want to use it when someone has a very long first name to avoid the ellipsis, or when your contact uses a shorten version of their name as their usual name.
 
-A simple solution to this problem is to use CSS to set the max-width of your app to 790px. Then, using a left and right margin of auto, the app will center in the desktop browser regardless of the width.
+<<EX2-19-2>> holds the rules to transform <<EX2-19-1>> to the final HTML file and holds the jQuery Mobile code that will be used on the page.
 
-This avoids the problem of lines of text that are too long for comfortable reading and is a simple way to improve the cross-device 'readability' of your app.
+The XSL file starts by specifying that you will match the whole XML document. You then load the jQuery Mobile libraries and specify the title of the document.
 
+You want to have one page per contact, so for each +contact+ in the XML document, the rule is to create a new jQuery Mobile page. Each jQuery Mobile page constructed here will have a fixed header that contains a previous button to go to the previous page unless this is the first page (with a slide transition in the reverse direction), a next button to go to the next page unless this is the last page (with a slide transition), and contact followed by the contact short name as heading (Contact Todd, Contact Anne and Contact Scott in our example). Each page content container is composed of the picture of the contact followed by a horizontal group container for the three button links to the contact email address using the mailto protocol, the contact telephone number using the tel protocol and the contact iMessage details using the sms protocol. Finally, each page also has a fixed footer. You will note that although the fixed footer contains no text, you still have and empty <h4></h4> to ensure that the footer has the required height that will be identical to that of the header, hence ensuring the desired balance between the header and the footer.
 
+No style was specified, so the default swatch +”a”+ is used to display the header and footer, while the swatch +”c”+ is used to display the content and the content elements. This is standard jQuery Mobile default style.
+
+You could modify the XSL file to allow for perpetual navigation, so that the first page has a previous button that links to the last page, and the last page has a next button that links to the first page.
+
+In this example, choosing to view the next contact will bring the corresponding contact page with a slide transition, while the previous button will bring the page for the previous contact using the reverse slide transition, to give an impression of natural flow. It is possible to change this by modifying the +data-transition+ and +data-direction+ attributes. It is also possible to modify the previous and next buttons to display icons only by adding the +data-iconpos="notext"+ attribute to the page link.  
+
+This technique is applicable in particular when you have pages describing artifacts, products or blog posts, where the display rules can be reused and only the content changes.
