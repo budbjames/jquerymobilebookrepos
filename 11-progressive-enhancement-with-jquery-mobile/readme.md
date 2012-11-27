@@ -11,18 +11,23 @@ Description:
 ## Recipes
 
 ### 1 - <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-1.adoc">What is Progressive Enhancement in a Mobile Context?</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
 
 *Problem:* 
 
 *Description:*
+
+*Percentage Complete:* 90%
 
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-2.adoc">How Graded Browser Support Works</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
 
 *Problem:* 
 
 *Description:*
+
+
+*Percentage Complete:* 90%
 
 ### 3 - <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-3.adoc">Adding AJAX to Page Links</a>
 *author:* <a href="mailto:"></a>
@@ -39,11 +44,13 @@ Description:
 *Description:*
 
 ### 5 - <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-5.adoc">Revealing Dynamic Content with Modals</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
 
 *Problem:* 
 
 *Description:*
+
+*Percentage Complete:* 90%
 
 ### 6 - <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-6.adoc">Dividing Content Using Tabs</a>
 *author:* <a href="mailto:"></a>
@@ -60,11 +67,13 @@ Description:
 *Description:*
 
 ### 8 - <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-8.adoc">Media Queries</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
 
 *Problem:* 
 
 *Description:*
+
+*Percentage Complete:* 90%
 
 ### 9 - <a href="/jquerymobilecookbook/book/blob/master/11-progressive-enhancement-with-jquery-mobile/recipe-9.adoc">Adjusting Columns Based on Viewport Width</a>
 *author:* <a href="mailto:"></a>
