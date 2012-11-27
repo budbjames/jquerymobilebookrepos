@@ -1,65 +1,37 @@
 ////
 
-I MOVED THIS TO CHAPTER 2 RECIPE 7 BECAUSE IT WAS THE FIRST CHAPTER TO MENTION TOOLBARS.
-jQueryMobile supports three types of toolbars.
-1.Header bars which is displayed as the top most item before page content.
-Normally used to show page title and buttons/icons.
-2.Footer bars which is displayed as the bottom most item after page content.
-Normally contains buttons/icons.
-3.Navbars which can be displayed within header/footer bars or with in page content to show seperate level of buttons/icons/other controls. 
-
-Author: John Chacko <poonkave@gmail.com>
+Author: Kevin Griffin <kevin@kevgriffin.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-2.9 Embedding Controls in Toolbars
+2.9 Navbars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to embed controls in the header or footer toolbars on the page. For example, you want to let the user toggle the current language of the page.
-
+You want to provide a navigation bar for your users that allows them to easily move to particular portions of your application.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-To do this, you need to be able to place a control into the header and position it properly to the right or left side.
 
-[source, html]
----- 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Embedding controls in toolbar</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-	<style>
-		#home-header .ui-select { 
-			float: right
-		}
-	</style>
-  </head>
-  <body>
-    <div id="home" data-role="page" data-theme="b">
-		<div id="home-header" data-role="header" data-position="inline">
-			<select name="language" id="language" data-native-menu="false" data-theme="b">
-				<option value="English">English</option>
-				<option value="French">French</option>
-				<option value="Russian">Russian</option>
-				<option value="Polish">Polish</option>
-			</select>
-			<h1>Home Page</h1> 
-
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" class="ui-btn-active">First</a></li>
+				<li><a href="#">Second</a></li>
+				<li><a href="#">Third</a></li>
+				<li><a href="#">Fourth</a></li>
+				<li><a href="#">Fifth</a></li>
+			</ul>
 		</div>
-		<div data-role="content"></div> 
-    </div>
-  </body>
-</html>
- 
+
+
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-In order to fit the control the right of the header, you've set it to float right. 
+The inclusion of a navigation bar is simple task. In the provided code camp, you are creating a div with the assigned data-role of "navbar".
+
+Inside of the div, you'll want to create an unordered list (ul) for each of the items you would like to include. There is no limit to the number of list items (li) that you can include. If you have five or fewer items, they will be rendered on a single line. More than five items will be rendered wrapped across multiple lines.
+
+The location of the navbar is not important. You may render it anywhere on the page, including within headers and footers.  

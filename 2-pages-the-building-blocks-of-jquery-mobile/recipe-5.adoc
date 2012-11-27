@@ -2,20 +2,19 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: Courtney Hall <courtney@bluerad.com> http://bluerad.com
-
+Author: 
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-2.12 Navbar Theming
+2.6 Fullscreen Toolbar Positioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Theming the navbar for your jQuery mobile application
+You want to be able to display a toolbar that will expand to match the width of the screen.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++

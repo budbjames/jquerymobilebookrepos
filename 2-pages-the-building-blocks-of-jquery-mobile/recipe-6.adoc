@@ -1,25 +1,54 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
-Author: 
+Author: Max Lynch <maxlynch@uwalumni.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-2.6 Fullscreen Toolbar Positioning
+2.6 Toolbar Theming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to be able to display a toolbar that will expand to match the width of the screen.
+You want to change the look and feel of a toolbar.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+You can easily change the theme of a toolbar by setting the data-theme attribute as show:
 
+[source, html]
+-----
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+<body>
+  <div data-role="page">
+		<div data-role="header" data-theme="e">
+			<h3>Yellow</h3>
+		</div>
+		<div data-role="content">
+			Content
+		</div>
+		<div data-role="footer" data-theme="b">
+			<h3>Blue</h3>
+		</div>
+	</div>
+</body>
+</html>
+-----
+ 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+This recipe demonstrates how to set the data-theme attribute to the theme swatch you want to use to style the toolbar.
+
+jQueryMobile supports three types of toolbars:
+1. Header bars, which are displayed as the topmost item before page content. Normally used to show page title and buttons/icons.
+2. Footer bars, which are displayed as the bottommost item after page content. Normally contains buttons/icons.
+3. Navbars, which can be displayed within header/footer bars or within page content to show separate level of buttons/icons/other controls.
