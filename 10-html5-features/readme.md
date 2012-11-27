@@ -67,11 +67,15 @@ Description:
 *Percentage Complete:* 20%
 
 ### 6 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-6.adoc">Audio</a>
-*author:* <a href="mailto:dcarrith@gmail.com">David Carrithers</a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
 
 *Problem:* 
 
 *Description:* 
+
+*Status:* 
+
+*Percentage Complete:* 90% 
 
 ### 7 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-7.adoc">Video</a>
 *author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
