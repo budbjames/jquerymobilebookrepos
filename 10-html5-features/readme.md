@@ -11,7 +11,7 @@ Description:
 ## Recipes
 
 ### 1 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-1.adoc">Keeping up with HTML5 features and compatibility</a>
-*author:* <a href="mailto:TODO">TODO</a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
 
 *Problem:* 
 
@@ -19,7 +19,7 @@ Description:
 
 *Status:* 
 
-*Percentage Complete:* 10%
+*Percentage Complete:* 90%
 
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-2.adoc">HTML 5 Geo-location</a>
 *author:* <a href="mailto:rhernandez@overridethis.com">Roberto Hernandez</a>
@@ -74,11 +74,13 @@ Description:
 *Description:* 
 
 ### 7 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-7.adoc">Video</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
 
 *Problem:* 
 
 *Description:* 
+
+*Percentage Complete:* 90%
 
 ### 8 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-8.adoc">Uploading Photos on iOS</a>
 *author:* <a href="mailto:ryan@trippingthebits.com">Ryan Westphal</a>
@@ -88,7 +90,7 @@ Description:
 *Description:* 
 
 ### 9 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-9.adoc">Game Development</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
 
 *Problem:* 
 
