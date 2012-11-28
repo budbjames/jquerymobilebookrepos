@@ -47,7 +47,7 @@ Description:
 ---
 
 ### 5 - <a href="/jquerymobilecookbook/book/blob/master/4-navigating-through-your-apps/recipe-5.adoc">Creating Modal Dialogs </a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a>
 
 *Problem:*
 
