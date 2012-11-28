@@ -1,6 +1,6 @@
 ////
 
-Author: Unassigned
+Author: Tyson Cadenhead <tcadenhead@appendto.com> 11/28/2012
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -12,12 +12,37 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+We want to show a stylish modal dialog box when the user clicks on a button.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+JQuery Mobile makes it easy to alert the user with fully styled dialog boxes using any link or button.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+To create a modal dialog, we need to create two pages. The first page will create the button to open the dialog and the second page will be the dialog itself.
+
+Our button page will look something like this:
+
+----
+<div data-role="page">
+	<a href="modal.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">Open Dialog</a>
+</div>
+----
+
+Our dialog page will look like this:
+
+----
+<div data-role="dialog">
+	<div data-role="header" data-theme="d">
+		<h1>Dialog</h1>
+	</div>
+	<div data-role="content" data-theme="c">
+		<h1>External Modal Dialog Box</h1>
+		<p>This dialog was created from the modal.html page.</p>
+		<a href="example.html" data-role="button" data-rel="back" data-theme="b">Okay</a>
+	</div>
+</div>
+----
+
+Dialogs basically function as a page within themselves. They can have toolbars like the header in the example above. Any links in the dialog with a data-rel="back" property will close the dialog box.
