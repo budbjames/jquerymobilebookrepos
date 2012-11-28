@@ -47,7 +47,7 @@ Description:
 ---
 
 ### 5 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-5.adoc">Fullscreen toolbar positioning</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a>
 
 *Problem:*
 
