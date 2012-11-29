@@ -1,8 +1,6 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
-Author: unassigned
+Author: Tyson Cadenhead <tcadenhead@appendto.com> 11/29/2012
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>

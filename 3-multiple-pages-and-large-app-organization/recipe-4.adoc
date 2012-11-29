@@ -1,6 +1,6 @@
 ////
 
-Author: unassigned
+Author: Tyson Cadenhead <tcadenhead@appendto.com> 11/29/2012
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -12,12 +12,18 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+There are some instances where we would like to include multiple pages in a single template.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+Instead of making each link in our application go to a separate html page, we can actually embed multiple pages in a single template.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+JQuery Mobile lets you embed as main pages in your template as you want. When you view your page, it will automatically display the first page in the template by default, but by using hashtag navigation, you can show and hide any of the pages in the DOM. Here is an example using the multipage pattern.
+
+----
+include::recipe-4-code/multipage.html[]
+----
+
+Since the data-role="page" attribute is set on all three pages, only our homepage will be displayed at first. When one of the homepage links are clicked, the homepage is hidden and the link that was clicked will be displayed. The data-title attribute can be used on pages and dialogs to change the title that is shown in the browser tab.
