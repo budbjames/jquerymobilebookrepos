@@ -38,7 +38,7 @@ Description:
 ---
 
 ### 4 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-4.adoc">How multipages works, how to use multipage pattern</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@gmail.com">Tyson Cadenhead</a>
 
 *Problem:* 
 
@@ -47,7 +47,7 @@ Description:
 ---
 
 ### 5 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-5.adoc">Performance comparison example of multipage pattern</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a>
 
 *Problem:* 
 
