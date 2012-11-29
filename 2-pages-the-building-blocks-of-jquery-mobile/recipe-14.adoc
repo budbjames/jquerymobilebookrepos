@@ -1,90 +1,111 @@
 ////
 
-Recipe(s) for Dialogs
+Recipe(s) for collapsibles 
 
 Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
+Need to check ref id of chapter on linking pages
 ////
 
-2.14 Page Dialogs
+2.15 Collapsible Content Blocks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to display a small page to the user in a way that will not look like or behave like a standard page. Instead, you want this to be more like a dialog box. For example, when you click on the second picture on the screen below, see Figure <<FIG2-14-1>> you want a small dialog window to appear that will offer various ways to contact that person, see Figure <<FIG2-14-2>>.
-
-[[FIG2-14-1]]
-.A Page with a Link with +data-rel="dialog"+
-image::images/grid_layout_example.png[]
-
-[[FIG2-14-2]]
-.The Dialog Page
-image::images/dialog_example.png[]
+You want to display some information in a way that will enable to toggle the view to show or hide, so that it does not take too much space on the screen (especially relevant when the content will be displayed on a small screen).
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Create the page as a standard jQuery Mobile page, and add the data-rel="dialog" attribute to the link to that page:
+Use a collapsible content block, using a container with data-role="collapsible", see <<EX2-16-1>>:
 
-[source,html]
+[[EX2-16-1]]
+.A Collapsible Example
+<!DOCTYPE html>
 <html>
  <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Grid Layout example</title>
-   <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
+   <meta name="viewport" content="width=device-width, initial-scale="1"">
+   <title>Collapsible example</title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.css" />
    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-   <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
-   <style>
-     .pic {
-       padding-right: 15px;
-       valign: middle;
-       width: 64px
-     }
-   </style>
+   <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
  </head>
  <body>
-   <div data-role="page" id="home">
+   <div data-role="page" id="profile">
      <div data-role="header" data-position="fixed">
-       <h4>Choose Contact</h4>
+       <h4>Staff Profile</h4>
      </div>
      <div data-role="content">
-       <!-- some code here -->
-
-       <a href="#contact_anne" data-rel="dialog" data-transition="pop">
-         <img src="anne.png" width="64"/>
-       </a>
-
-       <!-- some code here -->
-     </div> <!-- /content -->
-     <div data-role="footer" data-position="fixed">
-        <h4>My Contacts</h4>
-     </div>
-   </div>
-   <div data-role="page" id="contact_anne" >
-     <div data-role="header" >
-       <h1>Contact Anne</h1>
-     </div>
-     <div data-role="content">  
-       <img src="anne.png" class="pic" align="left" />       
-       <div data-role="controlgroup" data-type="horizontal" data-mini="true">
-         <legend>Anne-Gaelle Colom</legend>
-         <a href="mailto:coloma@wmin.ac.uk" data-role="button">Email</a>
-         <a href="tel:01234567890" data-role="button">Tel</a>
-         <a href="sms:coloma@wmin.ac.uk" data-role="button">iMessage</a>
-       </div>
-     </div>
-   </div>
+       <div>
+         <img src="AG.jpg" align="right" width="100" />
+           <span>
+             <h4>Anne-Gaelle Colom <br />Teaching Fellow</h4>   
+             Office: N7.122 <br />
+             Drop in: Tuesday 1-2pm<br />
+           </span>
+         </div>
+         <div data-role="collapsible">
+           <h3>Virtual Noticeboard</h3>
+           <dl>
+             <dt>News: </dt>
+             <dd>I am currently working on my recipes for the jQuery Mobile Cookbook...</dd>
+           </dl>
+         </div>
+         <div data-role="collapsible">
+           <h3>Area of expertise</h3>
+           <ul>
+             <li>jQuery Mobile</li>
+             <li>JavaScript</li>
+             <li>Front-end Web development</li>
+             <li>User Experience</li>
+           </ul>
+         </div>
+         <div data-role="collapsible">
+           <h3>Teaching</h3>
+           <p>Teaching details here...</p>
+         </div>
+         <div data-role="collapsible">
+           <h3>Projects</h3>
+           <p>Projects details here...</p>
+         </div>
+       </div><!-- /content -->
+       <div data-role="footer">
+         <h4></h4>
+       </div><!-- /footer -->
+    </div><!-- /page -->
  </body>
 </html>
 
+This will produce <<FIG2-16-1>> and <<FIG2-16-2>>.
+[[FIG2-16-1]]
+.Simple Collapsibles Collapsed
+image::images/Collapsible_Simple_Collapsed.png[]
+Photograph: Joby Sessions for .net magazine
+
+[[FIG2-16-2]]
+.Simple Collapsibles Expanded
+image::images/Collapsible_Simple_Expanded.png[]
+Photograph: Joby Sessions for .net magazine
+
+
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-Anne's picture here is a link to the page with the +id+ +contact_anne+ (Note that the code for the content before and after that picture in the page content container has been removed for clarity). +contact_anne+ is the id of a standard jQuery Mobile page, which is in the same file as the picture that was clicked, which allows the page to be called by simply linking to its +id+ using the +#id+ key.
+The collapsible content block will by default have content collapsed, so that only the collapsible heading is visible, next to a “plus” sign, that indicates that the content can be expanded. The user can expand (show) the content of the collapsible by touching anywhere on the heading (text or plus icon). The content then appears below the heading in its own content area. The “plus” icon becomes a “minus” icon, indicating that the content can now be collapsed (hidden).
 
-By adding the +data-rel="dialog"+ as an attribute to the link to the +contact_anne+ page +id+, the page will not be displayed in full screen like all standard pages. Instead, it will come as a dialog box floating in the middle of the screen.
+The heading element *+<h3>Area of expertise</h3>+* in the provided example must be immediately inside the collapsible container. It is this heading that will be displayed and clickable when the collapsible content is collapsed. It is possible to have more than one collapsible on the same page, and there is no restriction to the content of a collapsible.
 
-It is possible to add a +data-transition+ optional attribute that will define the transition used to bring the dialog box. By default, the reverse set transition is used when leaving the page. In the provided example, the transition +"pop"+ was used to open the dialog page.
+Note that it is also possible to add color to the collapsible header and/or the collapsible content. By default, the collapsible header will inherit theme from the defined page content theme (see Chapter 6 for more information on themes), and the content will have no theme and will simply be displayed on the page below its header. To override this style, you can add *+data-theme+* to the collapsible elements (i.e., to the header or to the content). Adding *+data-theme+* to the collapsible content will create a visual effect. The collapsible content will no longer be simply displayed on the page, but it will be in a visual container of the color corresponding to the theme specified. The content will still be below the heading, but also visually attached to it. The bottom of the content will have by default a nice rounded corner at the bottom. This can be changed with custom CSS.
 
-Note that it is possible to customize the look of the dialog by setting the +data-overlay-theme+ attribute and/or changing or removing the default 10% top margin.
+See the results below <<FIG2-16-3>> and <<FIG2-16-4>> of theming the collapsible and its content by changing the collapsible container to *+<div data-role="collapsible" data-theme="a" data-content-theme="c">+*.
+
+[[FIG2-16-3]]
+.Themed Collapsibles Collapsed
+image::images/Collapsible_Themed_Collapsed.png[]
+Photograph: Joby Sessions for .net magazine
+
+[[FIG2-16-4]]
+.Collapsibles with Themed Content Expanded
+image::images/Collapsible_Themed_Expanded.png[]
+Photograph: Joby Sessions for .net magazine

@@ -14,12 +14,11 @@ Solution:
 <title> Example of Themes</title> 
 <meta name=viewport content="user-scalable=no,width=device-width" />
 <link rel="stylesheet" href="http://code.jquery.com/mo
-bile/1.0.1/jquery.mobile-1.0.1.min.css" />
-<script src="http://code.jquery.com/jquery-1.6.4.min.j
+bile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.j
 s"></script>
-<script src="http://code.jquery.com/mobile/1.0.1/jquer
-y.mobile-1.0.1.min.js"></script>
-<script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquer
+y.mobile-1.2.0.min.js"></script>
 </head> 
 <body> 
 <div data-role="page" class="1st_page">
@@ -62,5 +61,4 @@ y.mobile-1.0.1.min.js"></script>
 <div data-role="footer" class="footer" data-theme="F">
 -----------------
 On today’s JQM codeVeggie menu we have prepared a theme style change using CSS, simplifying the development process. 
-There are five default themes in total; each theme has a total of twenty six color variant swatches.
-Swatches are assigned by using any of 26 letters  for each theme, styles can also be applied to buttons; listviews or any page element.
+There are five default swatches available (a-e) with the jQuery Mobile default theme. You can create a custom theme with jQuery Mobile ThemeRoller. Custom themes can have up to 26 variant swatches, one for each letter of the English alphabet.

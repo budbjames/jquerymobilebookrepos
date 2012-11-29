@@ -65,7 +65,7 @@ Description:
 ---
 
 ### 7 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-7.adoc">Creating an image gallery with the swipe event</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a>
 
 *Problem:*
 

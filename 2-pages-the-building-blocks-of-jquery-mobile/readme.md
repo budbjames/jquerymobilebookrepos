@@ -46,17 +46,8 @@ Description:
 
 ---
 
-### 5 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-5.adoc">Managing behavior of fixed positioning</a>
-*author:* <a href="mailto:"></a>
-
-*Problem:*
-
-*Description:* How to control to the appearance behavior
-
----
-
-### 6 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-6.adoc">Fullscreen toolbar positioning</a>
-*author:* <a href="mailto:"></a>
+### 5 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-5.adoc">Fullscreen toolbar positioning</a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a>
 
 *Problem:*
 
@@ -64,7 +55,7 @@ Description:
 
 ---
 
-### 7 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-7.adoc">Toolbar theming</a>
+### 6 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-6.adoc">Toolbar theming</a>
 *author:* <a href="mailto:maxlynch@uwalumni.com">Max Lynch</a>
 
 *Problem:* We want to change the look and feel of a toolbar.
@@ -73,7 +64,7 @@ Description:
 
 ---
 
-### 8 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-8.adoc">Toolbar buttons</a>
+### 7 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-7.adoc">Toolbar buttons</a>
 *author:* <a href="mailto:cory.gack@gmail">Cory Gackenheimer</a> (23 Nov 2012)
 
 *Problem:*
@@ -82,7 +73,7 @@ Description:
 
 ---
 
-### 9 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-9.adoc">Embedding controls in toolbars</a>
+### 8 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-8.adoc">Embedding controls in toolbars</a>
 *author:* <a href="mailto:poonkave@gmail.com">John Chacko</a>
 
 *Problem:* Sometimes we want to embed controls in the header or footer toolbars on the page. One common reason is to let the user toggle the current language of the page.
@@ -93,7 +84,7 @@ In order to this, we need to be able to place a control into the header and posi
 
 ---
 
-### 10 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-10.adoc">Navbars</a>
+### 9 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-9.adoc">Navbars</a>
 *author:* <a href="mailto:kevin@kevgriffin.com">Kevin Griffin</a>
 
 *Problem:* You would like to provide a navigation bar for your users to use that allows them to easily move to particular portions of your application.
@@ -102,7 +93,7 @@ In order to this, we need to be able to place a control into the header and posi
 
 ---
 
-### 11 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-11.adoc">Persistent footer navbar</a>
+### 10 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-10.adoc">Persistent footer navbar</a>
 *author:* <a href="mailto:maxlynch@uwalumni.com">Max Lynch</a>
 
 *Problem:* We want to position a NavBar at the bottom of our app and keep it at the bottom regardless of page transitions and navigation.
@@ -111,7 +102,7 @@ In order to this, we need to be able to place a control into the header and posi
 
 ---
 
-### 12 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-12.adoc">Navbar icons</a>
+### 11 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-11.adoc">Navbar icons</a>
 *author:* <a href="mailto:adambradley25@gmail.com">Adam Bradley</a>
 
 *Problem:* Like with any application, or even your car's dashboard, icons help users quickly identify an expected outcome when an interaction occurs. 
@@ -120,16 +111,7 @@ In order to this, we need to be able to place a control into the header and posi
 
 ---
 
-### 13 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-13.adoc">Theming navbars</a>
-*author:* <a href="mailto:"></a>
-
-*Problem:*
-
-*Description:* 
-
----
-
-### 14 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-14.adoc">Page dialogs</a>
+### 12 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-12.adoc">Page dialogs</a>
 *author:* <a href="mailto:coloma@westminster.ac.uk">Anne-Gaelle Colom</a>
 
 *Problem:* You want to display a small page to the user in a way that will not look like or behave like a standard page. Instead, you want this to be more like a dialog box. For example, when you click on the second picture on the screen below, see Figure <<FIG2-14-1>> you want a small dialog window to appear that will offer various ways to contact that person, see Figure <<FIG2-14-2>>.
@@ -138,7 +120,7 @@ In order to this, we need to be able to place a control into the header and posi
 
 ---
 
-### 15 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-15.adoc">Content Formatting with Layout grids</a>
+### 13 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-13.adoc">Content Formatting with Layout grids</a>
 *author:* <a href="mailto:coloma@westminster.ac.uk">Anne-Gaelle Colom</a>
 
 *Problem:* You want to organise your content in up to 5 columns on the page. For example, you want to have a screen that will display icons or images in 4 columns, as shown in <<FIG2-15-1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size.
@@ -147,7 +129,7 @@ In order to this, we need to be able to place a control into the header and posi
 
 ---
 
-### 16 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-16.adoc">Collapsible content blocks</a>
+### 14 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-14.adoc">Collapsible content blocks</a>
 *author:* <a href="mailto:coloma@westminster.ac.uk">Anne-Gaelle Colom</a>
 
 *Problem:* You want to display some information in a way that will enable to toggle the view to show or hide, so that it does not take too much space on the screen (especially relevant when the content will be displayed on a small screen).
@@ -156,7 +138,7 @@ In order to this, we need to be able to place a control into the header and posi
 
 ---
 
-### 17 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-17.adoc">Collapsible sets</a>
+### 15 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-15.adoc">Collapsible sets</a>
 *author:* <a href="mailto:coloma@westminster.ac.uk">Anne-Gaelle Colom</a>
 
 *Problem:* You want to use more than one collapsible, but when one collapsible is expanded, you want the others to be collapsed.
@@ -165,7 +147,7 @@ In order to this, we need to be able to place a control into the header and posi
 
 ---
 
-### 18 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-18.adoc">How to make pages readable on desktops and other wide screens</a>
+### 16 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-16.adoc">How to make pages readable on desktops and other wide screens</a>
 *author:* <a href="mailto:raydaly@gmail.com">Ray Daly</a>
 
 *Problem:* Your app looks fine on the phone but not on your desktop monitor. Text lines are too long to read comfortably.
@@ -174,7 +156,7 @@ In order to this, we need to be able to place a control into the header and posi
 
 ---
 
-### 19 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-19.adoc">Transform a simple XML file into linked jQuery Mobile Pages using XSLT</a>
+### 17 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-17.adoc">Transform a simple XML file into linked jQuery Mobile Pages using XSLT</a>
 *author:* <a href="mailto:coloma@westminster.ac.uk">Anne-Gaelle Colom</a>
 
 *Problem:* You want to create multiple pages that will look similar, and it seems inefficient to repeat the same code. You also want to link all those pages one after the other.

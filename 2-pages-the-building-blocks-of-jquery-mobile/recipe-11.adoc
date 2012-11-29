@@ -1,70 +1,49 @@
 ////
 
-Author: Max Lynch <maxlynch@uwalumni.com>
+Author: Adam Bradley <adambradley25@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-2.11 Persistent Footer Navbar
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2.11 Navbar Icons
+~~~~~~~~~~~~~~~~~
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
-You want to position a Navbar at the bottom of your app and keep it at the bottom regardless of page transitions and navigation.
++++++++
+You want to add icons to your Navbar. 
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
-You can combine the fixed positioning support for toolbars with a Navbar embedded in the footer toolbar. This gives you the desired effect of a Navbar fixed to the bottom of the app that stays there regardless of the content of the page.
+++++++++
+Like with any application, or even your car's dashboard, icons help users quickly identify an expected outcome when an interaction occurs. By default, jQuery Mobile comes with a basic set of icons that can be easily displayed within various elements, including Navbars. After jQuery Mobile performs its progressive enhancement magic, the assigned icons help to provide users with a familiar "app-like" appearance. Along with choosing which icon to display for each Navbar link, you can also customize an icon's position relative to each nav link's text.
 
-You can also duplicate this toolbar across several pages, giving you the effect of a Navbar that stays at the bottom despite navigation and changing page content.
-
-[source, html]
+.Navbar with Icons
+[source,html]
 ----
-<!DOCTYPE html> 
-<html> 
-	<head> 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-</head> 
-<body>
-  <div data-role="page" id="page1">
-		<div data-role="content">
-			Page 1
-		</div>
-		<div data-role="footer" data-id="fixedbar" data-position="fixed">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="page1.html" class="ui-btn-active ui-state-persist">Page 1</a></li>
-					<li><a href="page2.html">Page 2</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+<div data-role="footer">		
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#" data-icon="home">Home</a></li>
+			<li><a href="#" data-icon="info">Info</a></li>
+			<li><a href="#" data-icon="search">Search</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
 ----
 
-[source, html]
-----
-	<div data-role="page" id="page2">
-		<div data-role="content">
-			Page 2
-		</div>
-		<div data-role="footer" data-id="fixedbar" data-position="fixed">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="page1.html">Page 1</a></li>
-					<li><a href="page2.html" class="ui-btn-active ui-state-persist">Page 2</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-----
- 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-This recipe demonstrates how to add a page footer to each page where you want the toolbar to residen. You've also set the toolbars position to "fixed". In order to provide the effect of the toolbar persisting across page navigations, you set the data-id of the toolbar to the same value on each page. Also, to indicate the current page on the Navbar, you added the class="ui-btn-active ui-state-persist" to each active button for the page. 
+++++++++++
+Out of the box, jQuery Mobile provides a standard set of icons commonly used, such as "home", "info" or "search" icons. __See ########## for more information on jQuery Mobile icons.__ By using the 'data-icon' attribute, you can assign icons to individual. By default, they will be positioned on top of their link's text, which is also customizable.
+
+By using the 'data-iconpos' attribute within the Navbar container, you are able to override the default _top_ icon positioning. Vaild 'data-iconpos' values include: __left, right, top, bottom__.
+
+.Navbar with Bottom Positioned Icons
+[source,html]
+----
+<div data-role="navbar" data-iconpos="bottom">
+----
+
+Notice in the provided example the 'data-iconpos="bottom"' is not assigned to an individual link but instead to the  Navbar container.
+

@@ -17,42 +17,37 @@ JavaScript however isn't perfect and each browser vendor has a different interpr
 
 In January 2006 at a Barcamp in NYC, John Resig showed off three things.  One of those was jQuery, a JavaScript library that abstracts away cross-browser "quirks" and allows the developer to not have to think about it.  They essentially can "Write less, do more." which is the jQuery tag line.  jQuery is free, open source software that is licensed under the MIT license (http://jquery.org/license/).
 
+Today, jQuery is the most popular JavaScript library in use. jQuery is used on over 59.2% of the top 10,000 sites as tracked by Built With Trends as of November 2012.  That number continues to climb at a steady rate.  You can see the latest percentages at http://trends.builtwith.com/javascript/jQuery.
+
 jQuery allows JavaScript developers to take native code like this:
 
 [source,javascript]
 ----
-  if (browserType == "gecko")
-    document.poppedLayer = 
-      eval('document.getElementByID("HiddenDiv")');
-  else if (browserType == "ie")
-    document.poppedLayer = 
-      eval('document.getElementByID("HiddenDiv")');
-  else 
-    document.poppedLayer = 
-      eval('document.layers("HiddenDiv")');
-  document.poppedLayer.style.visibility = "visible";
+  var button = document.getElementById("mybutton");
+
+  if (button.addEventListener) {
+    button.addEventListener("click", redirect, false);
+  } else if (anchor.attachEvent) {
+    button.attachEvent("onclick", redirect);
+  } else {
+    button["onclick"] = redirect;
+  }
 ----
 
 and write one line of code like this:
 
 [source,javascript]
 ----
-  $("#HiddenDiv").show();
+  $("#mybutton").on("click", redirect);
 ----
 
-Today, jQuery is the most popular JavaScript library in use today.  According to Built With Trends jQuery is used on over 59.2% of the top 10,000 sites as tracked by Built With Trends as of November 2012.  That number continues to climb at a steady rate.  You can see the latest percentages at http://trends.builtwith.com/javascript/jQuery.
-
-A line of jQuery can be broken down into three parts. 
-
------
-$("div").hide();
------
+Above line of jQuery can be broken down into three parts.  
 
 First you need to declare and call the jQuery object.  We do that by calling it's alias '$'.  
 
-Next we select the elements on the page '("div")'.  The jQuery object will take any selectors that conform to the CSS 1-3 specs plus some pseudo selectors that are apart of jQuery. In our example about we will select all the div's on a page. 
+Next we select the element whose id is 'mybutton'.  The jQuery object will take any selectors that conform to the CSS 1-3 specs plus some pseudo selectors that are apart of jQuery. In our example about we will select a button whose id is 'mybutton' on a page. 
 
-The combined jQuery object and selector returns a jQuery Collection that can then have worked performed on.  jQuery has a rich API that allows you to do something on the returned collection.  In our example we are visibly hiding all the div elements on the page.
+The combined jQuery object and selector returns a jQuery Collection that can then have worked performed on.  jQuery has a rich API that allows you to do something on the returned collection.  In our example we are attaching a listener to the 'click' event where redirect' is the name of the listener function.
 
 Some broad actions you can perform using jQuery are things like selecting and manipulating DOM elements, DOM traversal, creating animations, handling events, and developing Ajax applications, easily.
 

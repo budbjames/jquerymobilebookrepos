@@ -7,82 +7,89 @@ Tech edited: <date>
 
 ////
 
-2.15 Formatting Content With Layout Grids
+2.16 Collapsible Sets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to organize your content in up to five columns on the page. For example, you want to have a screen that will display icons or images in four columns, as shown in <<FIG2-15-1>>, so that the images are always nicely spread out and aligned on the screen, regardless of the screen size.
-
-[[FIG2-15-1]]
-.Layout Grid Example
-image::images/grid_layout_example.png[]
+You want to use more than one collapsible, but when one collapsible is expanded, you want the others to be collapsed.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-You can use layout grids to format your content by having your content setup in a set of specific containers. For the aforementioned example, you will need to start by having the columns in a div with class="ui-grid-c". This corresponds to a four-column grid. This container will then hold the four div containers that will correspond to each of the four columns, each of which has its own class: "ui-block-a" to "ui-block-d":
+Use a collapsible set by having your collapsibles inside an additional +div+ container with +data-role="collapsible-set"+:
 
 [source,html]
+<!DOCTYPE html>
 <html>
  <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Grid Layout example</title>
-   <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
+   <meta name="viewport" content="width=device-width, initial-scale="1"">
+   <title>Collapsible example</title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.css" />
    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-   <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
  </head>
  <body>
-   <div data-role="page" id="home">
+   <div data-role="page" id="profile">
      <div data-role="header" data-position="fixed">
-       <h4>Choose Contact</h4>
+       <h4>Staff Profile</h4>
      </div>
      <div data-role="content">
-       <div class="ui-grid-c"><!-- defines a four-column grid layout -->
-         <div class="ui-block-a"> <!-- first column -->
-           <img src="todd.jpg" width="64"/><br /><br />
-           <img src="ghislain.jpg" width="64"/><br /><br />
-           <img src="elijah.jpg" width="64"/><br /><br />
-           <img src="addy.jpg" width="64"/><br />
-         </div> <!-- /first column -->
-         <div class="ui-block-b"> <!-- second column -->
-           <img src="anne.jpg" width="64"/><br /><br />
-           <img src="garann.jpg" width="64"/><br /><br />
-           <img src="doug.jpg" width="64"/><br /><br />
-           <img src="paul.jpg" width="64"/><br />
-         </div> <!-- /second column -->
-         <div class="ui-block-c"> <!-- third column -->
-           <img src="scott.jpg" width="64"/><br /><br />
-           <img src="mat.jpg" width="64"/><br /><br />
-           <img src="max.jpg" width="64"/><br /><br />
-           <img src="andy.jpg" width="64"/><br />
-         </div> <!-- /third column -->
-         <div class="ui-block-d"> <!-- fourth column -->
-           <img src="john.jpg" width="64"/><br /><br />
-           <img src="jquerymobile.jpg" width="64"/><br /><br />
-           <img src="mike.jpg" width="64"/><br /><br />
-           <img src="raymond.jpg" width="64"/><br />
-         </div> <!-- /fourth column -->
-       </div> <!-- /grid layout -->
-     </div> <!-- /content -->
-     <div data-role="footer" data-position="fixed">
-       <h4>My Contacts</h4>
-     </div>
-   </div>
+       <div>
+         <img src="AG.jpg" align="right" width="100" />
+           <span>
+             <h4>Anne-Gaelle Colom <br />Teaching Fellow</h4>
+             Office: N7.122 <br />
+             Drop in: Tuesday 1-2pm<br />
+           </span>
+         </div>
+         <div data-role="collapsible-set">
+           <div data-role="collapsible" data-theme="a" data-content-theme="c" >
+             <h3>Virtual Noticeboard</h3>
+             <dl>
+               <dt>News: </dt>
+               <dd>I am currently working on my recipes for the jQuery Mobile Cookbook...</dd>
+             </dl>
+           </div>
+           <div data-role="collapsible">
+             <h3>Area of expertise</h3>
+             <ul>
+               <li>jQuery Mobile</li>
+               <li>JavaScript</li>
+               <li>Front-end Web development</li>
+               <li>User Experience</li>
+             </ul>
+           </div>
+           <div data-role="collapsible">
+             <h3>Teaching</h3>
+             <p>Teaching details here...</p>
+           </div>
+           <div data-role="collapsible">
+             <h3>Projects</h3>
+             <p>Projects details here...</p>
+           </div>
+         </div> <!-- /collapsible-set -->
+       </div> <!-- /content -->
+       <div data-role="footer">
+         <h4></h4>
+       </div> <!-- /footer -->
+    </div> <!-- /page -->
  </body>
 </html>
 
+
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-You can choose from four layout grids to format your content:
-* Layout grid a is defined with +<div class="ui-grid-a">+ and is a two-column grid
-* Layout grid b is defined with +<div class="ui-grid-b">+ and is a three-column grid
-* Layout grid c is defined with +<div class="ui-grid-c">+ and is a four-column grid
-* Layout grid d is defined with +<div class="ui-grid-d">+ and is a five-column grid
+A collapsible set is a set of collapsibles that work together. All collapsibles in a set may be collapsed at the same time, and only one collapsible in a set can be expanded at any one time. The collapsibles in the set will look like a block of collapsibles, with the top and bottom rounded corners applied to the top of the first and the bottom of the last collapsibles of the set by default.
 
-After this definition, you will need to construct the content of each column in the grid. In our example, you have a four-column grid, defined with +<div class="ui-grid-c">, and the four columns are constructed using +<div class="ui-block-a">+ for the first column, +<div class="ui-block-b">+ for the second column, +<div class="ui-block-c">+ for the third column, and finally +<div class="ui-block-d">+ for the fourth column.
+Just as you are able to add theme to the header and content of the collapsible, you can do the same with the collapsible set, by adding +data-theme+ to the collapsible header, and/or to the collapsible content. This will produce <<FIG2-17-1>> and <<FIG2-17-2>>:
 
-Each of the defined columns can have any type of content. In this example, you simply have images. Any standard page content element can be inserted in a grid column. In some cases, for example if you have collapsibles in a grid, you will need to add an additional container that will ensure that you have extra margin around your elements and these do not overlap into their neighboring columns.
 
-Note that it is possible to have multiple row grids. In this case, you will need to define the layout grid type using the corresponding +ui-grid+ class, and assign block classes in a repeating sequence, so for a +3x3+ grid, this will look like +a, b, c, a, b, c, a, b, c+. The first column in each row must have the ui-block-a class that clears the floats and which will start a new line.
+[[FIG2-17-1]]
+.A Themed Collapsible Set Collapsed
+image::images/Collapsible_Themed_Collapsed.png[]
+Photograph: Joby Sessions for .net magazine
 
-It is possible to only have a small portion of the page content in a layout grid. You do not have to apply that layout to the whole content of the page. For example, you may choose to only have one line of elements in a layout grid to align buttons on the page.
+[[FIG2-17-2]]
+.A Themed Collapsible Set Expanded
+image::images/Collapsible_Themed_Expanded.png[]
+Photograph: Joby Sessions for .net magazine

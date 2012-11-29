@@ -74,7 +74,7 @@ Description:
 ---
 
 ### 8 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-8.adoc">Structuring client side code (inc AMD)</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a>
 
 *Problem:* 
 
@@ -92,7 +92,7 @@ Description:
 ---
 
 ### 10 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-10.adoc">Data-binding with knockout.js</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:buddy@refactorthis.net">Buddy James</a>
 
 *Problem:* 
 
@@ -119,7 +119,7 @@ Description:
 ---
 
 ### 13 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-13.adoc">Using JQM with ember.js</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:EricAnderson1011@gmail.com">Eric Anderson</a>
 
 *Problem:* 
 

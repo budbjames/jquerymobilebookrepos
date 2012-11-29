@@ -1,49 +1,90 @@
 ////
 
-Author: Adam Bradley <adambradley25@gmail.com>
+Recipe(s) for Dialogs
+
+Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-
-2.12 Navbar Icons
-~~~~~~~~~~~~~~~~~
+2.13 Page Dialogs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
-+++++++
-You want to add icons to your Navbar. 
+++++++++++++++++++++++++++++++++++++++++++++
+You want to display a small page to the user in a way that will not look like or behave like a standard page. Instead, you want this to be more like a dialog box. For example, when you click on the second picture on the screen below, see Figure <<FIG2-14-1>> you want a small dialog window to appear that will offer various ways to contact that person, see Figure <<FIG2-14-2>>.
+
+[[FIG2-14-1]]
+.A Page with a Link with +data-rel="dialog"+
+image::images/grid_layout_example.png[]
+
+[[FIG2-14-2]]
+.The Dialog Page
+image::images/dialog_example.png[]
 
 Solution
-++++++++
-Like with any application, or even your car's dashboard, icons help users quickly identify an expected outcome when an interaction occurs. By default, jQuery Mobile comes with a basic set of icons that can be easily displayed within various elements, including Navbars. After jQuery Mobile performs its progressive enhancement magic, the assigned icons help to provide users with a familiar "app-like" appearance. Along with choosing which icon to display for each Navbar link, you can also customize an icon's position relative to each nav link's text.
+++++++++++++++++++++++++++++++++++++++++++++
+Create the page as a standard jQuery Mobile page, and add the data-rel="dialog" attribute to the link to that page:
 
-.Navbar with Icons
 [source,html]
-----
-<div data-role="footer">		
-	<div data-role="navbar">
-		<ul>
-			<li><a href="#" data-icon="home">Home</a></li>
-			<li><a href="#" data-icon="info">Info</a></li>
-			<li><a href="#" data-icon="search">Search</a></li>
-		</ul>
-	</div><!-- /navbar -->
-</div><!-- /footer -->
-----
+<html>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Grid Layout example</title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
+   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+   <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+   <style>
+     .pic {
+       padding-right: 15px;
+       valign: middle;
+       width: 64px
+     }
+   </style>
+ </head>
+ <body>
+   <div data-role="page" id="home">
+     <div data-role="header" data-position="fixed">
+       <h4>Choose Contact</h4>
+     </div>
+     <div data-role="content">
+       <!-- some code here -->
+
+       <a href="#contact_anne" data-rel="dialog" data-transition="pop">
+         <img src="anne.png" width="64"/>
+       </a>
+
+       <!-- some code here -->
+     </div> <!-- /content -->
+     <div data-role="footer" data-position="fixed">
+        <h4>My Contacts</h4>
+     </div>
+   </div>
+   <div data-role="page" id="contact_anne" >
+     <div data-role="header" >
+       <h1>Contact Anne</h1>
+     </div>
+     <div data-role="content">  
+       <img src="anne.png" class="pic" align="left" />       
+       <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+         <legend>Anne-Gaelle Colom</legend>
+         <a href="mailto:coloma@wmin.ac.uk" data-role="button">Email</a>
+         <a href="tel:01234567890" data-role="button">Tel</a>
+         <a href="sms:coloma@wmin.ac.uk" data-role="button">iMessage</a>
+       </div>
+     </div>
+   </div>
+ </body>
+</html>
 
 Discussion
-++++++++++
-Out of the box, jQuery Mobile provides a standard set of icons commonly used, such as "home", "info" or "search" icons. __See ########## for more information on jQuery Mobile icons.__ By using the 'data-icon' attribute, you can assign icons to individual. By default, they will be positioned on top of their link's text, which is also customizable.
+++++++++++++++++++++++++++++++++++++++++++++
+Anne's picture here is a link to the page with the +id+ +contact_anne+ (Note that the code for the content before and after that picture in the page content container has been removed for clarity). +contact_anne+ is the id of a standard jQuery Mobile page, which is in the same file as the picture that was clicked, which allows the page to be called by simply linking to its +id+ using the +#id+ key.
 
-By using the 'data-iconpos' attribute within the Navbar container, you are able to override the default _top_ icon positioning. Vaild 'data-iconpos' values include: __left, right, top, bottom__.
+By adding the +data-rel="dialog"+ as an attribute to the link to the +contact_anne+ page +id+, the page will not be displayed in full screen like all standard pages. Instead, it will come as a dialog box floating in the middle of the screen.
 
-.Navbar with Bottom Positioned Icons
-[source,html]
-----
-<div data-role="navbar" data-iconpos="bottom">
-----
+It is possible to add a +data-transition+ optional attribute that will define the transition used to bring the dialog box. By default, the reverse set transition is used when leaving the page. In the provided example, the transition +"pop"+ was used to open the dialog page.
 
-Notice in the provided example the 'data-iconpos="bottom"' is not assigned to an individual link but instead to the  Navbar container.
-
+Note that it is possible to customize the look of the dialog by setting the +data-overlay-theme+ attribute and/or changing or removing the default 10% top margin.

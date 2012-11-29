@@ -18,7 +18,7 @@ Description: Provides an introduction to jQuery Mobile and its dependency, jQuer
 
 ---
 
-###2 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">What are jQuery?</a>
+###2 - <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">What is jQuery?</a>
 
 *author:*  <a href="mailto:johns221b@gmail.com">John Chacko</a>
 

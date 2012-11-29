@@ -1,25 +1,61 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
-Author: 
+Author: Tyson Cadenhead <tcadenhead@appendto.com> 11/28/2012
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-2.5 Managing Behavior of Fixed Positioning
+2.5 Fullscreen Toolbar Positioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to control how fix position tool bars are displayed.
+We want to be able to display a toolbar that will expand to match the width of the screen and persist as we navigate the page.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+Using the data-position="fixed" property on our headers and footers, we can make them float at the top and bottom of the screen as we navigate.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+By adding data-position="fixed" to our toolbars, they will always persist on the screen. A fixed-position setup would typically look like this:
+
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2.5 Example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+	<body>
+
+		<div data-role="page">
+
+			<div data-role="header" data-position="fixed" data-fullscreen="false">
+				<h1>Header</h1>
+			</div> <!-- End header -->
+			
+			<div data-role="content">
+
+				<div class="content-inner">
+					<p style="height: 1000px;">Content...</p>
+				</div> <!-- End content-inner -->
+
+				<div data-role="footer" data-position="fixed">
+					<h3>Footer</h3>
+				</div> <!-- End footer -->
+
+			</div> <!-- End content -->
+
+		</div> <!-- End page -->
+
+	</body>
+</html>
+----
+
+To make the toolbar truly full-screen, change data-fullscreen="false" to data-fullscreen="true" on the header toolbar. That will allow the user to scroll all the way to the top and bottom of the screen. One issue that will create is that part of the content will be partially obscured by our toolbars. Because of that, full-screen toolbars should only be used for content that doesn't have to be completely visible. A good example would be a photo application. Since it isn't essential for the user to see the top and bottom parts of photos, this sort of interface would be suitable.

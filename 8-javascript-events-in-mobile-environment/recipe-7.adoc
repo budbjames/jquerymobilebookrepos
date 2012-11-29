@@ -1,6 +1,6 @@
 ////
 
-Author: 
+Author: Tyson Cadenhead <tcadenhead@appendto.com> Nov. 27, 2012
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -12,7 +12,7 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-If you want to create a photo gallery on a mobile device, there isn't a jquery plugin for this.
+If you want to create a photo gallery on a mobile device, there isn't a jQuery plugin for this.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -20,4 +20,87 @@ Fortunately, you can use jQuery Mobile's events to build your own. The swipe eve
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+To implement an image gallery, we will need to use a combination of HTML, CSS and JavaScript. The HTML will just be a div with our images inside of it.
+
+----
+<div data-role="gallery" data-transition="flow">
+    <img src="http://lorempixel.com/output/animals-q-c-640-480-1.jpg" />
+    <img src="http://lorempixel.com/output/animals-q-c-640-480-2.jpg" />
+    <img src="http://lorempixel.com/output/animals-q-c-640-480-3.jpg" />
+</div>
+----
+
+With our CSS, we will hide all of the images that are not active.
+
+----
+div[data-role=gallery] {
+    width: 640px;
+    height: 480px;
+    overflow: hidden;
+    background: #333333;
+}
+
+div[data-role=gallery] img {
+    display: none;
+    height: 480px !important;
+}
+
+div[data-role=gallery] img.ui-page-active,
+div[data-role=gallery] img.out,
+div[data-role=gallery] img.in,
+div[data-role=gallery] img.slide {
+    display: block;
+}
+----
+
+The JavaScript is where most of the magic will happen. JQuery Mobile has some really good transitions built into it, so we can just extend them and look for the “data-transition” attribute on the gallery div to determine what our transition should be. We've got it set to "flow" right now, but it can just as easily be set to "slide" or "fade" or any of the other transition we want.
+
+----
+$("div[data-role=gallery]").each(function () {
+
+    // The $img represents all of the images in the gallery
+    var $img = $(this).children("img"),
+        $gallery = $(this),
+        $current = $(this).children("img").first();
+
+    // Swipe Left
+    $(this).bind("swipeleft", function () {
+
+        // If there is no next slide, the next slide is the first image element
+        var $next = $current.next();
+        if (!$next.length) {
+            $next = $img.first();
+        }
+
+        // Use the jQuery Mobile transitions to animate to the next slide
+        $.mobile.transitionHandlers.default($gallery.data("transition") || "slide", false, $next, $current);
+
+        // Set the slide we just animated to as the current slide
+        $current = $next;
+
+    });
+
+    // Swipe Right
+    $(this).bind("swiperight", function () {
+
+        // If there is no previous slide, the previous slide is the last image element
+        var $prev = $current.prev();
+        if (!$prev.length) {
+            $prev = $img.last();
+        }
+
+        // Use jQuery Mobile transitions to animate to the previous slide
+        $.mobile.transitionHandlers.default($gallery.data("transition") || "slide", true, $prev, $current);
+
+        // Set the slide we just transitioned to as the current slide
+        $current = $prev;
+
+     });
+
+    // Set the first slide as active
+    $current.addClass("ui-page-active");
+
+});
+----
+
+Now, when we swipe left, the next image will be shown. When we swipe right, the previous image will be be shown. Even though there isn't a plugin to create an image gallery out of the box, you can easily make one with very minimal code.

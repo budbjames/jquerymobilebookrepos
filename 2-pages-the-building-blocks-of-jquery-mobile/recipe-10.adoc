@@ -1,37 +1,70 @@
 ////
 
-Author: Kevin Griffin <kevin@kevgriffin.com>
+Author: Max Lynch <maxlynch@uwalumni.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-2.10 Navbars
+2.10 Persistent Footer Navbar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to provide a navigation bar for your users that allows them to easily move to particular portions of your application.
+You want to position a Navbar at the bottom of your app and keep it at the bottom regardless of page transitions and navigation.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
+You can combine the fixed positioning support for toolbars with a Navbar embedded in the footer toolbar. This gives you the desired effect of a Navbar fixed to the bottom of the app that stays there regardless of the content of the page.
 
-		<div data-role="navbar">
-			<ul>
-				<li><a href="#" class="ui-btn-active">First</a></li>
-				<li><a href="#">Second</a></li>
-				<li><a href="#">Third</a></li>
-				<li><a href="#">Fourth</a></li>
-				<li><a href="#">Fifth</a></li>
-			</ul>
+You can also duplicate this toolbar across several pages, giving you the effect of a Navbar that stays at the bottom despite navigation and changing page content.
+
+[source, html]
+----
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+<body>
+  <div data-role="page" id="page1">
+		<div data-role="content">
+			Page 1
 		</div>
+		<div data-role="footer" data-id="fixedbar" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="page1.html" class="ui-btn-active ui-state-persist">Page 1</a></li>
+					<li><a href="page2.html">Page 2</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+----
 
-
+[source, html]
+----
+	<div data-role="page" id="page2">
+		<div data-role="content">
+			Page 2
+		</div>
+		<div data-role="footer" data-id="fixedbar" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="page1.html">Page 1</a></li>
+					<li><a href="page2.html" class="ui-btn-active ui-state-persist">Page 2</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+----
+ 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The inclusion of a navigation bar is simple task. In the provided code camp, you are creating a div with the assigned data-role of "navbar".
-
-Inside of the div, you'll want to create an unordered list (ul) for each of the items you would like to include. There is no limit to the number of list items (li) that you can include. If you have five or fewer items, they will be rendered on a single line. More than five items will be rendered wrapped across multiple lines.
-
-The location of the navbar is not important. You may render it anywhere on the page, including within headers and footers.  
+This recipe demonstrates how to add a page footer to each page where you want the toolbar to residen. You've also set the toolbars position to "fixed". In order to provide the effect of the toolbar persisting across page navigations, you set the data-id of the toolbar to the same value on each page. Also, to indicate the current page on the Navbar, you added the class="ui-btn-active ui-state-persist" to each active button for the page. 

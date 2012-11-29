@@ -6,18 +6,6 @@ Mobile Progressive Enhancement
 Problem:  What is Progressive Enhancement in a Mobile Context?
 -----------------
 Solution:
-
-In its simplest conceptualization, progressive enhancement is the separation of HTML, CSS and JavaScript. That’s it, really. If you had to remember one thing about progressive enhancement, it should be that.
-Think of these web technologies as being in layers, with HTML as the first layer, CSS being the second, and JavaScript (and other client-side technologies that deal with site interactivity, such as Flash or Java applets) as being the third.
-Markup: Start out with semantic and well-structured HTML for flexibility and interoperability.
-Styling: Progressively enhance the look-and-feel of a design by adding support for browsers with greater features (e.g. WebKit browsers, IE9, Firefox and mobile browsers).
-Behavior: Enhance the site with rich, interactive features on web browsers with JavaScript.
-Accessibility: Content is within reach to all visitors.
-Portability: Cross-browser and cross-device support.
-Modularity: Having decoupled components with smart boundaries makes site builds easier and more fault-tolerant.
-Site Performance: Improvements in terms of (perceived) page loading times (which affects usability) is more readily implemented.
-
-
 Progressive enhancement in mobile context allows the browsers that supports CSS3 to deliver the total enhanced user experience to mobile as well as the desktop user.
 Developers using HTML5, CSS3 and JavaScript to create better web apps, more engaging rich internet apps that give the most features in the area of browser response and user experience to date.
 By utilizing a separate Cascading Style Sheets (CSS) for each page or page elements then adding some JavaScript
@@ -29,11 +17,11 @@ You can use section id or div to apply the data-role or manipulating the DOM.
 <head>
 <title>1st_Page</title>
 <link rel="stylesheet" href="http://code.jquery.com/mo
-bile/1.0.1/jquery.mobile-1.0.1.min.css" />
-<script src="http://code.jquery.com/jquery-1.6.4.min.j
+bile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.j
 s"></script>
-<script src="http://code.jquery.com/mobile/1.0.1/jquer
-y.mobile-1.0.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquer
+y.mobile-1.2.0.min.js"></script>
 </head>
 <normbody id="1st_page">
 <mobilebody id="1st_page">
