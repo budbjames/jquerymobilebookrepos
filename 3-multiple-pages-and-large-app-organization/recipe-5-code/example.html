@@ -1,0 +1,59 @@
+<!-- example.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multi-Page Template</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Start Homepage -->
+    <div id="homepage" data-role="page" data-title="Homepage">
+      <div data-role="header">
+        <h1>Homepage</h1>
+      </div>
+      <div data-role="content">
+        <form id="name-form">
+          <p><input name="name" id="name" placeholder="What is your name?" /></p>
+          <p><input type="submit" data-role="button" value="Submit" /></p>
+        </form>
+      </div>
+    </div>
+    <!-- End Homepage -->
+
+    <!-- Start Subpage -->
+    <div id="subpage" data-role="page" data-title="Subpage">
+      <div data-role="header">
+        <h1>Subpage</h1>
+      </div>
+      <div data-role="content">
+        <p>Hi <span id="name-content"></span>!</p>
+        <a href="#homepage" data-role="button">Back</a>
+      </div>
+    </div>
+    <!-- End Subpage -->
+
+    <script type="text/javascript">
+
+    $("#name-form").submit(function () {
+
+      // Get the name from the form
+      var name = $("#name").val() || "John Doe";
+
+      // Update the subpage to reflect the name
+      $("#name-content").html(name);
+
+      // Open the subpage
+      window.location.hash = "subpage";
+
+      // Don't submit the form
+      return false;
+
+    });
+    </script>
+
+  </body>
+</html>

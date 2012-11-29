@@ -12,12 +12,28 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+The multipage pattern can be useful, but in some instances it can often be bad for performance. When should we use the multipage pattern and when should we not?
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+Typically, the multipage pattern works well for injecting small pages and dialogs. Putting too many elements in the DOM is always a bad idea.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+There are a number of factors that could go into determining whether to use the multipage pattern. There are some instances where it is truly the best answer. In other situations, it should be avoided at all costs. Here are a couple of guidelines to help us determine whether the multipage pattern should be used.
+
+You don't want to waste time getting files from the server that could easily be stored in the DOM. It may only take a second or two to get the template, but using the multipage pattern, showing a template is almost instantaneous. The server is only hit when the pages are loaded. The multipage pattern can also marginally decrease server-side overhead.
+
+Another good use for multipage templates is the ability to use JavaScript to make pages more dynamic without relying on the server-side. For example, this would be a legitimate use of the multipage pattern:
+
+----
+include::recipe-5-code/example.html[]
+----
+
+The example about will take the name you enter and reveal the next page using your name and greeting you. No server-side code is required.
+
+On the other hand, excessively using the multipage pattern can have serious performance implications, especially on mobile devices. It relies on storing html markup in the DOM, which can potentially make the DOM bloated. One of the major rules for keeping mobile applications performing at their best is to keep the DOM lite. An overloaded DOM can signifigantly slow down your application.
+
+Don't put pages in a multipage template that need to be used in other templates. This may seem like common sense, but replicating code across multiple pages can become a nightmare to maintain.
+
+In short, the multipage pattern definitely has its place, but it should be used with caution.
