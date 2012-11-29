@@ -11,7 +11,7 @@ Tech edited: <date>
 ~~~~~~~~~~~~~~~~~~~
 By _John Chacko_
 
-JavaScript is a scripting language that adds behaviors and interactions to the web.  JavaScript has been around since 1995 but it was the introduction of Ajax (Asynchronous JavaScript and XML) which was nothing more the interrelated technologies used together to make asynchronous web applications, since then JavaScript's popularity has exploded.  Google made this technique mainstream by making it's GMail web application asynchronous.   
+JavaScript is a scripting language that adds behaviors and interactions to the web.  JavaScript has been around since 1995 but it was the introduction of Ajax (Asynchronous JavaScript and XML) which was nothing more the interrelated technologies used together to make asynchronous web applications, since then JavaScript's popularity has exploded.  Google made this technique mainstream by making it's GMail web application asynchronous.
 
 JavaScript however isn't perfect and each browser vendor has a different interpretation on how to implement the specification (ECMAScript).  Because of these differences JavaScript can work just fine in one browser but completely differently in another.  Web developers found themselves writing tons of code to handle all these cross-browser "quirks". 
 
@@ -41,14 +41,14 @@ and write one line of code like this:
   $("#mybutton").on("click", redirect);
 ----
 
-Above line of jQuery can be broken down into three parts.  
+Above line of jQuery can be broken down into three parts.
 
-First you need to declare and call the jQuery object.  We do that by calling it's alias '$'.  
+First you need to declare and call the jQuery object.  We do that by calling it's alias '$'.
 
-Next we select the element whose id is 'mybutton'.  The jQuery object will take any selectors that conform to the CSS 1-3 specs plus some pseudo selectors that are apart of jQuery. In our example about we will select a button whose id is 'mybutton' on a page. 
+Next we select the element whose id is 'mybutton'.  The jQuery object will take any selectors that conform to the CSS 1-3 specs plus some pseudo selectors that are apart of jQuery. In our example about we will select a button whose id is 'mybutton' on a page.
 
 The combined jQuery object and selector returns a jQuery Collection that can then have worked performed on.  jQuery has a rich API that allows you to do something on the returned collection.  In our example we are attaching a listener to the 'click' event where redirect' is the name of the listener function.
 
 Some broad actions you can perform using jQuery are things like selecting and manipulating DOM elements, DOM traversal, creating animations, handling events, and developing Ajax applications, easily.
 
-You can find out more about the jQuery API at http://api.jquery.com.  This book assumes you have a good understanding of how jQuery works. 
+You can find out more about the jQuery API at http://api.jquery.com.  This book assumes you have a good understanding of how jQuery works.
