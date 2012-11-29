@@ -22,27 +22,18 @@ Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 To create a modal dialog, we need to create two pages. The first page will create the button to open the dialog and the second page will be the dialog itself.
 
+image::images/4.5-dialog.png[]
+
 Our button page will look something like this:
 
 ----
-<div data-role="page">
-	<a href="modal.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">Open Dialog</a>
-</div>
+include::recipe-5-code/example.html[]
 ----
 
 Our dialog page will look like this:
 
 ----
-<div data-role="dialog">
-	<div data-role="header" data-theme="d">
-		<h1>Dialog</h1>
-	</div>
-	<div data-role="content" data-theme="c">
-		<h1>External Modal Dialog Box</h1>
-		<p>This dialog was created from the modal.html page.</p>
-		<a href="example.html" data-role="button" data-rel="back" data-theme="b">Okay</a>
-	</div>
-</div>
+include::recipe-5-code/modal.html[]
 ----
 
 Dialogs basically function as a page within themselves. They can have toolbars like the header in the example above. Any links in the dialog with a data-rel="back" property will close the dialog box.

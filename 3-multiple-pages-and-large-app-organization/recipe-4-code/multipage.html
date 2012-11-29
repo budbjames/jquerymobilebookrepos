@@ -1,0 +1,48 @@
+<!-- multipage.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multi-Page Template</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Start Homepage -->
+    <div id="homepage" data-role="page" data-title="Homepage">
+      <div data-role="header">
+        <h1>Homepage</h1>
+      </div>
+      <div data-role="content">
+        <p><a href="#subpage" data-role="button">Open Subpage</a></p>
+        <p><a href="#dialog" data-role="button">Open Dialog</a></p>
+      </div>
+    </div>
+    <!-- End Homepage -->
+
+    <!-- Start Subpage -->
+    <div id="subpage" data-role="page" data-title="Subpage">
+      <div data-role="header">
+        <h1>Subpage</h1>
+      </div>
+      <div data-role="content">
+        <a href="#homepage" data-role="button">Back</a>
+      </div>
+    </div>
+    <!-- End Subpage -->
+
+    <!-- Start Dialog -->
+    <div id="dialog" data-role="dialog" data-title="Dialog">
+      <div data-role="header">
+        <h1>Dialog</h1>
+      </div>
+      <div data-role="content">
+        <a href="#" data-rel="back" data-role="button">Back</a>
+      </div>
+    </div>
+    <!-- End Dialog -->
+
+  </body>
+</html>
