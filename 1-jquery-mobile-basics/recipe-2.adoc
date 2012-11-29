@@ -9,8 +9,9 @@ Tech edited: <date>
 
 1.2 What is jQuery?
 ~~~~~~~~~~~~~~~~~~~
+By _John Chacko_
 
-JavaScript is a scripting language that adds behaviors and interactions to the web.  JavaScript has been around since 1995 but it was the introduction of Ajax (Asynchronous JavaScript and XML) which was nothing more the interrelated technologies used together to make asynchronous web applications.  Google made this technique mainstream by making it's GMail web application asynchronous.  Since then JavaScript's popularity has exploded. 
+JavaScript is a scripting language that adds behaviors and interactions to the web.  JavaScript has been around since 1995 but it was the introduction of Ajax (Asynchronous JavaScript and XML) which was nothing more the interrelated technologies used together to make asynchronous web applications, since then JavaScript's popularity has exploded.  Google made this technique mainstream by making it's GMail web application asynchronous.   
 
 JavaScript however isn't perfect and each browser vendor has a different interpretation on how to implement the specification (ECMAScript).  Because of these differences JavaScript can work just fine in one browser but completely differently in another.  Web developers found themselves writing tons of code to handle all these cross-browser "quirks". 
 
