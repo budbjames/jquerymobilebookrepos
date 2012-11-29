@@ -1,3 +1,5 @@
+// models/fruit.js
+
 /*global define */
 
 define(function () {

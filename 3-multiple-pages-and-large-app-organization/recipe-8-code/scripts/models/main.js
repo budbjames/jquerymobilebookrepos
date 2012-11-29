@@ -1,3 +1,5 @@
+// models/main.js
+
 /*global define */
 
 define(function () {

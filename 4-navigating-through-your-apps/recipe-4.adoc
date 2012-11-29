@@ -25,21 +25,13 @@ Discussion
 To demonstrate how links should be set up, we need two separate pages. The homepage below links to the subpage. Note that it is just using a standard link. Also note that all of the content is wrapped with a div with a data-role of page. The data-role tells jQuery Mobile that everything inside of it is the content of the page. Everything outside of the page will be thrown out in the case of an ajax call.
 
 ----
-<!-- homepage.html -->
-<div data-role="page" id="homepage">
-    <h1>Homepage</h1>
-    <a href="subpage.html" data-transition="turn">Subpage</a>
-</div>
+include::recipe-4-code/homepage.html[]
 ----
 
 Next, we need to create the subpage. It will link back to the homepage so that you can click back and forth infinitely.
 
 ----
-<!-- subpage.html -->
-<div data-role="page" id="subpage">
-    <h1>Subpage</h1>
-    <a href="homepage.html" data-transition="turn">Homepage</a>
-</div>
+include::recipe-4-code/subpage.html[]
 ----
 
 The only thing to note about the link itself is that you can specify any valid jQuery mobile transition via the data-transition property.

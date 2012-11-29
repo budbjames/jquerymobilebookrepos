@@ -1,0 +1,20 @@
+/* gallery.css */
+
+div[data-role=gallery] {
+	width: 640px;
+	height: 480px;
+	overflow: hidden;
+	background: #333333;
+}
+
+div[data-role=gallery] img {
+	display: none;
+	height: 480px !important;
+}
+
+div[data-role=gallery] img.ui-page-active,
+div[data-role=gallery] img.out,
+div[data-role=gallery] img.in,
+div[data-role=gallery] img.slide {
+	display: block;
+}

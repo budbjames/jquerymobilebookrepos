@@ -26,269 +26,50 @@ The structure we use to organize our files is often determined by what MV* frame
 
 A typical project would look something like this:
 
-[images/3.8_file_sctructure.png]
+image::images/3.8_file_sctructure.png[]
 
 For the sake of our example, we will load all of our third-party libraries from remote content distribution networks, but any third-party libraries would typically go in the vendor directory.
 
 Now, to create our index.html page.  The script tag at the bottom of the page will load the script passed in through the "data-main" attribute automatically, so everything will be initialized in main.js.
 
 ----
-<!-- index.html -->
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>3.8 - Structuring Client-Side Code</title>
-		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-	</head>
-	<body>
-		<div id="categories" data-role="page" data-title="Categories">
-		  
-		      <div data-role="header">
-		            <h1>Food</h1>
-		      </div>
-		  
-		      <div data-role="content">
-		            <h2>Select a kind of food below:</h2>
-		            <ul data-role="listview" data-inset="true">
-		            </ul>
-		      </div>
-
-		</div>
-		<script data-main="scripts/main.js" type="text/javascript" src="http://requirejs.org/docs/release/2.1.2/minified/require.js"></script>
-	</body>
-</html>
+include::recipe-8-code/index.html[]
 ----
 
 The main purposes of main.js will be to set up the RequireJS configuration, initialize the router and override a few jQuery Mobile defaults. The two main functions that RequireJS provide for us are require() and define(). The define() function is used to define a module or array of modules. The require() function is used to require modules that have already been defined but are needed again.
 
 ----
-// scripts/main.js
-
-// Add common libraries to the config paths for easier reference
-require.config({
-  paths: {
-    "jquery": "http://code.jquery.com/jquery-1.8.2.min",
-    "jquerymobile": "http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min"
-  }
-});
-
-// Load our libraries and the router
-
-require([
-  "jquery",
-  "jquerymobile",
-  "routers/router"
-], function(
-    $, jquerymobile, Router
-) {
-
-  // Initialize the router
-  var router = new Router();
-  router.init();
-
-  // Do some jQuery Mobile configuration
-  $(document).on("mobileinit", function () {
-
-    // Prevents anchor tag click handling from messing up the url
-    $.mobile.linkBindingEnabled = false;
-
-    // Prevents jQuery Mobile from handling hash changes
-    $.mobile.hashListeningEnabled = false;
-
-  });
-
-});
+include::recipe-8-code/scripts/main.js[]
 ----
 
 Now for the router. Most frameworks will give you a router to work with, but since we aren't using a framework for this example, we will override every click event with our own custom routing.
 
 ----
-// routes/router.js
-
-define([
-	"jquery"
-], function ($) {
-
-	return function () {
-
-		// This does the actual routing
-		this.route = function (event) {
-
-			var model;
-
-			// If the route was called from a link being clicked, get the reference from the link
-			if (typeof event === "object") {
-				model = $(event.target).attr("href").replace("#/", "");
-
-			// The model is the string that was passed in
-			} else {
-				model = event;
-			}
-
-			// Get the list view and the model that was requested
-			require([
-			  
-			  "views/listview",
-				"models/" + model
-
-			], function (View, Model) {
-			
-				// Render the view and pass in the model	
-				var view = new View();
-				view.render(Model);
-			
-			});
-
-			return false;
-
-		};
-
-		// This is called by main.js
-		this.init = function (app) {
-
-			// When the user clicks on any link, we will call the router
-			$("body").delegate("a","click", this.route);
-
-			// Call the router right away
-			this.route("main");
-
-		};
-
-	};
-
-});
+include::recipe-8-code/scripts/routes/router.js[]
 ----
 
 For our example, we are only using one view for the entire application. It will render a basic list based on the data passed in from our models.
 
 ----
-// views/listview.js
-
-define([
-	"jquery"
-], function ($) {
-
-	return function () {
-
-		this.render = function (model) {
-
-			// Add the listview element to local memory for easy access
-			var $listView = $(".ui-listview");
-
-			// Remove all of the items from the list view
-			$listView.html("");
-			
-			// Loop over the items in the model to create the list
-			$.each(model, function () {
-
-				// If there is a link, add it to the list element
-				if (this.href) {
-					$listView.append(
-					  $("<li />").html($("<a />").attr("href", this.href).html(this.name))
-					);
-
-				// If there is no link, just render a list item
-				} else {
-					$listView.append(
-						$("<li />").html(this.name)
-					);
-				}
-
-			});
-
-			// Refresh the list view
-			$listView.listview("refresh");
-
-		};
-
-	};
-
-});
+include::recipe-8-code/scripts/views/listview.js[]
 ----
 
 Last of all, we will need to create our models. Our models are just going to serve up some static data. If you are working with a framework, your models will probably be significantly more robust.
 
 ----
-// models/main.js
-
-define(function () {
-
-	return [{
-		name: "Vegetables",
-		href: "#/vegetable"
-	}, {
-		name: "Fruits",
-		href: "#/fruit"
-	}, {
-		name: "Meats",
-		href: "#/meat"
-	}];
-
-});
+include::recipe-8-code/scripts/models/main.js[]
 ----
 
 ----
-// models/fruit.js
-
-define(function () {
-
-	return [{
-		name: "Back",
-		href: "#/main"
-	}, {
-		name: "Apple"
-	}, {
-		name: "Orange"
-	}, {
-		name: "Banana"
-	}, {
-		name: "Grapes"
-	}, {
-		name: "Pear"
-	}];
-
-});
+include::recipe-8-code/scripts/models/fruit.js[]
 ----
 
 ----
-// models/meat.js
-
-define(function () {
-
-	return [{
-		name: "Back",
-		href: "#/main"
-	}, {
-		name: "Chicken"
-	}, {
-		name: "Steak"
-	}, {
-		name: "Pork"
-	}];
-
-});
+include::recipe-8-code/scripts/models/meat.js[]
 ----
 
 ----
-// models/vegetables.js
-
-define(function () {
-
-	return [{
-		name: "Back",
-		href: "#/main"
-	}, {
-		name: "Tomato"
-	}, {
-		name: "Pepper"
-	}, {
-		name: "Onion"
-	}, {
-		name: "Potato"
-	}];
-
-});
+include::recipe-8-code/scripts/models/vegetables.js[]
 ----
 
 That's all there is to it. Using RequireJS or a similar AMD loader, we can make our jQuery Mobile code completely modular and maintainable.
