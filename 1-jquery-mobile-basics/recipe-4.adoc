@@ -9,6 +9,7 @@ Tech edited: <date>
 
 1.4 Including jQuery and jQuery Mobile in an HTML page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By _Panagiotis Tsalaportas_
 
 There are in total three ways you can include the jQuery and jQuery Mobile libraries to your 
 project. Each of the first two ways uses a different approach, while the third is 

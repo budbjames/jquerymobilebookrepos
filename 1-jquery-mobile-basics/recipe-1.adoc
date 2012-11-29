@@ -8,7 +8,8 @@ Tech edited: <date>
 ////
 
 1.1 Who Is This Book For?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
+By _James Weaver_
 
 This book was written by members of the jQuery and jQuery Mobile community.  It's purpose is to teach other developers in the community how to tackle common tasks while working with jQuery Mobile. 
 

@@ -8,7 +8,8 @@ Tech edited: <date>
 ////
 
 1.5 jQuery Mobile - WebPages and Applications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By _Cory Gackenheimer_
 
 Since jQuery Mobile is such a robust cross-platform framework for developing mobile applications, it provides you with many paths to generating and deploying your application. First and foremost is the mobile web application. 
 
