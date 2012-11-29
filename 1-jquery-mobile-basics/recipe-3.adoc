@@ -9,4 +9,31 @@ Tech edited: <date>
 
 1.3 What is jQuery Mobile?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+By _Ralph Whitbeck_
+
+jQuery Mobile is a project that falls within the jQuery Foundation just like jQuery core.  It was started in the spring of 2010 as a framework that would bridge the ever growing number of devices and browsers in the mobile space.  The mission of jQuery Mobile is similar to that of jQuery to abstract away the cross browser and device quirks and allow the developer to write one web application that targets all devices.
+
+jQuery Mobile isn't just an abstraction library it's an entire framework.  It is designed to make mobile web application development easier by integrating web standards like HTML5 and CSS3 together with the power of jQuery and jQuery UI into a robust, maintainable framework.
+
+jQuery Mobile is built with the principles of Progressive Enhancement in mind.  This means that you can develop using the framework and know that the end user will get a functionally working site when they visit your page on a mobile device.  Not all devices are created equally and some don't fully support the specification of the standards that jQuery Mobile is targeting.  But that's OK cause what progressive enhancement is designed to do is detect that a feature being used isn't supported and will ``fall back'' and provide a less enhanced version that is still functional. 
+
+The team at jQuery Mobile tests each new device that comes out and grades it on a A, B, C scale.  What does the scale mean?
+
+.Mobile Graded Browser Support
+* A-grade - Devices will support the full enhanced experience and also supports Ajax-enabled page transitions
+* B-grade - Devices will support the enhanced experience but will not support the Ajax-enabled page transitions
+* C-grade - Devices only support the basic HTML experience but is still functional
+
+.Supported Platforms
+[NOTE]
+====
+You can find out more about which devices and browsers are supported at what grade by heading over to jQuery Mobile's Platform page at http://jquerymobile.com/gbs/.
+====
+
+How does jQuery Mobile work?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+jQuery Mobile is a collection of markup standards and widgets that use specially named data attributes that enhance the output through the framework.  In addition when initialized the widgets will add WAI-ARIA Attributes to the code to enhance accessibility and make the page easily read by screen readers.
+
+Built using a CSS Framework similar to jQuery UI, jQuery Mobile pages and widgets are completely themable.  You can use the 5 swatches of colors that come with the default theme or you can customize the theme using the on-line ThemeRoller at http://jquerymobile.com/themeroller/.
 
