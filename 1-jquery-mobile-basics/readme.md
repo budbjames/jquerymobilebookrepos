@@ -32,6 +32,8 @@ Description: Provides an introduction to jQuery Mobile and its dependency, jQuer
 
 *author:* <a href="mailto:rwhitbeck@appendto.com">Ralph Whitbeck</a>
 
+*status:* Chapter leader review
+
 *Description:* Cover the basics of what jQuery Mobile is...what problem it solves.  Talk about progressive enhancement and the graded browser support.
 
 ---
@@ -40,7 +42,7 @@ Description: Provides an introduction to jQuery Mobile and its dependency, jQuer
 
 *author:* <a href="mailto:sys.sgx@gmail.com">Panagiotis Tsalaportas</a> (@syssgx)
 
-*status:* Needs to be reformatted
+*status:* chapter leader review
 
 *Description:* Information on how to get these libraries and include them in a page
 
