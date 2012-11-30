@@ -24,12 +24,12 @@ Description:
 
 *Problem:* 
 
-*Description:* 
+*Description:* Review the $.mobile.changePage() method and the JQM custom dynamic page events that are available for you to bind to.
 
 ---
 
 ### 3 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-3.adoc">Options for dynamically pulling in pages</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:gregfranko5@gmail.com">Greg Franko</a>
 
 *Problem:* 
 
