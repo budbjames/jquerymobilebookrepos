@@ -34,7 +34,7 @@ Description:
 
 
 ### 4 - <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/recipe-4.adoc">Data attributes</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:collin.forrester@gmail.com">Collin Forrester</a> - 11/30/2012
 
 *Problem:* 
 
