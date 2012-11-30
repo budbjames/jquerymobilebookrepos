@@ -24,7 +24,7 @@ Description:
 
 *Problem:* 
 
-*Description:* Review the $.mobile.changePage() method and the JQM custom dynamic page events that are available for you to bind to.
+*Description:*
 
 ---
 
@@ -33,7 +33,7 @@ Description:
 
 *Problem:* 
 
-*Description:* 
+*Description:* Review the $.mobile.changePage() method and the JQM custom dynamic page events that are available for you to bind to.
 
 ---
 
