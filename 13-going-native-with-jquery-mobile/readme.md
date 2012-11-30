@@ -18,7 +18,7 @@ Description:
 *Description:*
 
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-2.adoc">Exploring the PhoneGap Device APIs</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:collin.forrester@gmail.com">Collin Forrester</a> 11/30/2012
 
 *Problem:* 
 
