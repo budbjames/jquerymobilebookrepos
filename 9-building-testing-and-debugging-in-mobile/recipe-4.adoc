@@ -1,6 +1,10 @@
 ////
 
-Author: Levi DeHaan <levi@levidehaan.com>
+This recipe shows how to write automated unit tests against your jQuery Mobile application.
+
+Author: Daniel Mohl <danmohl@gmail.com>
+
+Bio: Daniel Mohl is a Microsoft MVP and F# Insider. He blogs at blog.danielmohl.com and you can follow him on Twitter at twitter.com/dmohl.
 
 ////
 
@@ -10,10 +14,115 @@ Author: Levi DeHaan <levi@levidehaan.com>
 Problem
 +++++++
 
-Sometimes your application gets big enough that it would be useful to be able to run tests on it to make sure that when you modify things; there are no major breaks. This is what you can use unit testing for. All the major functionality can be written into a test which can be run on each platform you are distributing to.
+You want to create automated unit tests for the custom JavaScript that makes up your jQuery Mobile application.   
 
 Solution
 ++++++++
+
+Before we begin, we need to set the stage with an example around which we wish to wrap automated unit tests. 
+In the bonus section of chapter 5, recipe 5 a bit of JavaScript was shown that showcased a simple approach for dynamically 
+determining the display of elements based on responses to other input elements on the page. As a refresher, here is the 
+JavaScript that was shown in that recipe.
+
+[source, javascript]     
+----
+$( document ).on( "pagebeforeshow", "#surveyPage", function() {
+  var $page = $( this );    
+
+  // Hide all dependency questions
+  $page.find( ".toggleElement" ).hide();
+  // Bind an event handler to the change JavaScript event to 
+  // toggle the visibility of the dependency questions
+  $( "input[name=favoriteLanguage]" ).change(function() {
+    var $input = $( this ), 
+      $page = $input.closest( "[data-role='page']" ),
+      classToShow;
+
+    // Hide all dependency questions
+    $page.find( ".toggleElement" ).hide();
+    // Get the value of the data-dependency-class attribute 
+    classToShow = $input.data( "dependencyClass" );
+    // Show the appropriate dependency question
+    $page.find( "." + classToShow ).show();
+  });
+});
+----
+
+To add automated unit tests for this JavaScript, we will use a few open source tools including [QUnit](https://github.com/jquery/qunit),
+[Mocha](http://visionmedia.github.com/mocha/), and [Chai](http://chaijs.com/). 
+
+Let's start with a fairly simple example using QUnit, which is the testing framework used to test the code of both jQuery and jQuery Mobile. 
+
+We first create a bit of markup that will be used during our tests as well as used to display the test results. That markup looks like this:
+
+[source, html]
+---
+<div id="qunit"></div>
+<div id="qunit-fixture">
+  <div data-role="page" id="surveyPage">
+    <div data-role="content">
+      <form action="#surveyCompletePage" method="get" data-ajax="false">
+        <ul data-role="listview" data-theme="d" > 					
+          <li>
+            <label>Favorite Language:</label>
+            <fieldset data-role="controlgroup">
+              <input type="radio" name="favoriteLanguage" id="javaScript" value="javaScript" data-dependency-class="clientAndServerSide"/>
+              <label for="javaScript">JavaScript</label>
+              <input type="radio" name="favoriteLanguage" id="ruby" value="ruby" data-dependency-class="serverSide" />
+              <label for="ruby">Ruby</label>
+            </fieldset>
+          </li>
+          <li class="toggleElement clientAndServerSide">
+            <label>Do you use this language for development on the:</label>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+              <input type="radio" name="languageUse" id="usedForServerSide" value="usedForServerSide" />
+              <label for="usedForServerSide">Server</label>
+              <input type="radio" name="languageUse" id="usedForBoth" value="usedForBoth" />
+              <label for="usedForBoth">Both</label>
+            </fieldset>	
+          </li>
+          <li class="toggleElement serverSide">	
+            <label>How many hours per week do you write server-side code?</label>
+            <div>
+              <input type="range" name="serverSideCodingHours" id="serverSideCodingHours" value="0" min="0" max="100" />
+            </div>
+          </li>					
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>
+---
+
+The JavaScript to create our tests looks like this:
+
+[source, javascript]
+---
+$(function() {
+  var $page = $( "#qunit-fixture" ).find( "#surveyPage" );
+	
+  test( "dependency question should initially be hidden", 2, function() {
+    ok( $page.find( ".clientAndServerSide" ).is( ":hidden" ), "clientAndServerSide Check" );
+    ok( $page.find( ".serverSide" ).is( ":hidden" ), "serverSide Check" );
+  });	
+
+  test( "clientAndServerSide should be visible when selecting the JavaScript language", 2, function() {
+    // Select the JavaScript favorite language
+    $page.find( "input[id=javaScript]" ).click();
+    ok( $page.find( ".clientAndServerSide" ).attr( "display" ) !== "none", "Visibility Check" );
+    ok( $page.find( ".serverSide" ).is( ":hidden" ), "Hidden Check" );	 
+  });	
+
+  test( "serverSide should be visible when selecting the JavaScript language", 2, function() {
+    // Select the Ruby favorite language
+    $page.find( "input[id=ruby]" ).click();	  
+    ok( $page.find( ".clientAndServerSide" ).is( ":hidden" ), "Hidden Check" );
+    ok( $page.find( ".serverSide" ).attr( "display" ) !== "none", "Visibility Check" );
+  });
+});  	
+---
+
+A jsFiddle for this example can be found at http://jsfiddle.net/gh/gist/jquery/1.8.2/4182401/[jsFiddle].
 
 Discussion
 ++++++++++
