@@ -23,14 +23,46 @@ jQuery allows JavaScript developers to take native code like this:
 
 [source,javascript]
 ----
-  var button = document.getElementById("mybutton");
+  // Grab a NodeList
+  var kittens  = document.querySelectorAll(".kitten");
 
-  if (button.addEventListener) {
-    button.addEventListener("click", redirect, false);
-  } else if (anchor.attachEvent) {
-    button.attachEvent("onclick", redirect);
-  } else {
-    button["onclick"] = redirect;
+  // Show images 'fast'
+  show(kittens, "fast");
+
+  // Function responsible for showing
+  function show (list, speed) {
+      
+      // Setup variables to use internally
+      var index, opacity, interval, timing;
+      var velocity = {"fast": 20, "slow": 60};
+      
+      // Determine if speed is a number, or a string
+      timing = ~toString.call(speed).indexOf("Number")
+          ? speed * .01
+          : velocity[speed] || 40;
+      
+      // Convert elements into array
+      if (list.nodeType && list.nodeType === 1) {
+          list = [list];
+      }
+      
+      // Set all items in collection to transparent
+      for (index = 0; index < list.length; index++) {
+          list[index].style.opacity = 0;
+      }
+      
+      // Set opacity-increasing interval
+      interval = setInterval(function () {
+          for (index = 0; index < list.length; index++) {
+              opacity = parseFloat(list[index].style.opacity);
+              list[index].style.opacity = opacity + .01;
+          }
+          // If images are fully opaque, clear interval
+          if (opacity >= 1) {
+              clearInterval(interval);
+          }
+      }, timing);
+      
   }
 ----
 
@@ -38,7 +70,7 @@ and write one line of code like this:
 
 [source,javascript]
 ----
-  $("#mybutton").on("click", redirect);
+  $(".kitten").show("fast");
 ----
 
 Above line of jQuery can be broken down into three parts.
