@@ -12,11 +12,11 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+When developing forms with user input, you typically have to write code to sync the data entered by the user with the underlying data model.  If changes are made to your data model programmatically, you must check for these changes and reflect them on the client side for the user.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+KnockoutJS is a library that allows data-binding to achieve an implementation of the MVVM (Model-View-ViewModel) UI design pattern using JavaScript.  This data-binding will update your ViewModel
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
