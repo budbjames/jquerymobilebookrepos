@@ -1,25 +1,255 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+Talk about using jQuery Mobile with Backbone.js
 
-Author: unassigned
+Author: Jonathan Creamer
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
 
 ////
 
-3.12 Recipe Title
+3.12 Using JQM with backbone.js
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Building a jQuery Mobile application using backbone.js, one of the web's most popular MV* frameworks, to handle browser history routing, and rendering of DOM elements. To learn more about backbone.js, visit http://backbonejs.org[backbonejs.org]
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+One way of using backbone.js in a jQuery Mobile application is to utilize backbone to do all of the application's rendering. 
+
+This means that instead of the html file containing all of the markup, the markup will all be generated dynamically with backbone. The `<body>` of the application will be virtually empty.
+
+Before getting started, make sure that the files are included correctly with everything in the *head*. It will not work with the scripts at the bottom.
+[source,html]
+----
+<link href="css/jquery.mobile-1.2.0.css" type="text/css" rel="stylesheet" />
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/jqm.config.js"></script>
+<script src="js/vendor/jquery.mobile-1.2.0.js"></script>
+<script src="js/vendor/underscore-min.js"></script>
+<script src="js/vendor/backbone-min.js"></script>
+<script src="js/app.js"></script>
+----
+
+In order to create a jQuery Mobile application with backbone.js, there are some configuration variables that need to be changed to allow backbone.js to route page requests since jQuery Mobile also handles this. Include the following code in a file such as `js/jqm.config.js`.
+
+[source,javascript]
+-----
+$( document ).on( "mobileinit", function() {
+	$.mobile.ajaxEnabled = false;
+	$.mobile.linkBindingEnabled = false;
+	$.mobile.hashListeningEnabled = false;
+	$.mobile.pushStateEnabled = false;
+});
+
+$( document ).on( "pagehide", "div[data-role='page']", function ( event, ui ) {
+	$( event.currentTarget ).remove();
+});
+----
+
+The `mobileinit` event fires after jQuery is loaded and ready to run. It's important to set these variables **before** the jQuery Mobile Source is included on the page. If you find the Backbone.js router not working, be sure that you set those configuration variables up and then include jQuery Mobile on the page.
+
+Next, a router needs to be created to map page requests. 
+
+[source,javascript]
+----
+var Router = Backbone.Router.extend({
+	routes: {
+		"": "home"
+	},
+	initialize: function() {
+		Backbone.history.start();
+	},
+	home: function() {
+		var home = new Home();
+		this.changePage( home );
+	},
+	changePage: function( view ) {
+		view.$el.appendTo( "body" );
+
+		$.mobile.changePage( view.$el, {
+            changeHash: false,
+            transition: $.mobile.defaultPageTransition
+        });
+	}
+});
+----
+
+This router does a few things. First of all, in the `initialize` method, it starts `Backbone.history`. This allows backbone to start listening to changes in the url through hash changes or pushstate. 
+
+A default route is setup to call the `home` function. The home function creates a new instance of the `Home` view, and passes this instance into the `changePage` function which is also defined on the router.
+
+The `changePage` function takes in the instance of the view, appends the view's DOM element to the page and then calls jQuery Mobile's `$.mobile.changePage` utility function. The `$.mobile.changePage` function accepts a DOM element, which represents a page, and an options object.
+
+Create views to represent the various pages needed. The next example shows a Home page view.
+
+[source,javascript]
+----
+var Home = Backbone.View.extend({
+	initialize: function() {
+		this.$el.attr( "data-role", "page" );
+		this.render();
+	},
+	render: function() {
+		this.$el.html( "<div data-role='content'>Hello World</div>" );
+	}
+});
+----
+
+The `initialize` function on the home view sets up the `data-role` of the element so that jQuery Mobile knows this element is going to be a page. Since no `el` is defined on the view, it will render as a `div`.
+
+The render function is a backbone.js convention. The content of any jQuery Mobile Page needs to have a `data-role="content"`, so the render function creates a div which is appended to the element.
+
+Since the Home view represents the page, any headers or footers needed would also be included and rendered into the Home's DOM element.
+
+The header and footer can also be their own views in case any additional logic is needed in them. 
+
+[source,javascript]
+----
+var Header = Backbone.View.extend({
+	initialize: function() {
+		this.$el.attr( "data-role", "header" );
+		this.render();
+	},
+	render: function() {
+		this.$el.append( "<h2>Header</h2>" );
+	}
+});
+
+var Footer = Backbone.View.extend({
+	initialize: function() {
+		this.$el.attr( "data-role", "footer" );
+		this.render();
+	},
+	render: function() {
+		this.$el.append( "<h4>Footer</h4>" );
+	}
+});
+----
+
+By having header and footer views, any event handling that needs to be done can be controlled inside the view, and these two views can then be re-used in any other view in the application. The Home view could be easily modified to include them.
+
+[source,javascript]
+----
+...
+render: function() {
+	this.header = new Header();
+	this.footer = new Footer();
+	this.$el
+		.append( header.el )
+		.append( "<div data-role='content'>Hello World</div>" );
+		.append( footer.el );
+}
+...
+----
+
+Adding a new page becomes easy once the basic infrastructure exists. Just add a new view.
+
+[source,javascript]
+----
+var About = Backbone.View.extend({
+	template: "#about",
+	initialize: function() {
+		this.$el.attr( "data-role", "page" );
+		
+		// Pull in a template from the html and render it using underscore.js
+		this.template = _.template( $(this.template).html() );
+		
+		this.render();
+	},
+	render: function() {
+		this.header = new Header();
+		this.footer = new Footer();
+		this.$el
+			.append( header.el )
+			.append( this.template({
+				foo: "bar"
+			}));
+			.append( footer.el );
+	}
+});
+----
+
+The `About` page example renders a template using underscore.js's built in templating.
+
+The last step in adding a new page is just to add a new route for it in the router.
+
+[source,javascript]
+----
+routes: {
+	"": "home",
+	about: "about"
+},
+about: function() {
+	this.changePage( new About() );
+}
+----
+
+The thing to keep in mind is that there's multiple was of building the backbone.js app as long as the configuration variables are setup correctly and the routing is active.
+
+The beauty of using backbone.js in the application is creating re-usable components that are used to generate the neccessary markup for jQuery Mobile.
+
+Models and collections can be used to retrieve the data neccessary for rendering pieces of the app dynamically. For example, a listview of contacts can easily be created by creating a `ListView` view that takes in a collection and creates a jQuery Mobile ListView.
+
+[source,javascript]
+----
+var Contact = Backbone.Model.extend({});
+var Contacts = Backbone.Collection.extend({
+	model: Contact,
+	url: "/contacts"
+});
+
+var ListView = Backbone.View.extend({
+	tagName: "ul",
+	initialize: function() {
+		this.$el.attr( "data-role", "listview" );
+		this.collection.on( "reset", this.render, this );
+		
+		this.fetch();
+	},
+	render: function() {
+		this.collection.each( this.renderItem );
+	},
+	renderItem: function( model ) {
+		var view = new ItemView();
+		this.$el.append( view.el );
+	}
+});
+
+var ItemView = Backbone.View.extend({
+	tagName: "li",
+	initialize: function() {
+		this.render();
+	},
+	render: function() {
+		this.$el.html( this.model.get("firstName") + " " + this.model.get("lastName") );
+	}
+});
+
+var listOfContacts = new ListView({
+	collection: new Contacts()
+});
+----
+
+In the previous example, there are several things going on. First off are the model and collection. These two constructors are defined just like any other model or collection would be defined with backbone.js.
+
+The `ListView` has a `tagName` of `ul` which means when it is instantiated, it will create a `ul` as it's `el`. Then in the initialize of the ListView, the `data-role="listview"` tells this jQuery Mobile that this element is going to be a ListView.
+
+The collection's `reset` event is then bound to the `render` method on the view. Whenever the collection is then fetched, it will trigger the `render` function which loops over the elements in the collection and calls `renderItem`.
+
+The `renderItem` function then instantiates a new `ItemView` for each element in the collection. The `ItemView` has an `li` for the `tagName`. Each `li` then gets appended to the ListView.
+
+This is a standard way of rendering a jQuery Mobile List using backbone.js. Any element in jQuery Mobile can be rendered using this basic idea.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+Once the initial plumbing of the app is configured, it's nothing more than a standard backbone.js application. This means that any developer who knows backbone.js can come in and be able to immediately able to work without issues.
+
+The jQuery Mobile Documentation has a resouce that talks about building backbone.js and require.js apps http://jquerymobile.com/test/docs/pages/backbone-require.html. 
+
+Their example uses http://requirejs.org/. Which is an AMD (asynchronous module definition) framework.
+
+Building jQuery Mobile apps with backbone.js is a great way to write maintainable, structured, and re-usable code.
