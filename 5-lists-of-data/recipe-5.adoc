@@ -4,7 +4,7 @@ This recipe shows how to use a normal list as well as an inset list to layout fo
 
 Author: Daniel Mohl <danmohl@gmail.com>
 
-Bio: Daniel Mohl is a Microsoft MVP and F# Insider. He blogs at blog.danielmohl.com and you can follow him on Twitter at twitter.com/dmohl.
+Bio: Daniel Mohl is a Microsoft MVP, F# and C# Insider, and author of the book entitled "Building Web, Cloud, and Mobile Solutions with F#". He blogs at blog.danielmohl.com and you can follow him on Twitter at twitter.com/dmohl.
 
 Chapter Leader approved: <date>
 Copy edited: <date>
