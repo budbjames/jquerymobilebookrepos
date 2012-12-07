@@ -253,3 +253,5 @@ The jQuery Mobile Documentation has a resouce that talks about building backbone
 Their example uses http://requirejs.org/. Which is an AMD (asynchronous module definition) framework.
 
 Building jQuery Mobile apps with backbone.js is a great way to write maintainable, structured, and re-usable code.
+
+To see a demo of jQuery Mobile and backbone.js check out https://github.com/jcreamer898/backbonejs-jquerymobile-sample.
