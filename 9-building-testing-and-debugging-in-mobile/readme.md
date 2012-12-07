@@ -32,7 +32,7 @@ Description:
 *Description:* 
 
 ### 4 - <a href="/jquerymobilecookbook/book/blob/master/9-building-testing-and-debugging-in-mobile/recipe-4.adoc">Integrating Automated Unit Testing</a>
-*author:* <a href="mailto:dmohl@yahoo.com">Daniel Mohl</a>
+*author:* <a href="mailto:dmohl@yahoo.com">Daniel Mohl</a> (Claimed: 11/22/2012)
 
 *Problem:* 
 

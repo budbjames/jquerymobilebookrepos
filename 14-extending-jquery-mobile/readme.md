@@ -4,7 +4,7 @@
 
 Description: 
 
-*Chapter Leader:* <a href="mailto:rwhitbeck@appendto.com">Ralph Whitbeck</a>
+*Chapter Leader:* <a href="mailto:arschmitz@gmail.com">Alex Schmitz</a>
 
 <a href="/jquerymobilecookbook/book/blob/master/14-extending-jquery-mobile/introduction.adoc">Introduction</a>
 

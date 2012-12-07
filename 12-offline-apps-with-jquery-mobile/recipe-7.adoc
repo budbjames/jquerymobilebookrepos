@@ -1,8 +1,6 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
-Author: John Doe <email@email.com>
+Author: Tyson Cadenhead <tcadenhead@appendto.com> 11/29/2012
 
 ////
 
@@ -11,12 +9,170 @@ Author: John Doe <email@email.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+What different types of offline storage do we have access to?
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+There are many ways to store data offline. Using the client-side to store large amounts of data has historically not been widely addressed by most browsers, so the support for different types of storage varies.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+Offline storage comes in many shapes and sizes. These include:
+
+* session
+* cookies
+* localStorage
+* web SQL
+* indexedDB
+
+JavaScript maintains a session as long as the client doesn't refresh the page, so you can actually use it to maintain storage in single-page applications using a basic getter / setter pattern. One benefit of using the session is that this will work in every browser that supports JavaScript. The downside is that as soon as the page is refreshed, everything is lost.
+
+----
+var Session = function () {
+
+    // This is where we will store the data
+    this.data = {};
+
+    // When we call this method, we will return the data that matches the name
+    this.get = function (name) {
+        return this.data[name];
+    };
+
+    // This method will set the data based on the name / value pair that is passed in    
+    this.set = function (name, value) {
+        this.data[name] = value;
+    }
+
+};
+
+var session = new Session();
+
+// Set the name
+session.set("name", "John Doe");
+
+// Get the name
+console.log(
+	session.get("name")
+); // Returns "John Doe"
+----
+
+Cookies are maintained when the page is reloaded, but they have size limitations. Also, most browsers allow their users to turn cookies off. Historically, cookies have mostly been used to keep small pieces of information on the client-side such as a name, an authorization code or an email address.
+
+----
+var Cookie = function () {
+
+    // When we call this method, we will return the data that matches the name
+    this.get = function (name) {
+    
+        // The cookies are stored as a big string, we'll need to split them into an array
+        var cookies = document.cookie.split(";");
+        
+        // Loop over all of the cookies
+        for (var i = 0; i < cookies.length; i++) {
+        
+            // Seperate the name and value pairs
+            cookies[i] = cookies[i].split("=");
+            
+            // If the name passed in matches the name of the cookie, return it
+            if (cookies[i][0] === name) {
+                return unescape(cookies[i][1]);
+            }
+            
+        }
+    
+    };
+    
+    // This method will set the data based on the name / value pair that is passed in 
+    this.set = function (name, value, numberOfDays) {
+        
+        // Create a new date for the expiration
+        var expiration = new Date();
+        
+        // Set the expiration date to the number of days passed in
+        expiration.setDate(expiration.getDate() + numberOfDays);
+        
+        // Add the expration date to the value
+        value = escape(value) + "; expires=" + expiration.toUTCString();
+        
+        // Set the cookie
+        document.cookie = name + "=" + value;
+        
+    };
+
+};
+
+var cookie = new Cookie();
+
+// Set the name
+cookie.set("name", "John Doe");
+
+// Get the name
+console.log(
+	cookie.get("name")
+); // Returns "John Doe"
+----
+
+Local Storage using name / value pairs can be a really good option for persisting data on the client-side. Local storage is supported by virtually every modern browser from Internet Explorer 8 and up.
+
+----
+// Check to see if the browser supports local storage
+if (typeof localStorage) {
+
+    // Set the data
+    localStorage["name"] = "John Doe";
+    
+    // Get the data
+    console.log(
+        localStorage["name"]
+    );
+    
+}
+----
+
+Web SQL is significantly more robust than any other options. With Web SQL, you can write SQL statements directly in your JavaScript. Web SQL enjoys support in all modern webkit browsers, so if your application is exclusively targeted for mobile devices, it may be the right fit. Unfortunately, Firefox and Internet Explorer don't support Web SQL yet.
+
+----
+// Create a new database
+var db = openDatabase(
+	'users',											// The name of the database
+	'1.0', 												// The database version
+	'A database for the users of the application', 		// A description of the database
+	2 * 1024 * 1024 									// The estimated size of the database
+);
+
+// Every database transaction is performed inside of the transaction method
+db.transaction(function (transaction) {
+
+	// Create a table called "people"
+	transaction.executeSql('CREATE TABLE IF NOT EXISTS people (id unique, name)');
+
+	// Insert a person into the database
+	transaction.executeSql('INSERT INTO people (id, name) VALUES (1, "John Doe")');
+
+});
+
+// Start a new transaction to select the person
+db.transaction(function (transaction) {
+
+	// Select all the people
+	transaction.executeSql('SELECT * FROM people', [], function (transaction, results) {
+		
+		// Loop over all of the rows in the response
+		for (var i = 0; i < results.rows.length; i++) {
+
+			// Get the person
+			var result = results.rows.item(i);
+
+			// Log the person's name
+			console.log(result.name);
+
+		}
+	});
+});
+----
+
+IndexedDB is designed for storing large amounts of data. It performs really well doing searches of the data using indexes. IndexedDB is supported by Firefox, Chrome and Internet Explorer 10, but not Safari.
+
+----
+TODO: Write an example of an IndexedDB
+----

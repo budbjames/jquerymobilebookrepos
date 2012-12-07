@@ -12,12 +12,19 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+When developing HTML forms that take user input, you typically have to write JavaScript code to sync the data entered by the user with the underlying data model that will eventually be persisted to some sort of data storage.  If changes are made to your data model programmatically, you must check for these changes and reflect them on the client side input controls for the user to see.  This recipe will take introduce Knockout.js, a JavaScript library that enables the implementation of the Model-View-ViewModel UI pattern.  
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+The recipe is made up of an HTML page that represents an ecommerce site with a shopping cart and an order summary.  The order form, shopping cart, and order summary display are all data-bound to properties of a ViewModel object by way of Knockout.js.  This apporach allows you to cleanly separate the user input from the data persistence of the application.  You will write less code and achieve a more responsive UI than before thanks to Knockout.js.
+
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+As you can see, when JQuery starts, we will setup bindings on in our UI as data attributes that link back to properties of our ViewModel object.
+
+The Customer's information entry section.
+Each field here is also databound to the display only fields in the Order Review section.  If you change any of the user's details, they are automatically refreshed in the review section.
+
+The item quantity text box allows you to change the quanity of the items to be order and as a result the Knockout.js bindings will perform a calculation on the quantity and price and the result is automatically reflected in the order summary.  This would be code that you would have to write yourself without knockout.js.

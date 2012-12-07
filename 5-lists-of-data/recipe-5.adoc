@@ -23,7 +23,7 @@ Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 Traditional web applications often use various techniques to lay out forms. However, creating web-based applications for mobile devices requires a shift in design thinking. One very common and easy approach in jQuery Mobile is to use a list to lay out form elements. 
 
-All that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item. The following, which is also available as a jsFiddle at http://jsfiddle.net/gh/gist/jquery/1.8.2/2512225/, provides an example:
+All that you need to do is wrap your list in a form element and add any applicable fieldset, label, and input elements as children of the desired list item. The following, which is also available as a jsFiddle at http://jsfiddle.net/gh/gist/jquery/1.8.2/2512225/[jsFiddle], provides an example:
 
 [source, html]
 ----
@@ -169,4 +169,4 @@ $( document ).on( "pagebeforeshow", "#surveyPage", function() {
 });
 ----
 
-A jsFiddle for this example can be found at http://jsfiddle.net/gh/gist/jquery/1.8.2/2512243/.
+A jsFiddle for this example can be found at http://jsfiddle.net/gh/gist/jquery/1.8.2/2512243/[jsFiddle].

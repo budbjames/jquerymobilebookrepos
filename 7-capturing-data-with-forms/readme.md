@@ -33,9 +33,9 @@ Not a recipe
 ### 3 - <a href="/jquerymobilecookbook/book/blob/master/7-capturing-data-with-forms/recipe-3.adoc">Theming forms</a>
 *author:* <a href="mailto:courtney@courtneyhall.com">Courtney Hall</a> (November 30, 2012)
 
-*Problem:*
+*Problem:* Standard forms in jQuery Mobile look plain. Make them more attractive by using themes.
 
-*Description:* How multipages works
+*Description:* A discussion on theming forms and a brief introduction to ThemeRoller
 
 ---
 
