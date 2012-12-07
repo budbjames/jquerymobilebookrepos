@@ -11,7 +11,7 @@ Tech edited: <date>
 ~~~~~~~~~~~~~~~~~~~
 By _John Chacko_
 
-JavaScript is a scripting language that adds behaviors and interactions to the web.  JavaScript has been around since 1995 but it was the introduction of Ajax (Asynchronous JavaScript and XML) which was nothing more the interrelated technologies used together to make asynchronous web applications, since then JavaScript's popularity has exploded.  Google made this technique mainstream by making it's GMail web application asynchronous.
+JavaScript is a programming language that can make webpages dynamic and interactive. It was created by Brendan Eich in 1994, but it wasn't until the introduction of AJAX (Asynchronous JavaScript and XML) that webdevelopers really saw its potential. Although AJAX was nothing more than a new way to use pre-existing technologies, Google helped popularize it with their email service, GMail.
 
 JavaScript however isn't perfect and each browser vendor has a different interpretation on how to implement the specification (ECMAScript).  Because of these differences JavaScript can work just fine in one browser but completely differently in another.  Web developers found themselves writing tons of code to handle all these cross-browser "quirks". 
 
