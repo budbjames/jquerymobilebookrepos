@@ -18,7 +18,9 @@ Solution
 ++++++++++++++++++++++++++++++++++++++++++++
 The recipe is made up of an HTML page that represents an ecommerce site with a shopping cart and an order summary.  The order form, shopping cart, and order summary displays are all data-bound to properties of a ViewModel object by way of Knockout.js.  This apporach allows you to cleanly separate the user input from the data persistence of the application by using the MVVM design pattern.  The MVVM design pattern is designed to separate your application into models that hold data, views that represent the user interface, and view models that present an abstraction between the models and views.  This separation of concerns will improve your code's architecture and increase testability.  You will write less code and achieve a more responsive UI than before thanks to Knockout.js.
 
-<add code>
+----
+include::recipe-10-code/example.html[]
+----
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
