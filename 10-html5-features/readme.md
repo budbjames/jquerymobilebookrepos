@@ -113,3 +113,14 @@ Description:
 *Problem:* 
 
 *Description:* 
+
+### 12 - <a href="/jquerymobilecookbook/book/blob/master/10-html5-features/recipe-12.adoc">jQuery Academics</a>
+*author:* <a href="mailto:whynetsolutions@aol.com">R.Thompson</a>
+
+*Problem:* 
+
+*Description:* 
+
+*Status:* 
+
+*Percentage Complete:* 100%

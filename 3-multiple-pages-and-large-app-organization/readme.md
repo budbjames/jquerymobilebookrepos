@@ -112,9 +112,9 @@ Description:
 ### 12 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-12.adoc">Using JQM with backbone.js</a>
 *author:* <a href="mailto:jcreamer@appendto.com">Jonathan Creamer</a>
 
-*Problem:* 
+*Problem:* Create an application with backbone.js
 
-*Description:* 
+*Description:* Utilize backbone.js for creating the markup for a jQuery Mobile application.
 
 ---
 

@@ -1,6 +1,6 @@
 ////
 
-Author: Unassigned
+Author: Courtney Hall
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -12,12 +12,70 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+jQuery Mobile forms are plain when they are first created. Often times the default look will not suffice for most projects.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+The answer to styling JQM forms lies in knowing which class selectors or inline data-attributes to use. Markup examples are used in the discussion below.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+Theming jQeury Mobile Forms
+
+  jQuery Mobile allows for the customization of your forms through a simple mechanism known as theming. A theme allows you change the appearance of your forms by using a predefined set of styles that can be used interchangeably to give your form that polished look. The JQM ships with a default theme which contains five color swatches that are named simply enough 'a' through 'e'. In addition to the default theme, the jQuery Mobile website offers a tool called ThemeRoller which allows you to create custom themes containing up to twenty-six color swatches. We will revisit ThemeRoller and the use of custom themes later on. The most important thing to remember is that your form and its elements will inherit any theme and/or styles previously defined for the parent container unless you override the element values inline or explicitly define a class for the forms container. 
+	
+	Creating a themed form for your mobile application is simply a matter of creating a container, declaring some classes for the container and nesting the form inside of it. In particular, the classes that we are interested in for our container, which happens to be a div are declared like so: ui-body ui-body-<swatch-name>. Remember, from what we learned earlier, that a form will inherit the theme or style declared for its parent container. We leverage this behavior by simply using a swatch name that is preassigned by using the letter 'e' for example in our class assignment. Below is a simple form exhibiting this behavior:
+
+<h1>Form using default theme swatch 'e'</h1>
+<div  class="ui-body ui-body-e">
+	<form action="">
+		<h2>Please enter your name:</h2>
+		<div data-role="fieldcontain">
+			<label for="fname">First Name: &nbsp;</label>
+			<input type="text" name="fname" placeholder="First Name">
+		</div>
+		<div data-role="fieldcontain">
+			<label for="lname">Last Name: &nbsp;</label>
+			<input type="text" name="lname" placeholder="Last Name">		
+		</div>
+		<div>
+			<input type="submit" value="Submit!" data-inline="true" />
+			<input type="reset" value="Reset" data-inline="true" />
+		</div>	
+	</form>
+</div>
+
+Overriding Theme Color Swatches
+Let's say that you have themed a form for use in your application but you would like to accentuate some of the elements by using a different color swatch. You can do this by using a simple inline data-attribute declaration. Inline declarations offer the greatest amount of control over the appearance of individual elements because you can override any style defined whether it be a global definition or or the parent container. Below is the same code from our previous example but using inline styles to configure the 'Last Name' input and 'Submit!' button with a different theme color swatch.
+
+
+<h1>Form using default theme swatch 'e' with inline data-attribute statements</h1>
+<div  class="ui-body ui-body-e" data-inline="true">
+	<form action="">
+		<h2>Please enter your name:</h2>
+		<div data-role="fieldcontain">
+			<label for="fname">First Name: &nbsp;</label>
+			<input type="text" name="fname" placeholder="First Name" />
+		</div>
+		<div data-role="fieldcontain">
+			<label for="lname">Last Name: &nbsp;</label>
+			<input type="text" name="lname" placeholder="Last Name" data-theme="b" />		
+		</div>
+		<div>
+			<input type="submit" value="Submit!" data-theme="a" data-inline="true" />
+			<input type="reset" value="Reset" data-inline="true" />
+		</div>	
+	</form>
+</div>
+
+Using ThemeRoller To Roll Your Own Themes
+	As we learned earlier, the default theme provided with JQM comes with five default color swatches. If these colors work with your current design, then that is great, your work is done. If on the other hand you would like to spice up the look of your application or have it match your current color scheme then you may want to consider ThemeRoller. If you visit the ThemeRoller page, you will immediately notice that the page is broken into three sections; the action bar at the very top of the page, a manual swatch configuration panel to the left and the drag and drop configuration interface to the right. Through the use of the ThemeRoller tool, one can create up to twenty-six color swatches per theme. 
+	ThemeRoller is meant to be a straightforward utility, simply grab color swatches from the color palette above and drop them onto various parts of the boiler plate UI interfaces to assign them with the color of your choice. To add more swatches for use in your theme, simply click the plus-sign (+) to the right of the letters in the global tab, in the upper left hand corner. You will notice that a new letter appears which should be 'd' and a corresponding UI set below the original three default widgets. Using the manual configuration panel to the left you can configure the Header/Footer Bar, Content Body and Button state by substituting the default colors with your own hexadecimal values. These values will be updated automatically to reflect the changes made when you drag and drop colors onto the component matching the swatch letter that you are currently working on.
+	Once you have constructed a theme that you would like to use for your own app, click the 'Download theme zip file' button in the action bar at the top of the page. Save the file locally when prompted and unzip the file where you plan on using the theme. You should see a file named 'index.html' and a folder entitled 'themes'. Enclosed inside of the themes folder you should see two files and an images folder. Your theme files will come in two flavors, a standard css file and a minified version of the css. Link to your stylesheet using a a standard link tag and include the following tags as prescribed in the index.html file in the root file of your download and you are ready to go.
+
+
+<link rel="stylesheet" href="themes/<your-theme-name>.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+                                
