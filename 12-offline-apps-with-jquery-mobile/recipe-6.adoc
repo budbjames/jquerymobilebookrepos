@@ -1,8 +1,6 @@
 ////
 
-This is a comment block.  Put notes about your recipe here and also your author information.
-
-Author: John Doe <email@email.com>
+Author: Tyson Cadenhead <tcadenhead@appendto.com>
 
 ////
 
@@ -11,12 +9,16 @@ Author: John Doe <email@email.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+Explain possible scenarios where offline storage could be beneficial.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+There are several reasons to make your application work offline.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+Offline storage has become very important because mobile devices can go places where they will lose their Internet connection. Data needs to persist whether the user is connected to the Internet or not.
+
+If you are developing an app for the iPhone or iPad, you will need to make sure that it doesn't crash in airplane mode. If it does, Apple will reject it. If you are wrapping your app with Phonegap, you can check the connection using the navigator.connection.type constant. If the device is not connected, you can fall back on local storage.
+
+Many apps don't even need to save data to an outside API. If your app doesn't share data with other users or devices, storing data on the client-side exclusively might be the best option. As an added benefit, local apps will free you from the expense and hassle of maintaining a server-side service.
