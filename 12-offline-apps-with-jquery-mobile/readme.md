@@ -46,7 +46,7 @@ Description:
 *Description:*
 
 ### 6 - <a href="/jquerymobilecookbook/book/blob/master/12-offline-apps-with-jquery-mobile/recipe-6.adoc">Why make your application work offline?</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a>
 
 *Problem:* 
 
