@@ -13,7 +13,7 @@ What different types of offline storage do we have access to?
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-There are many ways to store data offline. Using the client-side to store large amounts of data has historically not been widely addressed by most browsers, so the support for different types of storage varies.
+There are many ways to store data offline. Using the client-side to store large amounts of data was largely ignored by most browsers until recently, so support for different types of storage varies.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -25,7 +25,7 @@ Offline storage comes in many shapes and sizes. These include:
 * web SQL
 * indexedDB
 
-JavaScript maintains a session as long as the client doesn't refresh the page, so you can actually use it to maintain storage in single-page applications using a basic getter / setter pattern. One benefit of using the session is that this will work in every browser that supports JavaScript. The downside is that as soon as the page is refreshed, everything is lost.
+JavaScript maintains a session as long as the client doesn't refresh the page, so you can actually use the session to maintain storage in single-page applications using a basic getter / setter pattern. One benefit of using the session is that it will work in every browser that supports JavaScript. The downside is that as soon as the page is refreshed, everything is lost.
 
 ----
 var Session = function () {
@@ -56,7 +56,7 @@ console.log(
 ); // Returns "John Doe"
 ----
 
-Cookies are maintained when the page is reloaded, but they have size limitations. Also, most browsers allow their users to turn cookies off. Historically, cookies have mostly been used to keep small pieces of information on the client-side such as a name, an authorization code or an email address.
+Cookies are maintained when the page is reloaded, but they have size limitations. Most browsers also allow their users to turn cookies off. Historically, cookies have mostly been used to keep small pieces of information on the client-side such as a name, an authorization code or an email address.
 
 ----
 var Cookie = function () {
@@ -129,7 +129,7 @@ if (typeof localStorage) {
 }
 ----
 
-Web SQL is significantly more robust than any other options. With Web SQL, you can write SQL statements directly in your JavaScript. Web SQL enjoys support in all modern webkit browsers, so if your application is exclusively targeted for mobile devices, it may be the right fit. Unfortunately, Firefox and Internet Explorer don't support Web SQL yet.
+Web SQL is significantly more robust than any of the other options. With Web SQL, you can write SQL statements directly in your JavaScript. Web SQL enjoys support in all modern webkit browsers. If your application is exclusively targeted for mobile devices, Web SQL may be the right fit. Unfortunately, Firefox and Internet Explorer don't support Web SQL yet.
 
 ----
 // Create a new database
@@ -171,8 +171,32 @@ db.transaction(function (transaction) {
 });
 ----
 
-IndexedDB is designed for storing large amounts of data. It performs really well doing searches of the data using indexes. IndexedDB is supported by Firefox, Chrome and Internet Explorer 10, but not Safari.
+IndexedDB is designed for storing large amounts of data. It performs really well when searching data that uses indexes. IndexedDB is partially supported by Firefox, Chrome and Internet Explorer 10, but not Safari.
+
+IndexedDB is still in its infancy, so the implementation varies from one browsers to the next. According to W3C, IndexedDB was designed to be used with a library wrapper since working with it tends to be overly complex. One of the best examples of a IndexedDB wrapper is Lawnchair ( http://brian.io/lawnchair ).
 
 ----
-TODO: Write an example of an IndexedDB
+// Create a store
+var store = new Lawnchair({
+    name: 'user'
+}, function(user) {
+
+    // Set the name and ID of John Doe
+    var john = {
+        key: '1',
+        name: 'John Doe'
+    };
+
+    // Save him
+    user.save(john);
+
+    // Get John
+    user.get('1', function(person) {
+        console.log(person);
+    });
+});
 ----
+
+The above example will only use indexedDB if your browser supports it. Otherwise it will fall back on a different storage type.
+
+As you can see, there is no shortage of storage types. Each has it's own advantages and disadvantages and they should all be carefully weighed when choosing the one that will work best for your application.
