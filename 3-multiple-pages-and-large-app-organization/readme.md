@@ -83,7 +83,7 @@ Description:
 ---
 
 ### 9 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-9.adoc">Designing clean RESTful services, for both serving json to client side code via ajax, and html for page transitions. Utilising HTTP status codes for clean error handling. Could go hand in hand with client/server side balance. Big topic, but could be focussed on one area, or split.</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadnhead</a>
 
 *Problem:* 
 
