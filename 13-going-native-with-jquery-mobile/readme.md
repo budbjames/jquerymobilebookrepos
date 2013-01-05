@@ -20,9 +20,9 @@ Description:
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-2.adoc">Exploring the PhoneGap Device APIs</a>
 *author:* <a href="mailto:collin.forrester@gmail.com">Collin Forrester</a> 11/30/2012
 
-*Problem:* 
+*Problem:* Mobile web apps have a tough task to keep up with the rich functionality that native mobile apps offer users.  Mobile web apps are limited to the APIs supported by the mobile browsers they run in, which is improving with new HTML5 features but still trails native device APIs in several areas.
 
-*Description:*
+*Description:* To bridge the gap between web apps and native apps, PhoneGap offers several different native device APIs accessed directly from JavaScript.  These include: Accelerometer, Camera, Capture, Compass, Connection, Contacts, Device, Events, File, Geolocation, Globalization, Media, Notification, Splashscreen, and Storage.  These APIs are easy to use and are exposed via the navigator object that you may already be familiar with.
 
 
 ### 3 - <a href="/jquerymobilecookbook/book/blob/master/13-going-native-with-jquery-mobile/recipe-3.adoc">jQuery Mobile and WebWorks / Playbook</a>
