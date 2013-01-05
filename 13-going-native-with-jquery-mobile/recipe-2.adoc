@@ -1,22 +1,78 @@
-////
+////  
+:Author:    Collin Forrester
+:Email:     collin.forrester@gmail.com
+:Date:      01/05/2013
+:Revision:  0.1 
+//// 
 
-This is a comment block.  Put notes about your recipe here and also your author information.
+13.2 Exploring the PhoneGap Device APIs 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
-Author: John Doe <email@email.com>
+Problem 
+++++++++++++++++++++++++++++++++++++++++++++ 
+Mobile web apps have a tough task to keep up with the rich functionality that native mobile apps offer users.  Mobile web apps are limited to the APIs supported by the mobile browsers they run in, which is improving with new HTML5 features but still trails native device APIs in several areas.
 
-////
+Solution 
+++++++++++++++++++++++++++++++++++++++++++++ 
+To bridge the gap between web apps and native apps, PhoneGap offers several different native device APIs accessed directly from JavaScript.  These include: Accelerometer, Camera, Capture, Compass, Connection, Contacts, Device, Events, File, Geolocation, Globalization, Media, Notification, Splashscreen, and Storage.  These APIs are easy to use and are exposed via the navigator object that you may already be familiar with.
 
-13.2 Exploring the PhoneGap Device APIs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+An example call to access the device accelerometer might look like this: 
 
-Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+navigator.accelerometer.getCurrentAcceleration(accelerometerSuccess, accelerometerError);
 
-Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+Where accerlerometeSuccess is a callback function that executes when getCurrentAcceleration() returns a success and accelerometerError is a callback function that executes when an error is returned.  In the next section we will break down and discuss in detail some of the more commonly used device APIs with examples of how they might be used.
 
-Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+Discussion ++++++++++++++++++++++++++++++++++++++++++++ 
+In the following examples we will walk through code to use the accelerometer, capture, and contacts.  I'll only be walking through code closest to the PhoneGap device API calls and will assume you have an understanding of how to trigger these calls with buttons (##WHAT CHAPTER##) or events(##WHAT CHAPTER##).  In addition to the code samples below, there is some additional configuration steps needed on each platform to include the feature in PhoneGap.  The PhoneGap docs cover these steps extensively at http://docs.phonegap.com.
+
+The accelerometer is a device that detects change in motion relative to the devices current orientation on the x, y, and z axis.  The PhoneGap API to access to devices accelerometer could be used in games, gesture triggered actions, or in any number of ways.  The Accelerometer contains three methods: getCurrentAcceleration(), watchAcceleration(), and clearWatch().
+
+// deviceready is the event triggered when Cordova is initialized and the device is ready
+// We are adding an event listener to call onDeviceReady when it hears the deviceready event
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// When we use watchAcceleration() later, we will capture the ID and stop it.
+var watchID = null;
+
+// deviceready event has been fired, and the device is ready
+function onDeviceReady() {
+  // getCurrentAcceleration() captures a snapshot of the devices current acceleration
+  // We pass 2 callbacks to getCurrentAcceleration(), one for success, and one for error
+    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+}
+
+// startWatch() uses watchAcceleration() to monitor the devices acceleration
+function startWatch() {
+
+    // Using the an options object, we can specify to update acceleration every 3 seconds
+    var options = { frequency: 3000 };
+
+    // We capture the ID of the acceleration timer started by watchAcceleration()
+    // We can also use the same success and error callbacks for this function
+    watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+}
+
+// At any time, we can use this function to call clearWatch with the watchID to stop the timer
+function stopWatch() {
+    if (watchID) {
+        navigator.accelerometer.clearWatch(watchID);
+        watchID = null;
+    }
+}
+
+// The onSuccess callback recieves an accleration object when called by getCurrentAcceleration or watchAcceleration
+function onSuccess(acceleration) {
+	// The accleration object contains properties x, y, and z for the acceleration on the x, y, and z axis respectively.
+	// It also contains a timestamp of when the acceleration snapshot was taken.
+    alert('Acceleration X: ' + acceleration.x + '\n' +
+          'Acceleration Y: ' + acceleration.y + '\n' +
+          'Acceleration Z: ' + acceleration.z + '\n' +
+          'Timestamp: '      + acceleration.timestamp + '\n');
+}
+
+// If there was an error getting the acceleration, onError will be called and the error can be handled
+function onError() {
+    alert('onError!');
+}
+
+The following two examples over capture and contacts are going to focus on the API call and assume the onError callback and onDeviceReady event listeners are already set up.
