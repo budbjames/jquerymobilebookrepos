@@ -2,7 +2,7 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: unassigned
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -10,16 +10,39 @@ Tech edited: <date>
 ////
 
 3.1 Working with structural frameworks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
++++++++
+You have built the next great jQuery Mobile application and want to utilize the structural framework of your choice, but you want to make sure it plays nicely with jQuery Mobile.
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+++++++++
+jQuery Mobile by design, does not present a developer with a strict set of rules for structuring their applications. It does, however, contain a few bits within that may cause a developer to pause when implementing a structural framework for your application. The main place that many structural frameworks struggle to fit nicely with jQuery Mobile out of the box, is with navigation. In order to properly handle page transitions that fit nicely with jQuery Mobile you will have to hand the reigns of page change from jQuery Mobile to the framework of your choosing. Luckily, jQuery Mobile was designed with this in mind, and allows for this to be easily done within your application.
+
 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+++++++++++
+In order to handle a page change, jQuery Mobile triggers the $.mobile.changePage() event. This is done through binding anchor clicks and binding to hash changes in order to server the proper pages. This conflicts with the routing that you might choose to use for an application structured where you wish to define your routes and their handlers separate from those predetermined by jQuery Mobile. In order to detach the page handling and routing from jQuery Mobile, one must initialize jQuery Mobile with a set of options disabled. To remove these bindings all you need to do is set them to false during the jQuery Mobile Initialization event.
+
+[source, javascript]
+----
+$(document).on("mobileinit", function() {
+	$.mobile.<settingToDisable> = false;	
+});
+----
+A few of these handy 'settingsToDisable' are outlined below:
+
+.linkBindingEnabled
+Disabling 'linkBindingEnabled' turns off the automatic binding of anchor tag clicks that are then handled in a standard way by jQuery Mobile. Disabling this allows your structural framework to bind to these clicks as intended. Obviously, if you do not wish to delegate your clicks to your structural framework, you need not set this setting to false. 
+
+.hashListeningEnabled
+Disabling the 'hashListeningEnabled' setting, will tell jQuery Mobile not to listen to changes to location.hash. This means if you have custom routing or custom deep linking that you wish to implement with your structural framework, you are now free to do so.
+
+.ajaxEnabled
+Setting this to false will automatically set the hash listening to false and will load URLs as standard HTTP requests.
+
+.pushStateEnabled
+This, when enabled uses history.replaceState where possible. If you have previously set '$.mobile.ajaxEnabled = false;' you may wish to disable this setting as well.
+
+With these settings configured properly you are well on your way to creating your well structured jQuery Mobile application with the help of your framework of choice.
