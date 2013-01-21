@@ -11,7 +11,7 @@ Description:
 ## Recipes
 
 ### 1 - <a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/recipe-1.adoc">Working with structural frameworks</a>
-*author:* <a href="mailto:"></a>
+*author:* <a href="mailto:cory.gack@gmail.com">Cory Gackenheimer (2013-01-21)</a>
 
 *Problem:* 
 
