@@ -2,7 +2,10 @@
 
 This is a comment block.  Put notes about your recipe here and also your author information.
 
-Author: John Doe <email@email.com>
+Author: Ralph Whitbeck <rwhitbeck@appendto.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
 
 ////
 
@@ -11,11 +14,13 @@ Author: John Doe <email@email.com>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
+jQuery Mobile is very robust already but is it possible to extend jQuery Mobile further with plugins. 
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+The jQuery library became very popular because of it's extensibility and plugin ecosystem.  jQuery Mobile also has a plugin ecosystem and is also extensible. 
+
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
