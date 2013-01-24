@@ -65,7 +65,7 @@ Description:
 ---
 
 ### 7 - <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-7.adoc">Toolbar buttons</a>
-*author:* <a href="mailto:cory.gack@gmail">Cory Gackenheimer</a> (23 Nov 2012)
+*author:* <a href="mailto:cory.gack@gmail">Cory Gackenheimer</a>
 
 *Problem:*
 
