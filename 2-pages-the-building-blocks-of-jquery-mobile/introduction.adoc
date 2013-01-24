@@ -1,12 +1,303 @@
-////
-
-Author: Max Lynch <maxlynch@uwalumni.com>
-
-Chapter Leader: Max Lynch <maxlynch@uwalumni.com>
-
-////
-
 Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Pages are the fundamental building block of jQuery Mobile. Pages contain most of the content of an application and help separate different screens in the application. Pages support rich navigation features and provide standard ways to present information and navigational aids. This chapter will explain several core features of pages and how to use them.
+////
+
+Author: James Weaver <james@jwadeweaver.com>
+Chapter Leader approved: <date>
+Copy edited: Ralph Whitbeck <rwhitbeck@appendto.com> Nov 23, 2012
+Tech edited: <date>
+
+////
+
+1.1 Who Is This Book For?
+~~~~~~~~~~~~~~~~~~~~~~~~~
+By _James Weaver_
+
+This book was written by members of the jQuery and jQuery Mobile community.  Its purpose is to teach other developers in the community how to tackle common tasks while working with jQuery Mobile. 
+
+This book assumes you have a good understanding of how to use jQuery. While you don't need to know jQuery Mobile extensively, it will be beneficial to have an understanding of the basics. However, if you are totally new to jQuery Mobile, don't close the book yet, this chapter will provide you with tasks that provide the building blocks of developing with jQuery Mobile.
+
+////
+
+Author: John Chacko <johns221b@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: Ralph Whitbeck <rwhitbeck@appendto.com> Nov 23, 2012
+Tech edited: <date>
+
+////
+
+1.2 What is jQuery?
+~~~~~~~~~~~~~~~~~~~
+By _John Chacko_
+
+JavaScript is a programming language that can make webpages dynamic and interactive. It was created by Brendan Eich in 1994, but it wasn't until the introduction of AJAX (Asynchronous JavaScript and XML) that webdevelopers really saw its potential. Although AJAX was nothing more than a new way to use pre-existing technologies, Google helped popularize it with their email service, GMail.
+
+JavaScript however isn't perfect and each browser vendor has a different interpretation on how to implement the specification (ECMAScript).  Because of these differences JavaScript can work just fine in one browser but completely differently in another.  Web developers found themselves writing tons of code to handle all these cross-browser "quirks". 
+
+In January 2006 at a Barcamp in NYC, John Resig showed off three things.  One of those was jQuery, a JavaScript library that abstracts away cross-browser "quirks" and allows the developer to not have to think about it.  They essentially can "Write less, do more." which is the jQuery tag line.  jQuery is free, open source software that is licensed under the MIT license (http://jquery.org/license/).
+
+Today, jQuery is the most popular JavaScript library in use. jQuery is used on over 59.2% of the top 10,000 sites as tracked by Built With Trends as of November 2012.  That number continues to climb at a steady rate.  You can see the latest percentages at http://trends.builtwith.com/javascript/jQuery.
+
+jQuery allows JavaScript developers to take native code like this:
+
+[source,javascript]
+----
+  // Grab a NodeList
+  var kittens  = document.querySelectorAll(".kitten");
+
+  // Show images 'fast'
+  show(kittens, "fast");
+
+  // Function responsible for showing
+  function show (list, speed) {
+      
+      // Setup variables to use internally
+      var index, opacity, interval, timing;
+      var velocity = {"fast": 20, "slow": 60};
+      
+      // Determine if speed is a number, or a string
+      timing = ~toString.call(speed).indexOf("Number")
+          ? speed * .01
+          : velocity[speed] || 40;
+      
+      // Convert elements into array
+      if (list.nodeType && list.nodeType === 1) {
+          list = [list];
+      }
+      
+      // Set all items in collection to transparent
+      for (index = 0; index < list.length; index++) {
+          list[index].style.opacity = 0;
+      }
+      
+      // Set opacity-increasing interval
+      interval = setInterval(function () {
+          for (index = 0; index < list.length; index++) {
+              opacity = parseFloat(list[index].style.opacity);
+              list[index].style.opacity = opacity + .01;
+          }
+          // If images are fully opaque, clear interval
+          if (opacity >= 1) {
+              clearInterval(interval);
+          }
+      }, timing);
+      
+  }
+----
+
+and write one line of code like this:
+
+[source,javascript]
+----
+  $(".kitten").show("fast");
+----
+
+Above line of jQuery can be broken down into three parts.
+
+First you need to declare and call the jQuery object.  We do that by calling it's alias '$'.
+
+Next we select the element whose class is 'kitten'.  The jQuery object will take any selectors that conform to the CSS 1-3 specs plus some pseudo selectors that are apart of jQuery. In our example about we will select all elements whose class is 'kitten' on a page.
+
+The combined jQuery object and selector returns a jQuery Collection that can then have worked performed on.  jQuery has a rich API that allows you to do something on the returned collection.  In our example we are calling 'show' method on the collection.
+
+Some broad actions you can perform using jQuery are things like selecting and manipulating DOM elements, DOM traversal, creating animations, handling events, and developing Ajax applications, easily.
+
+You can find out more about the jQuery API at http://api.jquery.com.  This book assumes you have a good understanding of how jQuery works.
+
+////
+
+Author: Ralph Whitbeck <rwhitbeck@appendto.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
+////
+
+1.3 What is jQuery Mobile?
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+By _Ralph Whitbeck_
+
+jQuery Mobile is a project that falls within the jQuery Foundation just like jQuery core.  It was started in the spring of 2010 as a framework that would bridge the ever growing number of devices and browsers in the mobile space.  The mission of jQuery Mobile is similar to that of jQuery to abstract away the cross browser and device quirks and allow the developer to write one web application that targets all devices.
+
+jQuery Mobile isn't just an abstraction library it's an entire framework.  It is designed to make mobile web application development easier by integrating web standards like HTML5 and CSS3 together with the power of jQuery and jQuery UI into a robust, maintainable framework.
+
+jQuery Mobile is built with the principles of Progressive Enhancement in mind.  This means that you can develop using the framework and know that the end user will get a functionally working site when they visit your page on a mobile device.  Not all devices are created equally and some don't fully support the specification of the standards that jQuery Mobile is targeting.  But that's OK cause what progressive enhancement is designed to do is detect that a feature being used isn't supported and will ``fall back'' and provide a less enhanced version that is still functional. 
+
+The team at jQuery Mobile tests each new device that comes out and grades it on a A, B, C scale.  What does the scale mean?
+
+.Mobile Graded Browser Support
+* A-grade - Devices will support the full enhanced experience and also supports Ajax-enabled page transitions
+* B-grade - Devices will support the enhanced experience but will not support the Ajax-enabled page transitions
+* C-grade - Devices only support the basic HTML experience but is still functional
+
+.Supported Platforms
+[NOTE]
+====
+You can find out more about which devices and browsers are supported at what grade by heading over to jQuery Mobile's Platform page at http://jquerymobile.com/gbs/.
+====
+
+How does jQuery Mobile work?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+jQuery Mobile is a collection of markup standards and widgets that use specially named data attributes that enhance the output through the framework.  In addition when initialized the widgets will add WAI-ARIA Attributes to the code to enhance accessibility and make the page easily read by screen readers.
+
+Built using a CSS Framework similar to jQuery UI, jQuery Mobile pages and widgets are completely themable.  You can use the 5 swatches of colors that come with the default theme or you can customize the theme using the on-line ThemeRoller at http://jquerymobile.com/themeroller/.
+
+////
+
+Author: Panagiotis Tsalaportas <sys.sgx@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
+////
+
+1.4 Including jQuery and jQuery Mobile in an HTML page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By _Panagiotis Tsalaportas_
+
+There are in total three ways you can include the jQuery and jQuery Mobile libraries to your 
+project. Each of the first two ways uses a different approach, while the third is 
+a combination of the previous two. Let's have a look:
+
+* The first and easiest solution, is to simply use a CDN-hosted version of the libraries, such as 
+Google's CDN or jQuery's CDN. This is the most commonly suggested solution for web developers.
+* The second solution, is to manually download jQuery and jQuery Mobile and host these files on 
+your own server.
+* The third solution, which has recently been getting more supporters, is to combine the previous 
+two techniques and "use" them both. So, this way you first choose to load the CDN-hosted version 
+of the libraries, and in case the CDN is for some reason unreachable then the next automatically
+chosen option is to load the files hosted locally on your server.
+
+Including jQuery and jQuery Mobile is pretty much the same thing as including any other external
+JavaScript file in your HTML page. What the above solutions actually do, is to change _where_ these
+files are going to be loaded from, your server or a CDN server. This, of course, introduces both
+advantages and disadvantages, and thus we have to take a closer look to all of the techniques.
+
+Using a CDN
++++++++++++
+A Content Delivery Network is a distributed network of servers, containing copies of data across 
+various physical locations. Its purpose is to deliver identical files to the users, by choosing the
+closest optimal available server in the network. The advantages of using this technique are 
+many: 
+
+* You can start using the JavaScript libraries right away, without having to download any files.
+* You'll experience decreased latency. Any users that are not physically near your server will be able to download the
+libraries faster through the closest CDN server; this is better than forcing users to download
+jQuery from your own server independently from their location.
+* Your server will produce less traffic, as these files will be downloaded from the CDN server.
+* Perhaps the greatest benefit of using a CDN is that your website visitors might not have to download 
+the jQuery libraries at all. It is very likely that your visitors already have a copy of the JavaScript 
+libraries in their browser cache, and that's due to the fact that some of the most trafficked sites
+on the Internet choose to deliver these libraries through the same CDNs. When a browser sees an HTTP
+request to a location that has been accessed before, as for example a location pointing to the same 
+CDN-hosted version of jQuery, instead of remaking this request it tries to load the local copy of the 
+file from the browser cache, which leads to increased responsiveness.
+
+The disadvantages of a Content Delivery Network are that the JavaScript files will be available only if 
+the CDN is online, and if you are building native applications using jQuery and jQuery Mobile and
+the user's device is not connected to the internet, you will not be able to use their functionally. 
+It is thus recommended to choose the locally hosted files if you plan on deploying HTML5 offline apps.
+
+[IMPORTANT]
+====
+The jQuery Mobile library requires the jQuery core library to be also included in order to use it. 
+As a consequence, you have to include both of these libraries in every HTML page of your project,
+along with any CSS files needed by jQuery Mobile. It is important to also check the compatibility 
+between the different versions of jQuery and jQuery Mobile.
+====
+
+In this book, we will choose the official jQuery Content Delivery Network for our projects.
+There are two types of files in each library you can choose to include in your page: one is the 
+uncompressed version and is used for debugging purposes only, and the other is the minified and
+compressed version, which is targeting final distribution. The minified version has a prefix _min_
+added to its filename, and does not contain any spaces, line-breaks, or comments.
+
+The CDN-hosted version can be included in your HTML page with the following lines of code:
+
+-----
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+-----
+
+[NOTE]
+====
+The JavaScript files must be included in your project in the order shown.
+====
+
+While you are developing your project, you might want to use the filenames without the prefix _min_
+for debugging, as for example _http://code.jquery.com/jquery-1.8.2.js_. When your project is ready
+you can then include the minified compressed versions of the files.
+
+Using files hosted locally
+++++++++++++++++++++++++++
+If you are willing to host the library files yourself, you can download the latest version of
+jQuery from http://www.jquery.com, and the latest version of the ZIP package for jQuery Mobile 
+from http://www.jquerymobile.com/download. The ZIP package has a filename similar to jquery.mobile-x.zip
+where _x_ is the current version of the library, for example 1.1.0.
+
+After you extract the packages' contents, copy the folder _images/_ and the files _jquery.mobile-1.2.0.min.css_,
+_jquery-1.8.2.min.js_, _jquery.mobile-1.2.0.min.js_ to your current working directory, and add the following
+lines of code to your HTML page:
+
+-----
+<link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+<script src="jquery-1.8.2.min.js"></script>
+<script src="jquery.mobile-1.2.0.min.js"></script>
+-----
+
+[NOTE]
+====
+Because you are hosting the library files yourself, you must also add the _images/_ folder
+to your current working directory.
+====
+
+Using the combined approach
++++++++++++++++++++++++++++
+In case you want the benefits of using a CDN network, but you also want to make your application work 
+even if there is no Internet connection available, you can combine the two aforementioned techniques. This
+approach is mainly used in the popular HTML5 Boilerplate template, and focuses on how the JavaScript
+files will be loaded. You can load the CSS files whichever way you want:
+
+-----
+<link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+<script src="//code.jquery.com/jquery-1.8.2.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery-1.8.2.min.js"><\/script>')</script>
+<script src="//code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery.mobile-1.2.0.min.js"><\/script>')</script>
+-----
+
+[NOTE]
+====
+If you wonder why the script references do not have an "http" in the beginning, this is simply
+a method that allows you to use a single reference that works on both HTTP and HTTPS connections.
+====
+
+In the code displayed, we decided to use the locally hosted CSS file, while choosing to load the JavaScript files 
+from the jQuery CDN. Most developers suggest the JavaScript files to be placed at the bottom of the HTML page, 
+and the CSS files to be placed at the top of your HTML page in the head section. This makes the script 
+files non-blocking and allows for rendering the other page's elements. Also, it is good to note that you should 
+always use a version of the JavaScript libraries that is known to work well with your page.
+
+////
+
+Author: Cory Gackenheimer <cory.gack@gmail.com>
+Chapter Leader approved: <date>
+Copy edited: Ralph Whitbeck <rwhitbeck@appendto.com> Nov 23, 2012
+Tech edited: <date>
+
+////
+
+1.5 jQuery Mobile - WebPages and Applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By _Cory Gackenheimer_
+
+Since jQuery Mobile is such a robust cross-platform framework for developing mobile applications, it provides you with many paths to generating and deploying your application. First and foremost is the mobile web application. 
+
+Because jQuery Mobile is created with cross-device mobile browser support as a primary target, it provides an extensive solution for anyone who wishes to target a large variety of mobile devices with one set of code. It is also familiar to web developers, as it is built with standards in mind like HTML5, CSS3 and pragmatically utilizes semantic markup with progressive enhancement as a primary concern. You can utilize jQuery Mobile as the UI backbone for your web application, by adding a few choice media queries, what starts as a mobile first web application can easily become a wonderfully responsive web application. jQuery Mobile is also extensible, just as the core it is built upon - jQuery, it lends itself to allowing developers to roll their own widgets and plugins in order to suit the needs of their particular projects. 
+
+Along with building a web application that supports a wide range of mobile devices out of the box, jQuery Mobile applications are very well suited to become a native cross-platform experience if wrapped inside a native device WebView. This can be done manually across platforms, or through utilization of a third-party framework to build native applications. One of the most highly recognized and widely used frameworks for turning a web application into a native application is Apache Cordova (aka PhoneGap). PhoneGap leverages the power of the WebView native to mobile devices - basically a web browser without and address bar or back button - and allows a developer access to some device specific features such as the Camera, Contact Lists, File system, and much more. Going native takes an already incredibly beautiful and extensive jQuery Mobile application to another level.  We go further into building native applications in Chapter 12 - Going Native with jQuery Mobile.
+
+Whether you as a developer choose to build a web application with jQuery Mobile and leverage its extensive cross-browser, cross-device support to create their solutions, or choose to take that application to the native application world with a platform such as PhoneGap, you will be able to create a rich mobile experience without having to manage multiple projects for divergent platforms. This is the allure of jQuery Mobile. 
