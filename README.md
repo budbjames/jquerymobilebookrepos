@@ -13,12 +13,6 @@ Each recipe author must sign a [release form](https://rightsignature.com/forms/j
 
 ## Table of Contents
 
-* <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/readme.md">Chapter 1 - jQuery Mobile Basics</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-1.adoc">1 - Who this book is for</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-2.adoc">2 - What are jQuery?</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-3.adoc">3 - What is jQuery Mobile?</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-4.adoc">4 - Including jQuery and jQuery Mobile in an HTML Page</a>
-  * <a href="/jquerymobilecookbook/book/blob/master/1-jquery-mobile-basics/recipe-5.adoc">5 - jQuery Mobile - WebPages and Applications</a>
 * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/readme.md">Chapter 2 - Pages: The Building Blocks of jQuery Mobile</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/introduction.adoc">Introduction</a>
   * <a href="/jquerymobilecookbook/book/blob/master/2-pages-the-building-blocks-of-jquery-mobile/recipe-1.adoc">1 - Page anatomy</a>
