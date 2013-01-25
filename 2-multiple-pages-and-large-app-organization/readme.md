@@ -1,4 +1,4 @@
-# Chapter 3
+# Chapter 2
 
 ## Multiple Pages and Large App Organization
 
@@ -6,7 +6,7 @@ Description:
 
 *Chapter Leader:* <a href="mailto:mike@appendto.com">Mike Hostetler</a>
 
-<a href="/jquerymobilecookbook/book/blob/master/3-multiple-pages-and-large-app-organization/introduction.adoc">Introduction</a>
+<a href="/jquerymobilecookbook/book/blob/master/2-multiple-pages-and-large-app-organization/introduction.adoc">Introduction</a>
 
 ## Recipes
 
