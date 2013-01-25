@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.9 Navbars
+1.9 Navbars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

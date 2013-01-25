@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.5 Fullscreen Toolbar Positioning
+1.5 Fullscreen Toolbar Positioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

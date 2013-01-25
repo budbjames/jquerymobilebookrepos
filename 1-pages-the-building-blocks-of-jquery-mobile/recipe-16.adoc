@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.17 Making Pages Readable on Desktops and Other Wide Screens
+1.16 Making Pages Readable on Desktops and Other Wide Screens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

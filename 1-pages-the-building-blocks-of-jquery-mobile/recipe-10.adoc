@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.10 Persistent Footer Navbar
+1.10 Persistent Footer Navbar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

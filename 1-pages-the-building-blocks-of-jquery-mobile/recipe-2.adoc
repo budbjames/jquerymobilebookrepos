@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-2.2 Page Event Lifecycle
+1.2 Page Event Lifecycle
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

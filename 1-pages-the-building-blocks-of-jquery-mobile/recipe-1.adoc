@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-2.1 Page Anatomy
+1.1 Page Anatomy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

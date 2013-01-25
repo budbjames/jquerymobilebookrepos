@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-2.7 Toolbar Buttons
+1.7 Toolbar Buttons
 ~~~~~~~~~~~~~~~~~~~
 
 Problem

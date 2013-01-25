@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.18 Transforming XML to Linked jQuery Mobile Pages Using XSLT
+1.17 Transforming XML to Linked jQuery Mobile Pages Using XSLT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

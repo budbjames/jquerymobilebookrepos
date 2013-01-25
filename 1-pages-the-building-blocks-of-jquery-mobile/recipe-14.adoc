@@ -10,7 +10,7 @@ Tech edited: <date>
 Need to check ref id of chapter on linking pages
 ////
 
-2.15 Collapsible Content Blocks
+1.14 Collapsible Content Blocks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -7,16 +7,16 @@ Tech edited: <date>
 
 ////
 
-2.6 Toolbar Theming
+1.4 Fixing Toolbars to the Page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-You want to change the look and feel of a toolbar.
+You want to display a header or footer toolbar at all times and float it above the content of the page.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-You can easily change the theme of a toolbar by setting the data-theme attribute as show:
+jQuery Mobile provides fixed positioning support for toolbars. In fact, it's a simple matter of adding data-position="fixed" to the toolbar as shown:
 
 [source, html]
 -----
@@ -30,14 +30,16 @@ You can easily change the theme of a toolbar by setting the data-theme attribute
 </head> 
 <body>
   <div data-role="page">
-		<div data-role="header" data-theme="e">
-			<h3>Yellow</h3>
+		<div data-role="header" data-position="fixed">
+			<h3>Header</h3>
 		</div>
 		<div data-role="content">
-			Content
+			<div style="height: 1000px">
+				A really tall div
+			</div>
 		</div>
-		<div data-role="footer" data-theme="b">
-			<h3>Blue</h3>
+		<div data-role="footer" data-position="fixed">
+			<h3>Footer</h3>
 		</div>
 	</div>
 </body>
@@ -46,9 +48,6 @@ You can easily change the theme of a toolbar by setting the data-theme attribute
  
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-This recipe demonstrates how to set the data-theme attribute to the theme swatch you want to use to style the toolbar.
+You've now set the data-position attribute to "fixed" to keep the header and footer toolbars fixed at the top and bottom of the viewport, respectively.
 
-jQueryMobile supports three types of toolbars:
-1. Header bars, which are displayed as the topmost item before page content. Normally used to show page title and buttons/icons.
-2. Footer bars, which are displayed as the bottommost item after page content. Normally contains buttons/icons.
-3. Navbars, which can be displayed within header/footer bars or within page content to show separate level of buttons/icons/other controls.
+This keeps the center content padded enough to show the toolbars while allowing the toolbars to stay fixed in pace as the center content scrolls. A really tall div demonstrates the effect.

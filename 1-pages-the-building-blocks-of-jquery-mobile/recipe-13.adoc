@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-2.14 Formatting Content With Layout Grids
+1.13 Formatting Content With Layout Grids
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

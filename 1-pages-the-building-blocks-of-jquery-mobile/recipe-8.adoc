@@ -15,7 +15,7 @@ Tech edited: <date>
 
 ////
 
-2.8 Embedding Controls in Toolbars
+1.8 Embedding Controls in Toolbars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
