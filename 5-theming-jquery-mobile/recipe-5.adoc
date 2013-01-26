@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-6.5 Dynamically Changing Page Themes
+5.5 Dynamically Changing Page Themes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

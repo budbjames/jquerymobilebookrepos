@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-6.3 The ThemeRoller tool
+5.3 The ThemeRoller tool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

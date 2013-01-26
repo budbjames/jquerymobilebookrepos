@@ -1,4 +1,4 @@
-[[chapid_6]]
+[[chapid_5]]
 == Theming jQuery Mobile
 
 include::introduction.adoc[]

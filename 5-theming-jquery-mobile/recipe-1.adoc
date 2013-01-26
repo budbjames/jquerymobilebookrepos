@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-6.1 Default Page Themes
+5.1 Default Page Themes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

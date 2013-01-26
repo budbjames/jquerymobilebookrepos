@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-6.4 Designing and using custom icons
+5.4 Designing and using custom icons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

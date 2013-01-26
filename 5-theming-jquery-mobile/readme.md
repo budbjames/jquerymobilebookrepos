@@ -1,4 +1,4 @@
-# Chapter 6
+# Chapter 5
 
 ## Theming jQuery Mobile
 
@@ -6,11 +6,11 @@ Description:
 
 *Chapter Leader:* <a href="mailto:andy@commadelimited.com">Andy Matthews</a>
 
-<a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/introduction.adoc">Introduction</a>
+<a href="/jquerymobilecookbook/book/blob/master/5-theming-jquery-mobile/introduction.adoc">Introduction</a>
 
 ## Recipes
 
-### 1 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-1.adoc">Default Page Themes</a>
+### 1 - <a href="/jquerymobilecookbook/book/blob/master/5-theming-jquery-mobile/recipe-1.adoc">Default Page Themes</a>
 
 *author:* <a href="mailto:"></a>
 
@@ -18,7 +18,7 @@ Description:
 
 ---
 
-###2 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-2.adoc">Themes and Swatches</a>
+###2 - <a href="/jquerymobilecookbook/book/blob/master/5-theming-jquery-mobile/recipe-2.adoc">Themes and Swatches</a>
 
 *author:* <a href="mailto:dcarrith@gmail.com">David Carrithers</a>
 
@@ -26,7 +26,7 @@ Description:
 
 ---
 
-### 3 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-3.adoc">The ThemeRoller tool</a>
+### 3 - <a href="/jquerymobilecookbook/book/blob/master/5-theming-jquery-mobile/recipe-3.adoc">The ThemeRoller tool</a>
 
 *author:* <a href="mailto:sys.sgx@gmail.com">Panagiotis Tsalaportas</a> 
 
@@ -34,7 +34,7 @@ Description:
 
 ---
 
-### 4 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-4.adoc">Designing and using custom icons</a>
+### 4 - <a href="/jquerymobilecookbook/book/blob/master/5-theming-jquery-mobile/recipe-4.adoc">Designing and using custom icons</a>
 
 *author:* <a href="mailto:"></a>
 
@@ -42,7 +42,7 @@ Description:
 
 ---
 
-### 5 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-5.adoc">Dynamically Changing Page Themes</a>
+### 5 - <a href="/jquerymobilecookbook/book/blob/master/5-theming-jquery-mobile/recipe-5.adoc">Dynamically Changing Page Themes</a>
 
 *author:* <a href="mailto:maxlynch@uwalumni.com">Max Lynch</a>
 
@@ -50,7 +50,7 @@ Description:
 
 ---
 
-### 6 - <a href="/jquerymobilecookbook/book/blob/master/6-theming-jquery-mobile/recipe-6.adoc">Examples of Themes</a>
+### 6 - <a href="/jquerymobilecookbook/book/blob/master/5-theming-jquery-mobile/recipe-6.adoc">Examples of Themes</a>
 
 *author:* <a href="mailto:whynetsolutions@aol.com">R.THOMPSON</a>
 

@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-6.2 Themes and Swatches
+5.2 Themes and Swatches
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
