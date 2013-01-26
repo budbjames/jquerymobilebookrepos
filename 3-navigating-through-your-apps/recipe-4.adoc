@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-4.4 Executing links as AJAX calls 
+3.4 Executing links as AJAX calls 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

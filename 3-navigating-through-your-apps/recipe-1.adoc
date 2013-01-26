@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-4.1 Wireframing for jQuery Mobile 
+3.1 Wireframing for jQuery Mobile 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

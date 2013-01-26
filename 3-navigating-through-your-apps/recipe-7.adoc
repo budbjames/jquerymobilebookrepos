@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-4.7 OS considerations
+3.7 OS considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

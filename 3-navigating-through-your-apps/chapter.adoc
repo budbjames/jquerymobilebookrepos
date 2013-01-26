@@ -1,4 +1,4 @@
-[[chapid_4]]
+[[chapid_3]]
 == Navigating through your Apps
 
 include::introduction.adoc[]

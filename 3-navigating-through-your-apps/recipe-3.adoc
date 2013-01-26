@@ -11,7 +11,7 @@ Tech edited: <date>
 
 ////
 
-4.3 Linking to External Pages
+3.3 Linking to External Pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

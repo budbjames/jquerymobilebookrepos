@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-4.2 Planning a hierarchy for your App
+3.2 Planning a hierarchy for your App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

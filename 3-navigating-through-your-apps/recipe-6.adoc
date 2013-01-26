@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-4.6 Animated Page Transitions 
+3.6 Animated Page Transitions 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

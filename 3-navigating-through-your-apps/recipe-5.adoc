@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-4.5 Creating Modal Dialogs 
+3.5 Creating Modal Dialogs 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
