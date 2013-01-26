@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-5.1 Building a Basic List
+4.1 Building a Basic List
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -11,7 +11,7 @@ Tech edited: <date>
 
 ////
 
-5.8 Make a List That Contains Dynamic Data
+4.8 Make a List That Contains Dynamic Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

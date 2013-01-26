@@ -11,7 +11,7 @@ Tech edited: <date>
 
 ////
 
-5.2 Common Formatting of Lists
+4.2 Common Formatting of Lists
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

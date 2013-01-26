@@ -10,7 +10,7 @@ Tech edited: <date>
 
 ////
 
-5.3 Custom Formatting of Lists
+4.3 Custom Formatting of Lists
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

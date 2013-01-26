@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-5.9 Various Ways to Theme a List
+4.9 Various Ways to Theme a List
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
