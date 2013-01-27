@@ -34,9 +34,9 @@ To do this, you need to be able to place a control into the header and position 
   <head>
     <title>Embedding controls in toolbar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <link rel="stylesheet" href="/css/jquery.mobile.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.mobile.min.js"></script>
 	<style>
 		#home-header .ui-select { 
 			float: right
