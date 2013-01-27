@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-7.6 Form Submittal and AJAX
+6.5 Form Submittal and AJAX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

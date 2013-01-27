@@ -10,7 +10,7 @@ Tech edited: <date>
 
 ////
 
-7.7 Generating elements dynamically
+6.6 Generating elements dynamically
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

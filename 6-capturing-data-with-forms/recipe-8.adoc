@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-7.9 Options for Displaying Elements
+6.8 Options for Displaying Elements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

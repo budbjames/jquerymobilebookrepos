@@ -1,4 +1,4 @@
-[[chapid_7]]
+[[chapid_6]]
 == Capturing Data with Forms
 
 include::introduction.adoc[]

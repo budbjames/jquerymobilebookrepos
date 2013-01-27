@@ -10,7 +10,7 @@ Tech edited: <date>
 
 ////
 
-7.4 Using native form elements
+6.4 Using native form elements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

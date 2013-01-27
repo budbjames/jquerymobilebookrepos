@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-7.4 Theming forms
+6.4 Theming forms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

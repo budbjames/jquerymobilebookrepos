@@ -10,7 +10,7 @@ Tech edited: <date>
 
 ////
 
-7.1 Getting started with jQuery Mobile Forms
+6.1 Getting started with jQuery Mobile Forms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mobile devices often provide fewer ways for users to input data compared to that of traditional computers. Desktop and laptop users are able to take advantage of numerous input devices, such as entering an email using a full-sized keyboard or selecting a checkbox using a mouse. On top of the numerous and accurate input devices, most traditional computers offer large displays allowing webpage authors to easily organize form inputs optimized for monitors.
