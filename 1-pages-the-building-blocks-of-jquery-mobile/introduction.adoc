@@ -297,7 +297,8 @@ By _Anne-Gaelle Colom_
 
 The jQuery Mobile Team has developed a jQuery Mobile download builder that allows developers to 
 create their own custom bundle that contains only the components they need, hence producing the 
-leanest package possible. The jQuery Mobile download builder consists of a form on which you can 
+leanest package possible. The jQuery Mobile download builder, which can be found at 
+http://jquerymobile.com/download-builder/ consists of a form on which you can 
 select the modules that are required for your application. These modules are organized by categories: 
 Core, Events, Forms, Navigation, Transitions, Utilities, and Widgets. When you select modules to be 
 included in the custom bundle, the tool also automatically selects the corresponding dependencies 
