@@ -2,7 +2,7 @@
 
 This recipe shows some options on how to dynamically pull in pages
 
-Author: Greg Franko <gregfranko5@gmail.com> 11/29/2012
+Author: 
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>

@@ -20,7 +20,7 @@ Description:
 ---
 
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/2-multiple-pages-and-large-app-organization/recipe-2.adoc">The client-side/server-side balance</a>
-*author:* <a href="mailto:dcarrith@gmail.com">David Carrithers</a>
+*author:*  <a href="mailto:"></a>
 
 *Problem:* 
 
@@ -29,7 +29,7 @@ Description:
 ---
 
 ### 3 - <a href="/jquerymobilecookbook/book/blob/master/2-multiple-pages-and-large-app-organization/recipe-3.adoc">Options for dynamically pulling in pages</a>
-*author:* <a href="mailto:gregfranko5@gmail.com">Greg Franko</a>
+*author:*  <a href="mailto:"></a>
 
 *Problem:* 
 
