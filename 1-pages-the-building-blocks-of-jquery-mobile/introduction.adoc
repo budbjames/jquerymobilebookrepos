@@ -281,6 +281,31 @@ and the CSS files to be placed at the top of your HTML page in the head section.
 files non-blocking and allows for rendering the other page's elements. Also, it is good to note that you should 
 always use a version of the JavaScript libraries that is known to work well with your page.
 
+
+////
+
+Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
+Chapter Leader approved: <date>
+Copy edited: <date>
+Tech edited: <date>
+
+////
+
+1.5 jQuery Mobile - The Download Builder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By _Anne-Gaelle Colom_
+
+The jQuery Mobile Team has developed a jQuery Mobile download builder that allows developers to 
+create their own custom bundle that contains only the components they need, hence producing the 
+leanest package possible. The jQuery Mobile download builder consists of a form on which you can 
+select the modules that are required for your application. These modules are organized by categories: 
+Core, Events, Forms, Navigation, Transitions, Utilities, and Widgets. When you select modules to be 
+included in the custom bundle, the tool also automatically selects the corresponding dependencies 
+for you. Upon request, the builder generates a custom JavaScript and both a full and structure-only 
+theme stylesheet for production use in the form of a ZIP package. This ZIP package can be hosted on 
+your server, see above for further information on using files hosted locally. Note that the jQuery 
+Mobile images need to be downloaded separately. 
+
 ////
 
 Author: Cory Gackenheimer <cory.gack@gmail.com>
@@ -290,7 +315,7 @@ Tech edited: <date>
 
 ////
 
-1.5 jQuery Mobile - WebPages and Applications
+1.6 jQuery Mobile - WebPages and Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 By _Cory Gackenheimer_
 
