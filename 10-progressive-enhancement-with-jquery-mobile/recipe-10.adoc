@@ -4,7 +4,7 @@ Author:
 
 ////
 
-11.10 Responsive Images based on Screen Dimensions
+10.10 Responsive Images based on Screen Dimensions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -4,7 +4,7 @@ Author:
 
 ////
 
-11.9 Adjusting Columns Based on Viewport Width
+10.9 Adjusting Columns Based on Viewport Width
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

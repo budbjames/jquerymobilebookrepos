@@ -4,7 +4,7 @@ Author:
 
 ////
 
-11.7 Switching Between Dialogs and Collapsible Panels
+10.7 Switching Between Dialogs and Collapsible Panels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

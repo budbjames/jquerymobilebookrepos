@@ -6,7 +6,7 @@ Author: Shishir Ramam <sramam@gmail.com>
 
 ////
 
-11.12 Mobile device Orientation: Events and CSS
+10.12 Mobile device Orientation: Events and CSS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

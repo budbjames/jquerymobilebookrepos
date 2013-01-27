@@ -4,7 +4,7 @@ Author: Unassigned
 
 ////
 
-11.3 Adding AJAX to Page Links
+10.3 Adding AJAX to Page Links
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
