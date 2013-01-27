@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-3.13 Using JQM with ember.js
+2.13 Using JQM with ember.js
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

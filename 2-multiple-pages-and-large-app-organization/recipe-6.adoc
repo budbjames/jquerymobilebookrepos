@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-3.6 Designing clean RESTful services, for both serving json to client side code via ajax, and html for page transitions
+2.6 Designing clean RESTful services, for both serving json to client side code via ajax, and html for page transitions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

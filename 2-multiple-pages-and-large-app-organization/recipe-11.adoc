@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-3.11 Using Knockout.js on Multipage Documents
+2.11 Using Knockout.js on Multipage Documents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

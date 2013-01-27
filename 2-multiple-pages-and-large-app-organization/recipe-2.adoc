@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-3.2 The Client-Side/Server-Side Balance
+2.2 The Client-Side/Server-Side Balance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

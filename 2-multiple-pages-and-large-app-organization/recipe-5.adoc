@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-3.5 Performance comparison example of multipage pattern
+2.5 Performance comparison example of multipage pattern
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

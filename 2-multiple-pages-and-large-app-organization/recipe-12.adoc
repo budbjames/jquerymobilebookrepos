@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-3.12 Using JQM with backbone.js
+2.12 Using JQM with backbone.js
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

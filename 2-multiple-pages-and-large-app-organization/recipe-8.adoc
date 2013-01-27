@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-3.8 Structuring client side code (inc AMD)
+2.8 Structuring client side code (inc AMD)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

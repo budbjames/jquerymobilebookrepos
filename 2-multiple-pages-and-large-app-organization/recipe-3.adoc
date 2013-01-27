@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-3.3 Options for dynamically pulling in pages
+2.3 Options for dynamically pulling in pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

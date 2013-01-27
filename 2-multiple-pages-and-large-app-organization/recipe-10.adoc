@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-3.10 Data-binding with Knockout.js
+2.10 Data-binding with Knockout.js
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
