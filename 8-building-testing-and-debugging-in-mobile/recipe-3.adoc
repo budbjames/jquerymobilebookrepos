@@ -5,7 +5,7 @@ Bio: Scott Murphy is an interaction designer and front-end developer living in H
 
 ////
 
-9.3 App Analytics - Tracking your users
+8.3 App Analytics - Tracking your users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

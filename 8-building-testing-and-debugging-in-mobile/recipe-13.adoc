@@ -5,7 +5,7 @@ Author: Cory Gackenheimer <cory.gack@gmail.com
 ////
 
 
-9.13 Debugging Your IOS App
+8.13 Debugging Your IOS App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

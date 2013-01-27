@@ -4,7 +4,7 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 ////
 
-9.11 Deploying and Testing your app on a BlackBerry
+8.11 Deploying and Testing your app on a BlackBerry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -4,7 +4,7 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.14 Packaging your application for Deployment to an iOS Device
+8.14 Packaging your application for Deployment to an iOS Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

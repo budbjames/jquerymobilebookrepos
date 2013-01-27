@@ -4,7 +4,7 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 ////
 
-9.2 Testing your application in a desktop browser
+8.2 Testing your application in a desktop browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

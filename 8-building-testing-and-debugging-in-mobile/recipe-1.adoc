@@ -4,7 +4,7 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 ////
 
-9.1 Sample App
+8.1 Sample App
 ~~~~~~~~~~~~~~
 
 For the rest of this chapter we will be using the below sample application code in order to test, debug, build, and deploy.

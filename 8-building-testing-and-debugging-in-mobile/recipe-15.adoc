@@ -4,7 +4,7 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.15 Deploying and Testing your app on a IOS Device
+8.15 Deploying and Testing your app on a IOS Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

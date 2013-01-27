@@ -4,7 +4,7 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 ////
 
-9.18 Packaging your application for deployment to a Windows Mobile Device
+8.18 Packaging your application for deployment to a Windows Mobile Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

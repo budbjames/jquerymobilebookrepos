@@ -4,7 +4,7 @@ Author: Levi DeHaan <levi@levidehaan.com>
 
 ////
 
-9.10 Packaging your app for deployment to a BlackBerry
+8.10 Packaging your app for deployment to a BlackBerry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

@@ -4,7 +4,7 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.6 Packaging your application for deployment to an Android Device
+8.6 Packaging your application for deployment to an Android Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

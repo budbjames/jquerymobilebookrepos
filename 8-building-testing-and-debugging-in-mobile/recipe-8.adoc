@@ -4,7 +4,7 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.8 Take your app to the Google Play Store
+8.8 Take your app to the Google Play Store
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

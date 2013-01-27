@@ -4,7 +4,7 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.7 Deploying and testing your app on an Android
+8.7 Deploying and testing your app on an Android
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

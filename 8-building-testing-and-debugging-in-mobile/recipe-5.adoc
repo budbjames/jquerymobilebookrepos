@@ -4,7 +4,7 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-9.5 Debugging your App on Android
+8.5 Debugging your App on Android
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

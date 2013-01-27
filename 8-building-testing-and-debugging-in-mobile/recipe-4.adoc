@@ -8,7 +8,7 @@ Bio: Daniel Mohl is a Microsoft MVP, F# and C# Insider, and author of the book e
 
 ////
 
-9.4 Integrating Automated Unit Testing
+8.4 Integrating Automated Unit Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
