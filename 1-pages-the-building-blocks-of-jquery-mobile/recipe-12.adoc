@@ -33,9 +33,9 @@ Create the page as a standard jQuery Mobile page, and add the data-rel="dialog" 
  <head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Grid Layout example</title>
-   <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
-   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-   <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+   <link rel="stylesheet" href="/css/jquery.mobile.min.css">
+   <script src="/js/jquery.min.js"></script>
+   <script src="/js/jquery.mobile.min.js"></script>
    <style>
      .pic {
        padding-right: 15px;
