@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-8.9 Allow pinch to zoom on a specific DOM element
+7.9 Allow pinch to zoom on a specific DOM element
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

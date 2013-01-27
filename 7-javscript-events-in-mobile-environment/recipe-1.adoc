@@ -14,7 +14,7 @@ Tech edited: <date>
 
 ////
 
-8.1 Using mobileinit to configure jQuery Mobile defaults.
+7.1 Using mobileinit to configure jQuery Mobile defaults.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

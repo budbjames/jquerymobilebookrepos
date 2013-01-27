@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
 
-8.6 Touch vs. Click
+7.6 Touch vs. Click
 ~~~~~~~~~~~~~~~~~~~
 
 Problem

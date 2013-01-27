@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-8.5 Handling the pagebeforeload() event.
+7.5 Handling the pagebeforeload() event.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

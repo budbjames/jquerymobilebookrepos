@@ -1,4 +1,4 @@
-[[chapid_8]]
+[[chapid_7]]
 == JavaScript Events in a Mobile Environment
 
 include::introduction.adoc[]

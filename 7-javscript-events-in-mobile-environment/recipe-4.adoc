@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-8.4 Touch events
+7.4 Touch events
 ~~~~~~~~~~~~~~~~
 
 Problem

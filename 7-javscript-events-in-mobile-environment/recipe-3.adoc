@@ -7,7 +7,7 @@ Tech edited: <date>
 
 ////
  
-8.3 Custom routing with pagebeforechange
+7.3 Custom routing with pagebeforechange
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 Problem

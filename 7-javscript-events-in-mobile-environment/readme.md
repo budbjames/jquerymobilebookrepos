@@ -1,4 +1,4 @@
-# Chapter 8
+# Chapter 7
 
 ## JavaScript Events in a Mobile Environment
 
@@ -6,11 +6,11 @@ Description:
 
 *Chapter Leader:* <a href="mailto:mike@appendto.com">Mike Hostetler</a>
 
-<a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/introduction.adoc">Introduction</a>
+<a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/introduction.adoc">Introduction</a>
 
 ## Recipes
 
-### 1 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-1.adoc">Using mobileinit to configure jQuery Mobile defaults.</a>
+### 1 - <a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/recipe-1.adoc">Using mobileinit to configure jQuery Mobile defaults.</a>
 *author:* <a href="mailto:kinshuk.kar@gmail.com">Kinshuk Kar</a>
 
 *Problem:*
@@ -19,7 +19,7 @@ Description:
 
 ---
 
-### 2 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-2.adoc">Using pageinit in place of document.ready</a>
+### 2 - <a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/recipe-2.adoc">Using pageinit in place of document.ready</a>
 *author:* <a href="mailto:adrian.pillinger@gmail.com">Adrian Pillinger</a>
 
 *Problem:*
@@ -28,7 +28,7 @@ Description:
 
 --- 
 
-### 3 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-3.adoc">Custom routing with pagebeforechange</a> 
+### 3 - <a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/recipe-3.adoc">Custom routing with pagebeforechange</a> 
 *author:* <a href="mailto:poonkave@gmail.com">John Chacko</a>
 
 *Problem:*
@@ -37,7 +37,7 @@ Description:
 
 ---
 
-### 4 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-4.adoc">Touchevents</a>
+### 4 - <a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/recipe-4.adoc">Touchevents</a>
 *author:* <a href="mailto:cory.gack@gmail.com">Cory Gackenheimer</a> (3 Nov, 2012)
 
 *Problem:*
@@ -46,7 +46,7 @@ Description:
 
 ---
 
-### 5 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-5.adoc">pagebeforeload</a>
+### 5 - <a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/recipe-5.adoc">pagebeforeload</a>
 *author:* <a href="mailto:javed_anwar@yahoo.com">Javed Anwar</a>
 
 *Problem:*
@@ -55,7 +55,7 @@ Description:
 
 ---
 
-### 6 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-6.adoc">touch vs click</a>
+### 6 - <a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/recipe-6.adoc">touch vs click</a>
 *author:* <a href="mailto:cory.gack@gmail.com">Cory Gackenheimer</a> (17 Nov 2012)
 
 *Problem:*
@@ -64,7 +64,7 @@ Description:
 
 ---
 
-### 7 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-7.adoc">Creating an image gallery with the swipe event</a>
+### 7 - <a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/recipe-7.adoc">Creating an image gallery with the swipe event</a>
 *author:* <a href="mailto:tcadenhead@appendto.com">Tyson Cadenhead</a>
 
 *Problem:*
@@ -73,7 +73,7 @@ Description:
 
 ---
 
-### 8 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-8.adoc">Events Diagram</a>
+### 8 - <a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/recipe-8.adoc">Events Diagram</a>
 *author:* <a href="mailto:"></a>
 
 *Problem:*
@@ -82,7 +82,7 @@ Description:
 
 ---
 
-### 9 - <a href="/jquerymobilecookbook/book/blob/master/8-javascript-events-in-mobile-environment/recipe-9.adoc">Enable zoom/pinch on a specific DOM element </a>
+### 9 - <a href="/jquerymobilecookbook/book/blob/master/7-javascript-events-in-mobile-environment/recipe-9.adoc">Enable zoom/pinch on a specific DOM element </a>
 *author:* <a href="mailto:asafda@gmail.com">Assaf Damari</a>
 
 *Problem:*
