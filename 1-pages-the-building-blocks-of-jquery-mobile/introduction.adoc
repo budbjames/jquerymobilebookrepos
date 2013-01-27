@@ -292,7 +292,7 @@ Tech edited: <date>
 ////
 
 1.5 jQuery Mobile - The Download Builder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 By _Anne-Gaelle Colom_
 
 The jQuery Mobile Team has developed a jQuery Mobile download builder that allows developers to 
