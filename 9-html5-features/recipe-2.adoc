@@ -8,7 +8,7 @@ Bio: Currently a Managing Consultant for Excella in the Washington, DC region. I
 
 ////
 
-10.2 HTML5 Geolocation
+9.2 HTML5 Geolocation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

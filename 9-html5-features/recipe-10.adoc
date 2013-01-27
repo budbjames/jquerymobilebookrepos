@@ -9,7 +9,7 @@ Author: Anne-Gaelle Colom <coloma@westminster.ac.uk>
 
 ////
 
-10.10 Getting Started with jQuery Mobile and Google Maps
+9.10 Getting Started with jQuery Mobile and Google Maps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

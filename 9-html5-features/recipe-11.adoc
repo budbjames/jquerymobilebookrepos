@@ -4,7 +4,7 @@ Author: Ryan Westphal <ryan@trippingthebits.com>
 
 ////
 
-10.11 Combining pages, tweets, and maps
+9.11 Combining pages, tweets, and maps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

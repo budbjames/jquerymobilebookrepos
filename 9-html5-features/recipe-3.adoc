@@ -8,7 +8,7 @@ Bio: Currently a Managing Consultant for Excella in the Washington, DC region. I
 
 ////
 
-10.3 HTML5 localstorage
+9.3 HTML5 localstorage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

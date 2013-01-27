@@ -8,7 +8,7 @@ Bio: Ido is a Developer Advocate for Google. He has been a developer and buildin
 
 ////
 
-10.5 HTML5 WebSQL
+9.5 HTML5 WebSQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
