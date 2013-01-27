@@ -1,4 +1,4 @@
-[[chapid_2]]
+[[chapid_1]]
 == Pages: The building blocks of jQuery Mobile
 
 include::introduction.adoc[]
