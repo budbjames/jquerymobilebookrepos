@@ -1,4 +1,4 @@
-[[chapid_14]]
+[[chapid_13]]
 == Extending jQuery Mobile
 
 include::introduction.adoc[]

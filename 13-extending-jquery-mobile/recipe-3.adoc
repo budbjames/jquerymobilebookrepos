@@ -6,7 +6,7 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-14.3 Building a Custom Widget
+13.3 Building a Custom Widget
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

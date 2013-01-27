@@ -6,7 +6,7 @@ Author: Cory Gackenheimer <cory.gack@gmail.com>
 
 ////
 
-14.2 Understanding $.mobile.widget and the Widget Factory
+13.2 Understanding $.mobile.widget and the Widget Factory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

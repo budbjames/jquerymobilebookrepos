@@ -4,7 +4,7 @@ Author: Casey Justus <caseyjustus@gmail.com>
  
 ////
  
-14.5 Extending the Event Model
+13.5 Extending the Event Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 Problem

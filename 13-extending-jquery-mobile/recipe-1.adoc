@@ -6,7 +6,7 @@ Author: John Doe <email@email.com>
 
 ////
 
-14.1 jQuery Mobile Framework "Boot" Process
+13.1 jQuery Mobile Framework "Boot" Process
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
