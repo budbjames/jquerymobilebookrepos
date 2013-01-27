@@ -6,7 +6,7 @@ Author: John Doe <email@email.com>
 
 ////
 
-10.1 Make your webapp offline with Android
+11.1 Make your webapp offline with Android
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

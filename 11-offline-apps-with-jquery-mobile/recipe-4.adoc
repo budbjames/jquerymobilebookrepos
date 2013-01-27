@@ -6,7 +6,7 @@ Author: Michael Knox <webdpro@gmail.com>
 
 ////
 
-12.4 Local Storage and JSON
+11.4 Local Storage and JSON
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

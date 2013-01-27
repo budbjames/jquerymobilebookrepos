@@ -4,7 +4,7 @@ Author: Casey Justus <caseyjustus@gmail.com>
 
 ////
 
-12.5 Persisting and Syncing with Lawnchair.js
+11.5 Persisting and Syncing with Lawnchair.js
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

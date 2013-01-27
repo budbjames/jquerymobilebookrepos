@@ -1,4 +1,4 @@
-[[chapid_12]]
+[[chapid_11]]
 == Offline Apps with jQuery Mobile
 
 include::introduction.adoc[]

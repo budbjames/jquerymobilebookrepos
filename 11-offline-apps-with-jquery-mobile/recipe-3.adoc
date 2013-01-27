@@ -6,7 +6,7 @@ Author: John Kleinschmidt <kleinschmidtorama@gmail.com>
 
 ////
 
-12.3 Detecting connection status
+11.3 Detecting connection status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

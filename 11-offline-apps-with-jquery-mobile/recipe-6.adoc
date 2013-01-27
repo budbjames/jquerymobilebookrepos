@@ -4,7 +4,7 @@ Author: Tyson Cadenhead <tcadenhead@appendto.com>
 
 ////
 
-12.6 Why make your application work offline?
+11.6 Why make your application work offline?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
