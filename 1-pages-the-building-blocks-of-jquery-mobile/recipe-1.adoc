@@ -9,7 +9,7 @@ Tech edited: <date>
 
 ////
 
-1.1 Page Anatomy
+1.1 What is the structure of a jQuery Mobile page?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
@@ -18,9 +18,11 @@ You need to set up a jQuery Mobile page with a page header, a page content area 
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Pages are the fundamental building block of jQuery Mobile apps. jQuery Mobile offers a convenient structure that can be used to quickly build pages, though it does not require a specific structure.
+Pages are the fundamental building blocks of a jQuery Mobile application. jQuery Mobile offers a convenient structure that can be used to quickly build pages, though it does not require a specific structure.
 
-In jQuery Mobile, pages are placed inside of the <body> element of the main document. You can include different components by using the data-role attribute. Here's the code to create a simple page with a basic header, content area and footer:
+In jQuery Mobile, pages are placed inside of the <body> element of the main document. You can include different components by using the data-role attribute. The data-role attributes are HTML5 attributes used by the jQuery Mobile framework to determine how to transform the markup into a enhanced styled widget.
+
+Here's the code to create a simple page with a basic header, content area and footer:
 
 .A Simple jQuery Mobile Page
 [source,html]
@@ -54,4 +56,6 @@ Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 
 In the example page, you have a header, content area and footer, which are standard jQuery Mobile components that make up a page. As mentioned, you can put anything you like inside of a page, though the standard header, content and footer sections have many nice built-in features that make it easier to incorporate common mobile features such as navigation bars or back buttons.
+
+The content area can contain any standard HTML elements.  You can style these elements with custom styles in another stylesheet immediately after the jQuery Mobile stylesheet. 
 
