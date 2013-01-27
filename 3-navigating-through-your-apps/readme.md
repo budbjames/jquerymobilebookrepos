@@ -11,7 +11,7 @@ Description:
 ## Recipes
 
 ### 1 - <a href="/jquerymobilecookbook/book/blob/master/3-navigating-through-your-apps/recipe-1.adoc">Wireframing for jQuery Mobile </a>
-*author:* <a href="mailto:ldroth@gmail.com">Larry Roth</a> Nov 24, 2012
+*author:* 
 
 *Problem:*
 
@@ -20,7 +20,7 @@ Description:
 ---
 
 ### 2 - <a href="/jquerymobilecookbook/book/blob/master/3-navigating-through-your-apps/recipe-2.adoc">Planning a hierarchy for your App</a>
-*author:* <a href="mailto:ldroth@gmail.com">Larry Roth</a> Nov 24, 2012
+*author:* 
 
 *Problem:*
 
