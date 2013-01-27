@@ -5,7 +5,7 @@
 :Revision:  0.1 
 //// 
 
-13.2 Exploring the PhoneGap Device APIs 
+12.2 Exploring the PhoneGap Device APIs 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 Problem 

@@ -4,7 +4,7 @@ Author: Adam Stanley <astanley@rim.com>  http://twitter.com/n_adam_stanley
 
 ////
 
-13.8 Exploring the WebWorks platform APIs
+12.8 Exploring the WebWorks platform APIs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

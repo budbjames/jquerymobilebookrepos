@@ -6,7 +6,7 @@ Author: John Doe <email@email.com>
 
 ////
 
-13.7 Using jQuery Mobile with Nimblekit
+12.7 Using jQuery Mobile with Nimblekit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

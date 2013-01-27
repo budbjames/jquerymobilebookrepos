@@ -6,7 +6,7 @@ Author: Jeff Linwood <jlinwood@gmail.com>
 
 ////
 
-13.4 Using jQuery Mobile with PhoneGap's Camera
+12.4 Using jQuery Mobile with PhoneGap's Camera
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

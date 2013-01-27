@@ -6,7 +6,7 @@ Author: John Doe <email@email.com>
 
 ////
 
-13.3 jQuery Mobile and WebWorks / Playbook
+12.3 jQuery Mobile and WebWorks / Playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

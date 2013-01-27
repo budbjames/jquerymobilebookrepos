@@ -4,7 +4,7 @@ Author: Rahul Ravikumar <rahulrav@outlook.com>  http://twitter.com/tikurahul
 
 ////
 
-13.5 jQuery Mobile with Android's JavaScript Bridge
+12.5 jQuery Mobile with Android's JavaScript Bridge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

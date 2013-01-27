@@ -6,7 +6,7 @@ Author: Jeff Linwood <jlinwood@gmail.com>
 
 ////
 
-13.1 Using jQuery Mobile with PhoneGap
+12.1 Using jQuery Mobile with PhoneGap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem

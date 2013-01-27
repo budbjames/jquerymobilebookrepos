@@ -4,7 +4,7 @@ Author: Adam Stanley <astanley@rim.com>  http://twitter.com/n_adam_stanley
 
 ////
 
-13.8 Adding a swipe-down menu to your PlayBook application
+12.8 Adding a swipe-down menu to your PlayBook application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
