@@ -12,7 +12,7 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-We want to be able to display a toolbar that will expand to match the width of the screen and persist as we navigate the page.
+We want to be able to display a toolbar that will expand to match the height of the screen and persist as we navigate the page.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
