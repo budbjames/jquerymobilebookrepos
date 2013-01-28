@@ -3,8 +3,8 @@
 // Add common libraries to the config paths for easier reference
 require.config({
   paths: {
-    "jquery": "http://code.jquery.com/jquery-1.8.2.min",
-    "jquerymobile": "http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min"
+    "jquery": "/js/jquery.min",
+    "jquerymobile": "/js/jquery.mobile.min"
   }
 });
 
