@@ -1,6 +1,6 @@
 ////
 
-Author: 
+Author: Cory Gackenheimer <cory.gack@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -8,16 +8,32 @@ Tech edited: <date>
 ////
 
 3.2 Planning a hierarchy for your App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Problem
-++++++++++++++++++++++++++++++++++++++++++++
-Describe your problem here, in one or two sentences.  At a maximum, keep it to a single paragraph.
++++++++
+You want to ensure your jQuery Mobile application makes sense to use as an end user as far as navigation and structure, while still providing the full featured support you envision.
 
 Solution
-++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+++++++++
+When creating your jQuery Mobile application, as with any web-based application, it is important to think about the navigation and overall hierarchical structure of your application. In general you may not wish to lead your users too deeply away from the familiarity of a "Home" screen. In the non-mobile web this is usually handled by a hierarchical menu that would open and display the routes available to a user, linking them to various services or pages within your application. In mobile poorly planed hierarchy can at times lead to a bad end user experience.
 
 Discussion
-++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+++++++++++
+As mentioned above, the structure and hierarchy of your jQuery Mobile application should not be taken lightly. In mobile spaces, just as with the non-mobile web a poor user experience can quickly drive traffic away, never to return. While there are many opinions on the subject of user experience, there are no perfect or exact solutions. Even if there were the perfect formula, it likely would not be a best fit for every project or the next great jQuery Mobile application. What you can do, is be certain to follow a checklist to ensure you have thought about the issues that might arise when considering the hierarchy of your jQuery Mobile application.
+
+.Home Support
+Does your application follow the common paradigm where you should have a perpetual "Home" link to the main interface to your application? You can easily add one in a jQuery Mobile navigation header or footer.
+
+.Back Button
+Many jQuery Mobile applications are "single-page" applications, that utilize the History API to push history to your browser or webview. Over agressive or under agressive use of the jQuery Mobile back button support can cause a user to seemingly get lost in the application. This is something to pay attention to as you build your application. 
+
+Also important to keep in mind, if you plan on creating a mobile application for Phonegap and iOS, the iOS webview does not provide any back button support so to avoid trapping your users within your application, providing a back button is a necessity.
+
+.Link Depth
+When linking to a secondary or tertiary part of your application, are there any intermediary steps or pages that are not necessary to get the same result? Taking this into consideration will be a gift to all your users.
+
+.Remote Content
+Do you plan to query a remote source to pull data into your application? This can be valuable for many cases, but moreso on a mobile device than the non-mobile web, you will find connection issues or failed ajax. When creating your hierarchy, it is best keep this in mind so as to not lock your users in a loading state with no means to exit other than close the application.
+
+When building your applicaiton's hierarchy, keeping these guidelines in mind will be helpful for you and your app's user experience.
