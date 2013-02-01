@@ -2,7 +2,7 @@
 
 Author: Buddy James
 Chapter Leader approved: <date>
-Copy edited: 11/24/2012
+Copy edited: 02/01/2013
 Tech edited: <date>
 
 ////
@@ -27,7 +27,7 @@ Discussion
 As you can see, when JQuery starts, we will setup bindings on in our UI as data attributes that link back to properties of our ViewModel object.
 
 The user interface:
-<TODO>
+The user interface is a simple html form that mimics a shopping cart with an order summary.  The html form has input elements to allow the user to enter their billing information.  The first thing to note is the data-bind attributes of each input element.  KnockoutJS uses the html 5 data- attributes to define the binding behavior elements in your page.
 
 The Customer's information entry:
 Each field here is also databound to the display only fields in the Order Review section.  If you change any of the user's details, they are automatically refreshed in the review section.
