@@ -1,6 +1,6 @@
 ////
 
-Author: unassigned
+Author: Tonci Jukic <tonci.jukic@gmail.com>
 Chapter Leader approved: <date>
 Copy edited: <date>
 Tech edited: <date>
@@ -16,8 +16,27 @@ Websites used to present static content only and web servers used to deliver pur
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-Describe the solution to your recipe here.  It should be one to two paragraphs long.  It may include a code sample.
+There are two possible concepts when delivering to mobile devices, where JQM applies as a solution. Accessible websites that are well suited for mobile devices and fully functional mobile applications that utilize web as a platform to be built upon.
+
+Whichever you orient your design to, you should keep in mind the very nature of stateless HTTP protocol web relies on. Constant streaming of data is not really good, especially over mobile networks with limited resources. Also, mobile clients are not power machines suited for significant processing load. When designing your web applications or websites you should be aware of the processing and memory requirements your data or task require and carefully balance between back-end server and web browser as a client. Sometimes, when it is about data presentation or minor changes, it is a wise solution to manipulate data on the client side.
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-The discussion of your recipe should be where you break down a description of the problem you are solving.  It is the primary discussion place and should be where code examples are put.  It could be 4-6 paragraphs long.
+While mobile devices have grown more powerful, these are still quite limited with storage space, working memory and processing power. Pushing mobile devices to limits hurts user experience, a primary goal of JQM so all client-side work should be done with moderation.
+
+.Primary architecture
+When designing large websites and mobile applications, like with normal websites, you should always keep most of the data on the server side, process it on the server side and push to the client with high regard for performance. That includes primary data storage, sensitive information and all kinds of big data you require. Client work should be reserved for information visualization and communication and should not resemble once popular fat-clients behaviour. For dynamic content, designing an API is highly recommended as that path not only simplifies fast and dynamic server-client communication, but enables your products to be highly versatile in multi-platform environment.
+
+.Local processing
+When designing a client for your service, you can always take advantage of modern web technologies like local storage and combine specific, client or device settings and preferences processing with standard data flow from the server. If you have a standard server output to be presented in various ways, you should consider and evaluate local storage as a method of storing client or user specific information and choices related to data. As long as those specific differences can not impact data in a big way (e.g. reducing data transfer size significantly), you can perform filtering and formating on the client side.
+
+.Local storage
+For example, you can use local storage to store filters for data presentation:
+[source, html]
+----
+// TODO: add code example
+----
+
+
+
+
