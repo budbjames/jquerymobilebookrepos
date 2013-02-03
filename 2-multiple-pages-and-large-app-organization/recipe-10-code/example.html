@@ -14,7 +14,7 @@
 <!-- Start Homepage -->
   <div id="homepage" data-role="page" data-title="Homepage">
     <div data-role="header">
-    <h1>Confirm purchase</h1>
+    <h3>Purchase order</h3>
     </div>
     <div data-role="content">
     <form id="purchase-form" action="" method="post">
@@ -22,33 +22,86 @@
             <h3>Enter your billing information</h3>
             First Name: <input data-bind="value: FirstName" style="width: 200px;" type="text" /> 
             Last Name: <input data-bind="value: LastName" style="width: 200px;" type="text" /> 
-            Shipping Address: <input data-bind="value: ShippingAddress" style="width: 400px;" type="text" /> 
-            
+            Shipping Address: <input data-bind="value: ShippingAddress" style="width: 300px;" type="text" /> 
+            Cost: $<input data-bind="value: Cost" style="width: 50px;" type="text" /> 
+            Qty <input data-bind="value: Quantity" style="width: 50px;" type="text" />
+            Total:<input data-bind="value: Total" style="width: 100px; font-weight:bolder;" type="text" disabled="disabled" /> 
             <input  type="submit" value="Submit" />
         </div>
     </form>
     </div>
   </div>
   <!-- Start Subpage -->
-<div id="overview-page" data-role="page" data-title="Subpage">
-    <div data-role="header">
-    <h1>Order Review</h1>
+    <div id="overview-page" data-role="page" data-title="Subpage">
+        <div data-role="header">
+            <h1>Summary</h1>
+        </div>
+        <div data-role="header">
+            Thank you for your purchase!  You will find a summary of your order for your reference.
+        </div>
+        <div data-role="content">
+            <table>
+                <tr>
+                    <td>
+                        First Name:
+                    </td>
+                    <td>
+                        <span data-bind="text: FirstName" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Last Name:
+                    </td>
+                    <td>
+                        <span data-bind="text: LastName" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Shipping Address:
+                    </td>
+                    <td>
+                        <span data-bind="text: ShippingAddress" ></span>
+                    </td>
+                </tr>        
+                <tr>
+                    <td>
+                        Cost:
+                    </td>
+                    <td>
+                        $<span data-bind="text: Cost" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Quantity:
+                    </td>
+                    <td>
+                        <span data-bind="text: Quantity" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Total:
+                    </td>
+                    <td>
+                        $<span data-bind="text: Total" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a href="#homepage" data-role="button">Back</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <div data-role="content">
-        First Name: <strong id="spnFirstName" data-bind="text: FirstName"></strong>  
-        Last Name:  <strong id="spnLastName" data-bind="text: LastName"></strong>
-        Shipping Address:  <strong id="spnShippingAddress" data-bind="text: ShippingAddress"></strong>
-    <a href="#homepage" data-role="button">Back</a>
-    </div>
-</div>
     <!-- End Subpage -->
 <!-- End Homepage -->
 
-
-
-
     <script type="text/javascript">
-
+        //When the form is submitted, 
         $("#purchase-form").submit(function () {
 
             // Open the subpage
@@ -56,26 +109,33 @@
 
             // Don't submit the form
             return false;
-
         });
 
-
-        // Initialized the namespace
+        // Initialize the namespace
         var SuperShoppingCart = {};
 
-        // Bind the customer
+        // Create a function delegate to bind the ViewModel properties
         SuperShoppingCart.bindData = function () {
             // Create the view model
             function viewModel()
             {
+                //Associate each property with the knockout binding
                 this.FirstName = ko.observable("");
                 this.LastName = ko.observable("");
                 this.ShippingAddress = ko.observable("");
+                this.Cost = ko.observable("9.99");
+                this.Quantity = ko.observable("1");
+                this.Total = ko.computed(function () {
+                    return (this.Cost() * this.Quantity());
+                }, this);
             }
 
+            //Apply the knockout bindings to the viewmodel
             ko.applyBindings(new viewModel());
         };
 
+        //a method to convert the viewmodel to json and 
+        //save it using AJAX
         SuperShoppingCart.addCustomer = function () {
             $.ajax({
                 url: "/Home/Add/",
@@ -90,11 +150,11 @@
             });
         };
 
+        //When the document loads, create and bind the viewmodel
         $(document).ready(function () {
             SuperShoppingCart.bindData();
         });
 
     </script>
-
   </body>
 </html>
