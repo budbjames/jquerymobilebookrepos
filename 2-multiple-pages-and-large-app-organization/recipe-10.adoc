@@ -12,27 +12,195 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-When developing HTML forms that take user input, you typically have to write JavaScript code to sync the data entered by the user with the underlying data model that will eventually be persisted to some sort of data storage.  If changes are made to your data model programmatically, you must check for these changes and reflect them on the client side input controls for the user to see.  This recipe will take introduce Knockout.js, a JavaScript library that enables the implementation of the Model-View-ViewModel UI pattern.  
+When developing HTML forms that take user input, you typically have to write JavaScript code to sync the data entered by the user with the underlying data model that will eventually be persisted to some sort of data storage.  If changes are made to your data model programmatically, you must check for these changes and reflect them in the website or view's input controls for the user to see.  This recipe will introduce Knockout.js, a JavaScript library that enables the implementation of the Model-View-ViewModel UI design pattern.  The Model-View-ViewModel design pattern promotes the creation of maintainable applications by decoupling the user interface (View) from the logic that handles the user's interaction with the View (View-Model) and from the data that is displayed on the view (model).  With the clean separation of concerns, you get clean code that is easily tested and easily maintained.  Knockout.js also provides data-binding capabilities to sync the data in the model with the html elements used to display the model data.  This synchronization saves you time and effort by eliminating the need to write boiler plate code to store the data entered by users in the model as well as the code required to update the user interface elements with the programmatic changes that occur to the model.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-The recipe is made up of an HTML page that represents an ecommerce site with a shopping cart and an order summary.  The order form, shopping cart, and order summary displays are all data-bound to properties of a ViewModel object by way of Knockout.js.  This apporach allows you to cleanly separate the user input from the data persistence of the application by using the MVVM design pattern.  The MVVM design pattern is designed to separate your application into models that hold data, views that represent the user interface, and view models that present an abstraction between the models and views.  This separation of concerns will improve your code's architecture and increase testability.  You will write less code and achieve a more responsive UI than before thanks to Knockout.js.
+The recipe is made up of an HTML page that represents an ecommerce site with a shopping cart and an order summary.  The order form, shopping cart, and order summary displays are all data-bound to properties of a ViewModel object by way of Knockout.js.  This apporach allows you to cleanly separate the user input from the data persistence of the application by using the MVVM design pattern.  The MVVM design pattern is designed to separate your application into models that hold data, views that represent the user interface, and view models that present an abstraction between the models and views.  This separation of concerns will improve your code's architecture and increase testability.  You will write less code and achieve a more responsive UI by using Knockout.js.
 
+[source,html]
 ----
-include::recipe-10-code/example.html[]
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data-binding with KnockoutJS</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.0/knockout-min.js"></script>
+  </head>
+  <body>
+
+<!-- Start Homepage -->
+  <div id="homepage" data-role="page" data-title="Homepage">
+    <div data-role="header">
+    <h3>Purchase order</h3>
+    </div>
+    <div data-role="content">
+    <form id="purchase-form" action="" method="post">
+        <div>
+            <h3>Enter your billing information</h3>
+            First Name: <input data-bind="value: FirstName" style="width: 200px;" type="text" /> 
+            Last Name: <input data-bind="value: LastName" style="width: 200px;" type="text" /> 
+            Shipping Address: <input data-bind="value: ShippingAddress" style="width: 300px;" type="text" /> 
+            Cost: $<input data-bind="value: Cost" style="width: 50px;" type="text" /> 
+            Qty <input data-bind="value: Quantity" style="width: 50px;" type="text" />
+            Total:<input data-bind="value: Total" style="width: 100px; font-weight:bolder;" type="text" disabled="disabled" /> 
+            <input  type="submit" value="Submit" />
+        </div>
+    </form>
+    </div>
+  </div>
+  <!-- Start Subpage -->
+    <div id="overview-page" data-role="page" data-title="Subpage">
+        <div data-role="header">
+            <h1>Summary</h1>
+        </div>
+        <div data-role="header">
+            Thank you for your purchase!  You will find a summary of your order for your reference.
+        </div>
+        <div data-role="content">
+            <table>
+                <tr>
+                    <td>
+                        First Name:
+                    </td>
+                    <td>
+                        <span data-bind="text: FirstName" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Last Name:
+                    </td>
+                    <td>
+                        <span data-bind="text: LastName" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Shipping Address:
+                    </td>
+                    <td>
+                        <span data-bind="text: ShippingAddress" ></span>
+                    </td>
+                </tr>        
+                <tr>
+                    <td>
+                        Cost:
+                    </td>
+                    <td>
+                        $<span data-bind="text: Cost" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Quantity:
+                    </td>
+                    <td>
+                        <span data-bind="text: Quantity" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Total:
+                    </td>
+                    <td>
+                        $<span data-bind="text: Total" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a href="#homepage" data-role="button">Back</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- End Subpage -->
+<!-- End Homepage -->
+
+
+
+    <script type="text/javascript">
 ----
+
+[source,javascript]
+-----
+        //When the form is submitted, 
+        $("#purchase-form").submit(function () {
+
+            // Open the subpage
+            window.location.hash = "overview-page";
+
+            // Don't submit the form
+            return false;
+        });
+
+        // Initialize the namespace
+        var SuperShoppingCart = {};
+
+        // Create a function delegate to bind the ViewModel properties
+        SuperShoppingCart.bindData = function () {
+            // Create the view model
+            function viewModel()
+            {
+                //Associate each property with the knockout binding
+                this.FirstName = ko.observable("");
+                this.LastName = ko.observable("");
+                this.ShippingAddress = ko.observable("");
+                this.Cost = ko.observable("9.99");
+                this.Quantity = ko.observable("1");
+                this.Total = ko.computed(function () {
+                    return (this.Cost() * this.Quantity());
+                }, this);
+            }
+
+            //Apply the knockout bindings to the viewmodel
+            ko.applyBindings(new viewModel());
+        };
+
+        //a method to convert the viewmodel to json and 
+        //save it using AJAX
+        SuperShoppingCart.addCustomer = function () {
+            $.ajax({
+                url: "/Home/Add/",
+                type: 'post',
+                //Send a JSON representation of this view model to be saved
+                data: ko.toJSON(this),
+                contentType: 'application/json',
+                success: function (result) {
+                    //alert(result);
+                    $('#message').html(result);
+                }
+            });
+        };
+
+        //When the document loads, create and bind the viewmodel
+        $(document).ready(function () {
+            SuperShoppingCart.bindData();
+        });
+-----
+
+[source,html]
+----
+    </script>
+  </body>
+</html>
+----
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-As you can see, when JQuery starts, we will setup bindings on in our UI as data attributes that link back to properties of our ViewModel object.
+As you can see, when JQuery starts, we will setup bindings in our user interface as data attributes that link back to properties of our ViewModel object.
 
 The user interface:
-The user interface is a simple html form that mimics a shopping cart with an order summary.  The html form has input elements to allow the user to enter their billing information.  The first thing to note is the data-bind attributes of each input element.  KnockoutJS uses the html 5 data- attributes to define the binding behavior elements in your page.
+The user interface is a simple html form that mimics a shopping cart with an order summary.  The html form has input elements to allow the user to enter their billing information.  The first thing to note is the data-bind attributes of each input element.  KnockoutJS uses the html 5 data- attributes to define the binding behavior for elements on your page.
 
-The Customer's information entry:
-Each field here is also databound to the display only fields in the Order Review section.  If you change any of the user's details, they are automatically refreshed in the review section.
+The  Enter your bill information form:
+Each input element here is databound to the display only fields in the Order Review section.  If you change any of the user's details, they are automatically refreshed in the review section. 
 
-The item quantity text box allows you to change the quanity of the items to be order and as a result the Knockout.js bindings will perform a calculation on the quantity and price and the result is automatically reflected in the order summary.  This would be code that you would have to write yourself without knockout.js.
+The item quantity input element allows you to change the quanity of the items to be order and as a result the Knockout.js bindings will perform a calculation on the quantity and price values and the result is automatically reflected in the Total input element.  This is achieved by the  the order summary.  This would be code that you would have to write yourself without knockout.js.
 
 The product order section
 <TODO>
