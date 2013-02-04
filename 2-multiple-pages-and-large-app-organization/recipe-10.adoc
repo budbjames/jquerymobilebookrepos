@@ -31,7 +31,7 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
   </head>
   <body>
 
-<!-- Start Homepage -->
+
   <div id="homepage" data-role="page" data-title="Homepage">
     <div data-role="header">
     <h3>Purchase order</h3>
@@ -51,7 +51,7 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
     </form>
     </div>
   </div>
-  <!-- Start Subpage -->
+  
     <div id="overview-page" data-role="page" data-title="Subpage">
         <div data-role="header">
             <h1>Summary</h1>
@@ -117,10 +117,6 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
             </table>
         </div>
     </div>
-    <!-- End Subpage -->
-<!-- End Homepage -->
-
-
 
     <script type="text/javascript">
 ----
