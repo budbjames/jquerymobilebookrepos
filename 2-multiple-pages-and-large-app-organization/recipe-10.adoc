@@ -30,7 +30,6 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.0/knockout-min.js"></script>
   </head>
   <body>
-
   <div id="homepage" data-role="page" data-title="Homepage">
     <div data-role="header">
     <h3>Purchase order</h3>
@@ -50,7 +49,6 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
     </form>
     </div>
   </div>
-  
     <div id="overview-page" data-role="page" data-title="Subpage">
         <div data-role="header">
             <h1>Summary</h1>
@@ -116,21 +114,16 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
             </table>
         </div>
     </div>
-
     <script type="text/javascript">
         //When the form is submitted, 
         $("#purchase-form").submit(function () {
-
             // Open the subpage
             window.location.hash = "overview-page";
-
             // Don't submit the form
             return false;
         });
-
         // Initialize the namespace
         var SuperShoppingCart = {};
-
         // Create a function delegate to bind the ViewModel properties
         SuperShoppingCart.bindData = function () {
             // Create the view model
@@ -146,11 +139,9 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
                     return (this.Cost() * this.Quantity());
                 }, this);
             }
-
             //Apply the knockout bindings to the viewmodel
             ko.applyBindings(new viewModel());
         };
-
         //a method to convert the viewmodel to json and 
         //save it using AJAX
         SuperShoppingCart.addCustomer = function () {
@@ -166,7 +157,6 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
                 }
             });
         };
-
         //When the document loads, create and bind the viewmodel
         $(document).ready(function () {
             SuperShoppingCart.bindData();
