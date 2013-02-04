@@ -31,7 +31,6 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
   </head>
   <body>
 
-
   <div id="homepage" data-role="page" data-title="Homepage">
     <div data-role="header">
     <h3>Purchase order</h3>
@@ -119,10 +118,6 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
     </div>
 
     <script type="text/javascript">
-----
-
-[source,javascript]
------
         //When the form is submitted, 
         $("#purchase-form").submit(function () {
 
@@ -176,10 +171,6 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
         $(document).ready(function () {
             SuperShoppingCart.bindData();
         });
------
-
-[source,html]
-----
     </script>
   </body>
 </html>
