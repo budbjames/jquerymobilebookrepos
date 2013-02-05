@@ -61,71 +61,69 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
             <div>
                 $<span data-bind="text: Total" ></span>
             </div>
-
             <input  type="submit" value="Submit" />
         </div>
     </form>
     </div>
   </div>
-    <div id="overview-page" data-role="page" data-title="Subpage">
-        <div data-role="header">
-            <h1>Summary</h1>
-        </div>
-        <div data-role="header">
-            Thank you for your purchase!  You will find a summary of your order for your reference.
-        </div>
-        <div data-role="content">
-            <table>
-                <tr>
-                    <td>
-                        First Name:
-                    </td>
-                    <td>
-                        <span data-bind="text: FirstName" ></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Last Name:
-                    </td>
-                    <td>
-                        <span data-bind="text: LastName" ></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Shipping Address:
-                    </td>
-                    <td>
-                        <span data-bind="text: ShippingAddress" ></span>
-                    </td>
-                </tr>        
-            </table>
-            <h3>Cart contents</h3>
-            <ol data-bind="template: { name: 'productRowTemplate', foreach: ItemsInCart }">
-            </ol>
-            <script type="text/html" id="Script1">
-                <li>
-                    Product: <br />
-                    $<span data-bind="text: name" ></span> <br />
-                    Cost: 
-                    $<span data-bind="text: price" ></span> 
-                    Quantity: 
-                    <span data-bind="text: quantity" ></span> 
-                </li>
-            </script>
-            <div>
-                Total:
-            </div>
-            <div>
-                $<span data-bind="text: Total" ></span>
-            </div>
-            <a href="#homepage" data-role="button">Back</a>
-        </div>
-    </div>
-    <script type="text/javascript">
+  <div id="overview-page" data-role="page" data-title="Subpage">
+      <div data-role="header">
+          <h1>Summary</h1>
+      </div>
+      <div data-role="header">
+          Thank you for your purchase!  You will find a summary of your order for your reference.
+      </div>
+      <div data-role="content">
+          <table>
+              <tr>
+                  <td>
+                      First Name:
+                  </td>
+                  <td>
+                      <span data-bind="text: FirstName" ></span>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Last Name:
+                  </td>
+                  <td>
+                      <span data-bind="text: LastName" ></span>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Shipping Address:
+                  </td>
+                  <td>
+                      <span data-bind="text: ShippingAddress" ></span>
+                  </td>
+              </tr>        
+          </table>
+          <h3>Cart contents</h3>
+          <ol data-bind="template: { name: 'productRowTemplate', foreach: ItemsInCart }">
+          </ol>
+          <script type="text/html" id="Script1">
+              <li>
+                  Product: <br />
+                  $<span data-bind="text: name" ></span> <br />
+                  Cost: 
+                  $<span data-bind="text: price" ></span> 
+                  Quantity: 
+                  <span data-bind="text: quantity" ></span> 
+              </li>
+          </script>
+          <div>
+              Total:
+          </div>
+          <div>
+              $<span data-bind="text: Total" ></span>
+          </div>
+          <a href="#homepage" data-role="button">Back</a>
+      </div>
+  </div>
+  <script type="text/javascript">
 ----
-
 [source,javascript]
 -----
         var products = [
@@ -185,7 +183,6 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
             SuperShoppingCart.bindData();
         });
 -----
-
 [source,html]
 ----
     </script>
@@ -195,6 +192,10 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
 As you can see, when JQuery starts, we will setup bindings in our user interface as data attributes that link back to properties of our ViewModel object.
 
 The user interface:
