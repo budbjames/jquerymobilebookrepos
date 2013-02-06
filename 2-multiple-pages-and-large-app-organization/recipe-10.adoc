@@ -12,7 +12,7 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-When developing HTML forms that take user input, you typically have to write JavaScript code to sync the data entered by the user with the underlying data model that will eventually be persisted to some sort of data storage.  If changes are made to your data model programmatically, you must check for these changes and reflect them in the website or view's input controls for the user to see.  This recipe will introduce Knockout.js, a JavaScript library that enables the implementation of the Model-View-ViewModel UI design pattern.  The Model-View-ViewModel design pattern promotes the creation of maintainable applications by decoupling the user interface (View) from the logic that handles the user's interaction with the View (View-Model) and from the data that is displayed on the view (model).  With the clean separation of concerns, you get clean code that is easily tested and easily maintained.  Knockout.js also provides data-binding capabilities to sync the data in the model with the html elements used to display the model data.  This synchronization saves you time and effort by eliminating the need to write boiler plate code to store the data entered by users in the model as well as the code required to update the user interface elements with the programmatic changes that occur to the model.
+When developing HTML forms that take user input, you typically have to write JavaScript code to sync the data entered by the user with the underlying data model that will eventually be persisted to some sort of data storage.  If changes are made to your data model programmatically, you must check for these changes and reflect them in the view.  This recipe will introduce Knockout.js, a JavaScript library that enables the implementation of the Model-View-ViewModel (MVVM) design pattern.  The MVVM design pattern promotes the creation of maintainable applications by decoupling the user interface (View) from the logic that handles the user's interaction with the View (View-Model) and from the data that is displayed on the view (model).  With this clean separation of concerns, you get clean code that is easily tested and maintained.  Knockout.js also provides data-binding capabilities to sync the data in the model with the html elements used to display the model data.  This synchronization saves you time and effort by eliminating the need to write boiler plate code to store the data entered by users in the model as well as the code required to update the user interface elements with the programmatic changes that occur to the model.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -46,7 +46,7 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
             <script type="text/html" id="productRowTemplate">
                 <li>
                     Product: <br />
-                    $<span data-bind="text: name" ></span> <br />
+                    <span data-bind="text: name" ></span> <br />
                     Cost: 
                     $<span data-bind="text: price" ></span> 
                     Quantity: 
@@ -187,22 +187,50 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
 
-
-
-
 As you can see, when JQuery starts, we will setup bindings in our user interface as data attributes that link back to properties of our ViewModel object.
 
-The user interface:
-The user interface is a simple html form that mimics a shopping cart with an order summary.  The html form has input elements to allow the user to enter their billing information.  The first thing to note is the data-bind attributes of each input element.  KnockoutJS uses the html 5 data- attributes to define the binding behavior for elements on your page.
+The user interface is a simple html form that mimics a shopping cart with an order summary.  The html form has input elements to allow the user to enter their billing information.  The first thing to note is the data-bind attributes of each input element.  KnockoutJS uses the html5 data-* attributes to define the binding behavior for elements on your page.
 
-The  Enter your bill information form:
-Each input element here is databound to the display only fields in the Order Review section.  If you change any of the user's details, they are automatically refreshed in the review section. 
+In the Order summary, each ViewModel property is databound to elements that cannot be modified by the user. If you change any of the ViewModel's properties values, they are automatically refreshed in the order summary. 
 
-The item quantity input element allows you to change the quanity of the items to be order and as a result the Knockout.js bindings will perform a calculation on the quantity and price values and the result is automatically reflected in the Total input element.  This is achieved by the  the order summary.  This would be code that you would have to write yourself without knockout.js.
+In this recipe we use the following Knockout.JS data-bindings for the input and display elements in the view: text, value, and template.
+A value data-binding is used when binding a ViewModel's property value to an input element.
 
-The product order section
-<TODO>
+Here is an example
+Shipping Address: <input data-bind="value: ShippingAddress" type="text" /> 
 
-The order review section
-<TODO>
+In this example, we have a ViewModel that has a property defined named ShippingAddress.  The value of the property is displayed in a textbox.  When the value of the textbox is changed, the value of the property is automatically set.  This is the magic of Knockout.JS.  Likewise, if a script has changed the value of the ShippingAddress property of the ViewModel, then the text box is updated to reflect the changes.
 
+The next type of data-binding is text, which is used in display only element bindings such as <span>.
+
+Here is an example
+<span data-bind="text: FirstName" ></span> 
+
+Once again, we have a ViewModel object with a property named FirstName and it's value is displayed inside of the span element.  The user can't update a span except for when using script to do so.
+
+Finally, the last and most complicated of the three is the template binding.  The template binding has several uses but the most common reason to use a template binding is to iterate through the elements in a ViewModel array property to display the values in a consistent format.  The great thing about this approach is you aren't using JavaScript loops, rather you are simply defining declarative markup.  You apply the template data-bind attribute to an element that has child elements.  You define a template that represents the format of how the parents children should be displayed.  Perhaps an example will help.
+
+<h3>Cart contents</h3>
+<ol data-bind="template: { name: 'productRowTemplate', foreach: ItemsInCart }">
+</ol>
+<script type="text/html" id="productRowTemplate">
+    <li>
+        Product: <br />
+        <span data-bind="text: name" ></span> <br />
+    </li>
+</script>
+
+In this example, we have an ordered list element (parent) that specifies that a template is going to be used to format it's children and that the name of the template's id attribute will be 'productRowTemplate'.  The foreach states that we will loop through the ViewModels ItemsInCart array property.  The template itself is expressed inside of a script tag where the id attribute will be the value of the name part of the template binding.  Inside of the script tag, we have a single list item which defines the child layout.  The data-bind properties specified here are properties of the object in each element of the array.
+
+That's all there is to the data-binding of the view.  The other side of the data-binding mechanism lies in the properties of the ViewModel object.  
+
+The ViewModel is represented as an object literal with functions as methods and variables as properties.  Knockout.JS has a specific data binding object for different types of object members.  The following data-binding methods are used to set a ViewModel property as bindable by the view: ko.observable('value'), ko.observableArray([]), ko.computed(function () {}).  Finally, once you've defined the properties and their bindings, you need to call the ko.applyBindings() methods to apply the bindings that you've assigned to the properties of your ViewMode object.  Next we will explain each type of ViewModel binding.
+
+The call to ko.observable('value') simply marks a property variable as observable which means that it's value's changes can be observed by the view through the view data-bindings.  You can pass the initial value of the property as an argument to the observable() methods.
+
+In order to display more than one element via a template, you would create an array of objects and pass them to the ko.observableArray([]) method.  This is just like the observable properties only they are Arrays rather than single value variables.
+Finally, we have the ko.computed(function () {}) method which takes a function as an argument.  This allows you to specify the value of a proeprty as the return value of a function.  A common use for this approach is to perform calculations on multiple properties much like we do with the Total property of the shopping cart.  It's value is dynamically computed by  iterating through each product and multiplying each products quantity by it's price.  Another example would be if your ViewModel had a FirstName and LastName property and you wanted to concatenate the values of these properties and return the entire string as a property named FullName.
+
+As you can see, Knockout.JS is suprisingly powerful for how simple it is to use.  You can get up and running with Knockout.JS extremely fast.
+
+This recipe has demonstrated the most basic concepts used in Knockout.JS.  With this knowledge, you can begin writing mobile sites to take advanatage of MVVM by using the powerful data-binding functionality offered by this wonderful library. 
