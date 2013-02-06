@@ -19,7 +19,6 @@ Solution
 The recipe is made up of an HTML page that represents an ecommerce site with a shopping cart and an order summary.  The order form, shopping cart, and order summary displays are all data-bound to properties of a ViewModel object by way of Knockout.js.  This apporach allows you to cleanly separate the user input from the data persistence of the application by using the MVVM design pattern.  The MVVM design pattern is designed to separate your application into models that hold data, views that represent the user interface, and view models that present an abstraction between the models and views.  This separation of concerns will improve your code's architecture and increase testability.  You will write less code and achieve a more responsive UI by using Knockout.js.
 
 [source,html]
-----
 <!DOCTYPE html>
 <html>
   <head>
@@ -122,9 +121,7 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
       </div>
   </div>
   <script type="text/javascript">
------
 [source,javascript]
------
         var products = [
                     { name: '10pk recordable cds', price: 9.99, quantity: 2 },
                     { name: 'Super mousepad', price: 4.99, quantity: 1 },
@@ -181,13 +178,11 @@ The recipe is made up of an HTML page that represents an ecommerce site with a s
         $(document).ready(function () {
             SuperShoppingCart.bindData();
         });
------
 [source,html]
------
     </script>
   </body>
 </html>
-----
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -211,5 +206,3 @@ The product order section
 The order review section
 <TODO>
 
-The ViewModel
-<TODO>
