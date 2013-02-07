@@ -1,5 +1,3 @@
-<!-- example.html -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,8 +8,6 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.0/knockout-min.js"></script>
   </head>
   <body>
-
-<!-- Start Homepage -->
   <div id="homepage" data-role="page" data-title="Homepage">
     <div data-role="header">
     <h3>Purchase order</h3>
@@ -23,15 +19,32 @@
             First Name: <input data-bind="value: FirstName" style="width: 200px;" type="text" /> 
             Last Name: <input data-bind="value: LastName" style="width: 200px;" type="text" /> 
             Shipping Address: <input data-bind="value: ShippingAddress" style="width: 300px;" type="text" /> 
-            Cost: $<input data-bind="value: Cost" style="width: 50px;" type="text" /> 
-            Qty <input data-bind="value: Quantity" style="width: 50px;" type="text" />
-            Total:<input data-bind="value: Total" style="width: 100px; font-weight:bolder;" type="text" disabled="disabled" /> 
+            
+            <h3>Cart contents</h3>
+            <ol data-bind="template: { name: 'productRowTemplate', foreach: ItemsInCart }">
+            </ol>
+            <script type="text/html" id="productRowTemplate">
+                <li>
+                    Product: <br />
+                    <span data-bind="text: name" ></span> <br />
+                    Cost: 
+                    $<span data-bind="text: price" ></span> 
+                    Quantity: 
+                    <span data-bind="text: quantity" ></span> 
+                </li>
+            </script>
+            <div>
+                Total:
+            </div>
+            <div>
+                $<span data-bind="text: Total" ></span>
+            </div>
+
             <input  type="submit" value="Submit" />
         </div>
     </form>
     </div>
   </div>
-  <!-- Start Subpage -->
     <div id="overview-page" data-role="page" data-title="Subpage">
         <div data-role="header">
             <h1>Summary</h1>
@@ -65,78 +78,67 @@
                         <span data-bind="text: ShippingAddress" ></span>
                     </td>
                 </tr>        
-                <tr>
-                    <td>
-                        Cost:
-                    </td>
-                    <td>
-                        $<span data-bind="text: Cost" ></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Quantity:
-                    </td>
-                    <td>
-                        <span data-bind="text: Quantity" ></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Total:
-                    </td>
-                    <td>
-                        $<span data-bind="text: Total" ></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <a href="#homepage" data-role="button">Back</a>
-                    </td>
-                </tr>
             </table>
+            <h3>Cart contents</h3>
+            <ol data-bind="template: { name: 'productRowTemplate', foreach: ItemsInCart }">
+            </ol>
+            <script type="text/html" id="Script1">
+                <li>
+                    Product: <br />
+                    <span data-bind="text: name" ></span> <br />
+                    Cost: 
+                    $<span data-bind="text: price" ></span> 
+                    Quantity: 
+                    <span data-bind="text: quantity" ></span> 
+                </li>
+            </script>
+            <div>
+                Total:
+            </div>
+            <div>
+                $<span data-bind="text: Total" ></span>
+            </div>
+            <a href="#homepage" data-role="button">Back</a>
         </div>
     </div>
-    <!-- End Subpage -->
-<!-- End Homepage -->
-
     <script type="text/javascript">
+
+        var products = [
+                    { name: '10pk recordable cds', price: 9.99, quantity: 2 },
+                    { name: 'Super mousepad', price: 4.99, quantity: 1 },
+                    { name: 'Color Printer Cartridge', price: 25.00, quantity: 3 },
+                    { name: 'Super Printer', price: 100.99, quantity: 1 }
+        ];
+
         //When the form is submitted, 
         $("#purchase-form").submit(function () {
-
             // Open the subpage
             window.location.hash = "overview-page";
-
             // Don't submit the form
             return false;
         });
-
         // Initialize the namespace
         var SuperShoppingCart = {};
-
         // Create a function delegate to bind the ViewModel properties
         SuperShoppingCart.bindData = function () {
             // Create the view model
-            function viewModel()
-            {
+            function viewModel() {
                 //Associate each property with the knockout binding
-                this.FirstName = ko.observable("");
-                this.LastName = ko.observable("");
-                this.ShippingAddress = ko.observable("");
-                this.Cost = ko.observable("9.99");
-                this.Quantity = ko.observable("1");
+                this.FirstName = ko.observable('');
+                this.LastName = ko.observable('');
+                this.ShippingAddress = ko.observable('');
+                this.ItemsInCart = ko.observableArray(products);
+
                 this.Total = ko.computed(function () {
-                    return (this.Cost() * this.Quantity());
+                    return SuperShoppingCart.calculateTotalCost();
                 }, this);
             }
-
             //Apply the knockout bindings to the viewmodel
             ko.applyBindings(new viewModel());
         };
-
         //a method to convert the viewmodel to json and 
         //save it using AJAX
-        SuperShoppingCart.addCustomer = function () {
+        SuperShoppingCart.savePurchase = function () {
             $.ajax({
                 url: "/Home/Add/",
                 type: 'post',
@@ -144,17 +146,25 @@
                 data: ko.toJSON(this),
                 contentType: 'application/json',
                 success: function (result) {
-                    //alert(result);
                     $('#message').html(result);
                 }
             });
+        };
+
+        //a method to calculate the total cost of all products in the shopping cart
+        SuperShoppingCart.calculateTotalCost = function () {
+
+            var total = 0.00;
+            for (var counter = 0; counter < products.length; counter++)
+                total = (total + (products[counter].price * products[counter].quantity));
+
+            return total.toFixed(2);
         };
 
         //When the document loads, create and bind the viewmodel
         $(document).ready(function () {
             SuperShoppingCart.bindData();
         });
-
     </script>
   </body>
 </html>

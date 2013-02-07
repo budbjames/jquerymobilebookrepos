@@ -2,7 +2,7 @@
 
 Author: Buddy James
 Chapter Leader approved: <date>
-Copy edited: 02/01/2013
+Copy edited: 02/06/2013
 Tech edited: <date>
 
 ////
@@ -12,33 +12,225 @@ Tech edited: <date>
 
 Problem
 ++++++++++++++++++++++++++++++++++++++++++++
-When developing HTML forms that take user input, you typically have to write JavaScript code to sync the data entered by the user with the underlying data model that will eventually be persisted to some sort of data storage.  If changes are made to your data model programmatically, you must check for these changes and reflect them on the client side input controls for the user to see.  This recipe will take introduce Knockout.js, a JavaScript library that enables the implementation of the Model-View-ViewModel UI pattern.  
+When developing HTML forms that take user input, you typically have to write JavaScript code to sync the data entered by the user with the underlying data model that will eventually be persisted to some sort of data storage.  If changes are made to your data model programmatically, you must check for these changes and reflect them in the view.  This recipe will introduce Knockout.js, a JavaScript library that enables the implementation of the Model-View-ViewModel (MVVM) design pattern.  The MVVM design pattern promotes the creation of maintainable applications by decoupling the user interface (View) from the logic that handles the user's interaction with the View (View-Model) and from the data that is displayed on the view (model).  With this clean separation of concerns, you get clean code that is easily tested and maintained.  Knockout.js also provides data-binding capabilities to sync the data in the model with the html elements used to display the model data.  This synchronization saves you time and effort by eliminating the need to write boiler plate code to store the data entered by users in the model as well as the code required to update the user interface elements with the programmatic changes that occur to the model.
 
 Solution
 ++++++++++++++++++++++++++++++++++++++++++++
-The recipe is made up of an HTML page that represents an ecommerce site with a shopping cart and an order summary.  The order form, shopping cart, and order summary displays are all data-bound to properties of a ViewModel object by way of Knockout.js.  This apporach allows you to cleanly separate the user input from the data persistence of the application by using the MVVM design pattern.  The MVVM design pattern is designed to separate your application into models that hold data, views that represent the user interface, and view models that present an abstraction between the models and views.  This separation of concerns will improve your code's architecture and increase testability.  You will write less code and achieve a more responsive UI than before thanks to Knockout.js.
+The recipe is made up of an HTML page that represents an ecommerce site with a shopping cart and an order summary.  The order form, shopping cart, and order summary displays are all data-bound to properties of a ViewModel object by way of Knockout.js.  This apporach allows you to cleanly separate the user input from the data persistence of the application by using the MVVM design pattern.  The MVVM design pattern is designed to separate your application into models that hold data, views that represent the user interface, and view models that present an abstraction between the models and views.  This separation of concerns will improve your code's architecture and increase testability.  You will write less code and achieve a more responsive UI by using Knockout.js.
 
-----
-include::recipe-10-code/example.html[]
-----
+
+[source,html]
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data-binding with KnockoutJS</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.0/knockout-min.js"></script>
+  </head>
+  <body>
+  <div id="homepage" data-role="page" data-title="Homepage">
+    <div data-role="header">
+    <h3>Purchase order</h3>
+    </div>
+    <div data-role="content">
+    <form id="purchase-form" action="" method="post">
+        <div>
+            <h3>Enter your billing information</h3>
+            First Name: <input data-bind="value: FirstName" style="width: 200px;" type="text" /> 
+            Last Name: <input data-bind="value: LastName" style="width: 200px;" type="text" /> 
+            Shipping Address: <input data-bind="value: ShippingAddress" style="width: 300px;" type="text" /> 
+            <h3>Cart contents</h3>
+            <ol data-bind="template: { name: 'productRowTemplate', foreach: ItemsInCart }">
+            </ol>
+            <script type="text/html" id="productRowTemplate">
+                <li>
+                    Product: <br />
+                    <span data-bind="text: name" ></span> <br />
+                    Cost: 
+                    $<span data-bind="text: price" ></span> 
+                    Quantity: 
+                    <span data-bind="text: quantity" ></span> 
+                </li>
+            </script>
+            <div>
+                Total:
+            </div>
+            <div>
+                $<span data-bind="text: Total" ></span>
+            </div>
+            <input  type="submit" value="Submit" />
+        </div>
+    </form>
+    </div>
+  </div>
+  <div id="overview-page" data-role="page" data-title="Subpage">
+      <div data-role="header">
+          <h1>Summary</h1>
+      </div>
+      <div data-role="header">
+          Thank you for your purchase!  You will find a summary of your order for your reference.
+      </div>
+      <div data-role="content">
+          <table>
+              <tr>
+                  <td>
+                      First Name:
+                  </td>
+                  <td>
+                      <span data-bind="text: FirstName" ></span>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Last Name:
+                  </td>
+                  <td>
+                      <span data-bind="text: LastName" ></span>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Shipping Address:
+                  </td>
+                  <td>
+                      <span data-bind="text: ShippingAddress" ></span>
+                  </td>
+              </tr>        
+          </table>
+          <h3>Cart contents</h3>
+          <ol data-bind="template: { name: 'productRowTemplate', foreach: ItemsInCart }">
+          </ol>
+          <script type="text/html" id="Script1">
+              <li>
+                  Product: <br />
+                  $<span data-bind="text: name" ></span> <br />
+                  Cost: 
+                  $<span data-bind="text: price" ></span> 
+                  Quantity: 
+                  <span data-bind="text: quantity" ></span> 
+              </li>
+          </script>
+          <div>
+              Total:
+          </div>
+          <div>
+              $<span data-bind="text: Total" ></span>
+          </div>
+          <a href="#homepage" data-role="button">Back</a>
+      </div>
+  </div>
+  <script type="text/javascript">
+        var products = [
+                    { name: '10pk recordable cds', price: 9.99, quantity: 2 },
+                    { name: 'Super mousepad', price: 4.99, quantity: 1 },
+                    { name: 'Color Printer Cartridge', price: 25.00, quantity: 3 },
+                    { name: 'Super Printer', price: 100.99, quantity: 1 }
+        ];
+        //When the form is submitted, 
+        $("#purchase-form").submit(function () {
+            // Open the subpage
+            window.location.hash = "overview-page";
+            // Don't submit the form
+            return false;
+        });
+        // Initialize the namespace
+        var SuperShoppingCart = {};
+        // Create a function delegate to bind the ViewModel properties
+        SuperShoppingCart.bindData = function () {
+            // Create the view model
+            function viewModel() {
+                //Associate each property with the knockout binding
+                this.FirstName = ko.observable('');
+                this.LastName = ko.observable('');
+                this.ShippingAddress = ko.observable('');
+                this.ItemsInCart = ko.observableArray(products);
+                this.Total = ko.computed(function () {
+                    return SuperShoppingCart.calculateTotalCost();
+                }, this);
+            }
+            //Apply the knockout bindings to the viewmodel
+            ko.applyBindings(new viewModel());
+        };
+        //a method to convert the viewmodel to json and 
+        //save it using AJAX
+        SuperShoppingCart.savePurchase = function () {
+            $.ajax({
+                url: "/Home/Add/",
+                type: 'post',
+                //Send a JSON representation of this view model to be saved
+                data: ko.toJSON(this),
+                contentType: 'application/json',
+                success: function (result) {
+                    $('#message').html(result);
+                }
+            });
+        };
+        //a method to calculate the total cost of all products in the shopping cart
+        SuperShoppingCart.calculateTotalCost = function () {
+            var total = 0.00;
+            for (var counter = 0; counter < products.length; counter++)
+                total = (total + (products[counter].price * products[counter].quantity));
+            return total.toFixed(2);
+        };
+        //When the document loads, create and bind the viewmodel
+        $(document).ready(function () {
+            SuperShoppingCart.bindData();
+        });
+    </script>
+  </body>
+</html>
+
 
 Discussion
 ++++++++++++++++++++++++++++++++++++++++++++
-As you can see, when JQuery starts, we will setup bindings on in our UI as data attributes that link back to properties of our ViewModel object.
 
-The user interface:
-The user interface is a simple html form that mimics a shopping cart with an order summary.  The html form has input elements to allow the user to enter their billing information.  The first thing to note is the data-bind attributes of each input element.  KnockoutJS uses the html 5 data- attributes to define the binding behavior elements in your page.
+As you can see, when JQuery starts, we will setup bindings in our user interface as data attributes that link back to properties of our ViewModel object.
 
-The Customer's information entry:
-Each field here is also databound to the display only fields in the Order Review section.  If you change any of the user's details, they are automatically refreshed in the review section.
+The user interface is a simple html form that mimics a shopping cart with an order summary.  The html form has input elements to allow the user to enter their billing information.  The first thing to note is the data-bind attributes of each input element.  KnockoutJS uses the html5 data-* attributes to define the binding behavior for elements on your page.
 
-The item quantity text box allows you to change the quanity of the items to be order and as a result the Knockout.js bindings will perform a calculation on the quantity and price and the result is automatically reflected in the order summary.  This would be code that you would have to write yourself without knockout.js.
+In the Order summary, each ViewModel property is databound to elements that cannot be modified by the user. If you change any of the ViewModel's property values, they are automatically refreshed in the order summary view. 
 
-The product order section
-<TODO>
+In this recipe we use the following Knockout.JS data-bindings for the input and display elements in the view: text, value, and template.
+A data-binding of type "value" is used when binding a ViewModel's property value to an input element.
 
-The order review section
-<TODO>
+Here is an example
+Shipping Address: <input data-bind="value: ShippingAddress" type="text" /> 
 
-The ViewModel
-<TODO>
+In this example, we have a ViewModel that has a property defined named ShippingAddress.  The value of the property is displayed in a textbox.  When the value of the textbox is changed, the value of the property is automatically set.  This is the magic of Knockout.JS.  Likewise, if a script has changed the value of the ShippingAddress property of the ViewModel, then the text box is updated to reflect the changes.
+
+The next type of data-binding is "text", which is used in display only element bindings such as <span>.
+
+Here is an example
+<span data-bind="text: FirstName" ></span> 
+
+Once again, we have a ViewModel object with a property named FirstName and it's value is displayed inside of the span element.  The user can't update a span except for when using script to do so.
+
+Finally, the last and most complicated of the three is the template binding.  The template binding has several uses but the most common reason to use a template binding is to iterate through the elements in a ViewModel array property to display the values in a consistent format.  The great thing about this approach is you aren't using JavaScript loops, rather you are simply defining declarative markup.  You apply the template data-bind attribute to an element that normally has child elements that form the display.  You define a template that represents the format of how the children should be displayed.  Perhaps an example will help illustrate the concept of Knockout.JS templates.
+
+<h3>Cart contents</h3>
+<ol data-bind="template: { name: 'productRowTemplate', foreach: ItemsInCart }">
+</ol>
+<script type="text/html" id="productRowTemplate">
+    <li>
+        Product: <br />
+        <span data-bind="text: name" ></span> <br />
+    </li>
+</script>
+
+In this example, we have an ordered list element (parent) that specifies that a template is going to be used to format it's children and that the name of the template's id attribute will be 'productRowTemplate'.  The foreach states that we will loop through the ViewModels ItemsInCart array property to display each elements properties inside of the template.  The template itself is expressed inside of a script tag where the id attribute will be the value of the "name" part of the parent template binding.  Inside of the script tag, we have a single list item which defines how each child should be formatted.  The data-bind properties specified here are properties of the object contained in each element of the array.
+
+That's all there is to the data-binding of the view.  The other side of the data-binding mechanism lies in the properties of the ViewModel object.  
+
+The ViewModel is represented as an object literal with functions as methods and variables as properties.  Knockout.JS has a specific data-binding object for different types of object members.  The following data-binding methods are used to set a ViewModel property as bindable by the view: ko.observable('value'), ko.observableArray(array[]), ko.computed(function () {}).  Finally, once you've defined the properties and their bindings, you need to call the ko.applyBindings() methods to apply the bindings that you've assigned to the properties of your ViewMode object.  Next we will explain each type of ViewModel binding.
+
+The call to ko.observable('value') simply marks a property variable as observable which means that it's value's changes can be observed by the view through the view data-bindings.  You can pass the initial value of the property as an argument to the observable() methods.
+
+In order to display more than one element via a template, you would create an array of objects and pass them to the ko.observableArray() method.  This is just like the observable properties only they are Arrays rather than single value variables.
+
+Finally, we have the ko.computed() binding method which takes a function as an argument.  This allows you to specify the value of a proeprty as the return value of a function.  A common use for this approach is to perform calculations on multiple properties much like we do with the Total property of the shopping cart.  It's value is dynamically computed by  iterating through each product and multiplying each product's quantity by it's price.  Another example would be if your ViewModel had a FirstName and LastName property and you wanted to concatenate the values of these properties and return the entire string as a property named FullName.
+
+As you can see, Knockout.JS is suprisingly powerful for how simple it is to use.  You can get up and running with Knockout.JS with very little effort.
+
+This recipe has demonstrated the most basic concepts used in Knockout.JS.  With this knowledge, you can begin writing mobile sites to take advanatage of MVVM by using the powerful data-binding functionality offered by this wonderful library. 
